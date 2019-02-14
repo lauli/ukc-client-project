@@ -16,6 +16,8 @@
 		C8F6D57022033A6B0073488F /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D56F22033A6B0073488F /* NewsFeedViewController.swift */; };
 		C8F6D57222033A790073488F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D57122033A790073488F /* ProfileViewController.swift */; };
 		C8F6D57422033A840073488F /* ReportingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D57322033A840073488F /* ReportingViewController.swift */; };
+		C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDC0C72214E6D300B3D80E /* TabBarController.swift */; };
+		C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDC0CA2214EDCB00B3D80E /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		C8F6D56F22033A6B0073488F /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		C8F6D57122033A790073488F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C8F6D57322033A840073488F /* ReportingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingViewController.swift; sourceTree = "<group>"; };
+		C8FDC0C72214E6D300B3D80E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		C8FDC0CA2214EDCB00B3D80E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,9 +70,11 @@
 				C8F6D563220338040073488F /* Info.plist */,
 				C8F6D555220338020073488F /* AppDelegate.swift */,
 				C8F6D557220338020073488F /* MainViewController.swift */,
+				C8FDC0C72214E6D300B3D80E /* TabBarController.swift */,
 				C8F6D560220338040073488F /* LaunchScreen.storyboard */,
 				C8F6D55B220338030073488F /* Main.storyboard */,
 				C8F6D56C2203393D0073488F /* Data */,
+				C8FDC0C92214EDA100B3D80E /* Extensions */,
 				C8F6D569220338AF0073488F /* NewsFeed */,
 				C8F6D56B220338C50073488F /* Profile */,
 				C8F6D56A220338B70073488F /* Reporting */,
@@ -106,6 +112,14 @@
 				C8F6D56D22033A480073488F /* DataHandler.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		C8FDC0C92214EDA100B3D80E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C8FDC0CA2214EDCB00B3D80E /* UIColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,7 +196,9 @@
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
 				C8F6D56E22033A480073488F /* DataHandler.swift in Sources */,
 				C8F6D57222033A790073488F /* ProfileViewController.swift in Sources */,
+				C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */,
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,
+				C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */,
 				C8F6D57022033A6B0073488F /* NewsFeedViewController.swift in Sources */,
 				C8F6D57422033A840073488F /* ReportingViewController.swift in Sources */,
 			);
