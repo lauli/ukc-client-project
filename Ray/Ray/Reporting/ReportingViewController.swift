@@ -13,11 +13,10 @@ class ReportingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Report a new Issue"
         tabBarItem = UITabBarItem(title: "Report",
                      image: UIImage.init(named: "icon-report-outline"),
                      selectedImage: UIImage.init(named: "icon-report"))
-        
-        title = "Report a new Issue"
     }
 
 }
