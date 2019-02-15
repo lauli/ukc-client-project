@@ -15,8 +15,6 @@ class ProfileViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    //test
 
     /*
     // MARK: - Navigation
