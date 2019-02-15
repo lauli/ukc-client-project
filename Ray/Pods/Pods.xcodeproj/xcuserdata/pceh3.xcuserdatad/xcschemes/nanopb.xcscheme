@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7A47B47A50ED64F7BE6828ACC0B4E34D"
-               BlueprintName = "Pods-Ray"
+               BlueprintIdentifier = "817C64A5E9ACD16E40F48767BCC7E3EA"
+               BlueprintName = "nanopb"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Pods-Ray.framework">
+               BuildableName = "nanopb.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
