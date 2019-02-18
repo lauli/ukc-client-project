@@ -23,18 +23,20 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var timer = Timer() //for checking autocomplete possibilities update
     var buildingResult = ""
     var floorResult = ""
+    var roomResult = ""
     var ref: DatabaseReference!
     var buildingEntered = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        getBuildingNames()
         
         let pickerView = UIPickerView()
         pickerView.delegate = self
         
         floorTextField.inputView = pickerView
+        
+        getBuildingNames()
     }
     
     //Get building names from firebase for autocomplete
@@ -55,7 +57,28 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
             // Get databse values
             let info = snapshot.value as? NSDictionary
             // Get all building names
-            self.floorAutoCompletionPossibilities = info?.allKeys as! [String]
+            let rooms = info?.allKeys as! [String]
+            
+            for room in rooms{
+                self.ref.child("University Of Kent").child(self.buildingResult).child(room).observeSingleEvent(of: .value, with: { (snapshot) in
+                //Get databse values
+                let info = snapshot.value as? NSDictionary
+                // Get all building names
+                let floor = info?["fl_id"] as! String
+
+                if self.floorAutoCompletionPossibilities.contains(floor) {
+                // already appended
+                }
+                else {
+                    self.floorAutoCompletionPossibilities += [floor]
+                }
+                })
+                { (error) in
+                    print(error.localizedDescription)
+                }
+            }
+            
+            
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -63,11 +86,36 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     //Get building rooms from firebase for autocomplete
     func getFloorRooms(){
-        ref.child("University Of Kent").child(buildingResult).child(floorResult).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("University Of Kent").child(buildingResult).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get databse values
             let info = snapshot.value as? NSDictionary
             // Get all building names
-            self.roomsAutoCompletionPossibilities = info?.allKeys as! [String]
+            let rooms = info?.allKeys as! [String]
+            
+            for room in rooms{
+                self.ref.child("University Of Kent").child(self.buildingResult).child(room).observeSingleEvent(of: .value, with: { (snapshot) in
+                    //Get databse values
+                    let info = snapshot.value as? NSDictionary
+                    // Get all building names
+                    let floor = info?["fl_id"] as! String
+                    
+                    if floor.contains(self.floorResult){
+                        
+                        if let roomInt = info?["rm_id"] as? Int {
+                            var roomName = String(roomInt)
+                            roomName = String(roomName.lowercased().capitalized)
+                            self.roomsAutoCompletionPossibilities += [roomName]
+                        }
+                        if var roomName = info?["rm_id"] as? String{
+                            roomName = String(roomName.lowercased().capitalized)
+                            self.roomsAutoCompletionPossibilities += [roomName]
+                        }
+                    }
+                })
+                { (error) in
+                    print(error.localizedDescription)
+                }
+            }
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -108,7 +156,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     func searchAutocompleteEntriesWIthSubstring(substring: String) {
         let userQuery = substring
         let suggestions = getAutocompleteSuggestions(userText: substring)
-        
         if suggestions.count > 0 {
             timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in
                 let autocompleteResult = self.formatAutocompleteResult(substring: substring, possibleMatches: suggestions)
@@ -117,7 +164,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
             })
         } else {
             timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in
-                //self.buildingTextField.text = substring
                 if self.buildingEntered == true {
                     self.roomTextField.text = substring
                 }
@@ -133,10 +179,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     func getAutocompleteSuggestions(userText: String) -> [String]{
         var possibleMatches: [String] = []
         if buildingEntered == true{
-        for item in buildingAutoCompletionPossibilities {
+        for item in roomsAutoCompletionPossibilities {
             let myString:NSString! = item as NSString
             let substringRange :NSRange! = myString.range(of: userText)
-            
             if (substringRange.location == 0)
             {
                 possibleMatches.append(item)
@@ -144,7 +189,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         }
         }
         else {
-            for item in roomsAutoCompletionPossibilities {
+            for item in buildingAutoCompletionPossibilities {
                 let myString:NSString! = item as NSString
                 let substringRange :NSRange! = myString.range(of: userText)
                 
@@ -162,7 +207,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         let colouredString: NSMutableAttributedString = NSMutableAttributedString(string: userQuery + autocompleteResult)
         colouredString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.lightGray, range: NSRange(location: userQuery.count,length:autocompleteResult.count))
         if buildingEntered == true{
-            self.floorTextField.attributedText = colouredString
+            self.roomTextField.attributedText = colouredString
         }
         else {
             self.buildingTextField.attributedText = colouredString
@@ -172,11 +217,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     //moves typing indicator to end of inputted information
     func moveCaretToEndOfUserQueryPosition(userQuery : String) {
         if buildingEntered == true{
-        if let newPosition = self.floorTextField.position(from: self.floorTextField.beginningOfDocument, offset: userQuery.count) {
-            self.floorTextField.selectedTextRange = self.floorTextField.textRange(from: newPosition, to: newPosition)
+        if let newPosition = self.roomTextField.position(from: self.roomTextField.beginningOfDocument, offset: userQuery.count) {
+            self.roomTextField.selectedTextRange = self.roomTextField.textRange(from: newPosition, to: newPosition)
         }
-        let selectedRange: UITextRange? = floorTextField.selectedTextRange
-        floorTextField.offset(from: floorTextField.beginningOfDocument, to: (selectedRange?.start)!)
+        let selectedRange: UITextRange? = roomTextField.selectedTextRange
+        roomTextField.offset(from: roomTextField.beginningOfDocument, to: (selectedRange?.start)!)
         }
         else {
             if let newPosition = self.buildingTextField.position(from: self.buildingTextField.beginningOfDocument, offset: userQuery.count) {
@@ -191,7 +236,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     func formatAutocompleteResult(substring: String, possibleMatches: [String]) -> String {
         var autoCompleteResult = possibleMatches[0]
         if buildingEntered == true{
-            floorResult = possibleMatches[0]
+            roomResult = possibleMatches[0]
         }
         else{
         buildingResult = possibleMatches[0]
@@ -205,8 +250,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.textColor = UIColor.black
         if buildingEntered == true {
-        moveCaretToEndOfUserQueryPosition(userQuery: floorResult)
-        print(floorResult)
+        moveCaretToEndOfUserQueryPosition(userQuery: roomResult)
+        print(roomResult)
         }
         else{
             moveCaretToEndOfUserQueryPosition(userQuery: buildingResult)
@@ -238,5 +283,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         floorTextField.text = floorAutoCompletionPossibilities[row]
         floorResult = floorTextField.text ?? ""
         getFloorRooms()
+        print(floorResult)
     }
 }
