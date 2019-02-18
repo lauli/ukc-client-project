@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileViewController: UIViewController, UITextFieldDelegate{
 
@@ -17,9 +18,21 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
     var timer = Timer()
     var result = ""
     
+    var ref: DatabaseReference! = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ref.child("University Of Kent").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            let username = value?["username"] as? String ?? ""
+            let user = User(username: username)
+            
+            // ...
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         // Do any additional setup after loading the view.
     }
     
