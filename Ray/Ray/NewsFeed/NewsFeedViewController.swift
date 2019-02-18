@@ -12,7 +12,8 @@ class NewsFeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // ene mene muh
+        
         // Do any additional setup after loading the view.
     }
     
