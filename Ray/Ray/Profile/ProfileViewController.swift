@@ -9,75 +9,82 @@
 import UIKit
 import Firebase
 
-class ProfileViewController: UIViewController, UITextFieldDelegate{
+class ProfileViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     
-    var autoCompletionPossibilities = ["Jennison", "Templeman", "Cornwallis South", "Cornwallis North"]
+    var autoCompletionPossibilities = [""] // array for database building info
     var autoCompleteCharacterCount = 0
-    var timer = Timer()
+    var timer = Timer() //for checking autocomplete possibilities update
     var result = ""
-    
-    var ref: DatabaseReference! = Database.database().reference()
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getBuildingNames()
+    }
+    
+    //Get building names from firebase for autocomplete
+    func getBuildingNames(){
+        ref = Database.database().reference()
         ref.child("University Of Kent").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let value = snapshot.value as? NSDictionary
-            let username = value?["username"] as? String ?? ""
-            let user = User(username: username)
-            
-            // ...
+            // Get databse values
+            let info = snapshot.value as? NSDictionary
+            // Get all building names
+            self.autoCompletionPossibilities = info?.allKeys as! [String]
         }) { (error) in
             print(error.localizedDescription)
         }
-        // Do any additional setup after loading the view.
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { //1
-        var subString = (textField.text!.capitalized as NSString).replacingCharacters(in: range, with: string) // 2
+    //searches for autocompletes with substring entered
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var subString = (textField.text!.capitalized as NSString).replacingCharacters(in: range, with: string)
         subString = formatSubstring(subString: subString)
         
-        if subString.count == 0 { // 3 when a user clears the textField
+        if subString.count == 0 { //when a user clears the textField
             resetValues()
         } else {
-            searchAutocompleteEntriesWIthSubstring(substring: subString) //4
+            searchAutocompleteEntriesWIthSubstring(substring: subString)
         }
         return true
     }
+    
+    //Formats entered text
     func formatSubstring(subString: String) -> String {
-        let formatted = String(subString.dropLast(autoCompleteCharacterCount)).lowercased().capitalized //5
+        let formatted = String(subString.dropLast(autoCompleteCharacterCount)).lowercased().capitalized
         return formatted
     }
     
+    //Clears text field
     func resetValues() {
         autoCompleteCharacterCount = 0
         textField.text = ""
     }
 
+    //gets suggestions and displays to user, updating every 0.01
     func searchAutocompleteEntriesWIthSubstring(substring: String) {
         let userQuery = substring
-        let suggestions = getAutocompleteSuggestions(userText: substring) //1
+        let suggestions = getAutocompleteSuggestions(userText: substring)
         
         if suggestions.count > 0 {
-            timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in //2
-                let autocompleteResult = self.formatAutocompleteResult(substring: substring, possibleMatches: suggestions) // 3
-                self.putColourFormattedTextInTextField(autocompleteResult: autocompleteResult, userQuery : userQuery) //4
-                self.moveCaretToEndOfUserQueryPosition(userQuery: userQuery) //5
+            timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in
+                let autocompleteResult = self.formatAutocompleteResult(substring: substring, possibleMatches: suggestions)
+                self.putColourFormattedTextInTextField(autocompleteResult: autocompleteResult, userQuery : userQuery)
+                self.moveCaretToEndOfUserQueryPosition(userQuery: userQuery)
             })
         } else {
-            timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in //7
+            timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in
                 self.textField.text = substring
             })
             autoCompleteCharacterCount = 0
         }
     }
     
+    //itterates though possibilities and appends to possible matches
     func getAutocompleteSuggestions(userText: String) -> [String]{
         var possibleMatches: [String] = []
-        for item in autoCompletionPossibilities { //2
+        for item in autoCompletionPossibilities {
             let myString:NSString! = item as NSString
             let substringRange :NSRange! = myString.range(of: userText)
             
@@ -89,12 +96,14 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         return possibleMatches
     }
     
+    //displays suggetion and formats
     func putColourFormattedTextInTextField(autocompleteResult: String, userQuery : String) {
         let colouredString: NSMutableAttributedString = NSMutableAttributedString(string: userQuery + autocompleteResult)
         colouredString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.lightGray, range: NSRange(location: userQuery.count,length:autocompleteResult.count))
         self.textField.attributedText = colouredString
     }
     
+    //moves typing indicator to end of inputted information
     func moveCaretToEndOfUserQueryPosition(userQuery : String) {
         if let newPosition = self.textField.position(from: self.textField.beginningOfDocument, offset: userQuery.count) {
             self.textField.selectedTextRange = self.textField.textRange(from: newPosition, to: newPosition)
@@ -103,6 +112,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         textField.offset(from: textField.beginningOfDocument, to: (selectedRange?.start)!)
     }
     
+    //combines substring with suggestion
     func formatAutocompleteResult(substring: String, possibleMatches: [String]) -> String {
         var autoCompleteResult = possibleMatches[0]
         result = possibleMatches[0]
@@ -111,6 +121,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate{
         return autoCompleteResult
     }
     
+    //if user presses enter key, suggestion is selected
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.textColor = UIColor.black
         moveCaretToEndOfUserQueryPosition(userQuery: result)
