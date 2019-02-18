@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8F6C1AC221AEC1200FB1B34 /* ReportingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6C1AB221AEC1200FB1B34 /* ReportingViewModel.swift */; };
 		C8F6D556220338020073488F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D555220338020073488F /* AppDelegate.swift */; };
 		C8F6D558220338030073488F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D557220338020073488F /* MainViewController.swift */; };
 		C8F6D55D220338030073488F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F6D55B220338030073488F /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C8F6C1AB221AEC1200FB1B34 /* ReportingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingViewModel.swift; sourceTree = "<group>"; };
 		C8F6D552220338020073488F /* Ray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F6D555220338020073488F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8F6D557220338020073488F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F6D57322033A840073488F /* ReportingViewController.swift */,
+				C8F6C1AB221AEC1200FB1B34 /* ReportingViewModel.swift */,
 			);
 			path = Reporting;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,
 				C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */,
 				C8F6D57022033A6B0073488F /* NewsFeedViewController.swift in Sources */,
+				C8F6C1AC221AEC1200FB1B34 /* ReportingViewModel.swift in Sources */,
 				C8F6D57422033A840073488F /* ReportingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
