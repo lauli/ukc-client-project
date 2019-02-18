@@ -155,18 +155,32 @@
                                     <outlet property="delegate" destination="fWq-1D-66C" id="soh-18-yMN"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Floor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vns-TK-jKe">
+                                <rect key="frame" x="8" y="110" width="359" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fWq-1D-66C" id="fPR-ha-BYx"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Vns-TK-jKe" firstAttribute="leading" secondItem="5vO-Ih-nZd" secondAttribute="leading" constant="8" id="2ht-AF-Cqw"/>
+                            <constraint firstItem="Vns-TK-jKe" firstAttribute="top" secondItem="b3w-8T-mg7" secondAttribute="bottom" constant="8" id="6T0-vV-h7x"/>
                             <constraint firstItem="b3w-8T-mg7" firstAttribute="top" secondItem="5vO-Ih-nZd" secondAttribute="top" constant="8" id="H4P-a6-JFR"/>
+                            <constraint firstItem="Vns-TK-jKe" firstAttribute="top" secondItem="b3w-8T-mg7" secondAttribute="bottom" constant="8" id="LV3-eS-DZo"/>
                             <constraint firstItem="b3w-8T-mg7" firstAttribute="leading" secondItem="5vO-Ih-nZd" secondAttribute="leading" constant="8" id="cqY-0L-Ofy"/>
                             <constraint firstItem="5vO-Ih-nZd" firstAttribute="trailing" secondItem="b3w-8T-mg7" secondAttribute="trailing" constant="8" id="ow0-H4-NHM"/>
+                            <constraint firstItem="5vO-Ih-nZd" firstAttribute="trailing" secondItem="Vns-TK-jKe" secondAttribute="trailing" constant="8" id="rNX-A8-iDR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5vO-Ih-nZd"/>
                     </view>
                     <navigationItem key="navigationItem" id="hUS-4e-0F4"/>
                     <connections>
-                        <outlet property="textField" destination="b3w-8T-mg7" id="pyr-hN-D1J"/>
+                        <outlet property="buildingTextField" destination="b3w-8T-mg7" id="a9M-8C-kIv"/>
+                        <outlet property="floorTextField" destination="Vns-TK-jKe" id="MjD-au-TeV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0r5-FA-nKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
