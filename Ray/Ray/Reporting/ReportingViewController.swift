@@ -35,16 +35,27 @@ class ReportingViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupPage()
+        setupStackView()
+    }
+    
+    private func setupPage() {
         navigationItem.title = "Report a new Issue"
         tabBarItem = UITabBarItem(title: "Report",
-                     image: UIImage.init(named: "icon-report-outline"),
-                     selectedImage: UIImage.init(named: "icon-report"))
-        
+                                  image: UIImage.init(named: "icon-report-outline"),
+                                  selectedImage: UIImage.init(named: "icon-report"))
+    }
+    
+    private func setupStackView() {
         viewUserDifferent.isHidden = true
         userSwitch.onTintColor = .princetonOrange
+        locationButton.tintColor = .princetonOrange
         
         setupUserDefaults()
+        
+        // description textview setup
         descriptionTextView.setupDescription()
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
     private func setupUserDefaults() {
@@ -88,9 +99,10 @@ extension UITextView: UITextViewDelegate {
     
     public func setupDescription() {
         self.delegate = self
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderColor = UIColor.princetonOrange.cgColor
         self.layer.borderWidth = 0.25
+        self.layer.cornerRadius = 5
         self.textColor = .lightGray
-        self.text = "Door not closing\nMy door is not closing properly anymore. I think it has something to do with the saftey device on top of the door, that starts beeping when I don't close it properly. \nI have attached pictures, and made a video so you can see what is happening. \nMany thanks!"
+        self.text = "Door not closing\n\nMy door is not closing properly anymore. I think it has something to do with the saftey device on top of the door, that starts beeping when I don't close it properly. \nI have attached pictures, and made a video so you can see what is happening. \n\nMany thanks!"
     }
 }

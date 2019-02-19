@@ -48,10 +48,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NkM-fP-zcY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="641"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="654.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QXb-WU-62h">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="654.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lmi-Vn-5c3" customClass="UserView" customModule="Ray" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
@@ -214,6 +214,10 @@
                                                     <constraint firstItem="UxJ-aU-2Qs" firstAttribute="top" secondItem="clq-M2-Qmn" secondAttribute="top" constant="16" id="Wk5-C0-c0X"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h49-pJ-Bf6">
+                                                <rect key="frame" x="0.0" y="624.5" width="375" height="30"/>
+                                                <state key="normal" title="Send Report"/>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="R8m-cw-PES" secondAttribute="trailing" id="4lK-pV-RTO"/>
@@ -221,6 +225,7 @@
                                             <constraint firstAttribute="trailing" secondItem="Gko-PJ-2EG" secondAttribute="trailing" id="Saz-Bh-CwE"/>
                                             <constraint firstItem="Jqr-wF-7L4" firstAttribute="leading" secondItem="j8B-yI-aCU" secondAttribute="trailing" constant="-226" id="b3B-2V-q20"/>
                                             <constraint firstItem="R8m-cw-PES" firstAttribute="leading" secondItem="QXb-WU-62h" secondAttribute="leading" id="enf-yF-CGi"/>
+                                            <constraint firstItem="h49-pJ-Bf6" firstAttribute="centerX" secondItem="QXb-WU-62h" secondAttribute="centerX" id="f25-kG-GD9"/>
                                             <constraint firstItem="Lmi-Vn-5c3" firstAttribute="leading" secondItem="QXb-WU-62h" secondAttribute="leading" id="kaa-II-xub"/>
                                             <constraint firstItem="Gko-PJ-2EG" firstAttribute="leading" secondItem="QXb-WU-62h" secondAttribute="leading" id="m0O-wz-6Y6"/>
                                         </constraints>
