@@ -25,7 +25,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var floorResult = ""
     var roomResult = ""
     var ref: DatabaseReference!
-    var buildingEntered = false
+    var possibleMatches: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +46,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
             let info = snapshot.value as? NSDictionary
             // Get all building names
             self.buildingAutoCompletionPossibilities = info?.allKeys as! [String]
+            self.buildingAutoCompletionPossibilities.sort()
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -53,6 +54,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     //Get building floors from firebase for autocomplete
     func getBuildingFloors(){
+        floorAutoCompletionPossibilities = [""]
+        roomsAutoCompletionPossibilities = [""]
+        floorResult = ""
+        roomResult = ""
+        roomTextField.text = ""
+        floorTextField.text = ""
         ref.child("University Of Kent").child(buildingResult).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get databse values
             let info = snapshot.value as? NSDictionary
@@ -71,14 +78,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
                 }
                 else {
                     self.floorAutoCompletionPossibilities += [floor]
+                    self.floorAutoCompletionPossibilities.sort()
                 }
                 })
                 { (error) in
                     print(error.localizedDescription)
                 }
             }
-            
-            
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -86,6 +92,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     //Get building rooms from firebase for autocomplete
     func getFloorRooms(){
+        roomsAutoCompletionPossibilities = [""]
+        roomResult = ""
+        roomTextField.text = ""
         ref.child("University Of Kent").child(buildingResult).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get databse values
             let info = snapshot.value as? NSDictionary
@@ -105,10 +114,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
                             var roomName = String(roomInt)
                             roomName = String(roomName.lowercased().capitalized)
                             self.roomsAutoCompletionPossibilities += [roomName]
+                            self.roomsAutoCompletionPossibilities.sort()
                         }
                         if var roomName = info?["rm_id"] as? String{
                             roomName = String(roomName.lowercased().capitalized)
                             self.roomsAutoCompletionPossibilities += [roomName]
+                            self.roomsAutoCompletionPossibilities.sort()
                         }
                     }
                 })
@@ -127,9 +138,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         subString = formatSubstring(subString: subString)
         
         if subString.count == 0 { //when a user clears the textField
-            resetValues()
+            resetValues(textField: textField)
         } else {
-            searchAutocompleteEntriesWIthSubstring(substring: subString)
+            searchAutocompleteEntriesWIthSubstring(substring: subString, textField: textField)
         }
         return true
     }
@@ -142,32 +153,38 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     //Clears text field
-    func resetValues() {
+    func resetValues(textField: UITextField) {
         autoCompleteCharacterCount = 0
-        if buildingEntered == true {
+        if textField == roomTextField {
             roomTextField.text = ""
+            roomResult = ""
         }
-        else {
+        else if textField == buildingTextField{
         buildingTextField.text = ""
+            buildingResult = ""
+            floorTextField.text = ""
+            floorResult = ""
+            roomTextField.text = ""
+            roomResult = ""
         }
     }
 
     //gets suggestions and displays to user, updating every 0.01
-    func searchAutocompleteEntriesWIthSubstring(substring: String) {
+    func searchAutocompleteEntriesWIthSubstring(substring: String, textField: UITextField) {
         let userQuery = substring
-        let suggestions = getAutocompleteSuggestions(userText: substring)
+        let suggestions = getAutocompleteSuggestions(textField: textField, userText: substring)
         if suggestions.count > 0 {
             timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in
-                let autocompleteResult = self.formatAutocompleteResult(substring: substring, possibleMatches: suggestions)
-                self.putColourFormattedTextInTextField(autocompleteResult: autocompleteResult, userQuery : userQuery)
-                self.moveCaretToEndOfUserQueryPosition(userQuery: userQuery)
+                let autocompleteResult = self.formatAutocompleteResult(textField: textField, substring: substring, possibleMatches: suggestions)
+                self.putColourFormattedTextInTextField(textField: textField, autocompleteResult: autocompleteResult, userQuery : userQuery)
+                self.moveCaretToEndOfUserQueryPosition(textField: textField, userQuery: userQuery)
             })
         } else {
             timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in
-                if self.buildingEntered == true {
+                if textField == self.roomTextField {
                     self.roomTextField.text = substring
                 }
-                else{
+                else if textField == self.buildingTextField {
                     self.buildingTextField.text = substring
                 }
             })
@@ -176,9 +193,8 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     //itterates though possibilities and appends to possible matches
-    func getAutocompleteSuggestions(userText: String) -> [String]{
-        var possibleMatches: [String] = []
-        if buildingEntered == true{
+    func getAutocompleteSuggestions(textField: UITextField, userText: String) -> [String]{
+        if textField == self.roomTextField {
         for item in roomsAutoCompletionPossibilities {
             let myString:NSString! = item as NSString
             let substringRange :NSRange! = myString.range(of: userText)
@@ -188,7 +204,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
             }
         }
         }
-        else {
+        else if textField == self.buildingTextField{
             for item in buildingAutoCompletionPossibilities {
                 let myString:NSString! = item as NSString
                 let substringRange :NSRange! = myString.range(of: userText)
@@ -203,27 +219,27 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     //displays suggetion and formats
-    func putColourFormattedTextInTextField(autocompleteResult: String, userQuery : String) {
+    func putColourFormattedTextInTextField(textField: UITextField, autocompleteResult: String, userQuery : String) {
         let colouredString: NSMutableAttributedString = NSMutableAttributedString(string: userQuery + autocompleteResult)
         colouredString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.lightGray, range: NSRange(location: userQuery.count,length:autocompleteResult.count))
-        if buildingEntered == true{
+        if textField == self.roomTextField {
             self.roomTextField.attributedText = colouredString
         }
-        else {
+        else if textField == self.buildingTextField {
             self.buildingTextField.attributedText = colouredString
         }
     }
     
     //moves typing indicator to end of inputted information
-    func moveCaretToEndOfUserQueryPosition(userQuery : String) {
-        if buildingEntered == true{
+    func moveCaretToEndOfUserQueryPosition(textField: UITextField, userQuery : String) {
+        if textField == self.roomTextField {
         if let newPosition = self.roomTextField.position(from: self.roomTextField.beginningOfDocument, offset: userQuery.count) {
             self.roomTextField.selectedTextRange = self.roomTextField.textRange(from: newPosition, to: newPosition)
         }
         let selectedRange: UITextRange? = roomTextField.selectedTextRange
         roomTextField.offset(from: roomTextField.beginningOfDocument, to: (selectedRange?.start)!)
         }
-        else {
+        else if textField == self.buildingTextField {
             if let newPosition = self.buildingTextField.position(from: self.buildingTextField.beginningOfDocument, offset: userQuery.count) {
                 self.buildingTextField.selectedTextRange = self.buildingTextField.textRange(from: newPosition, to: newPosition)
             }
@@ -233,12 +249,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     }
     
     //combines substring with suggestion
-    func formatAutocompleteResult(substring: String, possibleMatches: [String]) -> String {
+    func formatAutocompleteResult(textField: UITextField, substring: String, possibleMatches: [String]) -> String {
         var autoCompleteResult = possibleMatches[0]
-        if buildingEntered == true{
+        if textField == self.roomTextField {
             roomResult = possibleMatches[0]
         }
-        else{
+        else if textField == self.buildingTextField {
         buildingResult = possibleMatches[0]
         }
         autoCompleteResult.removeSubrange(autoCompleteResult.startIndex..<autoCompleteResult.index(autoCompleteResult.startIndex, offsetBy: substring.count))
@@ -249,16 +265,37 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     //if user presses enter key, suggestion is selected
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.textColor = UIColor.black
-        if buildingEntered == true {
-        moveCaretToEndOfUserQueryPosition(userQuery: roomResult)
-        print(roomResult)
+        if textField == roomTextField {
+            moveCaretToEndOfUserQueryPosition(textField: textField, userQuery: roomResult)
+            print(roomResult)
         }
-        else{
-            moveCaretToEndOfUserQueryPosition(userQuery: buildingResult)
+        else if textField == buildingTextField{
+            moveCaretToEndOfUserQueryPosition(textField: textField, userQuery: buildingResult)
             print(buildingResult)
-            buildingEntered = true
-            getBuildingFloors()
+            if buildingTextField.text == possibleMatches[0]{
+                getBuildingFloors()
+            }
+            else {
+                
+                let alert = UIAlertController(title: "Alert", message: "Location does not exist, please check spelling and re-enter", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    switch action.style{
+                    case .default:
+                        print("default")
+                        
+                    case .cancel:
+                        print("cancel")
+                        
+                    case .destructive:
+                        print("destructive")
+                        
+                        
+                    }}))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
         }
+        
         return true
     }
     
