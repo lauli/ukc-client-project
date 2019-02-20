@@ -8,8 +8,7 @@
 
 import UIKit
 
-class NewsFeedTableViewController: UITableViewController
-{
+class NewsFeedTableViewController: UITableViewController {
     private var rssItems: [RSSItem]?
     private var cellStates: [CellState]?
     
@@ -22,10 +21,9 @@ class NewsFeedTableViewController: UITableViewController
         fetchData()
     }
     
-    private func fetchData()
-    {
+    private func fetchData() {
         let feedParser = FeedParser()
-        feedParser.parseFeed(url: "https://developer.apple.com/news/rss/news.rss") { (rssItems) in
+        feedParser.parseFeed(url: "https://abcnews.go.com/abcnews/thisweekheadlines") { (rssItems) in
             self.rssItems = rssItems
             self.cellStates = Array(repeating: .collapsed, count: rssItems.count)
             
@@ -35,9 +33,7 @@ class NewsFeedTableViewController: UITableViewController
         }
     }
     
-    
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // Return the number of sections
         return 1
@@ -61,10 +57,9 @@ class NewsFeedTableViewController: UITableViewController
             cell.selectionStyle = .none
             
             if let cellStates = cellStates {
-                cell.issueDesc.numberOfLines = (cellStates[indexPath.row] == .expanded) ? 0 : 4
+                cell.descriptionLabel.numberOfLines = (cellStates[indexPath.row] == .expanded) ? 0 : 4
             }
         }
-        
         return cell
     }
     
@@ -74,9 +69,9 @@ class NewsFeedTableViewController: UITableViewController
         let cell = tableView.cellForRow(at: indexPath) as! NewsFeedTableViewCell
         
         tableView.beginUpdates()
-        cell.issueDesc.numberOfLines = (cell.issueDesc.numberOfLines == 0) ? 3 : 0
+        cell.descriptionLabel.numberOfLines = (cell.descriptionLabel.numberOfLines == 0) ? 3 : 0
         
-        cellStates?[indexPath.row] = (cell.issueDesc.numberOfLines == 0) ? .expanded : .collapsed
+        cellStates?[indexPath.row] = (cell.descriptionLabel.numberOfLines == 0) ? .expanded : .collapsed
         tableView.endUpdates()
     }
 }

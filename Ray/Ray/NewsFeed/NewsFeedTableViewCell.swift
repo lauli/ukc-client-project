@@ -15,18 +15,18 @@ enum CellState {
 
 class NewsFeedTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var issueTitle: UILabel!
-    @IBOutlet weak var issueDate: UILabel!
-    @IBOutlet weak var issueDesc: UILabel! {
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel! {
         didSet {
-            issueDesc.numberOfLines = 3
+            descriptionLabel.numberOfLines = 3
         }
     }
         var item: RSSItem! {
             didSet {
-                issueTitle.text = item.title
-                issueDesc.text = item.description
-                issueDate.text = item.pubDate
+                titleLabel.text = item.title
+                descriptionLabel.text = item.description
+                dateLabel.text = item.pubDate
             }
         }
 }

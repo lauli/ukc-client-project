@@ -18,8 +18,7 @@ struct RSSItem {
 // parse xml to foundation objects
 // call back
 
-class FeedParser: NSObject, XMLParserDelegate
-{
+class FeedParser: NSObject, XMLParserDelegate {
     private var rssItems: [RSSItem] = []
     private var currentElement = ""
     
@@ -51,7 +50,6 @@ class FeedParser: NSObject, XMLParserDelegate
                 if let error = error {
                     print(error.localizedDescription)
                 }
-                
                 return
             }
             
@@ -91,6 +89,7 @@ class FeedParser: NSObject, XMLParserDelegate
         if elementName == "item" {
             let rssItem = RSSItem(title: currentTitle, description: currentDescription, pubDate: currentPubDate)
             self.rssItems.append(rssItem)
+            //rssItems += [rssItem]
         }
     }
     

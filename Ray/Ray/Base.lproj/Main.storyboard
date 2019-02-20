@@ -25,24 +25,29 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="106.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d4v-H1-XYh">
-                                            <rect key="frame" x="0.0" y="0.0" width="54" height="82.5"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="d4v-H1-XYh">
+                                            <rect key="frame" x="16" y="16" width="343" height="74.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHq-2R-qRc">
-                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="25.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="54" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="17" id="phL-lh-Ny6"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uv-Sq-JH0">
-                                                    <rect key="frame" x="0.0" y="33.5" width="42" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="25" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQH-bm-K5O">
-                                                    <rect key="frame" x="0.0" y="62" width="42" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="53.5" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="SFv-S1-YIy"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -50,14 +55,21 @@
                                             </subviews>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="d4v-H1-XYh" secondAttribute="trailing" constant="16" id="6PR-EN-nL0"/>
+                                        <constraint firstItem="d4v-H1-XYh" firstAttribute="top" secondItem="HCD-Hl-SKL" secondAttribute="top" constant="16" id="cck-wS-bpa"/>
+                                        <constraint firstItem="d4v-H1-XYh" firstAttribute="leading" secondItem="HCD-Hl-SKL" secondAttribute="leading" constant="16" id="duF-3T-MA9"/>
+                                        <constraint firstAttribute="bottom" secondItem="d4v-H1-XYh" secondAttribute="bottom" constant="16" id="wdL-NL-MjB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="issueDate" destination="5uv-Sq-JH0" id="bfb-Jl-uRa"/>
-                                    <outlet property="issueDesc" destination="xQH-bm-K5O" id="dsI-Iy-z0e"/>
-                                    <outlet property="issueTitle" destination="bHq-2R-qRc" id="XId-vO-bdQ"/>
+                                    <outlet property="dateLabel" destination="5uv-Sq-JH0" id="qaz-FP-f7x"/>
+                                    <outlet property="descriptionLabel" destination="xQH-bm-K5O" id="sQv-KX-hmf"/>
+                                    <outlet property="titleLabel" destination="bHq-2R-qRc" id="HOb-Mw-eK3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="amG-1d-n5p" id="3QQ-9S-uEB"/>
                             <outlet property="delegate" destination="amG-1d-n5p" id="Nx5-bh-7N4"/>
@@ -67,7 +79,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1S-Qs-zp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2293.5999999999999" y="-726.38680659670172"/>
+            <point key="canvasLocation" x="2295" y="-731"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="2dP-sz-Qkd">
