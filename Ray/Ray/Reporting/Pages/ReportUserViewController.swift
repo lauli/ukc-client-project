@@ -86,7 +86,7 @@ class ReportUserViewController: UIViewController {
     
     private func disableNextButton(_ disable: Bool) {
         nextButton.isEnabled = !disable
-        nextButton.backgroundColor = disable ? .weldonBlue : .princetonOrange
+        nextButton.backgroundColor = disable ? .princetonOrangeLight : .princetonOrange
     }
     
     @IBAction func nextPage(_ sender: Any) {
@@ -98,10 +98,12 @@ class ReportUserViewController: UIViewController {
             viewUserDifferent.isHidden = false
             setUserInfoColorTo(.gray)
             disableNextButton(consentSwitch.isOn ? false : true)
+            elseButton.setTitle("Report for Yourself", for: .normal)
         } else {
             viewUserDifferent.isHidden = true
             setUserInfoColorTo(.black)
             disableNextButton(false)
+            elseButton.setTitle("Report for Someone Else", for: .normal)
         }
     }
     
