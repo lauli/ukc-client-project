@@ -37,6 +37,27 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         
         floorTextField.inputView = pickerView
         
+        
+        ref.child("University Of Kent").child("Users").child("12345679890").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get databse values
+            let info = snapshot.value as? NSDictionary
+            // Get user info
+            
+            let email = info?["email"] as! String
+            let name = info?["name"] as! String
+            let phone = info?["phone"] as! String
+        
+            print("email", email)
+            print("name", name)
+            print("phone", phone)
+            let issues = info?["issues"] as? NSArray
+            print(issues!)
+            
+            
+            }) { (error) in
+            print(error.localizedDescription)
+        }
+        
         getBuildingNames()
     }
     
