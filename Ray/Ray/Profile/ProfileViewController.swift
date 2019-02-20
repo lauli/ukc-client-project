@@ -24,6 +24,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var buildingResult = ""
     var floorResult = ""
     var roomResult = ""
+    var autoCompleteResult = ""
     var ref: DatabaseReference!
     var possibleMatches: [String] = []
     
@@ -41,6 +42,16 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     //Get building names from firebase for autocomplete
     func getBuildingNames(){
+        buildingAutoCompletionPossibilities = [""]
+        floorAutoCompletionPossibilities = [""]
+        roomsAutoCompletionPossibilities = [""]
+        floorResult = ""
+        roomResult = ""
+        buildingResult = ""
+        buildingTextField.text = ""
+        roomTextField.text = ""
+        floorTextField.text = ""
+        possibleMatches = []
         ref.child("University Of Kent").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get databse values
             let info = snapshot.value as? NSDictionary
@@ -60,6 +71,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         roomResult = ""
         roomTextField.text = ""
         floorTextField.text = ""
+        possibleMatches = []
         ref.child("University Of Kent").child(buildingResult).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get databse values
             let info = snapshot.value as? NSDictionary
@@ -95,6 +107,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         roomsAutoCompletionPossibilities = [""]
         roomResult = ""
         roomTextField.text = ""
+        possibleMatches = []
         ref.child("University Of Kent").child(buildingResult).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get databse values
             let info = snapshot.value as? NSDictionary
@@ -107,9 +120,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
                     let info = snapshot.value as? NSDictionary
                     // Get all building names
                     let floor = info?["fl_id"] as! String
-                    
                     if floor.contains(self.floorResult){
-                        
                         if let roomInt = info?["rm_id"] as? Int {
                             var roomName = String(roomInt)
                             roomName = String(roomName.lowercased().capitalized)
@@ -156,16 +167,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     func resetValues(textField: UITextField) {
         autoCompleteCharacterCount = 0
         if textField == roomTextField {
-            roomTextField.text = ""
-            roomResult = ""
+            getFloorRooms()
         }
         else if textField == buildingTextField{
-        buildingTextField.text = ""
-            buildingResult = ""
-            floorTextField.text = ""
-            floorResult = ""
-            roomTextField.text = ""
-            roomResult = ""
+            getBuildingNames()
         }
     }
 
@@ -195,26 +200,33 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     //itterates though possibilities and appends to possible matches
     func getAutocompleteSuggestions(textField: UITextField, userText: String) -> [String]{
         if textField == self.roomTextField {
+            possibleMatches = []
         for item in roomsAutoCompletionPossibilities {
             let myString:NSString! = item as NSString
             let substringRange :NSRange! = myString.range(of: userText)
             if (substringRange.location == 0)
             {
                 possibleMatches.append(item)
+                roomResult = possibleMatches[0]
             }
         }
+        
         }
         else if textField == self.buildingTextField{
+            possibleMatches = []
             for item in buildingAutoCompletionPossibilities {
                 let myString:NSString! = item as NSString
                 let substringRange :NSRange! = myString.range(of: userText)
                 
                 if (substringRange.location == 0)
                 {
-                    possibleMatches.append(item)
+                possibleMatches.append(item)
+                buildingResult = possibleMatches[0]
                 }
             }
+        
         }
+        
         return possibleMatches
     }
     
@@ -250,14 +262,18 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     
     //combines substring with suggestion
     func formatAutocompleteResult(textField: UITextField, substring: String, possibleMatches: [String]) -> String {
-        var autoCompleteResult = possibleMatches[0]
+        //var autoCompleteResult = possibleMatches[0]
         if textField == self.roomTextField {
-            roomResult = possibleMatches[0]
+        autoCompleteResult = roomResult
         }
         else if textField == self.buildingTextField {
-        buildingResult = possibleMatches[0]
+        autoCompleteResult = buildingResult
         }
+        
+        if substring.count < autoCompleteResult.count{
         autoCompleteResult.removeSubrange(autoCompleteResult.startIndex..<autoCompleteResult.index(autoCompleteResult.startIndex, offsetBy: substring.count))
+        }
+        
         autoCompleteCharacterCount = autoCompleteResult.count
         return autoCompleteResult
     }
@@ -267,11 +283,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         textField.textColor = UIColor.black
         if textField == roomTextField {
             moveCaretToEndOfUserQueryPosition(textField: textField, userQuery: roomResult)
-            print(roomResult)
         }
         else if textField == buildingTextField{
             moveCaretToEndOfUserQueryPosition(textField: textField, userQuery: buildingResult)
-            print(buildingResult)
             if buildingTextField.text == possibleMatches[0]{
                 getBuildingFloors()
             }
