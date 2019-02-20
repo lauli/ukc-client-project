@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
 		C03794390B0D2CB7E07D8DA5 /* Pods_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */; };
+		C8788315221D1410001AFF36 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */; };
+		C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */; };
 		C88498B4221C9359000A724A /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B3221C9359000A724A /* ReportViewController.swift */; };
 		C88498B7221C9767000A724A /* ReportUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B6221C9767000A724A /* ReportUserViewController.swift */; };
 		C88498BA221CDA0B000A724A /* Shree714.ttc in Resources */ = {isa = PBXBuildFile; fileRef = C88498B9221CDA0B000A724A /* Shree714.ttc */; };
@@ -30,8 +33,11 @@
 
 /* Begin PBXFileReference section */
 		0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17A071A28074DEA3B42C3274 /* Pods-Ray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.debug.xcconfig"; sourceTree = "<group>"; };
 		2E88815C68888ABE541D3D18 /* Pods-Ray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.release.xcconfig"; sourceTree = "<group>"; };
+		C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
+		C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachmentsViewController.swift; sourceTree = "<group>"; };
 		C88498B3221C9359000A724A /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		C88498B6221C9767000A724A /* ReportUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserViewController.swift; sourceTree = "<group>"; };
 		C88498B9221CDA0B000A724A /* Shree714.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Shree714.ttc; path = ../../../../../../../../../../Library/Fonts/Shree714.ttc; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 				C8A1F189221CF45600806190 /* ReportIssueViewController.swift */,
 				C8A1F18B221CF56900806190 /* ReportPageViewController.swift */,
 				C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */,
+				C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 				C8FDC0C72214E6D300B3D80E /* TabBarController.swift */,
 				C8F6D560220338040073488F /* LaunchScreen.storyboard */,
 				C8F6D55B220338030073488F /* Main.storyboard */,
+				0DA68075221717DC0078915B /* GoogleService-Info.plist */,
 				C8F6D56C2203393D0073488F /* Data */,
 				C8FDC0C92214EDA100B3D80E /* Extensions */,
 				C8F6D569220338AF0073488F /* NewsFeed */,
@@ -179,6 +187,7 @@
 				C88498B8221CDA00000A724A /* Fonts */,
 				C8FDC0CA2214EDCB00B3D80E /* UIColorExtension.swift */,
 				C8A1F18D221CF6DD00806190 /* UITextField+TextViewExtension.swift */,
+				C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -245,6 +254,7 @@
 			files = (
 				C88498BA221CDA0B000A724A /* Shree714.ttc in Resources */,
 				C8F6D562220338040073488F /* LaunchScreen.storyboard in Resources */,
+				0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */,
 				C8F6D55F220338040073488F /* Assets.xcassets in Resources */,
 				C8F6D55D220338030073488F /* Main.storyboard in Resources */,
 			);
@@ -263,16 +273,24 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Ray/Pods-Ray-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -315,8 +333,10 @@
 				C8A1F18C221CF56900806190 /* ReportPageViewController.swift in Sources */,
 				C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */,
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,
+				C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */,
 				C88498B7221C9767000A724A /* ReportUserViewController.swift in Sources */,
 				C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */,
+				C8788315221D1410001AFF36 /* UINavigationBarExtension.swift in Sources */,
 				C8F6D57022033A6B0073488F /* NewsFeedViewController.swift in Sources */,
 				C8A1F18E221CF6DD00806190 /* UITextField+TextViewExtension.swift in Sources */,
 				C8F6C1AC221AEC1200FB1B34 /* ReportingViewModel.swift in Sources */,

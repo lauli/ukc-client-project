@@ -40,7 +40,11 @@ class ReportUserViewController: ReportPageViewController {
         // buttons
         nextButton.backgroundColor = .princetonOrange
         nextButton.layer.cornerRadius = 5
-        elseButton.backgroundColor = .weldonBlue
+        
+        elseButton.backgroundColor = .white
+        elseButton.setTitleColor(.weldonBlue, for: .normal)
+        elseButton.layer.borderColor = UIColor.weldonBlue.cgColor
+        elseButton.layer.borderWidth = 1
         elseButton.layer.cornerRadius = 5
         
         // hidden view - report for someone else

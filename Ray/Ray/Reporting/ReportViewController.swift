@@ -26,16 +26,21 @@ class ReportViewController: TabmanViewController {
     }
     
     private func setupPage() {
-        navigationItem.title = "Report a new Issue"
+        navigationItem.title = "New Report"
         tabBarItem = UITabBarItem(title: "Report",
                                   image: UIImage.init(named: "icon-report-outline"),
                                   selectedImage: UIImage.init(named: "icon-report"))
+        
+        // Get rid of navigationbar seperator line
+        self.navigationController?.navigationBar.barTintColor = .princetonOrange
+        self.navigationController?.navigationBar.shouldRemoveShadow(true)
+        self.navigationController?.navigationBar.barStyle = .blackTranslucent
         
         // Create bar
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .progressive
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
-        bar.backgroundColor = .white
+        bar.backgroundView.style = .blur(style: .extraLight)
         bar.indicator.tintColor = .princetonOrange
         bar.indicator.overscrollBehavior = .compress
         bar.layout.contentMode = .fit
@@ -60,8 +65,13 @@ class ReportViewController: TabmanViewController {
         issuePage.delegate = self
         viewControllers.append(issuePage)
         
-        viewControllers.append(userPage)
-        viewControllers.append(userPage)
+        let locationPage = storyboard.instantiateViewController(withIdentifier: "ReportLocationPage") as! ReportLocationViewController
+        locationPage.delegate = self
+        viewControllers.append(locationPage)
+        
+        let attachmentsPage = storyboard.instantiateViewController(withIdentifier: "ReportAttachmentsPage") as! ReportAttachmentsViewController
+        attachmentsPage.delegate = self
+        viewControllers.append(attachmentsPage)
         
         print(viewControllers)
         reloadData()
