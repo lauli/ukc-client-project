@@ -1,7 +1,7 @@
 PODS:
   - AutoInsetter (1.4.1)
-  - Pageboy (3.0.1)
-  - Tabman (2.1.0):
+  - Pageboy (3.0.4)
+  - Tabman (2.1.3):
     - AutoInsetter (~> 1.4.1)
     - Pageboy (~> 3.0.1)
 
@@ -17,8 +17,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AutoInsetter: d0eafc611d686f83f925ded729084cf916a39863
-  Pageboy: ec0170fd880ea6fa3589219edfd64b554443ff6e
-  Tabman: 1903b01c88a728895ca1bd1f69d1e842e2ca8b1a
+  Pageboy: 0ab0515c657bf551a26e58e434f718a7ebc5819b
+  Tabman: 083741793bed532032b1a010f4af3725d49fa519
 
 PODFILE CHECKSUM: bf8f79ba3ac3f36dfed5207c3c1a42ea0a624cf5
 
