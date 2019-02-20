@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReportUserViewController: UIViewController {
+class ReportUserViewController: ReportPageViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
@@ -20,9 +20,6 @@ class ReportUserViewController: UIViewController {
     @IBOutlet weak var differentPhone: UITextField!
     @IBOutlet weak var differentEmail: UITextField!
     
-    @IBOutlet weak var differentNameLabel: UILabel!
-    @IBOutlet weak var differentPhoneLabel: UILabel!
-    @IBOutlet weak var differentEmailLabel: UILabel!
     @IBOutlet weak var differentConsentLabel: UILabel!
     @IBOutlet weak var consentSwitch: UISwitch!
     
@@ -30,9 +27,7 @@ class ReportUserViewController: UIViewController {
     @IBOutlet weak var elseButton: UIButton!
     
     private var viewModel: ReportingViewModel!
-    
-    weak var delegate: ReportPageDelegate?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,24 +47,12 @@ class ReportUserViewController: UIViewController {
         viewUserDifferent.isHidden = true
         consentSwitch.onTintColor = .princetonOrange
         consentSwitch.isOn = false
-//        differentNameLabel.textColor = .princetonOrange
-//        differentPhoneLabel.textColor = .princetonOrange
-//        differentEmailLabel.textColor = .princetonOrange
-        changeTextfieldFor(differentName, color: .charcoal, placeholderText: "Alexander McKenzie")
-        changeTextfieldFor(differentPhone, color: .charcoal, placeholderText: "+44 7220 2345678")
-        changeTextfieldFor(differentEmail, color: .charcoal, placeholderText: "acm1234@kent.ac.uk")
+        differentName.changeTo(color: .charcoal, placeholderText: "Alexander McKenzie")
+        differentPhone.changeTo(color: .charcoal, placeholderText: "+44 7220 2345678")
+        differentEmail.changeTo(color: .charcoal, placeholderText: "acm1234@kent.ac.uk")
         
         differentConsentLabel.numberOfLines = 0
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
-        
-    }
-    
-    private func changeTextfieldFor(_ textfield: UITextField, color: UIColor, placeholderText: String) {
-        textfield.layer.borderColor = color.cgColor
-        textfield.layer.borderWidth = 0.5
-        textfield.layer.cornerRadius = 5
-        textfield.attributedPlaceholder = NSAttributedString(string: placeholderText,
-                                                   attributes: [NSAttributedString.Key.foregroundColor: color])
     }
     
     private func setupUserDefaults() {

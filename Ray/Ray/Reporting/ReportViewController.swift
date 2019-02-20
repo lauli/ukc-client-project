@@ -34,10 +34,8 @@ class ReportViewController: TabmanViewController {
         // Create bar
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .progressive
-        bar.backgroundColor = .princetonOrange
-        bar.backgroundView.style = .blur(style: .extraLight)
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
-
+        bar.backgroundColor = .white
         bar.indicator.tintColor = .princetonOrange
         bar.indicator.overscrollBehavior = .compress
         bar.layout.contentMode = .fit
@@ -45,7 +43,7 @@ class ReportViewController: TabmanViewController {
         bar.buttons.customize { button in
             button.font.withSize(10)
             button.font = UIFont(name: "ShreeDev0714-Bold", size: 12)!
-            button.tintColor = .white
+            button.tintColor = .princetonOrange
             button.selectedTintColor = .princetonOrange
         }
         // Add to view
@@ -57,7 +55,11 @@ class ReportViewController: TabmanViewController {
         let userPage = storyboard.instantiateViewController(withIdentifier: "ReportUserPage") as! ReportUserViewController
         userPage.delegate = self
         viewControllers.append(userPage)
-        viewControllers.append(userPage)
+        
+        let issuePage = storyboard.instantiateViewController(withIdentifier: "ReportIssuePage") as! ReportIssueViewController
+        issuePage.delegate = self
+        viewControllers.append(issuePage)
+        
         viewControllers.append(userPage)
         viewControllers.append(userPage)
         
