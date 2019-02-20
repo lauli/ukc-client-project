@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsTableViewController: UITableViewController
+class NewsFeedTableViewController: UITableViewController
 {
     private var rssItems: [RSSItem]?
     private var cellStates: [CellState]?
@@ -77,8 +77,6 @@ class NewsTableViewController: UITableViewController
         cell.issueDesc.numberOfLines = (cell.issueDesc.numberOfLines == 0) ? 3 : 0
         
         cellStates?[indexPath.row] = (cell.issueDesc.numberOfLines == 0) ? .expanded : .collapsed
-        
         tableView.endUpdates()
     }
-    
 }

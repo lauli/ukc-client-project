@@ -102,5 +102,4 @@ class FeedParser: NSObject, XMLParserDelegate
     {
         print(parseError.localizedDescription)
     }
-    
 }

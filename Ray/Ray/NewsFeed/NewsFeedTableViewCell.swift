@@ -17,13 +17,16 @@ class NewsFeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var issueTitle: UILabel!
     @IBOutlet weak var issueDate: UILabel!
-    @IBOutlet weak var issueDesc: UILabel!
-    
-    var item: RSSItem! {
+    @IBOutlet weak var issueDesc: UILabel! {
         didSet {
-            issueTitle.text = item.title
-            issueDesc.text = item.description
-            issueDate.text = item.pubDate
+            issueDesc.numberOfLines = 3
         }
     }
+        var item: RSSItem! {
+            didSet {
+                issueTitle.text = item.title
+                issueDesc.text = item.description
+                issueDate.text = item.pubDate
+            }
+        }
 }
