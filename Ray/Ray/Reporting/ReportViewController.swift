@@ -10,18 +10,19 @@ import UIKit
 import Pageboy
 import Tabman
 
-class ReportViewController: TabmanViewController, PageboyViewControllerDataSource, TMBarDataSource {
+class ReportViewController: TabmanViewController {
 
     private var viewControllers: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
-        self.transition = Transition(style: .push, duration: 0.5)
+        self.transition = Transition(style: .moveIn, duration: 0.3)
+        self.navigationOrientation = .horizontal
+        self.isScrollEnabled = false
         
         setupPage()
         setupViewControllers()
-        // Do any additional setup after loading the view.
     }
     
     private func setupPage() {
@@ -33,12 +34,15 @@ class ReportViewController: TabmanViewController, PageboyViewControllerDataSourc
         // Create bar
         let bar = TMBar.ButtonBar()
         bar.layout.transitionStyle = .progressive
-        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
         bar.backgroundColor = .princetonOrange
+        bar.backgroundView.style = .blur(style: .extraLight)
+        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+
         bar.indicator.tintColor = .princetonOrange
         bar.indicator.overscrollBehavior = .compress
+        bar.layout.contentMode = .fit
         bar.indicator.weight = .light
-        bar.buttons.customize{ button in
+        bar.buttons.customize { button in
             button.font.withSize(10)
             button.font = UIFont(name: "ShreeDev0714-Bold", size: 12)!
             button.tintColor = .white
@@ -55,14 +59,16 @@ class ReportViewController: TabmanViewController, PageboyViewControllerDataSourc
         viewControllers.append(userPage)
         viewControllers.append(userPage)
         viewControllers.append(userPage)
+        viewControllers.append(userPage)
         
         print(viewControllers)
         reloadData()
     }
     
-    
-    // MARK: - Pageboy
-    
+}
+
+
+extension ReportViewController: PageboyViewControllerDataSource, TMBarDataSource {
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return viewControllers.count
     }
@@ -79,7 +85,7 @@ class ReportViewController: TabmanViewController, PageboyViewControllerDataSourc
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable  {
         switch index {
         case 0:
-            return TMBarItem(title: "Reporter")
+            return TMBarItem(title: "Contact")
         case 1:
             return TMBarItem(title: "Issue")
         case 2:
