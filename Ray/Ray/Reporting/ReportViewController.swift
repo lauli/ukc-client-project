@@ -51,6 +51,7 @@ class ReportViewController: TabmanViewController, PageboyViewControllerDataSourc
     private func setupViewControllers() {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
         let userPage = storyboard.instantiateViewController(withIdentifier: "ReportUserPage") as! ReportUserViewController
+        userPage.delegate = self
         viewControllers.append(userPage)
         viewControllers.append(userPage)
         viewControllers.append(userPage)
@@ -89,4 +90,14 @@ class ReportViewController: TabmanViewController, PageboyViewControllerDataSourc
             return TMBarItem(title: "")
         }
     }
+}
+
+extension ReportViewController: ReportPageDelegate {
+    func nextPage() {
+        scrollToPage(.next, animated: true)
+    }
+}
+
+protocol ReportPageDelegate: class {
+    func nextPage()
 }

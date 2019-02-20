@@ -31,6 +31,8 @@ class ReportUserViewController: UIViewController {
     
     private var viewModel: ReportingViewModel!
     
+    weak var delegate: ReportPageDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,7 +90,7 @@ class ReportUserViewController: UIViewController {
     }
     
     @IBAction func nextPage(_ sender: Any) {
-        
+        delegate?.nextPage()
     }
     
     @IBAction func reportForSomeoneElse(_ sender: Any) {
