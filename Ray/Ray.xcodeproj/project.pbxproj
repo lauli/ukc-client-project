@@ -11,6 +11,8 @@
 		C03794390B0D2CB7E07D8DA5 /* Pods_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */; };
 		C8788315221D1410001AFF36 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */; };
 		C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */; };
+		C8788319221E3507001AFF36 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788318221E3507001AFF36 /* User.swift */; };
+		C878831C221E36EA001AFF36 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878831B221E36EA001AFF36 /* Report.swift */; };
 		C88498B4221C9359000A724A /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B3221C9359000A724A /* ReportViewController.swift */; };
 		C88498B7221C9767000A724A /* ReportUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B6221C9767000A724A /* ReportUserViewController.swift */; };
 		C88498BA221CDA0B000A724A /* Shree714.ttc in Resources */ = {isa = PBXBuildFile; fileRef = C88498B9221CDA0B000A724A /* Shree714.ttc */; };
@@ -38,6 +40,8 @@
 		2E88815C68888ABE541D3D18 /* Pods-Ray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.release.xcconfig"; sourceTree = "<group>"; };
 		C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachmentsViewController.swift; sourceTree = "<group>"; };
+		C8788318221E3507001AFF36 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C878831B221E36EA001AFF36 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		C88498B3221C9359000A724A /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		C88498B6221C9767000A724A /* ReportUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserViewController.swift; sourceTree = "<group>"; };
 		C88498B9221CDA0B000A724A /* Shree714.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Shree714.ttc; path = ../../../../../../../../../../Library/Fonts/Shree714.ttc; sourceTree = "<group>"; };
@@ -87,6 +91,15 @@
 				2E88815C68888ABE541D3D18 /* Pods-Ray.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C878831A221E36D2001AFF36 /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				C8788318221E3507001AFF36 /* User.swift */,
+				C878831B221E36EA001AFF36 /* Report.swift */,
+			);
+			path = DataModels;
 			sourceTree = "<group>";
 		};
 		C88498B5221C9750000A724A /* Pages */ = {
@@ -176,6 +189,7 @@
 		C8F6D56C2203393D0073488F /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C878831A221E36D2001AFF36 /* DataModels */,
 				C8F6D56D22033A480073488F /* DataHandler.swift */,
 			);
 			path = Data;
@@ -331,8 +345,10 @@
 				C8F6D57222033A790073488F /* ProfileViewController.swift in Sources */,
 				C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */,
 				C8A1F18C221CF56900806190 /* ReportPageViewController.swift in Sources */,
+				C878831C221E36EA001AFF36 /* Report.swift in Sources */,
 				C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */,
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,
+				C8788319221E3507001AFF36 /* User.swift in Sources */,
 				C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */,
 				C88498B7221C9767000A724A /* ReportUserViewController.swift in Sources */,
 				C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */,

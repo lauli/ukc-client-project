@@ -41,6 +41,7 @@ class ReportViewController: TabmanViewController {
         bar.layout.transitionStyle = .progressive
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
         bar.backgroundView.style = .blur(style: .extraLight)
+        bar.indicator.isProgressive = true
         bar.indicator.tintColor = .princetonOrange
         bar.indicator.overscrollBehavior = .compress
         bar.layout.contentMode = .fit
@@ -97,13 +98,13 @@ extension ReportViewController: PageboyViewControllerDataSource, TMBarDataSource
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable  {
         switch index {
         case 0:
-            return TMBarItem(title: "Contact")
+            return TMBarItem(title: "1. Contact")
         case 1:
-            return TMBarItem(title: "Issue")
+            return TMBarItem(title: "2. Issue")
         case 2:
-            return TMBarItem(title: "Location")
+            return TMBarItem(title: "3. Location")
         case 3:
-            return TMBarItem(title: "Attachments")
+            return TMBarItem(title: "4. Attachments")
         default:
             return TMBarItem(title: "")
         }
