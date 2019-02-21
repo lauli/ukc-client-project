@@ -19,8 +19,8 @@ struct RSSItem {
 // call back
 
 class FeedParser: NSObject, XMLParserDelegate {
-    private var rssItems: [RSSItem] = []
-    private var currentElement = ""
+    var rssItems: [RSSItem] = []
+    var currentElement = ""
     
     private var currentTitle: String = "" {
         didSet {
