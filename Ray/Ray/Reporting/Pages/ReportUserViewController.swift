@@ -61,11 +61,12 @@ class ReportUserViewController: ReportPageViewController {
     
     private func setupUserDefaults() {
         if viewModel.user == nil {
-            viewModel.fetchUserInformation { success, result in
-                if success, let user = result {
+            _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+                if let user = self.viewModel.user {
                     self.nameLabel.text = user.name
                     self.phoneLabel.text = user.phone
                     self.emailLabel.text = user.email
+                    timer.invalidate()
                 }
             }
             

@@ -20,43 +20,46 @@ final class DataHandler {
     // data types
     typealias Success = (Bool) -> ()
     typealias RetrievedUser = (Bool, User?) -> ()
+    typealias DecodedReports = (Bool, [Report]?) -> ()
     typealias RetrievedData = (Bool, [String]) -> ()
     
     // current user 
-    var user: User
+    var user: User?
     
     init() {
         reference = Database.database().reference()
-        user = User()
         
-        // TODO: enable when whole setup is finished
-//        fetchUserInformation { success, result in
-//            if success, let user = result {
-//                self.user = user
-//            }
-//        }
+        fetchUserInformation { success, result in
+            if success, let user = result {
+                self.user = user
+            }
+        }
     }
     
-    func fetchUserInformation(completion: @escaping RetrievedUser) {
+    private func fetchUserInformation(completion: @escaping RetrievedUser) {
         
         // TODO: get user id from core data
         let id = "12345679890"
         
         reference.child("University Of Kent").child("Users").child(id).observeSingleEvent(of: .value, with: { result in
-            let info = result.value as? NSDictionary
             
-            if let email = info?["email"] as? String,
-                let name = info?["name"] as? String,
-                let phone = info?["phone"] as? String {
+            guard let info = result.value as? NSDictionary else {
+                completion(false, nil)
+                return
+            }
+            
+            if let email = info["email"] as? String,
+                let name = info["name"] as? String,
+                let phone = info["phone"] as? String {
                 
-                var reports: [Report] = []
-                if let issues = info?["issues"] as? [String] {
-                    for issue in issues {
-                        reports.append(Report(id: issue))
+                self.decodeIssuesFrom(result: info) { success, result in
+                    if success{
+                        let user = User(id: id, name: name, email: email, phone: phone, reports: result)
+                        completion(true, user)
+                    } else {
+                        completion(false, nil)
                     }
                 }
-                
-                completion(true, User(id: id, name: name, email: email, phone: phone, reports: reports))
                 
             } else {
                 completion(false, nil)
@@ -66,6 +69,31 @@ final class DataHandler {
             print(error.localizedDescription)
             completion(false, nil)
         }
+    }
+    
+    private func decodeIssuesFrom(result: NSDictionary, completion: @escaping DecodedReports) {
+        var reports: [Report] = []
+        
+        guard let array = result["issues"] as? NSArray else {
+            completion(false, [])
+            return
+        }
+            
+        for issueInfo in array {
+            if let issue = issueInfo as? NSDictionary,
+                let issuetitle = issue["issue_title"] as? String ,
+                let description = issue["description"] as? String,
+                let location = issue["location"] as? NSDictionary,
+                let building = location["building"] as? String,
+                let floor = location["floor"] as? String,
+                let room = location["room"] as? String {
+                
+                print(issuetitle + "  " + description)
+                let loc = Location(building: building, floor: floor, room: room)
+                reports.append(Report(title: issuetitle, description: description, location: loc))
+            }
+        }
+        completion(true, reports)
     }
     
     func buildings(completion: @escaping RetrievedData){

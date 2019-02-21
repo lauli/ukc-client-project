@@ -11,16 +11,11 @@ import Foundation
 final class ReportingViewModel {
     
     private let dataHandler = DataHandler.shared
-    var user: User?
     
-    func fetchUserInformation(completion: @escaping DataHandler.RetrievedUser) {
-        dataHandler.fetchUserInformation { success, result in
-            if success, let user = result {
-                self.user = user
-            }
-            
-            completion(success, result)
+    var user: User? {
+        get {
+            return dataHandler.user
         }
     }
-    
+
 }

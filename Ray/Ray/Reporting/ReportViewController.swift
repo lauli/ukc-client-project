@@ -27,25 +27,27 @@ class ReportViewController: TabmanViewController {
     
     private func setupPage() {
         navigationItem.title = "New Report"
-        tabBarItem = UITabBarItem(title: "Report",
-                                  image: UIImage.init(named: "icon-report-outline"),
-                                  selectedImage: UIImage.init(named: "icon-report"))
         
-        // Get rid of navigationbar seperator line
+        // Setup navigationbar and get rid of navigationbar seperator line
         self.navigationController?.navigationBar.barTintColor = .princetonOrange
         self.navigationController?.navigationBar.shouldRemoveShadow(true)
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
+        self.navigationController?.navigationBar.tintColor = .white
         
         // Create bar
         let bar = TMBar.ButtonBar()
-        bar.layout.transitionStyle = .progressive
-        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
         bar.backgroundView.style = .blur(style: .extraLight)
+
+        bar.layout.transitionStyle = .progressive
+        bar.layout.contentMode = .fit
+        bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)
+        
         bar.indicator.isProgressive = true
         bar.indicator.tintColor = .princetonOrange
-        bar.indicator.overscrollBehavior = .compress
-        bar.layout.contentMode = .fit
+        bar.indicator.overscrollBehavior = .bounce
         bar.indicator.weight = .light
+        bar.indicator.transitionStyle = .snap
+        
         bar.buttons.customize { button in
             button.font.withSize(10)
             button.font = UIFont(name: "ShreeDev0714-Bold", size: 12)!

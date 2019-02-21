@@ -10,8 +10,14 @@ import Foundation
 
 final class Report {
     let id: String
+    let title: String
+    let description: String
+    let location: Location
     
-    init(id: String) {
+    init(id: String = "", title: String, description: String, location: Location) {
         self.id = id
+        self.title = title
+        self.description = description
+        self.location = location
     }
 }
