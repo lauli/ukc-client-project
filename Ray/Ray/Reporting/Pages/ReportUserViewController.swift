@@ -60,9 +60,20 @@ class ReportUserViewController: ReportPageViewController {
     }
     
     private func setupUserDefaults() {
-        nameLabel.text = viewModel.user?.name
-        phoneLabel.text = viewModel.user?.phone
-        emailLabel.text = viewModel.user?.email
+        if viewModel.user == nil {
+            viewModel.fetchUserInformation { success, result in
+                if success, let user = result {
+                    self.nameLabel.text = user.name
+                    self.phoneLabel.text = user.phone
+                    self.emailLabel.text = user.email
+                }
+            }
+            
+        } else {
+            nameLabel.text = viewModel.user?.name
+            phoneLabel.text = viewModel.user?.phone
+            emailLabel.text = viewModel.user?.email
+        }
     }
     
     private func setUserInfoColorTo(_ color: UIColor){

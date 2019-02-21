@@ -22,29 +22,30 @@ final class DataHandler {
     typealias RetrievedUser = (Bool, User?) -> ()
     typealias RetrievedData = (Bool, [String]) -> ()
     
-    //
+    // current user 
     var user: User
     
     init() {
         reference = Database.database().reference()
         user = User()
         
-        fetchUserInformation { success, result in
-            if success, let user = result {
-                self.user = user
-            }
-        }
+        // TODO: enable when whole setup is finished
+//        fetchUserInformation { success, result in
+//            if success, let user = result {
+//                self.user = user
+//            }
+//        }
     }
     
-    private func fetchUserInformation(completion: @escaping RetrievedUser) {
+    func fetchUserInformation(completion: @escaping RetrievedUser) {
         
         // TODO: get user id from core data
+        let id = "12345679890"
         
-        reference.child("University Of Kent").child("Users").child("12345679890").observeSingleEvent(of: .value, with: { result in
+        reference.child("University Of Kent").child("Users").child(id).observeSingleEvent(of: .value, with: { result in
             let info = result.value as? NSDictionary
             
-            if let id = info?["id"] as? String,
-                let email = info?["email"] as? String,
+            if let email = info?["email"] as? String,
                 let name = info?["name"] as? String,
                 let phone = info?["phone"] as? String {
                 

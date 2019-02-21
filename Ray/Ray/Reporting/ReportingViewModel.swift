@@ -9,14 +9,18 @@
 import Foundation
 
 final class ReportingViewModel {
-    let user: User?
     
-    init() {
-        // TODO: fetch user information instead of default
-        user = User(id: "1234",
-                    name: "Laureen Schausberger",
-                    email: "ls691@kent.ac.uk",
-                    phone: "+43699 1098 1095")
+    private let dataHandler = DataHandler.shared
+    var user: User?
+    
+    func fetchUserInformation(completion: @escaping DataHandler.RetrievedUser) {
+        dataHandler.fetchUserInformation { success, result in
+            if success, let user = result {
+                self.user = user
+            }
+            
+            completion(success, result)
+        }
     }
     
 }
