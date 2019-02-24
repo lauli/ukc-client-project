@@ -64,13 +64,13 @@ class ReportViewController: TabmanViewController {
         userPage.delegate = self
         viewControllers.append(userPage)
         
-        let issuePage = storyboard.instantiateViewController(withIdentifier: "ReportIssuePage") as! ReportIssueViewController
-        issuePage.delegate = self
-        viewControllers.append(issuePage)
-        
         let locationPage = storyboard.instantiateViewController(withIdentifier: "ReportLocationPage") as! ReportLocationViewController
         locationPage.delegate = self
         viewControllers.append(locationPage)
+        
+        let issuePage = storyboard.instantiateViewController(withIdentifier: "ReportIssuePage") as! ReportIssueViewController
+        issuePage.delegate = self
+        viewControllers.append(issuePage)
         
         let attachmentsPage = storyboard.instantiateViewController(withIdentifier: "ReportAttachmentsPage") as! ReportAttachmentsViewController
         attachmentsPage.delegate = self
@@ -102,9 +102,9 @@ extension ReportViewController: PageboyViewControllerDataSource, TMBarDataSource
         case 0:
             return TMBarItem(title: "1. Contact")
         case 1:
-            return TMBarItem(title: "2. Issue")
+            return TMBarItem(title: "2. Location    ")
         case 2:
-            return TMBarItem(title: "3. Location")
+            return TMBarItem(title: "3. Issue")
         case 3:
             return TMBarItem(title: "4. Attachments")
         default:
