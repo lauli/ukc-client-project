@@ -404,12 +404,28 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="fWq-1D-66C" kind="relationship" relationship="rootViewController" id="PzG-qF-3vd"/>
+                        <segue destination="04r-2M-t5u" kind="relationship" relationship="rootViewController" id="1Ri-fJ-hhQ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaN-5v-pjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1046" y="728"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kLQ-ZK-2b7">
+            <objects>
+                <viewController id="04r-2M-t5u" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Xw-Fu-KO5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kcd-tA-DYP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ukp-hL-lsS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gkp-n5-g3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2270" y="727"/>
         </scene>
         <!--Report User View Controller-->
         <scene sceneID="4Hm-lx-tYG">
@@ -918,7 +934,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0r5-FA-nKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2276" y="734"/>
+            <point key="canvasLocation" x="5074" y="655"/>
         </scene>
         <!--Report Attachments View Controller-->
         <scene sceneID="El1-kT-gFj">
@@ -990,7 +1006,4 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="nyz-l7-Scy"/>
-    </inferredMetricsTieBreakers>
 </document>
