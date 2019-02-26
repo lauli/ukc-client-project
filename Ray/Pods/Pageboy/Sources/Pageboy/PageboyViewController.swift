@@ -294,7 +294,7 @@ open class PageboyViewController: UIViewController {
 }
 
 // MARK: - Paging Updates
-public extension PageboyViewController {
+extension PageboyViewController {
     
     /// Scroll the page view controller to a new page.
     ///
