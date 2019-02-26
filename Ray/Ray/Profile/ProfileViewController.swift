@@ -28,6 +28,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
     var ref: DatabaseReference!
     var possibleMatches: [String] = []
     
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
@@ -38,27 +43,29 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         floorTextField.inputView = pickerView
         
         
-        ref.child("University Of Kent").child("Users").child("12345679890").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get databse values
-            let info = snapshot.value as? NSDictionary
-            // Get user info
-            
-            let email = info?["email"] as! String
-            let name = info?["name"] as! String
-            let phone = info?["phone"] as! String
+//        ref.child("University Of Kent").child("Users").child("12345679890").observeSingleEvent(of: .value, with: { (snapshot) in
+//            // Get databse values
+//            let info = snapshot.value as? NSDictionary
+//            // Get user info
+//
+//            let email = info?["email"] as! String
+//            let name = info?["name"] as! String
+//            let phone = info?["phone"] as! String
+//
+//            print("email", email)
+//            print("name", name)
+//            print("phone", phone)
+//            let issues = info?["issues"] as? NSArray
+//            print(issues!)
+//
+//
+//            }) { (error) in
+//            print(error.localizedDescription)
+//        }
+//
+//        getBuildingNames()
         
-            print("email", email)
-            print("name", name)
-            print("phone", phone)
-            let issues = info?["issues"] as? NSArray
-            print(issues!)
-            
-            
-            }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-        getBuildingNames()
+        firebaseStorage()
     }
     
     //Get building names from firebase for autocomplete
@@ -357,4 +364,42 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         getFloorRooms()
         print(floorResult)
     }
+    
+    
+    func firebaseStorage(){
+        
+        // Points to the root reference
+        let storageRef = Storage.storage().reference()
+
+
+        // Data in memory
+       
+        let img = UIImage(named: "cat.jpg")
+        let data = img!.jpegData(compressionQuality: 0.9) as NSData?
+    
+        
+        // Create a reference to the file you want to upload
+        let imagesRef = storageRef.child("images/cat.jpg")
+        
+        // Upload the file to the path
+        let uploadTask = imagesRef.putData(data! as Data, metadata: nil) { (metadata, error) in
+            guard let metadata = metadata else {
+                // Uh-oh, an error occurred!
+                return
+            }
+            
+            print("success")
+            // Metadata contains file metadata such as size, content-type.
+            let size = metadata.size
+            // You can also access to download URL after upload.
+            imagesRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    // Uh-oh, an error occurred!
+                    return
+                }
+            }
+        }
+    }
+    
+        
 }
