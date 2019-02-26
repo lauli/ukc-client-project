@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
+		73AC8FCA2225765D0054F7BE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC8FC92225765D0054F7BE /* ProfileViewController.swift */; };
 		C03794390B0D2CB7E07D8DA5 /* Pods_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */; };
 		C8788315221D1410001AFF36 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */; };
 		C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */; };
@@ -41,6 +42,7 @@
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17A071A28074DEA3B42C3274 /* Pods-Ray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.debug.xcconfig"; sourceTree = "<group>"; };
 		2E88815C68888ABE541D3D18 /* Pods-Ray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.release.xcconfig"; sourceTree = "<group>"; };
+		73AC8FC92225765D0054F7BE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachmentsViewController.swift; sourceTree = "<group>"; };
 		C8788318221E3507001AFF36 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		C8F6D56B220338C50073488F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				73AC8FC92225765D0054F7BE /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				C8F6D57222033A790073488F /* ManualEntryViewController.swift in Sources */,
 				C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */,
 				C8A1F18C221CF56900806190 /* ReportPageViewController.swift in Sources */,
+				73AC8FCA2225765D0054F7BE /* ProfileViewController.swift in Sources */,
 				C878831C221E36EA001AFF36 /* Report.swift in Sources */,
 				C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */,
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,

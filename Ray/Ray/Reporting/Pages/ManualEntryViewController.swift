@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Foundation
 
-class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
+class ManualEntryViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
   
     @IBOutlet weak var buildingTextField: UITextField!
     @IBOutlet weak var floorTextField: UITextField!
