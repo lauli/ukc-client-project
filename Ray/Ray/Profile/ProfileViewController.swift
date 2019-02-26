@@ -19,11 +19,13 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var addLocation: UIButton!
     
+    @IBOutlet weak var ukc: UIButton!
+    @IBOutlet weak var add: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addLocation.backgroundColor = .princetonOrange
-        addLocation.layer.cornerRadius = 5
+        setupLayout()
         
     }
     @IBAction func location(_ sender: Any) {
@@ -33,5 +35,19 @@ class ProfileViewController: UIViewController {
     @IBAction func ukcBtn(_ sender: UIButton) {
     }
     @IBAction func addBtn(_ sender: UIButton) {
+    }
+    
+    private func setupLayout() {
+        addLocation.backgroundColor = .princetonOrange
+        addLocation.layer.cornerRadius = 5
+        
+        ukc.backgroundColor = .princetonOrange
+        ukc.layer.cornerRadius = 20
+        
+        add.backgroundColor = .white
+        add.setTitleColor(.weldonBlue, for: .normal)
+        add.layer.borderColor = UIColor.weldonBlue.cgColor
+        add.layer.borderWidth = 1
+        add.layer.cornerRadius = 20
     }
 }

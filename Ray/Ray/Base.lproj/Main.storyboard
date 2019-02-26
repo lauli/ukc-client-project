@@ -444,14 +444,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeh-DD-TLp">
-                                <rect key="frame" x="42" y="750" width="31" height="30"/>
-                                <state key="normal" title="UKC"/>
+                                <rect key="frame" x="42" y="730" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="lLm-xg-sO8"/>
+                                    <constraint firstAttribute="height" constant="50" id="s1q-G7-L4k"/>
+                                </constraints>
+                                <state key="normal" title="UKC">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="ukcBtn:" destination="04r-2M-t5u" eventType="touchUpInside" id="r6W-Ud-6Eo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfS-9c-DYr">
-                                <rect key="frame" x="172" y="750" width="30" height="30"/>
+                                <rect key="frame" x="191" y="730" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="T6D-hj-NCo"/>
+                                    <constraint firstAttribute="width" constant="50" id="jDt-pz-lhX"/>
+                                </constraints>
                                 <state key="normal" title="+"/>
                                 <connections>
                                     <action selector="addBtn:" destination="04r-2M-t5u" eventType="touchUpInside" id="Cva-iP-quY"/>
@@ -515,12 +525,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     </view>
                     <navigationItem key="navigationItem" id="Ukp-hL-lsS"/>
                     <connections>
+                        <outlet property="add" destination="pfS-9c-DYr" id="y7p-iy-Fa2"/>
                         <outlet property="addLocation" destination="3Iu-Tm-roV" id="lPW-tV-MlA"/>
                         <outlet property="chooseLocation" destination="K9v-tI-vIp" id="3c8-f9-GD7"/>
                         <outlet property="chosenLocation" destination="Lg6-Nq-84G" id="liR-N1-OaX"/>
                         <outlet property="emailField" destination="qEC-aU-qtL" id="dbG-ut-nKc"/>
                         <outlet property="nameField" destination="XwZ-2P-oFC" id="0LB-eS-Vzm"/>
                         <outlet property="noField" destination="umz-0y-YIW" id="sDM-UB-1LD"/>
+                        <outlet property="ukc" destination="eeh-DD-TLp" id="lON-yZ-zyA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkp-n5-g3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
