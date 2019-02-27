@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D1390382227375F00F22906 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1390372227375F00F22906 /* LoginViewController.swift */; };
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
 		C8F6D556220338020073488F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D555220338020073488F /* AppDelegate.swift */; };
 		C8F6D558220338030073488F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D557220338020073488F /* MainViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D1390372227375F00F22906 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		44D986AE569FE1BF63D104E8 /* Pods-Ray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.debug.xcconfig"; sourceTree = "<group>"; };
 		C8F6D552220338020073488F /* Ray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ray.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +52,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D1390392227377A00F22906 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				0D1390372227375F00F22906 /* LoginViewController.swift */,
+			);
+			name = Authentication;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		99940443F7CC5E252DE97939 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +110,7 @@
 				C8F6D569220338AF0073488F /* NewsFeed */,
 				C8F6D56B220338C50073488F /* Profile */,
 				C8F6D56A220338B70073488F /* Reporting */,
+				0D1390392227377A00F22906 /* Authentication */,
 			);
 			path = Ray;
 			sourceTree = "<group>";
@@ -262,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D1390382227375F00F22906 /* LoginViewController.swift in Sources */,
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
 				C8F6D56E22033A480073488F /* DataHandler.swift in Sources */,
 				C8F6D57222033A790073488F /* ProfileViewController.swift in Sources */,
