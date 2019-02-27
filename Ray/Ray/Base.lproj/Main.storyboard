@@ -414,7 +414,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <!--Profile View Controller-->
         <scene sceneID="kLQ-ZK-2b7">
             <objects>
-                <viewController id="04r-2M-t5u" customClass="ProfileViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profileID" id="04r-2M-t5u" customClass="ProfileViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Xw-Fu-KO5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -491,6 +491,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <connections>
                                     <action selector="addLocation:" destination="04r-2M-t5u" eventType="touchUpInside" id="Nb1-1v-NHO"/>
                                     <action selector="location:" destination="04r-2M-t5u" eventType="touchUpInside" id="uiB-Bj-OEt"/>
+                                    <action selector="popUp:" destination="04r-2M-t5u" eventType="touchUpInside" id="7Y0-uc-z1z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -526,47 +527,19 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     <navigationItem key="navigationItem" id="Ukp-hL-lsS"/>
                     <connections>
                         <outlet property="add" destination="pfS-9c-DYr" id="y7p-iy-Fa2"/>
-                        <outlet property="addLocation" destination="3Iu-Tm-roV" id="lPW-tV-MlA"/>
+                        <outlet property="addLocation" destination="3Iu-Tm-roV" id="T6V-x7-hqF"/>
                         <outlet property="chooseLocation" destination="K9v-tI-vIp" id="3c8-f9-GD7"/>
                         <outlet property="chosenLocation" destination="Lg6-Nq-84G" id="liR-N1-OaX"/>
                         <outlet property="emailField" destination="qEC-aU-qtL" id="dbG-ut-nKc"/>
                         <outlet property="nameField" destination="XwZ-2P-oFC" id="0LB-eS-Vzm"/>
                         <outlet property="noField" destination="umz-0y-YIW" id="sDM-UB-1LD"/>
+                        <outlet property="showPopUp" destination="3Iu-Tm-roV" id="zvR-Ni-VU1"/>
                         <outlet property="ukc" destination="eeh-DD-TLp" id="lON-yZ-zyA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkp-n5-g3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2269.5652173913045" y="725.89285714285711"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Vik-He-yKF">
-            <objects>
-                <viewController id="Dth-el-j8R" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="p4f-ZS-ccx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QD7-dR-QOF">
-                                <rect key="frame" x="87" y="373" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcJ-A2-etf">
-                                        <rect key="frame" x="101" y="90" width="39" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Close"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.99583572149999999" green="0.67142272000000003" blue="0.1487264931" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Ls1-vt-qnq"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eV8-sb-qoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3141" y="726"/>
         </scene>
         <!--Report User View Controller-->
         <scene sceneID="4Hm-lx-tYG">
