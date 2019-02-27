@@ -539,6 +539,35 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </objects>
             <point key="canvasLocation" x="2269.5652173913045" y="725.89285714285711"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Vik-He-yKF">
+            <objects>
+                <viewController id="Dth-el-j8R" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p4f-ZS-ccx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QD7-dR-QOF">
+                                <rect key="frame" x="87" y="373" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CcJ-A2-etf">
+                                        <rect key="frame" x="101" y="90" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Close"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99583572149999999" green="0.67142272000000003" blue="0.1487264931" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ls1-vt-qnq"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eV8-sb-qoZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3141" y="726"/>
+        </scene>
         <!--Report User View Controller-->
         <scene sceneID="4Hm-lx-tYG">
             <objects>
