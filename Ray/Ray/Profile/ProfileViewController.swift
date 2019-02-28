@@ -8,17 +8,14 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIPopoverControllerDelegate {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var noField: UITextField!
-    
     @IBOutlet weak var chooseLocation: UITextField!
     @IBOutlet weak var chosenLocation: UITextField!
-    
     @IBOutlet weak var addLocation: UIButton!
-    
     @IBOutlet weak var ukc: UIButton!
     @IBOutlet weak var add: UIButton!
     
@@ -28,12 +25,14 @@ class ProfileViewController: UIViewController {
         setupLayout()
     }
     
-    //    let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpID") as! PopUpViewController
-    //    self.addChild (popOverVC)
-    //    popOverVC.view.frame = self.view.frame
-    //    self.view.addSubview(popOverVC.view)
-    //    popOverVC.didMove(toParent: self)
+    @IBAction func addLocation(_ sender: UIButton) {
     
+        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpID") as! PopUpViewController
+        self.addChild (popOverVC)
+       popOverVC.view.frame = self.view.frame
+       self.view.addSubview(popOverVC.view)
+       popOverVC.didMove(toParent: self)
+    }
     
     @IBAction func ukcBtn(_ sender: UIButton) {
     }

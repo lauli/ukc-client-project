@@ -489,12 +489,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="addLocation:" destination="04r-2M-t5u" eventType="touchUpInside" id="Nb1-1v-NHO"/>
+                                    <action selector="addLocation:" destination="04r-2M-t5u" eventType="touchUpInside" id="CWE-cv-lmW"/>
                                     <action selector="location:" destination="04r-2M-t5u" eventType="touchUpInside" id="uiB-Bj-OEt"/>
                                     <action selector="popUp:" destination="04r-2M-t5u" eventType="touchUpInside" id="7Y0-uc-z1z"/>
-                                    <segue destination="8ux-wh-YUW" kind="popoverPresentation" popoverAnchorView="3Iu-Tm-roV" id="JCZ-Qh-yb6">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -546,7 +543,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <!--Pop Up View Controller-->
         <scene sceneID="dEf-A2-4a2">
             <objects>
-                <viewController id="8ux-wh-YUW" customClass="PopUpViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popUpID" id="8ux-wh-YUW" customClass="PopUpViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GM2-wE-BbE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
