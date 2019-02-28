@@ -10,6 +10,9 @@ import UIKit
 
 class NewsFeedDetailsViewController: UIViewController {
     
+    @IBOutlet weak var issueImage: UIImageView!
+    @IBOutlet weak var furtherDesc: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

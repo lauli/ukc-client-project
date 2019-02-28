@@ -67,6 +67,7 @@
                                     <outlet property="dateLabel" destination="5uv-Sq-JH0" id="qaz-FP-f7x"/>
                                     <outlet property="descriptionLabel" destination="xQH-bm-K5O" id="sQv-KX-hmf"/>
                                     <outlet property="titleLabel" destination="bHq-2R-qRc" id="HOb-Mw-eK3"/>
+                                    <segue destination="2X0-8x-ikO" kind="show" id="TNT-fT-UqB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -89,13 +90,30 @@
                     <view key="view" contentMode="scaleToFill" id="0D7-Vr-n2K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fcv-6B-a4j">
+                                <rect key="frame" x="16" y="77" width="343" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moT-wl-ZQw">
+                                <rect key="frame" x="16" y="253" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="NAQ-6m-uDc"/>
                     </view>
+                    <connections>
+                        <outlet property="furtherDesc" destination="moT-wl-ZQw" id="1VZ-bl-Kb2"/>
+                        <outlet property="issueImage" destination="Fcv-6B-a4j" id="Bch-rA-r0G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9P-YW-bmu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3361" y="-732"/>
+            <point key="canvasLocation" x="3360.8000000000002" y="-732.68365817091455"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="2dP-sz-Qkd">
