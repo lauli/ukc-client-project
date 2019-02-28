@@ -23,7 +23,7 @@ class NewsFeedTableViewController: UITableViewController {
     
     private func fetchData() {
         let feedParser = FeedParser()
-        feedParser.parseFeed(url: "https://abcnews.go.com/abcnews/thisweekheadlines") { rssItems in
+        feedParser.parseFeed(url: "https://www.kent.ac.uk/estates/rss/disruptions.php") { rssItems in
             self.rssItems = rssItems
             self.cellStates = Array(repeating: .collapsed, count: rssItems.count)
             

@@ -10,6 +10,7 @@
 		7340F8512218D6D0007DE743 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340F8502218D6D0007DE743 /* XMLParser.swift */; };
 		7340F8532218DC27007DE743 /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340F8522218DC27007DE743 /* NewsFeedTableViewCell.swift */; };
 		7340F8552218DC99007DE743 /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7340F8542218DC99007DE743 /* NewsFeedTableViewController.swift */; };
+		738044AD22289BDB0065D3AA /* NewsFeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738044AC22289BDB0065D3AA /* NewsFeedDetailsViewController.swift */; };
 		C8F6D556220338020073488F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D555220338020073488F /* AppDelegate.swift */; };
 		C8F6D558220338030073488F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D557220338020073488F /* MainViewController.swift */; };
 		C8F6D55D220338030073488F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F6D55B220338030073488F /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		7340F8502218D6D0007DE743 /* XMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		7340F8522218DC27007DE743 /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
 		7340F8542218DC99007DE743 /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
+		738044AC22289BDB0065D3AA /* NewsFeedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedDetailsViewController.swift; sourceTree = "<group>"; };
 		C8F6D552220338020073488F /* Ray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F6D555220338020073488F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8F6D557220338020073488F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				7340F8502218D6D0007DE743 /* XMLParser.swift */,
 				7340F8522218DC27007DE743 /* NewsFeedTableViewCell.swift */,
 				7340F8542218DC99007DE743 /* NewsFeedTableViewController.swift */,
+				738044AC22289BDB0065D3AA /* NewsFeedDetailsViewController.swift */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			files = (
 				7340F8512218D6D0007DE743 /* XMLParser.swift in Sources */,
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
+				738044AD22289BDB0065D3AA /* NewsFeedDetailsViewController.swift in Sources */,
 				7340F8532218DC27007DE743 /* NewsFeedTableViewCell.swift in Sources */,
 				C8F6D56E22033A480073488F /* DataHandler.swift in Sources */,
 				C8F6D57222033A790073488F /* ProfileViewController.swift in Sources */,
