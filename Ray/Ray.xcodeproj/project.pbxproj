@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0D1390382227375F00F22906 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1390372227375F00F22906 /* LoginViewController.swift */; };
+		0D27AC4822281A5A00CA54E4 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */; };
+		0D27AC4A2228200E00CA54E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */; };
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
 		C8F6D556220338020073488F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D555220338020073488F /* AppDelegate.swift */; };
 		C8F6D558220338030073488F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D557220338020073488F /* MainViewController.swift */; };
@@ -23,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		0D1390372227375F00F22906 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		44D986AE569FE1BF63D104E8 /* Pods-Ray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.debug.xcconfig"; sourceTree = "<group>"; };
 		C8F6D552220338020073488F /* Ray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ray.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				0D1390372227375F00F22906 /* LoginViewController.swift */,
+				0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */,
+				0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */,
 			);
 			name = Authentication;
 			path = "New Group";
@@ -274,10 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D27AC4A2228200E00CA54E4 /* ResetPasswordViewController.swift in Sources */,
 				0D1390382227375F00F22906 /* LoginViewController.swift in Sources */,
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
 				C8F6D56E22033A480073488F /* DataHandler.swift in Sources */,
 				C8F6D57222033A790073488F /* ProfileViewController.swift in Sources */,
+				0D27AC4822281A5A00CA54E4 /* CreateAccountViewController.swift in Sources */,
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,
 				C8F6D57022033A6B0073488F /* NewsFeedViewController.swift in Sources */,
 				C8F6D57422033A840073488F /* ReportingViewController.swift in Sources */,
