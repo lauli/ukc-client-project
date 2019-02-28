@@ -414,7 +414,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <!--Profile View Controller-->
         <scene sceneID="kLQ-ZK-2b7">
             <objects>
-                <viewController storyboardIdentifier="profileID" id="04r-2M-t5u" customClass="ProfileViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="04r-2M-t5u" customClass="ProfileViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Xw-Fu-KO5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -492,6 +492,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <action selector="addLocation:" destination="04r-2M-t5u" eventType="touchUpInside" id="Nb1-1v-NHO"/>
                                     <action selector="location:" destination="04r-2M-t5u" eventType="touchUpInside" id="uiB-Bj-OEt"/>
                                     <action selector="popUp:" destination="04r-2M-t5u" eventType="touchUpInside" id="7Y0-uc-z1z"/>
+                                    <segue destination="8ux-wh-YUW" kind="popoverPresentation" popoverAnchorView="3Iu-Tm-roV" id="JCZ-Qh-yb6">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -533,13 +536,47 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <outlet property="emailField" destination="qEC-aU-qtL" id="dbG-ut-nKc"/>
                         <outlet property="nameField" destination="XwZ-2P-oFC" id="0LB-eS-Vzm"/>
                         <outlet property="noField" destination="umz-0y-YIW" id="sDM-UB-1LD"/>
-                        <outlet property="showPopUp" destination="3Iu-Tm-roV" id="zvR-Ni-VU1"/>
                         <outlet property="ukc" destination="eeh-DD-TLp" id="lON-yZ-zyA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkp-n5-g3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2269.5652173913045" y="725.89285714285711"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="dEf-A2-4a2">
+            <objects>
+                <viewController id="8ux-wh-YUW" customClass="PopUpViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GM2-wE-BbE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J47-9G-ZHe">
+                                <rect key="frame" x="20" y="233" width="374" height="385"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEz-SU-qNf">
+                                        <rect key="frame" x="168" y="347" width="39" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Close"/>
+                                        <connections>
+                                            <action selector="closeBtn:" destination="8ux-wh-YUW" eventType="touchUpInside" id="n9B-ka-0wN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.99583572149999999" green="0.67142272000000003" blue="0.1487264931" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ZtW-H8-cLY"/>
+                    </view>
+                    <connections>
+                        <outlet property="popUpView" destination="J47-9G-ZHe" id="Cmt-2Q-CwE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cyQ-mT-BQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3140.579710144928" y="725.89285714285711"/>
         </scene>
         <!--Report User View Controller-->
         <scene sceneID="4Hm-lx-tYG">
