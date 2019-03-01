@@ -108,7 +108,6 @@
                     </view>
                     <connections>
                         <outlet property="furtherDesc" destination="moT-wl-ZQw" id="1VZ-bl-Kb2"/>
-                        <outlet property="issueImage" destination="Fcv-6B-a4j" id="Bch-rA-r0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S9P-YW-bmu" userLabel="First Responder" sceneMemberID="firstResponder"/>

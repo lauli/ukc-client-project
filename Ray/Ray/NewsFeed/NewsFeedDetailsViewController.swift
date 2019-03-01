@@ -10,10 +10,20 @@ import UIKit
 
 class NewsFeedDetailsViewController: UIViewController {
     
-    @IBOutlet weak var issueImage: UIImageView!
     @IBOutlet weak var furtherDesc: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    fileprivate var imageView = UIImageView()
+    
+    fileprivate var desc: UILabel? {
+        get {
+            return furtherDesc
+        }
+        set {
+            furtherDesc = newValue
+        }
     }
 }

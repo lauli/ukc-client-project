@@ -28,7 +28,7 @@ class NewsFeedTableViewController: UITableViewController {
             self.cellStates = Array(repeating: .collapsed, count: rssItems.count)
             
             OperationQueue.main.addOperation {
-                self.tableView.reloadSections(IndexSet(integer: 0), with: .left)
+                self.tableView.reloadSections(IndexSet(integer: 0), with: .none)
             }
         }
     }
