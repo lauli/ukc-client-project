@@ -39,9 +39,9 @@ final class DataHandler {
     private func fetchUserInformation(completion: @escaping RetrievedUser) {
         
         // TODO: get user id from core data
-        let id = "12345679890"
+        let id = "1"
         
-        reference.child("University Of Kent").child("Users").child(id).observeSingleEvent(of: .value, with: { result in
+        reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).observeSingleEvent(of: .value, with: { result in
             
             guard let info = result.value as? NSDictionary else {
                 completion(false, nil)
@@ -50,9 +50,10 @@ final class DataHandler {
             
             if let email = info["email"] as? String,
                 let name = info["name"] as? String,
-                let phone = info["phone"] as? String {
+                let phone = info["phone"] as? String,
+            let issueIds = info["issues"] as? [Any] {
                 
-                self.decodeIssuesFrom(result: info) { success, result in
+                self.decodeIssues(ids: issueIds) { success, result in
                     if success{
                         let user = User(id: id, name: name, email: email, phone: phone, reports: result)
                         completion(true, user)
@@ -71,42 +72,63 @@ final class DataHandler {
         }
     }
     
-    private func decodeIssuesFrom(result: NSDictionary, completion: @escaping DecodedReports) {
+    private func decodeIssues(ids: [Any], completion: @escaping DecodedReports) {
         var reports: [Report] = []
-        
-        guard let array = result["issues"] as? NSArray else {
-            completion(false, [])
-            return
-        }
-            
-        for issueInfo in array {
-            if let issue = issueInfo as? NSDictionary,
-                let issuetitle = issue["issue_title"] as? String ,
-                let description = issue["description"] as? String,
-                let location = issue["location"] as? NSDictionary,
-                let building = location["building"] as? String,
-                let floor = location["floor"] as? String,
-                let room = location["room"] as? String {
-                
-                print(issuetitle + "  " + description)
-                let loc = Location(building: building, floor: floor, room: room)
-                reports.append(Report(title: issuetitle, description: description, location: loc))
-            }
-        }
-        completion(true, reports)
+        completion(true, []) // TODO: fix
+//        for issueId in ids {
+//
+//            guard let id = issueId as? String else {
+//                continue
+//            }
+//
+//            reference.child("Company").child("University Of Kent").child("Issues").child(id).observeSingleEvent(of: .value, with: { result in
+//
+//                guard let issue = result.value as? NSDictionary else {
+//                    completion(false, nil)
+//                    return
+//                }
+//
+//                if let issuetitle = issue["issue_title"] as? String ,
+//                    let description = issue["description"] as? String,
+//                    let location = issue["location"] as? NSDictionary,
+//                    let building = location["building"] as? String,
+//                    let floor = location["floor"] as? String,
+//                    let room = location["room"] as? String {
+//
+//                    print(issuetitle + "  " + description)
+//                    let loc = Location(building: building, floor: floor, room: room)
+//                    reports.append(Report(title: issuetitle, description: description, location: loc))
+//
+//                    if reports.count == ids.count {
+//                        // only end fetching when all issues were fetched
+//                        completion(true, reports)
+//                    }
+//
+//                } else {
+//                    completion(false, nil)
+//                }
+//
+//            }) { (error) in
+//                print(error.localizedDescription)
+//                completion(false, nil)
+//            }
+//        }
     }
     
     func buildings(completion: @escaping RetrievedData){
         var buildings: [String] = []
         
-        reference.child("University Of Kent").observeSingleEvent(of: .value, with: { result in
+        reference.child("Company").child("University Of Kent").child("Building").observeSingleEvent(of: .value, with: { result in
             let info = result.value as? NSDictionary
-            let allBuildings = info?.allKeys as! [String]
             
+            guard let allBuildings = info?.allKeys as? [String] else {
+                completion(false, [])
+                return
+            }
+
             for building in allBuildings {
                 let buildingName = String(building.lowercased().capitalized)
                 buildings.append(buildingName)
-                buildings.sort()
             }
             completion(true, buildings)
             
@@ -119,14 +141,17 @@ final class DataHandler {
     func floorsFor(building: String, completion: @escaping RetrievedData) {
         var floors: [String] = []
         
-        reference.child("University Of Kent").child(building).observeSingleEvent(of: .value, with: { result in
+        reference.child("Company").child("University Of Kent").child("Building").child(building).observeSingleEvent(of: .value, with: { result in
             let info = result.value as? NSDictionary
-            let allFloors = info?.allKeys as! [String]
+            
+            guard let allFloors = info?.allKeys as? [String] else {
+                completion(false, [])
+                return
+            }
             
             for floor in allFloors {
                 let floorName = String(floor.lowercased().capitalized)
                 floors.append(floorName)
-                floors.sort()
             }
             completion(true, floors)
             
@@ -139,14 +164,17 @@ final class DataHandler {
     func roomsFor(building: String, floor: String, completion: @escaping RetrievedData) {
         var rooms: [String] = []
         
-        reference.child("University Of Kent").child(building).child(floor).observeSingleEvent(of: .value, with: { result in
+        reference.child("Company").child("University Of Kent").child("Building").child(building).child("Floor").child(floor).child("Room").observeSingleEvent(of: .value, with: { result in
             let info = result.value as? NSDictionary
-            let allRooms = info?.allKeys as! [String]
+            
+            guard let allRooms = info?.allKeys as? [String] else {
+                completion(false, [])
+                return
+            }
             
             for room in allRooms {
                 let roomName = String(room.lowercased().capitalized)
                 rooms.append(roomName)
-                rooms.sort()
             }
             completion(true, rooms)
             

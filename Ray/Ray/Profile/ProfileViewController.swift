@@ -36,28 +36,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         pickerView.delegate = self
         
         floorTextField.inputView = pickerView
-        
-        
-        ref.child("University Of Kent").child("Users").child("12345679890").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get databse values
-            let info = snapshot.value as? NSDictionary
-            // Get user info
-            
-            let email = info?["email"] as! String
-            let name = info?["name"] as! String
-            let phone = info?["phone"] as! String
-        
-            print("email", email)
-            print("name", name)
-            print("phone", phone)
-            let issues = info?["issues"] as? NSArray
-            print(issues!)
-            
-            
-            }) { (error) in
-            print(error.localizedDescription)
-        }
-        
+
         getBuildingNames()
     }
     
@@ -73,14 +52,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         roomTextField.text = ""
         floorTextField.text = ""
         possibleMatches = []
-        ref.child("University Of Kent").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get databse values
-            let info = snapshot.value as? NSDictionary
-            // Get all building names
-            self.buildingAutoCompletionPossibilities = info?.allKeys as! [String]
-            self.buildingAutoCompletionPossibilities.sort()
-        }) { (error) in
-            print(error.localizedDescription)
+        
+        DataHandler.shared.buildings() { success, buildings in
+            if success {
+                self.buildingAutoCompletionPossibilities = buildings
+                self.buildingAutoCompletionPossibilities.sort()
+            }
         }
     }
     
@@ -93,33 +70,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         roomTextField.text = ""
         floorTextField.text = ""
         possibleMatches = []
-        ref.child("University Of Kent").child(buildingResult).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get databse values
-            let info = snapshot.value as? NSDictionary
-            // Get all building names
-            let rooms = info?.allKeys as! [String]
-            
-            for room in rooms{
-                self.ref.child("University Of Kent").child(self.buildingResult).child(room).observeSingleEvent(of: .value, with: { (snapshot) in
-                //Get databse values
-                let info = snapshot.value as? NSDictionary
-                // Get all building names
-                let floor = info?["fl_id"] as! String
-
-                if self.floorAutoCompletionPossibilities.contains(floor) {
-                // already appended
-                }
-                else {
-                    self.floorAutoCompletionPossibilities += [floor]
-                    self.floorAutoCompletionPossibilities.sort()
-                }
-                })
-                { (error) in
-                    print(error.localizedDescription)
-                }
+        
+        DataHandler.shared.buildings() { success, floors in
+            if success {
+                self.floorAutoCompletionPossibilities = floors
+                self.floorAutoCompletionPossibilities.sort()
             }
-        }) { (error) in
-            print(error.localizedDescription)
         }
     }
     
@@ -129,38 +85,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UIPickerView
         roomResult = ""
         roomTextField.text = ""
         possibleMatches = []
-        ref.child("University Of Kent").child(buildingResult).observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get databse values
-            let info = snapshot.value as? NSDictionary
-            // Get all building names
-            let rooms = info?.allKeys as! [String]
-            
-            for room in rooms{
-                self.ref.child("University Of Kent").child(self.buildingResult).child(room).observeSingleEvent(of: .value, with: { (snapshot) in
-                    //Get databse values
-                    let info = snapshot.value as? NSDictionary
-                    // Get all building names
-                    let floor = info?["fl_id"] as! String
-                    if floor.contains(self.floorResult){
-                        if let roomInt = info?["rm_id"] as? Int {
-                            var roomName = String(roomInt)
-                            roomName = String(roomName.lowercased().capitalized)
-                            self.roomsAutoCompletionPossibilities += [roomName]
-                            self.roomsAutoCompletionPossibilities.sort()
-                        }
-                        if var roomName = info?["rm_id"] as? String{
-                            roomName = String(roomName.lowercased().capitalized)
-                            self.roomsAutoCompletionPossibilities += [roomName]
-                            self.roomsAutoCompletionPossibilities.sort()
-                        }
-                    }
-                })
-                { (error) in
-                    print(error.localizedDescription)
-                }
+        
+        DataHandler.shared.buildings() { success, rooms in
+            if success {
+                self.roomsAutoCompletionPossibilities = rooms
+                self.roomsAutoCompletionPossibilities.sort()
             }
-        }) { (error) in
-            print(error.localizedDescription)
         }
     }
     
