@@ -235,6 +235,7 @@
 				C8F6D54F220338020073488F /* Frameworks */,
 				C8F6D550220338020073488F /* Resources */,
 				0F89A2C32CC78AC274E39FEA /* [CP] Embed Pods Frameworks */,
+				13435020635B2462E44A3B2A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -326,6 +327,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ray/Pods-Ray-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		13435020635B2462E44A3B2A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Ray/Pods-Ray-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ray/Pods-Ray-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E3E17E0761955F8CCB8B5A22 /* [CP] Check Pods Manifest.lock */ = {
