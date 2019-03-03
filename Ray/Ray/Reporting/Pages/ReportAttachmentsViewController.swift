@@ -6,6 +6,7 @@
 //  Copyright © 2019 Laureen Schausberger. All rights reserved.
 //
 
+import Photos
 import UIKit
 
 class ReportAttachmentsViewController: ReportPageViewController {
@@ -21,7 +22,14 @@ class ReportAttachmentsViewController: ReportPageViewController {
     
 
     @IBAction func sendReport(_ sender: Any) {
-        
+        AttachmentsHandler.shared.showActionSheet(currentVC: self)
+        AttachmentsHandler.shared.imagePickedBlock = { (image) in
+            print("IMAGE")
+        }
+        AttachmentsHandler.shared.videoPickedBlock = {(url) in
+            print("VIDEO")
+        }
     }
-    
+
 }
+

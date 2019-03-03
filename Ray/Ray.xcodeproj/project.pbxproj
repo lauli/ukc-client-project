@@ -24,6 +24,7 @@
 		C8A1F18E221CF6DD00806190 /* UITextField+TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18D221CF6DD00806190 /* UITextField+TextViewExtension.swift */; };
 		C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */; };
 		C8E2481E222B55F3004EFAF8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2481D222B55F3004EFAF8 /* MapViewController.swift */; };
+		C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2481F222B7F3D004EFAF8 /* AttachmentsHandler.swift */; };
 		C8F6C1AC221AEC1200FB1B34 /* ReportingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6C1AB221AEC1200FB1B34 /* ReportingViewModel.swift */; };
 		C8F6D556220338020073488F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D555220338020073488F /* AppDelegate.swift */; };
 		C8F6D558220338030073488F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D557220338020073488F /* MainViewController.swift */; };
@@ -57,6 +58,7 @@
 		C8A1F18D221CF6DD00806190 /* UITextField+TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+TextViewExtension.swift"; sourceTree = "<group>"; };
 		C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportLocationViewController.swift; sourceTree = "<group>"; };
 		C8E2481D222B55F3004EFAF8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Ray/MapViewController.swift; sourceTree = SOURCE_ROOT; };
+		C8E2481F222B7F3D004EFAF8 /* AttachmentsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsHandler.swift; sourceTree = "<group>"; };
 		C8F6C1AB221AEC1200FB1B34 /* ReportingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingViewModel.swift; sourceTree = "<group>"; };
 		C8F6D552220338020073488F /* Ray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F6D555220338020073488F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			children = (
 				C878831A221E36D2001AFF36 /* DataModels */,
 				C8F6D56D22033A480073488F /* DataHandler.swift */,
+				C8E2481F222B7F3D004EFAF8 /* AttachmentsHandler.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			files = (
 				C878831F221E4752001AFF36 /* HistoryTableViewController.swift in Sources */,
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
+				C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */,
 				C8F6D56E22033A480073488F /* DataHandler.swift in Sources */,
 				C8F6D57222033A790073488F /* ProfileViewController.swift in Sources */,
 				C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */,
