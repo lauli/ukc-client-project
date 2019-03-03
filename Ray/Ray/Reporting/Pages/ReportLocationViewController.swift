@@ -17,7 +17,6 @@ class ReportLocationViewController: ReportPageViewController {
     @IBOutlet weak var containerSaved: UIView!
     @IBOutlet weak var containerMap: UIView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
@@ -57,5 +56,13 @@ class ReportLocationViewController: ReportPageViewController {
     
     @IBAction func nextPage(_ sender: Any) {
         delegate?.nextPage()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let mapViewController = segue.destination as? MapViewController else {
+            return
+        }
+        
+        mapViewController.size = containerMap.bounds
     }
 }

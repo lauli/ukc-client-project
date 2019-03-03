@@ -19,27 +19,32 @@ class MapViewController: UIViewController {
     private var zoomLevel: Float = 17.0
     private var selectedPlace: CLLocationCoordinate2D?
     
+    var size: CGRect?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setupMapView()
         setupWithPermission()
     }
     
     private func setupMapView() {
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
         
         let camera = GMSCameraPosition.camera(withLatitude: 51.296320,
                                               longitude: 1.067484,
                                               zoom: zoomLevel)
-        mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
+        mapView = GMSMapView.map(withFrame: self.view.bounds, camera: camera)
         mapView.delegate = self
-        mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.settings.myLocationButton = true
         mapView.isMyLocationEnabled = true
-        
+        mapView.layer.cornerRadius = 10
+
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
         mapView.isHidden = true
@@ -48,6 +53,7 @@ class MapViewController: UIViewController {
     private func addMarker(ToPosition position: CLLocationCoordinate2D) {
         mapView.clear()
         let marker = GMSMarker(position: position)
+        marker.icon = GMSMarker.markerImage(with: .princetonOrange)
         marker.map = mapView
     }
     
@@ -64,7 +70,7 @@ class MapViewController: UIViewController {
             print("location request denied")
             
         case .authorizedWhenInUse, .authorizedAlways:
-            setupMapView()
+            print("location access authorized")
         }
     }
 }
@@ -110,6 +116,7 @@ extension MapViewController: CLLocationManagerDelegate {
         case .authorizedAlways, .authorizedWhenInUse:
             print("Location status is OK.")
             mapView.isHidden = false
+            mapView.animate(toZoom: zoomLevel)
         }
     }
     
