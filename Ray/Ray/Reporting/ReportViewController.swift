@@ -60,9 +60,6 @@ class ReportViewController: TabmanViewController {
     
     private func setupViewControllers() {
         let storyboard = UIStoryboard(name: "Main", bundle: .main)
-        let userPage = storyboard.instantiateViewController(withIdentifier: "ReportUserPage") as! ReportUserViewController
-        userPage.delegate = self
-        viewControllers.append(userPage)
         
         let locationPage = storyboard.instantiateViewController(withIdentifier: "ReportLocationPage") as! ReportLocationViewController
         locationPage.delegate = self
@@ -75,6 +72,10 @@ class ReportViewController: TabmanViewController {
         let attachmentsPage = storyboard.instantiateViewController(withIdentifier: "ReportAttachmentsPage") as! ReportAttachmentsViewController
         attachmentsPage.delegate = self
         viewControllers.append(attachmentsPage)
+        
+        let userPage = storyboard.instantiateViewController(withIdentifier: "ReportUserPage") as! ReportSummaryViewController
+        userPage.delegate = self
+        viewControllers.append(userPage)
         
         print(viewControllers)
         reloadData()
@@ -100,13 +101,13 @@ extension ReportViewController: PageboyViewControllerDataSource, TMBarDataSource
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable  {
         switch index {
         case 0:
-            return TMBarItem(title: "1. Contact")
+            return TMBarItem(title: "1. Location")
         case 1:
-            return TMBarItem(title: "2. Location    ")
+            return TMBarItem(title: "2. Description")
         case 2:
-            return TMBarItem(title: "3. Issue")
+            return TMBarItem(title: "3. Attachments")
         case 3:
-            return TMBarItem(title: "4. Attachments")
+            return TMBarItem(title: "4. Summary")
         default:
             return TMBarItem(title: "")
         }

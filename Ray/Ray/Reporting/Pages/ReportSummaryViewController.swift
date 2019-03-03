@@ -8,23 +8,31 @@
 
 import UIKit
 
-class ReportUserViewController: ReportPageViewController {
+class ReportSummaryViewController: ReportPageViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     
-    @IBOutlet weak var viewUserDifferent: UIView!
-    
+    @IBOutlet weak var elseButton: UIButton!
+    @IBOutlet weak var viewUserDifferent: UIStackView!
     @IBOutlet weak var differentName: UITextField!
     @IBOutlet weak var differentPhone: UITextField!
     @IBOutlet weak var differentEmail: UITextField!
-    
     @IBOutlet weak var differentConsentLabel: UILabel!
     @IBOutlet weak var consentSwitch: UISwitch!
     
+    @IBOutlet weak var locationLabel: UILabel!
+    
+    @IBOutlet weak var reportTitle: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var attachFirst: UIView!
+    @IBOutlet weak var attachSecond: UIView!
+    @IBOutlet weak var attachThird: UIView!
+    @IBOutlet weak var attachFourth: UIView!
+    
     @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var elseButton: UIButton!
     
     private var viewModel: ReportingViewModel!
 
@@ -42,9 +50,7 @@ class ReportUserViewController: ReportPageViewController {
         nextButton.layer.cornerRadius = 5
         
         elseButton.backgroundColor = .white
-        elseButton.setTitleColor(.weldonBlue, for: .normal)
-        elseButton.layer.borderColor = UIColor.weldonBlue.cgColor
-        elseButton.layer.borderWidth = 1
+        elseButton.setTitleColor(.princetonOrange, for: .normal)
         elseButton.layer.cornerRadius = 5
         
         // hidden view - report for someone else

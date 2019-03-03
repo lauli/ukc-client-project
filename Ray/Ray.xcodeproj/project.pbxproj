@@ -17,7 +17,7 @@
 		C8788321221E534D001AFF36 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788320221E534C001AFF36 /* HistoryTableViewCell.swift */; };
 		C8788323221E54CA001AFF36 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788322221E54CA001AFF36 /* Location.swift */; };
 		C88498B4221C9359000A724A /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B3221C9359000A724A /* ReportViewController.swift */; };
-		C88498B7221C9767000A724A /* ReportUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B6221C9767000A724A /* ReportUserViewController.swift */; };
+		C88498B7221C9767000A724A /* ReportSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B6221C9767000A724A /* ReportSummaryViewController.swift */; };
 		C88498BA221CDA0B000A724A /* Shree714.ttc in Resources */ = {isa = PBXBuildFile; fileRef = C88498B9221CDA0B000A724A /* Shree714.ttc */; };
 		C8A1F18A221CF45600806190 /* ReportIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F189221CF45600806190 /* ReportIssueViewController.swift */; };
 		C8A1F18C221CF56900806190 /* ReportPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18B221CF56900806190 /* ReportPageViewController.swift */; };
@@ -52,7 +52,7 @@
 		C8788320221E534C001AFF36 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		C8788322221E54CA001AFF36 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C88498B3221C9359000A724A /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
-		C88498B6221C9767000A724A /* ReportUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportUserViewController.swift; sourceTree = "<group>"; };
+		C88498B6221C9767000A724A /* ReportSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSummaryViewController.swift; sourceTree = "<group>"; };
 		C88498B9221CDA0B000A724A /* Shree714.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Shree714.ttc; path = ../../../../../../../../../../Library/Fonts/Shree714.ttc; sourceTree = "<group>"; };
 		C8A1F189221CF45600806190 /* ReportIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueViewController.swift; sourceTree = "<group>"; };
 		C8A1F18B221CF56900806190 /* ReportPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPageViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		C88498B5221C9750000A724A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				C88498B6221C9767000A724A /* ReportUserViewController.swift */,
+				C88498B6221C9767000A724A /* ReportSummaryViewController.swift */,
 				C8A1F189221CF45600806190 /* ReportIssueViewController.swift */,
 				C8A1F18B221CF56900806190 /* ReportPageViewController.swift */,
 				C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */,
@@ -404,7 +404,7 @@
 				C8788319221E3507001AFF36 /* User.swift in Sources */,
 				C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */,
 				C8E2481E222B55F3004EFAF8 /* MapViewController.swift in Sources */,
-				C88498B7221C9767000A724A /* ReportUserViewController.swift in Sources */,
+				C88498B7221C9767000A724A /* ReportSummaryViewController.swift in Sources */,
 				C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */,
 				C8788323221E54CA001AFF36 /* Location.swift in Sources */,
 				C8788315221D1410001AFF36 /* UINavigationBarExtension.swift in Sources */,
