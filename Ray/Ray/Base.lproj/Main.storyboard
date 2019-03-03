@@ -832,25 +832,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </objects>
             <point key="canvasLocation" x="5711" y="655"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="3gK-Rz-e9M">
             <objects>
-                <viewController id="3eM-0J-YmD" sceneMemberID="viewController">
+                <viewController id="3eM-0J-YmD" customClass="MapViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZqN-vb-Bbh">
                         <rect key="frame" x="0.0" y="0.0" width="311" height="392"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-yb-Ome">
-                                <rect key="frame" x="0.0" y="0.0" width="311" height="392"/>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="6UO-V4-cC3" firstAttribute="bottom" secondItem="ay7-yb-Ome" secondAttribute="bottom" id="1vn-hP-GUJ"/>
-                            <constraint firstItem="ay7-yb-Ome" firstAttribute="leading" secondItem="6UO-V4-cC3" secondAttribute="leading" id="B9J-Aa-e6e"/>
-                            <constraint firstItem="6UO-V4-cC3" firstAttribute="trailing" secondItem="ay7-yb-Ome" secondAttribute="trailing" id="XD7-xc-JgF"/>
-                            <constraint firstItem="ay7-yb-Ome" firstAttribute="top" secondItem="6UO-V4-cC3" secondAttribute="top" id="w5c-ww-qu6"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6UO-V4-cC3"/>
                     </view>
                 </viewController>
