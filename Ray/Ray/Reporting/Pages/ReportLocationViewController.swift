@@ -57,12 +57,5 @@ class ReportLocationViewController: ReportPageViewController {
     @IBAction func nextPage(_ sender: Any) {
         delegate?.nextPage()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let mapViewController = segue.destination as? MapViewController else {
-            return
-        }
-        
-        mapViewController.size = containerMap.bounds
-    }
+
 }

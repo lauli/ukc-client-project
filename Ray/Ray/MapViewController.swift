@@ -18,9 +18,7 @@ class MapViewController: UIViewController {
     private var currentLocation: CLLocation?
     private var zoomLevel: Float = 17.0
     private var selectedPlace: CLLocationCoordinate2D?
-    
-    var size: CGRect?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }
