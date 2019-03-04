@@ -25,13 +25,32 @@ class ProfileViewController: UIViewController, UIPopoverControllerDelegate {
         setupLayout()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "popoverSegue" {
+            let popoverViewController = segue.destination
+            popoverViewController.popoverPresentationController!.delegate = self as? UIPopoverPresentationControllerDelegate
+        }
+    }
+    
+    func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
+        setAlphaOfBackgroundViews(alpha: 0.7)
+    }
+    
+    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+        setAlphaOfBackgroundViews(alpha: 1)
+    }
+    
+    func setAlphaOfBackgroundViews(alpha: CGFloat) {
+        let statusBarWindow = UIApplication.shared.value(forKey: "statusBarWindow") as? UIWindow
+        UIView.animate(withDuration: 0.2) {
+            statusBarWindow?.alpha = alpha;
+            self.view.alpha = alpha;
+            self.navigationController?.navigationBar.alpha = alpha;
+        }
+    }
+    
     @IBAction func addLocation(_ sender: UIButton) {
     
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpID") as! PopUpViewController
-        self.addChild (popOverVC)
-       popOverVC.view.frame = self.view.frame
-       self.view.addSubview(popOverVC.view)
-       popOverVC.didMove(toParent: self)
     }
     
     @IBAction func ukcBtn(_ sender: UIButton) {

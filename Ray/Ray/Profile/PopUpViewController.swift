@@ -8,13 +8,10 @@
 
 import UIKit
 
-class PopUpViewController: UIViewController {
+class PopUpViewController: UIViewController, UIPopoverControllerDelegate {
     
-    @IBOutlet weak var popUpView: UIView!
+     @IBOutlet weak var addView: UIView!
     
-    
-    @IBAction func closeBtn(_ sender: UIButton) {
-    }
 }
 
 

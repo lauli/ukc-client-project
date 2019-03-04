@@ -492,6 +492,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <action selector="addLocation:" destination="04r-2M-t5u" eventType="touchUpInside" id="CWE-cv-lmW"/>
                                     <action selector="location:" destination="04r-2M-t5u" eventType="touchUpInside" id="uiB-Bj-OEt"/>
                                     <action selector="popUp:" destination="04r-2M-t5u" eventType="touchUpInside" id="7Y0-uc-z1z"/>
+                                    <segue destination="8ux-wh-YUW" kind="popoverPresentation" identifier="popoverSegue" popoverAnchorView="3Iu-Tm-roV" id="Wl5-OZ-S2q">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                         </subviews>
@@ -543,32 +546,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <!--Pop Up View Controller-->
         <scene sceneID="dEf-A2-4a2">
             <objects>
-                <viewController storyboardIdentifier="popUpID" id="8ux-wh-YUW" customClass="PopUpViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popUpID" modalPresentationStyle="overCurrentContext" id="8ux-wh-YUW" customClass="PopUpViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GM2-wE-BbE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J47-9G-ZHe">
-                                <rect key="frame" x="20" y="233" width="374" height="385"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vzM-73-de5">
+                                <rect key="frame" x="20" y="76" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEz-SU-qNf">
-                                        <rect key="frame" x="168" y="347" width="39" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Close"/>
-                                        <connections>
-                                            <action selector="closeBtn:" destination="8ux-wh-YUW" eventType="touchUpInside" id="n9B-ka-0wN"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.99583572149999999" green="0.67142272000000003" blue="0.1487264931" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZtW-H8-cLY"/>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="280" height="150"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="280" height="280"/>
                     <connections>
-                        <outlet property="popUpView" destination="J47-9G-ZHe" id="Cmt-2Q-CwE"/>
+                        <outlet property="addView" destination="vzM-73-de5" id="J5j-K5-Lkx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyQ-mT-BQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
