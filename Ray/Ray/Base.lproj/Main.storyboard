@@ -490,8 +490,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 </state>
                                 <connections>
                                     <action selector="addLocation:" destination="04r-2M-t5u" eventType="touchUpInside" id="CWE-cv-lmW"/>
-                                    <action selector="location:" destination="04r-2M-t5u" eventType="touchUpInside" id="uiB-Bj-OEt"/>
-                                    <action selector="popUp:" destination="04r-2M-t5u" eventType="touchUpInside" id="7Y0-uc-z1z"/>
                                     <segue destination="8ux-wh-YUW" kind="popoverPresentation" identifier="popoverSegue" popoverAnchorView="3Iu-Tm-roV" id="Wl5-OZ-S2q">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
