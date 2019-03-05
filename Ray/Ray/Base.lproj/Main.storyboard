@@ -546,24 +546,62 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             <objects>
                 <viewController storyboardIdentifier="popUpID" modalPresentationStyle="overCurrentContext" id="8ux-wh-YUW" customClass="PopUpViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GM2-wE-BbE">
-                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vzM-73-de5">
-                                <rect key="frame" x="20" y="76" width="240" height="128"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Add a new location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8J-3R-UCc">
+                                <rect key="frame" x="128" y="15" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iBI-da-jCP">
+                                <rect key="frame" x="20" y="59" width="360" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Floor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQj-eZ-khv">
+                                <rect key="frame" x="20" y="117" width="360" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Room" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eki-ms-WOH">
+                                <rect key="frame" x="20" y="175" width="360" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQa-eW-EOE">
+                                <rect key="frame" x="19" y="10" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                                <state key="normal" title="Cancel"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXP-yd-rkn">
+                                <rect key="frame" x="339" y="10" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="iBI-da-jCP" firstAttribute="trailing" secondItem="GM2-wE-BbE" secondAttribute="trailingMargin" id="1YM-IN-hub"/>
+                            <constraint firstItem="iBI-da-jCP" firstAttribute="leading" secondItem="GM2-wE-BbE" secondAttribute="leadingMargin" id="5oh-CQ-HpJ"/>
+                            <constraint firstItem="PQj-eZ-khv" firstAttribute="trailing" secondItem="iBI-da-jCP" secondAttribute="trailing" id="D52-mj-mAd"/>
+                            <constraint firstItem="iBI-da-jCP" firstAttribute="top" secondItem="ZtW-H8-cLY" secondAttribute="top" constant="15" id="GlK-H5-jah"/>
+                            <constraint firstItem="iBI-da-jCP" firstAttribute="centerX" secondItem="u8J-3R-UCc" secondAttribute="centerX" id="LwA-Bf-47M"/>
+                            <constraint firstItem="PQj-eZ-khv" firstAttribute="leading" secondItem="iBI-da-jCP" secondAttribute="leading" id="SbI-C8-ZyE"/>
+                            <constraint firstItem="Eki-ms-WOH" firstAttribute="trailing" secondItem="PQj-eZ-khv" secondAttribute="trailing" id="cNB-DF-6gy"/>
+                            <constraint firstItem="PQj-eZ-khv" firstAttribute="top" secondItem="iBI-da-jCP" secondAttribute="bottom" constant="28" id="gSP-Od-iJL"/>
+                            <constraint firstItem="Eki-ms-WOH" firstAttribute="leading" secondItem="PQj-eZ-khv" secondAttribute="leading" id="hl3-Ll-UfF"/>
+                            <constraint firstItem="Eki-ms-WOH" firstAttribute="top" secondItem="PQj-eZ-khv" secondAttribute="bottom" constant="28" id="rYN-dA-8nn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZtW-H8-cLY"/>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="280" height="150"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="200" height="150"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="280" height="280"/>
-                    <connections>
-                        <outlet property="addView" destination="vzM-73-de5" id="J5j-K5-Lkx"/>
-                    </connections>
+                    <size key="freeformSize" width="400" height="400"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyQ-mT-BQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

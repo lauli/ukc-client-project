@@ -33,20 +33,24 @@ class ProfileViewController: UIViewController, UIPopoverControllerDelegate {
     }
     
     func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
-        setAlphaOfBackgroundViews(alpha: 0.7)
+        //setAlphaOfBackgroundViews(alpha: 0.7)
     }
     
     func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
-        setAlphaOfBackgroundViews(alpha: 1)
+        //setAlphaOfBackgroundViews(alpha: 1)
     }
     
-    func setAlphaOfBackgroundViews(alpha: CGFloat) {
-        let statusBarWindow = UIApplication.shared.value(forKey: "statusBarWindow") as? UIWindow
-        UIView.animate(withDuration: 0.2) {
-            statusBarWindow?.alpha = alpha;
-            self.view.alpha = alpha;
-            self.navigationController?.navigationBar.alpha = alpha;
-        }
+    //func setAlphaOfBackgroundViews(alpha: CGFloat) {
+    //    let statusBarWindow = UIApplication.shared.value(forKey: "statusBarWindow") as? UIWindow
+    //    UIView.animate(withDuration: 0.2) {
+    //        statusBarWindow?.alpha = alpha;
+    //        self.view.alpha = alpha;
+    //        self.navigationController?.navigationBar.alpha = alpha;
+    //    }
+   // }
+    
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
     }
     
     @IBAction func addLocation(_ sender: UIButton) {
