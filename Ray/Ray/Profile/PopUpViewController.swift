@@ -10,8 +10,16 @@ import UIKit
 
 class PopUpViewController: UIViewController, UIPopoverControllerDelegate {
     
-     @IBOutlet weak var addView: UIView!
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var buildingTxt: UITextField!
+    @IBOutlet weak var floorTxt: UITextField!
+    @IBOutlet weak var roomTxt: UITextField!
     
+    
+    @IBAction func cancelBtn(_ sender: UIButton) {
+        
+    }
 }
 
 

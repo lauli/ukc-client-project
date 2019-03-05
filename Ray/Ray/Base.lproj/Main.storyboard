@@ -577,6 +577,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <rect key="frame" x="19" y="10" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelBtn:" destination="8ux-wh-YUW" eventType="touchUpInside" id="Uh6-37-PJa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXP-yd-rkn">
                                 <rect key="frame" x="339" y="10" width="37" height="30"/>
@@ -602,6 +605,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     <value key="contentSizeForViewInPopover" type="size" width="200" height="150"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="400"/>
+                    <connections>
+                        <outlet property="buildingTxt" destination="iBI-da-jCP" id="4WP-vQ-CUF"/>
+                        <outlet property="cancelBtn" destination="lQa-eW-EOE" id="9yx-QB-ieq"/>
+                        <outlet property="doneBtn" destination="wXP-yd-rkn" id="HGH-B1-eCe"/>
+                        <outlet property="floorTxt" destination="PQj-eZ-khv" id="Wm1-um-WLS"/>
+                        <outlet property="roomTxt" destination="Eki-ms-WOH" id="jhc-my-12e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyQ-mT-BQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
