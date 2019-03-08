@@ -12,5 +12,6 @@ target 'Ray' do
       pod 'Firebase/Auth'
       pod 'Firebase/Storage'
       pod 'Firebase/Database'
+      pod 'PopupDialog', '~> 0.9'
 
 end

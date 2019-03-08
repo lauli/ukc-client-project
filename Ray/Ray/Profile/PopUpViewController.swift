@@ -25,7 +25,6 @@ class PopUpViewController: UIViewController, UIPopoverControllerDelegate {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
-        //self.showAnimate()
     }
 }
 
