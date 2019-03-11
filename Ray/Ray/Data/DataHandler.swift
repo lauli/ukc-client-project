@@ -74,45 +74,47 @@ final class DataHandler {
     
     private func decodeIssues(ids: [Any], completion: @escaping DecodedReports) {
         var reports: [Report] = []
-        completion(true, []) // TODO: fix
-//        for issueId in ids {
-//
-//            guard let id = issueId as? String else {
-//                continue
-//            }
-//
-//            reference.child("Company").child("University Of Kent").child("Issues").child(id).observeSingleEvent(of: .value, with: { result in
-//
-//                guard let issue = result.value as? NSDictionary else {
-//                    completion(false, nil)
-//                    return
-//                }
-//
-//                if let issuetitle = issue["issue_title"] as? String ,
-//                    let description = issue["description"] as? String,
-//                    let location = issue["location"] as? NSDictionary,
-//                    let building = location["building"] as? String,
-//                    let floor = location["floor"] as? String,
-//                    let room = location["room"] as? String {
-//
-//                    print(issuetitle + "  " + description)
-//                    let loc = Location(building: building, floor: floor, room: room)
-//                    reports.append(Report(title: issuetitle, description: description, location: loc))
-//
-//                    if reports.count == ids.count {
-//                        // only end fetching when all issues were fetched
-//                        completion(true, reports)
-//                    }
-//
-//                } else {
-//                    completion(false, nil)
-//                }
-//
-//            }) { (error) in
-//                print(error.localizedDescription)
-//                completion(false, nil)
-//            }
-//        }
+        
+        print(ids)
+
+        for issueId in ids {
+
+            guard let id = issueId as? Int else {
+                continue
+            }
+
+            reference.child("Company").child("University Of Kent").child("Issues").child("\(id)").observeSingleEvent(of: .value, with: { result in
+
+                guard let issue = result.value as? NSDictionary else {
+                    completion(false, nil)
+                    return
+                }
+
+                if let issuetitle = issue["issue_title"] as? String ,
+                    let description = issue["description"] as? String,
+                    let location = issue["location"] as? NSDictionary,
+                    let building = location["building"] as? String,
+                    let floor = location["floor"] as? String,
+                    let room = location["room"] as? String {
+
+                    print(issuetitle + "  " + description)
+                    let loc = Location(building: building, floor: floor, room: room)
+                    reports.append(Report(title: issuetitle, description: description, location: loc))
+
+                    if reports.count == ids.count {
+                        // only end fetching when all issues were fetched
+                        completion(true, reports)
+                    }
+
+                } else {
+                    completion(false, nil)
+                }
+
+            }) { (error) in
+                print(error.localizedDescription)
+                completion(false, nil)
+            }
+        }
     }
     
     func buildings(completion: @escaping RetrievedData){
