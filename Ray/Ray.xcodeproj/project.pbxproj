@@ -34,7 +34,7 @@
 		C8F6D562220338040073488F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F6D560220338040073488F /* LaunchScreen.storyboard */; };
 		C8F6D56E22033A480073488F /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D56D22033A480073488F /* DataHandler.swift */; };
 		C8F6D57022033A6B0073488F /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D56F22033A6B0073488F /* NewsFeedViewController.swift */; };
-		C8F6D57222033A790073488F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D57122033A790073488F /* ProfileViewController.swift */; };
+		C8F6D57222033A790073488F /* ReportLocationManualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D57122033A790073488F /* ReportLocationManualViewController.swift */; };
 		C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDC0C72214E6D300B3D80E /* TabBarController.swift */; };
 		C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDC0CA2214EDCB00B3D80E /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
@@ -71,7 +71,7 @@
 		C8F6D563220338040073488F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8F6D56D22033A480073488F /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
 		C8F6D56F22033A6B0073488F /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
-		C8F6D57122033A790073488F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C8F6D57122033A790073488F /* ReportLocationManualViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportLocationManualViewController.swift; sourceTree = "<group>"; };
 		C8FDC0C72214E6D300B3D80E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C8FDC0CA2214EDCB00B3D80E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -205,7 +205,7 @@
 		C8F6D56B220338C50073488F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				C8F6D57122033A790073488F /* ProfileViewController.swift */,
+				C8F6D57122033A790073488F /* ReportLocationManualViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -395,7 +395,7 @@
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
 				C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */,
 				C8F6D56E22033A480073488F /* DataHandler.swift in Sources */,
-				C8F6D57222033A790073488F /* ProfileViewController.swift in Sources */,
+				C8F6D57222033A790073488F /* ReportLocationManualViewController.swift in Sources */,
 				C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */,
 				C8A1F18C221CF56900806190 /* ReportPageViewController.swift in Sources */,
 				C878831C221E36EA001AFF36 /* Report.swift in Sources */,
