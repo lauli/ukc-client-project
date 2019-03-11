@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
+		738044AB222892B10065D3AA /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738044AA222892B10065D3AA /* PopUpViewController.swift */; };
 		C03794390B0D2CB7E07D8DA5 /* Pods_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */; };
+		C808A3582236A2EF0092DF8B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808A3572236A2EE0092DF8B /* ProfileViewController.swift */; };
 		C8788315221D1410001AFF36 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */; };
 		C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */; };
 		C8788319221E3507001AFF36 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788318221E3507001AFF36 /* User.swift */; };
@@ -44,6 +46,8 @@
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17A071A28074DEA3B42C3274 /* Pods-Ray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.debug.xcconfig"; sourceTree = "<group>"; };
 		2E88815C68888ABE541D3D18 /* Pods-Ray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.release.xcconfig"; sourceTree = "<group>"; };
+		738044AA222892B10065D3AA /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		C808A3572236A2EE0092DF8B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
 		C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachmentsViewController.swift; sourceTree = "<group>"; };
 		C8788318221E3507001AFF36 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -105,6 +109,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C808A3542236A2AD0092DF8B /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				738044AA222892B10065D3AA /* PopUpViewController.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		C878831A221E36D2001AFF36 /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +163,7 @@
 				C8F6D553220338020073488F /* Products */,
 				B1CC18D8A03916215FFD954A /* Pods */,
 				382D9E576E3F51C45C25D00F /* Frameworks */,
+				C808A3542236A2AD0092DF8B /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				C8F6D57122033A790073488F /* ReportLocationManualViewController.swift */,
+				C808A3572236A2EE0092DF8B /* ProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -314,9 +328,11 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Ray/Pods-Ray-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
+				"${BUILT_PRODUCTS_DIR}/PopupDialog/PopupDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -326,9 +342,11 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicBlurView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PopupDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -401,6 +419,7 @@
 				C878831C221E36EA001AFF36 /* Report.swift in Sources */,
 				C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */,
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,
+				C808A3582236A2EF0092DF8B /* ProfileViewController.swift in Sources */,
 				C8788319221E3507001AFF36 /* User.swift in Sources */,
 				C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */,
 				C8E2481E222B55F3004EFAF8 /* MapViewController.swift in Sources */,
@@ -412,6 +431,7 @@
 				C8E24822222B8998004EFAF8 /* UIImageView+Extension.swift in Sources */,
 				C8F6D57022033A6B0073488F /* NewsFeedViewController.swift in Sources */,
 				C8A1F18E221CF6DD00806190 /* UITextField+TextViewExtension.swift in Sources */,
+				738044AB222892B10065D3AA /* PopUpViewController.swift in Sources */,
 				C8F6C1AC221AEC1200FB1B34 /* ReportingViewModel.swift in Sources */,
 				C88498B4221C9359000A724A /* ReportViewController.swift in Sources */,
 				C8A1F18A221CF45600806190 /* ReportIssueViewController.swift in Sources */,

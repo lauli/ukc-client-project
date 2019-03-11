@@ -10,6 +10,7 @@ import UIKit
 
 import Firebase
 import GoogleMaps
+import PopupDialog
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

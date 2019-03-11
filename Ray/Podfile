@@ -13,5 +13,6 @@ target 'Ray' do
       	pod 'Firebase/Database'
 	pod 'GoogleMaps'
 	pod 'GooglePlaces'
+	pod 'PopupDialog', '~> 0.9'
 
 end

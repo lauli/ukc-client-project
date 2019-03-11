@@ -2,16 +2,15 @@
 //  ReportLocationManualViewController.swift
 //  Ray
 //
-//  Created by Laureen Schausberger on 31.01.19.
+//  Creat/Users/ksb36/ukc-client-project/Ray/Ray/Profile/ProfileViewController.swifted by Kirsty Samantha Butler on 26/02/2019.
 //  Copyright © 2019 Laureen Schausberger. All rights reserved.
 //
 
 import UIKit
 import Firebase
-import Foundation
 
 class ReportLocationManualViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
-  
+    
     @IBOutlet weak var buildingTextField: UITextField!
     @IBOutlet weak var floorTextField: UITextField!
     @IBOutlet weak var roomTextField: UITextField!
@@ -36,7 +35,7 @@ class ReportLocationManualViewController: UIViewController, UITextFieldDelegate,
         pickerView.delegate = self
         
         floorTextField.inputView = pickerView
-
+        
         getBuildingNames()
     }
     
@@ -124,7 +123,7 @@ class ReportLocationManualViewController: UIViewController, UITextFieldDelegate,
             getBuildingNames()
         }
     }
-
+    
     //gets suggestions and displays to user, updating every 0.01
     func searchAutocompleteEntriesWIthSubstring(substring: String, textField: UITextField) {
         let userQuery = substring
@@ -152,16 +151,16 @@ class ReportLocationManualViewController: UIViewController, UITextFieldDelegate,
     func getAutocompleteSuggestions(textField: UITextField, userText: String) -> [String]{
         if textField == self.roomTextField {
             possibleMatches = []
-        for item in roomsAutoCompletionPossibilities {
-            let myString:NSString! = item as NSString
-            let substringRange :NSRange! = myString.range(of: userText)
-            if (substringRange.location == 0)
-            {
-                possibleMatches.append(item)
-                roomResult = possibleMatches[0]
+            for item in roomsAutoCompletionPossibilities {
+                let myString:NSString! = item as NSString
+                let substringRange :NSRange! = myString.range(of: userText)
+                if (substringRange.location == 0)
+                {
+                    possibleMatches.append(item)
+                    roomResult = possibleMatches[0]
+                }
             }
-        }
-        
+            
         }
         else if textField == self.buildingTextField{
             possibleMatches = []
@@ -171,11 +170,11 @@ class ReportLocationManualViewController: UIViewController, UITextFieldDelegate,
                 
                 if (substringRange.location == 0)
                 {
-                possibleMatches.append(item)
-                buildingResult = possibleMatches[0]
+                    possibleMatches.append(item)
+                    buildingResult = possibleMatches[0]
                 }
             }
-        
+            
         }
         
         return possibleMatches
@@ -196,11 +195,11 @@ class ReportLocationManualViewController: UIViewController, UITextFieldDelegate,
     //moves typing indicator to end of inputted information
     func moveCaretToEndOfUserQueryPosition(textField: UITextField, userQuery : String) {
         if textField == self.roomTextField {
-        if let newPosition = self.roomTextField.position(from: self.roomTextField.beginningOfDocument, offset: userQuery.count) {
-            self.roomTextField.selectedTextRange = self.roomTextField.textRange(from: newPosition, to: newPosition)
-        }
-        let selectedRange: UITextRange? = roomTextField.selectedTextRange
-        roomTextField.offset(from: roomTextField.beginningOfDocument, to: (selectedRange?.start)!)
+            if let newPosition = self.roomTextField.position(from: self.roomTextField.beginningOfDocument, offset: userQuery.count) {
+                self.roomTextField.selectedTextRange = self.roomTextField.textRange(from: newPosition, to: newPosition)
+            }
+            let selectedRange: UITextRange? = roomTextField.selectedTextRange
+            roomTextField.offset(from: roomTextField.beginningOfDocument, to: (selectedRange?.start)!)
         }
         else if textField == self.buildingTextField {
             if let newPosition = self.buildingTextField.position(from: self.buildingTextField.beginningOfDocument, offset: userQuery.count) {
@@ -215,14 +214,14 @@ class ReportLocationManualViewController: UIViewController, UITextFieldDelegate,
     func formatAutocompleteResult(textField: UITextField, substring: String, possibleMatches: [String]) -> String {
         //var autoCompleteResult = possibleMatches[0]
         if textField == self.roomTextField {
-        autoCompleteResult = roomResult
+            autoCompleteResult = roomResult
         }
         else if textField == self.buildingTextField {
-        autoCompleteResult = buildingResult
+            autoCompleteResult = buildingResult
         }
         
         if substring.count < autoCompleteResult.count{
-        autoCompleteResult.removeSubrange(autoCompleteResult.startIndex..<autoCompleteResult.index(autoCompleteResult.startIndex, offsetBy: substring.count))
+            autoCompleteResult.removeSubrange(autoCompleteResult.startIndex..<autoCompleteResult.index(autoCompleteResult.startIndex, offsetBy: substring.count))
         }
         
         autoCompleteCharacterCount = autoCompleteResult.count
@@ -266,17 +265,17 @@ class ReportLocationManualViewController: UIViewController, UITextFieldDelegate,
     
     // Sets number of columns in picker view
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    return 1
+        return 1
     }
     
     // Sets the number of rows in the picker view
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return floorAutoCompletionPossibilities.count
+        return floorAutoCompletionPossibilities.count
     }
     
     // This function sets the text of the picker view to the content of the "salutations" array
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return floorAutoCompletionPossibilities[row]
+        return floorAutoCompletionPossibilities[row]
     }
     
     // When user selects an option, this function will set the text of the text field to reflect
