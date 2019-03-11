@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import PopupDialog
 
-class ProfileViewController: UIViewController, UIPopoverControllerDelegate {
+class ProfileViewController: UIViewController, UIPopoverControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -19,29 +20,12 @@ class ProfileViewController: UIViewController, UIPopoverControllerDelegate {
     @IBOutlet weak var ukc: UIButton!
     @IBOutlet weak var add: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
     }
-    
-    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //if segue.identifier == "popoverSegue" {
-            //let popoverViewController = segue.destination
-        //let popoverViewController
-            
-          //  popoverViewController.modalPresentationStyle = UIModalPresentationStyle.popover
-           // popoverViewController.popoverPresentationController!.delegate = self as? UIPopoverPresentationControllerDelegate
-        
-  //  }
-    
-    //func prepareForPopoverPresentation(_ popoverPresentationController: UIPopoverPresentationController) {
-    //    setAlphaOfBackgroundViews(alpha: 0.7)
-    //}
-    
-    //func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
-    //    setAlphaOfBackgroundViews(alpha: 1)
-    //}
     
     func setAlphaOfBackgroundViews(alpha: CGFloat) {
         let statusBarWindow = UIApplication.shared.value(forKey: "statusBarWindow") as? UIWindow
@@ -53,21 +37,42 @@ class ProfileViewController: UIViewController, UIPopoverControllerDelegate {
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        //return .none
         return UIModalPresentationStyle.none
     }
     
     @IBAction func addLocation(_ sender: UIButton) -> Void {
-        let popOverVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpID") as! PopUpViewController
-        popOverVC.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        showDialog()
+    }
+    
+    func showDialog() {
+        let title = "Add a new location"
+        let message = "Saved locations can be used for quick reporting"
+
+        let popup = PopupDialog(title: title,
+                                message: message,
+                                buttonAlignment: .horizontal,
+                                transitionStyle: .zoomIn,
+                                tapGestureDismissal: true,
+                                panGestureDismissal: true,
+                                hideStatusBar: true) {
+                                    print("Completed")
+        }
         
-        tabBarController?.present(popOverVC, animated: true)
+        let buttonOne = CancelButton(title: "CANCEL") {
+            //self.label.text = "You cancelled the dialog"
+        }
         
-        //self.addChild(popOverVC)
+        let buttonTwo = DefaultButton(title: "SHAKE", dismissOnTap: false) { [weak popup] in
+            popup?.shake()
+        }
         
-        popOverVC.view.frame = self.view.frame
-        self.view.addSubview(popOverVC.view)
-        popOverVC.didMove(toParent: self)
+        let buttonThree = DefaultButton(title: "OK") {
+            
+        }
+        
+        popup.addButtons([buttonOne, buttonTwo, buttonThree])
+        
+        self.present(popup, animated: false, completion: nil)
     }
     
     

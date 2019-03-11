@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PopupDialog
 
 class PopUpViewController: UIViewController, UIPopoverControllerDelegate {
     
@@ -24,8 +25,9 @@ class PopUpViewController: UIViewController, UIPopoverControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        //self.view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
     }
+    
 }
 
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import PopupDialog
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
