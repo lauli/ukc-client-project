@@ -23,6 +23,7 @@ class HistoryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupLayout()
         // Initialization code
     }
 
@@ -30,6 +31,10 @@ class HistoryTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    private func setupLayout() {
+        titleLabel.adjustsFontSizeToFitWidth = true
     }
     
     private func updateLabels() {

@@ -11,7 +11,7 @@ import Pageboy
 import Tabman
 
 class ReportViewController: TabmanViewController {
-
+    
     private var viewControllers: [UIViewController] = []
     
     override func viewDidLoad() {
@@ -27,6 +27,9 @@ class ReportViewController: TabmanViewController {
     
     private func setupPage() {
         navigationItem.title = "New Report"
+        tabBarItem = UITabBarItem(title: "Report",
+                                  image: UIImage.init(named: "icon-report-outline"),
+                                  selectedImage: UIImage.init(named: "icon-report"))
         
         // Setup navigationbar and get rid of navigationbar seperator line
         self.navigationController?.navigationBar.barTintColor = .princetonOrange
@@ -37,7 +40,7 @@ class ReportViewController: TabmanViewController {
         // Create bar
         let bar = TMBar.ButtonBar()
         bar.backgroundView.style = .blur(style: .extraLight)
-
+        
         bar.layout.transitionStyle = .progressive
         bar.layout.contentMode = .fit
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 20.0, bottom: 0.0, right: 20.0)

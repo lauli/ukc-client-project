@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.swift
+//  UserViewController.swift
 //  Ray
 //
 //  Created by Laureen Schausberger on 11.03.19.
@@ -9,7 +9,7 @@
 import UIKit
 import PopupDialog
 
-class ProfileViewController: UIViewController, UIPopoverControllerDelegate, UITextFieldDelegate {
+class UserViewController: UIViewController, UIPopoverControllerDelegate, UITextFieldDelegate {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!

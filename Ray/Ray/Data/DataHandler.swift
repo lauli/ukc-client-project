@@ -9,6 +9,9 @@
 import Foundation
 import Firebase
 
+// public typealiases
+typealias Success = (Bool) -> ()
+
 final class DataHandler {
     
     // singleton
@@ -18,7 +21,6 @@ final class DataHandler {
     private var reference: DatabaseReference!
     
     // data types
-    typealias Success = (Bool) -> ()
     typealias RetrievedUser = (Bool, User?) -> ()
     typealias DecodedReports = (Bool, [Report]?) -> ()
     typealias RetrievedData = (Bool, [String]) -> ()
@@ -90,24 +92,35 @@ final class DataHandler {
                     return
                 }
 
-                if let issuetitle = issue["issue_title"] as? String ,
+                guard let issuetitle = issue["issue_title"] as? String ,
                     let description = issue["description"] as? String,
-                    let location = issue["location"] as? NSDictionary,
-                    let building = location["building"] as? String,
+                    let location = issue["location"] as? NSDictionary else {
+                        completion(false, nil)
+                        return
+                }
+                
+                let loc: Location
+                
+                if let building = location["building"] as? String,
                     let floor = location["floor"] as? String,
                     let room = location["room"] as? String {
 
-                    print(issuetitle + "  " + description)
-                    let loc = Location(building: building, floor: floor, room: room)
-                    reports.append(Report(title: issuetitle, description: description, location: loc))
-
-                    if reports.count == ids.count {
-                        // only end fetching when all issues were fetched
-                        completion(true, reports)
-                    }
-
+                    loc = Location(building: building, floor: floor, room: room)
+                    
+                } else if let lat = location["lat"] as? Double,
+                let long = location["long"] as? Double {
+                    loc = Location(building: "Lat: \(lat)", floor: "Long: \(long)", room: "")
+                    
                 } else {
                     completion(false, nil)
+                    return
+                }
+                
+                reports.append(Report(title: issuetitle, description: description, location: loc))
+                
+                if reports.count == ids.count {
+                    // only end fetching when all issues were fetched
+                    completion(true, reports)
                 }
 
             }) { (error) in
