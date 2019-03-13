@@ -10,12 +10,12 @@ import UIKit
 
 class ReportLocationViewController: ReportPageViewController {
 
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var segment: UISegmentedControl!
+    @IBOutlet private weak var nextButton: UIButton!
+    @IBOutlet private weak var segment: UISegmentedControl!
     
-    @IBOutlet weak var containerManual: UIView!
-    @IBOutlet weak var containerSaved: UIView!
-    @IBOutlet weak var containerMap: UIView!
+    @IBOutlet private weak var containerManual: UIView!
+    @IBOutlet private weak var containerSaved: UIView!
+    @IBOutlet private weak var containerMap: UIView!
     
     private var suggestedVC: SuggestedInputViewController?
 //    private var savedLocationsVC:
@@ -86,5 +86,4 @@ class ReportLocationViewController: ReportPageViewController {
         
         delegate?.nextPage()
     }
-
 }

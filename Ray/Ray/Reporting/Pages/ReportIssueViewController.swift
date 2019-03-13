@@ -10,9 +10,11 @@ import UIKit
 
 class ReportIssueViewController: ReportPageViewController {
 
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var descriptionTextField: UITextView!
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet private weak var titleTextField: UITextField!
+    @IBOutlet private weak var descriptionTextField: UITextView!
+    
+    @IBOutlet private weak var prevButton: UIButton!
+    @IBOutlet private weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +25,15 @@ class ReportIssueViewController: ReportPageViewController {
         nextButton.backgroundColor = .princetonOrange
         nextButton.layer.cornerRadius = 5
         
-        titleTextField.changeTo(color: .charcoal, placeholderText: "Door not closing")
-        descriptionTextField.changeTo(color: .charcoal)
+        prevButton.backgroundColor = .princetonOrange
+        prevButton.layer.cornerRadius = 5
+        
+//        titleTextField.changeTo(color: .charcoal, placeholderText: "Door not closing")
+//        descriptionTextField.changeTo(color: .charcoal)
+//        descriptionTextField.textContainerInset = UIEdgeInsets(top: 6, left: 4, bottom: 4, right: 4)
+        
+        titleTextField.placeholder = "Door not closing"
         descriptionTextField.setupReportDescription()
-        descriptionTextField.textContainerInset = UIEdgeInsets(top: 6, left: 4, bottom: 4, right: 4)
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
@@ -52,6 +59,11 @@ class ReportIssueViewController: ReportPageViewController {
         viewModel.description = descriptionTextField.text
         
         delegate?.nextPage()
+    }
+    
+    
+    @IBAction func prevPage(_ sender: Any) {
+        delegate?.prevPage()
     }
 }
 

@@ -44,6 +44,7 @@ class ReportViewController: TabmanViewController {
         // Create bar
         let bar = TMBar.ButtonBar()
         bar.backgroundView.style = .blur(style: .extraLight)
+        bar.isUserInteractionEnabled = false
         
         bar.layout.transitionStyle = .progressive
         bar.layout.contentMode = .fit
@@ -129,8 +130,26 @@ extension ReportViewController: ReportPageDelegate {
     func nextPage() {
         scrollToPage(.next, animated: true)
     }
+    
+    func prevPage() {
+        scrollToPage(.previous, animated: true)
+    }
+    
+    func sendReport() {
+        // TODO: implement sending to backend
+        
+        scrollToPage(.first, animated: false)
+        viewModel = ReportingViewModel()
+        viewControllers = []
+        setupViewControllers() // reset
+        reloadData()
+        
+        tabBarController?.selectedIndex = 2 // go to profile to see new issue
+    }
 }
 
 protocol ReportPageDelegate: class {
     func nextPage()
+    func prevPage()
+    func sendReport()
 }

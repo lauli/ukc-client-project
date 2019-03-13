@@ -10,29 +10,30 @@ import UIKit
 
 class ReportSummaryViewController: ReportPageViewController {
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var emailLabel: UILabel!
+    @IBOutlet private weak var phoneLabel: UILabel!
     
-    @IBOutlet weak var elseButton: UIButton!
-    @IBOutlet weak var viewUserDifferent: UIStackView!
-    @IBOutlet weak var differentName: UITextField!
-    @IBOutlet weak var differentPhone: UITextField!
-    @IBOutlet weak var differentEmail: UITextField!
-    @IBOutlet weak var differentConsentLabel: UILabel!
-    @IBOutlet weak var consentSwitch: UISwitch!
+    @IBOutlet private weak var elseButton: UIButton!
+    @IBOutlet private weak var viewUserDifferent: UIStackView!
+    @IBOutlet private weak var differentName: UITextField!
+    @IBOutlet private weak var differentPhone: UITextField!
+    @IBOutlet private weak var differentEmail: UITextField!
+    @IBOutlet private weak var differentConsentLabel: UILabel!
+    @IBOutlet private weak var consentSwitch: UISwitch!
     
-    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet private weak var locationLabel: UILabel!
     
-    @IBOutlet weak var reportTitle: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var reportTitle: UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     
-    @IBOutlet weak var attachFirst: UIImageView!
-    @IBOutlet weak var attachSecond: UIImageView!
-    @IBOutlet weak var attachThird: UIImageView!
-    @IBOutlet weak var attachFourth: UIImageView!
+    @IBOutlet private weak var attachFirst: UIImageView!
+    @IBOutlet private weak var attachSecond: UIImageView!
+    @IBOutlet private weak var attachThird: UIImageView!
+    @IBOutlet private weak var attachFourth: UIImageView!
     
-    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet private weak var prevButton: UIButton!
+    @IBOutlet private weak var nextButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,8 @@ class ReportSummaryViewController: ReportPageViewController {
         // buttons
         nextButton.backgroundColor = .princetonOrange
         nextButton.layer.cornerRadius = 5
+        prevButton.backgroundColor = .princetonOrange
+        prevButton.layer.cornerRadius = 5
         
         elseButton.backgroundColor = .white
         elseButton.setTitleColor(.princetonOrange, for: .normal)
@@ -131,9 +134,14 @@ class ReportSummaryViewController: ReportPageViewController {
         nextButton.backgroundColor = disable ? .princetonOrangeLight : .princetonOrange
     }
     
-    @IBAction func nextPage(_ sender: Any) {
-        delegate?.nextPage()
+    @IBAction func sendReport(_ sender: Any) {
+       delegate?.sendReport()
     }
+    
+    @IBAction func prevPage(_ sender: Any) {
+        delegate?.prevPage()
+    }
+    
     
     @IBAction func reportForSomeoneElse(_ sender: Any) {
         if viewUserDifferent.isHidden {

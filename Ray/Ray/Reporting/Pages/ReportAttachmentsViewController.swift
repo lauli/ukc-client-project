@@ -12,7 +12,9 @@ import UIKit
 class ReportAttachmentsViewController: ReportPageViewController {
 
     @IBOutlet private weak var addButton: UIButton!
-    @IBOutlet private weak var sendButton: UIButton!
+    
+    @IBOutlet private weak var prevButton: UIButton!
+    @IBOutlet private weak var nextButton: UIButton!
     
     @IBOutlet private weak var first: UIImageView!
     @IBOutlet private weak var second: UIImageView!
@@ -32,8 +34,11 @@ class ReportAttachmentsViewController: ReportPageViewController {
     }
     
     private func setupLayout() {
-        sendButton.backgroundColor = .princetonOrange
-        sendButton.layer.cornerRadius = 5
+        nextButton.backgroundColor = .princetonOrange
+        nextButton.layer.cornerRadius = 5
+        
+        prevButton.backgroundColor = .princetonOrange
+        prevButton.layer.cornerRadius = 5
         
         addButton.backgroundColor = .white
         addButton.setTitleColor(.weldonBlue, for: .normal)
@@ -48,7 +53,7 @@ class ReportAttachmentsViewController: ReportPageViewController {
     }
     
 
-    @IBAction func sendReport(_ sender: Any) {
+    @IBAction func showSummary(_ sender: Any) {
         viewModel.attachments = images
         delegate?.nextPage()
     }
@@ -92,6 +97,10 @@ class ReportAttachmentsViewController: ReportPageViewController {
         AttachmentsHandler.shared.videoPickedBlock = { url in
             print("VIDEO")
         }
+    }
+    
+    @IBAction func prevPage(_ sender: Any) {
+        delegate?.prevPage()
     }
 }
 

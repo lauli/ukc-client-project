@@ -57,6 +57,7 @@ class MapViewController: UIViewController {
         let marker = GMSMarker(position: position)
         marker.icon = GMSMarker.markerImage(with: .princetonOrange)
         marker.map = mapView
+        selectedPlace = position
     }
     
     private func setupWithPermission() {
@@ -80,7 +81,6 @@ class MapViewController: UIViewController {
 extension MapViewController: GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         addMarker(ToPosition: coordinate)
-        selectedPlace = coordinate
     }
 }
 
