@@ -130,14 +130,6 @@
 			path = DataModels;
 			sourceTree = "<group>";
 		};
-		C878831D221E473C001AFF36 /* Histroy */ = {
-			isa = PBXGroup;
-			children = (
-				C8788320221E534C001AFF36 /* IssueTableViewCell.swift */,
-			);
-			path = Histroy;
-			sourceTree = "<group>";
-		};
 		C88498B5221C9750000A724A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +184,6 @@
 				C8E2481D222B55F3004EFAF8 /* MapViewController.swift */,
 				C8F6D56C2203393D0073488F /* Data */,
 				C8FDC0C92214EDA100B3D80E /* Extensions */,
-				C878831D221E473C001AFF36 /* Histroy */,
 				C8F6D569220338AF0073488F /* NewsFeed */,
 				C8F6D56B220338C50073488F /* User */,
 				C8F6D56A220338B70073488F /* Reporting */,
@@ -222,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				C81EDF062238804E00AA108E /* IssueTableViewController.swift */,
+				C8788320221E534C001AFF36 /* IssueTableViewCell.swift */,
 				C81EDF042238800200AA108E /* ProfileViewController.swift */,
 				C81EDF08223881A700AA108E /* ProfileViewModel.swift */,
 				C808A3572236A2EE0092DF8B /* UserViewController.swift */,
