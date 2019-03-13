@@ -20,10 +20,12 @@ class UserViewController: UIViewController, UIPopoverControllerDelegate, UITextF
     @IBOutlet weak var ukc: UIButton!
     @IBOutlet weak var add: UIButton!
     
+    @IBOutlet weak var popupViewController: PopupViewController!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            
         setupLayout()
     }
     

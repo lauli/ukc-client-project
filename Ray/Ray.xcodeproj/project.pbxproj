@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
+		734A80E1223994A500C9641C /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 734A80E0223994A500C9641C /* PopupViewController.xib */; };
+		734A80E32239973F00C9641C /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A80E22239973F00C9641C /* PopupViewController.swift */; };
 		C03794390B0D2CB7E07D8DA5 /* Pods_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */; };
 		C808A3582236A2EF0092DF8B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808A3572236A2EE0092DF8B /* UserViewController.swift */; };
 		C81EDF052238800200AA108E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81EDF042238800200AA108E /* ProfileViewController.swift */; };
@@ -47,6 +49,8 @@
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		17A071A28074DEA3B42C3274 /* Pods-Ray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.debug.xcconfig"; sourceTree = "<group>"; };
 		2E88815C68888ABE541D3D18 /* Pods-Ray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.release.xcconfig"; sourceTree = "<group>"; };
+		734A80E0223994A500C9641C /* PopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
+		734A80E22239973F00C9641C /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		738044AA222892B10065D3AA /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		C808A3572236A2EE0092DF8B /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		C81EDF042238800200AA108E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 				C81EDF042238800200AA108E /* ProfileViewController.swift */,
 				C81EDF08223881A700AA108E /* ProfileViewModel.swift */,
 				C808A3572236A2EE0092DF8B /* UserViewController.swift */,
+				734A80E0223994A500C9641C /* PopupViewController.xib */,
+				734A80E22239973F00C9641C /* PopupViewController.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 				0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */,
 				C8F6D55F220338040073488F /* Assets.xcassets in Resources */,
 				C8F6D55D220338030073488F /* Main.storyboard in Resources */,
+				734A80E1223994A500C9641C /* PopupViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,6 +448,7 @@
 				C8F6C1AC221AEC1200FB1B34 /* ReportingViewModel.swift in Sources */,
 				C88498B4221C9359000A724A /* ReportViewController.swift in Sources */,
 				C8A1F18A221CF45600806190 /* ReportIssueViewController.swift in Sources */,
+				734A80E32239973F00C9641C /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
