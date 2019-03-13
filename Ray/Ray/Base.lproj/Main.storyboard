@@ -170,13 +170,13 @@
                                                         <rect key="frame" x="0.0" y="150" width="350" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I guarantee that have the consent of the person I am reporting for to do so in their name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-1L-dNE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="305.33333333333331" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="263.66666666666669" height="31"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HT-PM-eal">
-                                                                <rect key="frame" x="307.33333333333331" y="0.0" width="44.666666666666686" height="31"/>
+                                                                <rect key="frame" x="265.66666666666669" y="0.0" width="86.333333333333314" height="31"/>
                                                                 <color key="onTintColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <connections>
                                                                     <action selector="consentSwitch:" destination="Xhd-tO-6Wy" eventType="valueChanged" id="WAe-gw-Dpv"/>
@@ -230,28 +230,28 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v2A-gn-9Yy">
                                                 <rect key="frame" x="0.0" y="639" width="350" height="81.666666666666629"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-YU-vKZ">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-YU-vKZ" customClass="UIImageView">
                                                         <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="HA7-YU-vKZ" secondAttribute="height" multiplier="1:1" id="DTG-N4-bzL"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3K-aL-UET">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3K-aL-UET" customClass="UIImageView">
                                                         <rect key="frame" x="89.666666666666686" y="0.0" width="81.333333333333314" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="W3K-aL-UET" secondAttribute="height" multiplier="1:1" id="klt-Ki-haG"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-q1-fqi">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-q1-fqi" customClass="UIImageView">
                                                         <rect key="frame" x="179" y="0.0" width="81.666666666666686" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="JLD-q1-fqi" secondAttribute="height" multiplier="1:1" id="dDh-pq-0iI"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUJ-rk-R6D">
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUJ-rk-R6D" customClass="UIImageView">
                                                         <rect key="frame" x="268.66666666666669" y="0.0" width="81.333333333333314" height="81.666666666666671"/>
                                                         <color key="backgroundColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
@@ -740,10 +740,10 @@
             </objects>
             <point key="canvasLocation" x="5446" y="663"/>
         </scene>
-        <!--Report Location Manual View Controller-->
+        <!--Suggested Input View Controller-->
         <scene sceneID="zOu-Hh-YeL">
             <objects>
-                <viewController id="fWq-1D-66C" customClass="ReportLocationManualViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fWq-1D-66C" customClass="SuggestedInputViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bic-fQ-pkn">
                         <rect key="frame" x="0.0" y="0.0" width="350" height="475.66666666666663"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

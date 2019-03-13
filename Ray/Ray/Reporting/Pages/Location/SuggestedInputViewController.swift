@@ -1,5 +1,5 @@
 //
-//  ReportLocationManualViewController.swift
+//  SuggestedInputViewController.swift
 //  Ray
 //
 //  Creat/Users/ksb36/ukc-client-project/Ray/Ray/Profile/ProfileViewController.swifted by Kirsty Samantha Butler on 26/02/2019.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ReportLocationManualViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
+class SuggestedInputViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
     
     @IBOutlet weak var buildingTextField: UITextField!
     @IBOutlet weak var floorTextField: UITextField!

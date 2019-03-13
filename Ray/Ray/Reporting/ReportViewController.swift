@@ -13,9 +13,13 @@ import Tabman
 class ReportViewController: TabmanViewController {
     
     private var viewControllers: [UIViewController] = []
+    private var viewModel: ReportingViewModel!
     
     override func viewDidLoad() {
+        self.viewModel = ReportingViewModel()
+        
         super.viewDidLoad()
+        
         self.dataSource = self
         self.transition = Transition(style: .moveIn, duration: 0.3)
         self.navigationOrientation = .horizontal
@@ -66,18 +70,22 @@ class ReportViewController: TabmanViewController {
         
         let locationPage = storyboard.instantiateViewController(withIdentifier: "ReportLocationPage") as! ReportLocationViewController
         locationPage.delegate = self
+        locationPage.viewModel = viewModel
         viewControllers.append(locationPage)
         
         let issuePage = storyboard.instantiateViewController(withIdentifier: "ReportIssuePage") as! ReportIssueViewController
         issuePage.delegate = self
+        issuePage.viewModel = viewModel
         viewControllers.append(issuePage)
         
         let attachmentsPage = storyboard.instantiateViewController(withIdentifier: "ReportAttachmentsPage") as! ReportAttachmentsViewController
         attachmentsPage.delegate = self
+        attachmentsPage.viewModel = viewModel
         viewControllers.append(attachmentsPage)
         
         let userPage = storyboard.instantiateViewController(withIdentifier: "ReportUserPage") as! ReportSummaryViewController
         userPage.delegate = self
+        userPage.viewModel = viewModel
         viewControllers.append(userPage)
         
         print(viewControllers)

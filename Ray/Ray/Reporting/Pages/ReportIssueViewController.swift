@@ -30,7 +30,27 @@ class ReportIssueViewController: ReportPageViewController {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
+    private func hasUserGivenAllInformation() -> Bool {
+        if titleTextField.text == nil || titleTextField.text == "" {
+            return false
+        }
+        
+        if descriptionTextField.text.contains("Hi!\n\nMy door is not closing properly anymore since Monday afternoon. I think it has something to do with the saftey device on top of the door, that starts beeping when I don't close it properly. Usually when I let my door loose, it shuts automatically without my help. But now it doesn't anymore - it needs my help to do it. \n\nI have attached pictures, and made a video so you can see what is happening. \n\nMany thanks!") {
+            return false
+        }
+        
+        return true
+    }
+    
     @IBAction func nextPage(_ sender: Any) {
+        if !hasUserGivenAllInformation() {
+            // TODO: handle missing input
+            return
+        }
+        
+        viewModel.title = titleTextField.text
+        viewModel.description = descriptionTextField.text
+        
         delegate?.nextPage()
     }
 }

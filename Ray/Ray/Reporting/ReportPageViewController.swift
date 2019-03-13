@@ -11,6 +11,8 @@ import UIKit
 class ReportPageViewController: UIViewController {
     
     weak var delegate: ReportPageDelegate?
+    
+    var viewModel: ReportingViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

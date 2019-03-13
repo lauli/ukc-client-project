@@ -17,6 +17,10 @@ class ReportLocationViewController: ReportPageViewController {
     @IBOutlet weak var containerSaved: UIView!
     @IBOutlet weak var containerMap: UIView!
     
+    private var suggestedVC: SuggestedInputViewController?
+//    private var savedLocationsVC:
+    private var mapVC: MapViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
@@ -38,6 +42,20 @@ class ReportLocationViewController: ReportPageViewController {
         containerMap.isHidden = !map
     }
     
+    // MARK: - Overrides
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let viewController = segue.destination as? SuggestedInputViewController {
+            suggestedVC = viewController
+            
+        } else if let viewController = segue.destination as? MapViewController {
+            mapVC = viewController
+        }
+        // TODO: make for saved locations
+    }
+    
+    // MARK: - IBActions
+    
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -55,6 +73,17 @@ class ReportLocationViewController: ReportPageViewController {
     }
     
     @IBAction func nextPage(_ sender: Any) {
+        
+        if !containerManual.isHidden {
+            
+            
+        } else if !containerSaved.isHidden {
+            
+        } else if !containerMap.isHidden, let mapVC = mapVC {
+            let (lat, long) = mapVC.savedLocation()
+            viewModel.location = Location(building: lat, floor: long, room: "")
+        }
+        
         delegate?.nextPage()
     }
 

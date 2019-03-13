@@ -27,21 +27,29 @@ class ReportSummaryViewController: ReportPageViewController {
     @IBOutlet weak var reportTitle: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    @IBOutlet weak var attachFirst: UIView!
-    @IBOutlet weak var attachSecond: UIView!
-    @IBOutlet weak var attachThird: UIView!
-    @IBOutlet weak var attachFourth: UIView!
+    @IBOutlet weak var attachFirst: UIImageView!
+    @IBOutlet weak var attachSecond: UIImageView!
+    @IBOutlet weak var attachThird: UIImageView!
+    @IBOutlet weak var attachFourth: UIImageView!
     
     @IBOutlet weak var nextButton: UIButton!
     
-    private var viewModel: ReportingViewModel!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = ReportingViewModel()
         setupLayout()
         setupUserDefaults()
+        setupLocation()
+        setupDescription()
+        setupAttachments()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupUserDefaults()
+        setupLocation()
+        setupDescription()
+        setupAttachments()
     }
     
     private func setupLayout() {
@@ -63,6 +71,35 @@ class ReportSummaryViewController: ReportPageViewController {
         
         differentConsentLabel.numberOfLines = 0
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+    }
+    
+    private func setupLocation() {
+        locationLabel.text = viewModel.location?.toString()
+        
+    }
+    
+    private func setupDescription() {
+        reportTitle.text = viewModel.title
+        descriptionLabel.text = viewModel.description
+    }
+    
+    private func setupAttachments() {
+        guard let images = viewModel.attachments else {
+            return
+        }
+        
+        if images.count == 4 {
+            attachFourth.image = images[3]
+        }
+        if images.count >= 3 {
+            attachThird.image = images[2]
+        }
+        if images.count >= 2 {
+            attachSecond.image = images[1]
+        }
+        if images.count >= 1 {
+            attachFirst.image = images[0]
+        }
     }
     
     private func setupUserDefaults() {

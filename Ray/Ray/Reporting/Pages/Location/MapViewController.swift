@@ -28,6 +28,10 @@ class MapViewController: UIViewController {
         setupWithPermission()
     }
     
+    func savedLocation() -> (String, String) {
+        return ("Lat: \(selectedPlace?.latitude ?? 0.0)", "Long: \(selectedPlace?.longitude ?? 0.0)")
+    }
+    
     private func setupMapView() {
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest

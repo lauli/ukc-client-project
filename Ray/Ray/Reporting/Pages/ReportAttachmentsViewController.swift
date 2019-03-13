@@ -11,13 +11,15 @@ import UIKit
 
 class ReportAttachmentsViewController: ReportPageViewController {
 
-    @IBOutlet weak var addButton: UIButton!
-    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet private weak var addButton: UIButton!
+    @IBOutlet private weak var sendButton: UIButton!
     
-    @IBOutlet weak var first: UIImageView!
-    @IBOutlet weak var second: UIImageView!
-    @IBOutlet weak var third: UIImageView!
-    @IBOutlet weak var fourth: UIImageView!
+    @IBOutlet private weak var first: UIImageView!
+    @IBOutlet private weak var second: UIImageView!
+    @IBOutlet private weak var third: UIImageView!
+    @IBOutlet private weak var fourth: UIImageView!
+    
+    private var images: [UIImage] = []
     
     private var alreadyOverFourAttachemnts: Bool {
         return first.image != nil && second.image != nil && third.image != nil && fourth.image != nil
@@ -47,7 +49,8 @@ class ReportAttachmentsViewController: ReportPageViewController {
     
 
     @IBAction func sendReport(_ sender: Any) {
-        
+        viewModel.attachments = images
+        delegate?.nextPage()
     }
     
     @IBAction func addAttachment(_ sender: Any) {
@@ -76,9 +79,14 @@ class ReportAttachmentsViewController: ReportPageViewController {
             } else if self.fourth.image == nil {
                 self.fourth.image = image
                 self.fourth.maskCircle(anyImage: image)
-
+                
+            } else {
+                print("too many images saved already")
+                // TODO: make user aware that he/she can only store 4 pics
+                return
             }
             print("IMAGE")
+            self.images.append(image)
         }
         
         AttachmentsHandler.shared.videoPickedBlock = { url in

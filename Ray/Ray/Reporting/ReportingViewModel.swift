@@ -6,7 +6,7 @@
 //  Copyright © 2019 Laureen Schausberger. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class ReportingViewModel {
     
@@ -17,5 +17,10 @@ final class ReportingViewModel {
             return dataHandler.user
         }
     }
+    
+    var location: Location? = nil
+    var title: String? = nil
+    var description: String? = nil
+    var attachments: [UIImage]? = nil
 
 }
