@@ -331,7 +331,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Ray/Pods-Ray-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Ray/Pods-Ray-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicBlurView/DynamicBlurView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -358,7 +358,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ray/Pods-Ray-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ray/Pods-Ray-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		13435020635B2462E44A3B2A /* [CP] Copy Pods Resources */ = {
@@ -369,7 +369,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Ray/Pods-Ray-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Ray/Pods-Ray-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
@@ -382,7 +382,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ray/Pods-Ray-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ray/Pods-Ray-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E3E17E0761955F8CCB8B5A22 /* [CP] Check Pods Manifest.lock */ = {
