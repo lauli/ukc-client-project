@@ -53,7 +53,7 @@ final class IssueTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? HistoryTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? IssueTableViewCell else {
             print("IssueTableViewController > CellType doesn't match.")
             return tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         }

@@ -17,8 +17,7 @@
 		C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */; };
 		C8788319221E3507001AFF36 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788318221E3507001AFF36 /* User.swift */; };
 		C878831C221E36EA001AFF36 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878831B221E36EA001AFF36 /* Report.swift */; };
-		C878831F221E4752001AFF36 /* HistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878831E221E4752001AFF36 /* HistoryTableViewController.swift */; };
-		C8788321221E534D001AFF36 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788320221E534C001AFF36 /* HistoryTableViewCell.swift */; };
+		C8788321221E534D001AFF36 /* IssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788320221E534C001AFF36 /* IssueTableViewCell.swift */; };
 		C8788323221E54CA001AFF36 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788322221E54CA001AFF36 /* Location.swift */; };
 		C88498B4221C9359000A724A /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B3221C9359000A724A /* ReportViewController.swift */; };
 		C88498B7221C9767000A724A /* ReportSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B6221C9767000A724A /* ReportSummaryViewController.swift */; };
@@ -57,8 +56,7 @@
 		C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachmentsViewController.swift; sourceTree = "<group>"; };
 		C8788318221E3507001AFF36 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C878831B221E36EA001AFF36 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
-		C878831E221E4752001AFF36 /* HistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewController.swift; sourceTree = "<group>"; };
-		C8788320221E534C001AFF36 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		C8788320221E534C001AFF36 /* IssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTableViewCell.swift; sourceTree = "<group>"; };
 		C8788322221E54CA001AFF36 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		C88498B3221C9359000A724A /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		C88498B6221C9767000A724A /* ReportSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSummaryViewController.swift; sourceTree = "<group>"; };
@@ -135,8 +133,7 @@
 		C878831D221E473C001AFF36 /* Histroy */ = {
 			isa = PBXGroup;
 			children = (
-				C878831E221E4752001AFF36 /* HistoryTableViewController.swift */,
-				C8788320221E534C001AFF36 /* HistoryTableViewCell.swift */,
+				C8788320221E534C001AFF36 /* IssueTableViewCell.swift */,
 			);
 			path = Histroy;
 			sourceTree = "<group>";
@@ -417,7 +414,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C878831F221E4752001AFF36 /* HistoryTableViewController.swift in Sources */,
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
 				C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */,
 				C8F6D56E22033A480073488F /* DataHandler.swift in Sources */,
@@ -438,7 +434,7 @@
 				C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */,
 				C8788323221E54CA001AFF36 /* Location.swift in Sources */,
 				C8788315221D1410001AFF36 /* UINavigationBarExtension.swift in Sources */,
-				C8788321221E534D001AFF36 /* HistoryTableViewCell.swift in Sources */,
+				C8788321221E534D001AFF36 /* IssueTableViewCell.swift in Sources */,
 				C8E24822222B8998004EFAF8 /* UIImageView+Extension.swift in Sources */,
 				C8F6D57022033A6B0073488F /* NewsFeedViewController.swift in Sources */,
 				C8A1F18E221CF6DD00806190 /* UITextField+TextViewExtension.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  HistoryTableViewCell.swift
+//  IssueTableViewCell.swift
 //  Ray
 //
 //  Created by Laureen Schausberger on 21.02.19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HistoryTableViewCell: UITableViewCell {
+class IssueTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
