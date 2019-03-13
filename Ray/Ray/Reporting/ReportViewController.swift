@@ -93,6 +93,24 @@ class ReportViewController: TabmanViewController {
         reloadData()
     }
     
+    private func alertIfWeekend() {
+        
+        let today = Date()
+        let calendar = Calendar(identifier: .gregorian)
+        let components = calendar.dateComponents([.weekday], from: today)
+        
+        if components.weekday != 7 && components.weekday != 1 {
+            // not a weekend - return
+            return
+        }
+        
+        let message = "Hi! \n\n I noticed that it's a weekend, so I want to make you aware of the fact that the Estate's office is closed. If you consider your issue an emergency, I recommend reporting it to the Campus Security. \n Campus Security staff are on duty 24 hours per day, 365 days per year and can always be contacted via phone for emergencies: (0122782)3333 and enquiries: (0122782)3300. \n\nIf this isn't an emergency, Estates will be handling your report on Monday. \n\n Have a lovely weekend and stay safe,\n-Ray :)"
+        
+        let alert = UIAlertController(title: "Weekend Report", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 
@@ -138,6 +156,7 @@ extension ReportViewController: ReportPageDelegate {
     func sendReport() {
         // TODO: implement sending to backend
         
+        alertIfWeekend()
         scrollToPage(.first, animated: false)
         viewModel = ReportingViewModel()
         viewControllers = []
