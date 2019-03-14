@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<div id="home"></div>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ray</title>
+    <meta name="description" content="Reporting Ray Website.">
+    <link rel="stylesheet" href="raycss.css">
+</head>
+
+<body>
+
+    <div class="nav">
+        <nav>
+            <li>
+                <div onclick="contactScroll()">Contact Details</div>
+            </li>
+            <li>
+                <div onclick="locationScroll()">Location</div>
+            </li>
+            <li><img onclick="homeScroll()" id="logo" src="images/ray.png" alt="Ray Logo"></li>
+            <li>
+                <div onclick="issueScroll()">Issue</div>
+            </li>
+            <li>
+                <div onclick="attachmentsScroll()">Attachments</div>
+            </li>
+        </nav>
+    </div>
+
+    <div class="content">
+
+        <!--
+            REPORT NUMBER
+        -->
+        <div class="section">
+            <h1 id="reportNumber">Issue Report:</h1>
+        </div>
+
+        <!--
+            ADDED BUTTON
+        -->
+
+        <button id="confirmation" onclick="confirmationMessage()">
+            <h3>Send User Confirmation</h3>
+        </button>
+
+        <!--
+            CONTACT
+        -->
+
+        <div class="section">
+            <div id="contact" style="padding-top: 70px; margin-top: -70px;"></div>
+            <h3>Contact Details</h3>
+
+            <p>
+                <div id="name"><b>Name: </b>Loading...</div>
+            </p>
+
+            <p>
+                <div id="email"><b>Email: </b>Loading...</div>
+            </p>
+            <p>
+                <div id="phone"><b>Phone Number: </b>Loading...</div>
+            </p>
+        </div>
+
+        <!--
+            LOCATION
+        -->
+
+        <div class="section">
+            <div id="location" style="padding-top: 70px; margin-top: -70px;"></div>
+            <h3>Location</h3>
+            <div id="location_content">
+                <p>
+                    <div id="building"><b>Building: </b>Loading...</div>
+                </p>
+                <p>
+                    <div id="floor"><b>Floor: </b>Loading...</div>
+                </p>
+                <p>
+                    <div id="room"><b>Room: </b>Loading...</div>
+                </p>
+            </div>
+        </div>
+
+
+        <!--
+            ISSUE
+        -->
+
+        <div class="section">
+            <div id="issue" style="padding-top: 70px; margin-top: -70px;"></div>
+            <h3>Issue</h3>
+            <p>
+                <div id="natureOfIssue"><b>Nature of Issue: </b>Loading...</div>
+            </p>
+            <p>
+                <div id="description"><b>Description: </b>Loading...</div>
+            </p>
+        </div>
+
+        <!--
+            ATTACHMENTS
+        -->
+
+
+        <div class="section">
+            <div id="attachments" style="padding-top: 70px; margin-top: -70px;"></div>
+
+            <h3>Attachments</h3>
+            <div class="row">
+                <div class="column">
+                    <a href="images/sibson.jpg" download><img class="image-column" alt="Added attachments" src="images/sibson.jpg" /></a>
+                </div>
+                <div class="column">
+                    <a href="images/parkwood-bedroom.jpg" download><img class="image-column" alt="Added attachments" src="images/parkwood-bedroom.jpg" /></a>
+                </div>
+                <div class="column">
+                    <a href="images/templeman.jpg" download><img class="image-column" alt="Added attachments" src="images/templeman.jpg" /></a>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Ray, 2019</p>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+
+</html>
