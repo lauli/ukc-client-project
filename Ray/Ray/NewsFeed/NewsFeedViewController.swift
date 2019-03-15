@@ -12,7 +12,7 @@ class NewsFeedViewController: UITableViewController {
 
     private let reuseIdentifier = "issueCell"
     
-    var viewModel: ProfileViewModel!
+    var viewModel: NewsFeedViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +31,6 @@ class NewsFeedViewController: UITableViewController {
     }
     
     private func setupIssues() {
-        //        if viewModel.user == nil {
-        //            _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-        //                if self.viewModel.user != nil {
-        //                    self.tableView.reloadData()
-        //                    timer.invalidate()
-        //                }
-        //            }
-        //
-        //        }
     }
     
     // MARK: - Table view data source
@@ -49,7 +40,8 @@ class NewsFeedViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+//        return viewModel.sharedIssue?.reports?.count ?? 0
+        return 4
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -24,9 +24,13 @@ final class DataHandler {
     typealias DecodedReports = (Bool, [Report]?) -> ()
     typealias DecodedLocations = (Bool, [Location]?) -> ()
     typealias RetrievedData = (Bool, [String]) -> ()
+    typealias RetrievedIssues = (Bool, Shared?) -> ()
     
     // current user
     var user: User?
+    
+    // shared issues
+    var sharedIssues: Shared?
     
     init() {
         reference = Database.database().reference()
@@ -230,4 +234,64 @@ final class DataHandler {
         }
     }
     
+    func fetchReportedIssues(completion: @escaping RetrievedData) {
+        
+        let issues: [String] = []
+        
+        reference.child("Company").child("University Of Kent").child("Issues").observeSingleEvent(of: .value, with: { result in
+             print(result.childrenCount)
+            for i in 1 ... result.childrenCount{
+                 print(i)
+                let issueID = String(i)
+                self.fetchReportedIssue(issueId: issueID){ success, result in
+                    if success{
+                        completion(true, issues)
+                        
+                    } else {
+                        completion(false, [])
+                    }
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+            completion(false, [])
+        }
+    }
+    
+    func fetchReportedIssue(issueId: String, completion: @escaping RetrievedIssues) {
+        
+        var issues: [String] = []
+        
+        reference.child("Company").child("University Of Kent").child("Issues").child(issueId).observeSingleEvent(of: .value, with: { result in
+            
+            guard let info = result.value as? NSDictionary else {
+                completion(false, nil)
+                return
+            }
+            
+            guard let sharedIssue = info["shared"] as? String else {
+                    completion(false, nil)
+                    return
+            }
+            
+            if sharedIssue == "true" {
+                // only add issues to user, when there are issues
+                issues.append(issueId)
+                self.decodeIssues(ids: issues) { success, result in
+                    if success{
+                        let sharedIssues = Shared(reports: result)
+                        self.sharedIssues = sharedIssues
+                        completion(true, sharedIssues)
+                    } else {
+                        completion(false, nil)
+                    }
+                }
+            }
+            
+            
+        }) { (error) in
+            print(error.localizedDescription)
+            completion(false, nil)
+        }
+    }
 }
