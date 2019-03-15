@@ -156,7 +156,7 @@ final class DataHandler {
     func floorsFor(building: String, completion: @escaping RetrievedData) {
         var floors: [String] = []
         
-        reference.child("Company").child("University Of Kent").child("Building").child(building).observeSingleEvent(of: .value, with: { result in
+        reference.child("Company").child("University Of Kent").child("Building").child(building).child("Floor").observeSingleEvent(of: .value, with: { result in
             let info = result.value as? NSDictionary
             
             guard let allFloors = info?.allKeys as? [String] else {

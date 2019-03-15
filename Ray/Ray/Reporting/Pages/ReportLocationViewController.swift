@@ -74,8 +74,20 @@ class ReportLocationViewController: ReportPageViewController {
     
     @IBAction func nextPage(_ sender: Any) {
         
-        if !containerManual.isHidden {
+        if !containerManual.isHidden, let suggestedVC = suggestedVC {
             
+            if let location = suggestedVC.savedLocation() {
+                viewModel.location = location
+                
+            } else {
+                if viewModel.location == nil {
+                    let alert = UIAlertController(title: "Missing Input", message: "Please make sure to give us all the information we need to handle your report properly (location).", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+            }
+
             
         } else if !containerSaved.isHidden {
             
