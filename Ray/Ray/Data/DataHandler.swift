@@ -24,12 +24,13 @@ final class DataHandler {
     typealias DecodedReports = (Bool, [Report]?) -> ()
     typealias DecodedLocations = (Bool, [Location]?) -> ()
     typealias RetrievedData = (Bool, [String]) -> ()
-    typealias RetrievedIssues = (Bool, Shared?) -> ()
+    typealias RetrievedIssues = (Bool, String) -> ()
+    typealias RetrievedIssue = (Bool, Shared?) -> ()
     
     // current user
     var user: User?
     
-    // shared issues
+    // current user
     var sharedIssues: Shared?
     
     init() {
@@ -234,31 +235,25 @@ final class DataHandler {
         }
     }
     
+    
     func fetchReportedIssues(completion: @escaping RetrievedData) {
-        
-        let issues: [String] = []
-        
+        var issues: [String] = []
         reference.child("Company").child("University Of Kent").child("Issues").observeSingleEvent(of: .value, with: { result in
-             print(result.childrenCount)
-            for i in 1 ... result.childrenCount{
-                 print(i)
-                let issueID = String(i)
-                self.fetchReportedIssue(issueId: issueID){ success, result in
-                    if success{
-                        completion(true, issues)
-                        
-                    } else {
-                        completion(false, [])
-                    }
-                }
+            
+            for child in result.children {
+                let snap = child as! DataSnapshot
+                let key = snap.key
+                issues.append(key)
             }
+            completion(true, issues)
+            
         }) { (error) in
             print(error.localizedDescription)
-            completion(false, [])
+            completion(true, [])
         }
     }
     
-    func fetchReportedIssue(issueId: String, completion: @escaping RetrievedIssues) {
+    func fetchReportedIssue(issueId: String, completion: @escaping RetrievedIssue) {
         
         var issues: [String] = []
         
@@ -280,7 +275,6 @@ final class DataHandler {
                 self.decodeIssues(ids: issues) { success, result in
                     if success{
                         let sharedIssues = Shared(reports: result)
-                        self.sharedIssues = sharedIssues
                         completion(true, sharedIssues)
                     } else {
                         completion(false, nil)
@@ -288,7 +282,8 @@ final class DataHandler {
                 }
             }
             
-            
+            completion(true, self.sharedIssues)
+        
         }) { (error) in
             print(error.localizedDescription)
             completion(false, nil)

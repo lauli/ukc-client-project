@@ -12,7 +12,34 @@ class NewsFeedViewController: UITableViewController {
 
     private let reuseIdentifier = "issueCell"
     
-    var viewModel: NewsFeedViewModel!
+    //var viewModel: NewsFeedViewModel!
+    
+    private(set) var sharedIssue: Shared?
+    var allIssues = [""]
+    
+    
+    func loadIssues(){
+        DataHandler.shared.fetchReportedIssues() { success, issues in
+            if success {
+                self.allIssues = issues
+                for issue in self.allIssues {
+                    DataHandler.shared.fetchReportedIssue(issueId: issue){ success, sharedIssues in
+                        if success {
+                            self.sharedIssue = sharedIssues
+                            print("ahred", sharedIssues)
+                        }
+                        else{
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    
+    func issueForIndex(_ index: Int) -> Report? {
+        return sharedIssue?.reports?[index]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +58,7 @@ class NewsFeedViewController: UITableViewController {
     }
     
     private func setupIssues() {
+        loadIssues()
     }
     
     // MARK: - Table view data source
@@ -40,8 +68,7 @@ class NewsFeedViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return viewModel.sharedIssue?.reports?.count ?? 0
-        return 4
+        return sharedIssue?.reports?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,9 +77,9 @@ class NewsFeedViewController: UITableViewController {
             return tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         }
         
-//        if let report = viewModel.issueForIndex(indexPath.row) {
-//            cell.report = report
-//        }
+        if let report = issueForIndex(indexPath.row) {
+            cell.report = report
+        }
         
         return cell
     }

@@ -10,10 +10,27 @@ import Foundation
 
 final class NewsFeedViewModel {
 private(set) var sharedIssue: Shared?
+var allIssues = [""]
 
     init() {
-        sharedIssue = DataHandler.shared.sharedIssues
-        print(sharedIssue!)
+    }
+    
+    func loadIssues(){
+        
+        print("test")
+//        DataHandler.shared.fetchReportedIssues() { success, issues in
+//            if success {
+//                self.allIssues = issues
+//                for issue in self.allIssues {
+//                    DataHandler.shared.fetchReportedIssue(issueId: issue){ success, sharedIssues in
+//                        if success {
+//                            self.sharedIssue = sharedIssues
+//                        }
+//                    }
+//
+//                }
+//            }
+//        }
     }
     
     
