@@ -13,7 +13,7 @@
         <!--Root View Controller-->
         <scene sceneID="qVT-Yq-fij">
             <objects>
-                <tableViewController id="y1V-wn-HbD" customClass="NewsFeedViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="y1V-wn-HbD" customClass="SharedIssuesTableViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5nF-Yl-VRm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,6 +88,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="HG4-Dh-kOP"/>
+                    <connections>
+                        <outlet property="tableview" destination="5nF-Yl-VRm" id="c8b-iJ-BZe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LA-9F-66Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -106,18 +106,17 @@ final class DataHandler {
         
         for issueId in ids {
             
-            guard let id = issueId as? Int else {
-                continue
-            }
+//            guard let id = issueId as? Int else {
+//                continue
+//            }
             
-            reference.child("Company").child("University Of Kent").child("Issues").child("\(id)").observeSingleEvent(of: .value, with: { result in
+            reference.child("Company").child("University Of Kent").child("Issues").child("\(issueId)").observeSingleEvent(of: .value, with: { result in
                 
                 guard let issue = result.value as? NSDictionary,
                     let report = self.decodeIssue(issue) else {
                         completion(false, nil)
                         return
                 }
-                
                 reports.append(report)
                 
                 if reports.count == ids.count {
