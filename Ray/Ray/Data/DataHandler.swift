@@ -5,7 +5,6 @@
 //  Created by Laureen Schausberger on 31.01.19.
 //  Copyright © 2019 Laureen Schausberger. All rights reserved.
 //
-
 import Foundation
 import Firebase
 
@@ -23,25 +22,27 @@ final class DataHandler {
     // data types
     typealias RetrievedUser = (Bool, User?) -> ()
     typealias DecodedReports = (Bool, [Report]?) -> ()
+    typealias DecodedLocations = (Bool, [Location]?) -> ()
     typealias RetrievedData = (Bool, [String]) -> ()
     
-    // current user 
+    // current user
     var user: User?
     
     init() {
         reference = Database.database().reference()
         
-        fetchUserInformation { success, result in
-            if success, let user = result {
-                self.user = user
-            }
-        }
+        //        fetchUserInformation { success, result in
+        //            if success, let user = result {
+        //                self.user = user
+        //            }
+        //        }
     }
     
-    private func fetchUserInformation(completion: @escaping RetrievedUser) {
+    func fetchUserInformation(completion: @escaping RetrievedUser) {
         
         // TODO: get user id from core data
-        let id = "1"
+        // TODO: make app wait until user is loaded - otherwise login screen
+        let id = "2"
         
         reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).observeSingleEvent(of: .value, with: { result in
             
@@ -50,23 +51,42 @@ final class DataHandler {
                 return
             }
             
-            if let email = info["email"] as? String,
+            guard let email = info["email"] as? String,
                 let name = info["name"] as? String,
-                let phone = info["phone"] as? String,
-            let issueIds = info["issues"] as? [Any] {
+                let phone = info["phone"] as? String else {
+                    completion(false, nil)
+                    return
+            }
+            
+            var locationArray: [Location] = []
+            if let locations = info["saved_locations"] as? [Any] {
                 
+                for item in locations {
+                    guard let location = item as? NSDictionary else {
+                        continue
+                    }
+                    
+                    if let loc = self.decodeLocation(location) {
+                        locationArray.append(loc)
+                    }
+                }
+            }
+            
+            if let issueIds = info["issues"] as? [Any] {
+                // only add issues to user, when there are issues
                 self.decodeIssues(ids: issueIds) { success, result in
                     if success{
-                        let user = User(id: id, name: name, email: email, phone: phone, reports: result)
+                        let user = User(id: id, name: name, email: email, phone: phone,
+                                        reports: result, savedLocations: locationArray)
+                        self.user = user
                         completion(true, user)
+                        
                     } else {
                         completion(false, nil)
                     }
                 }
-                
-            } else {
-                completion(false, nil)
             }
+            
             
         }) { (error) in
             print(error.localizedDescription)
@@ -78,56 +98,67 @@ final class DataHandler {
         var reports: [Report] = []
         
         print(ids)
-
+        
         for issueId in ids {
-
+            
             guard let id = issueId as? Int else {
                 continue
             }
-
+            
             reference.child("Company").child("University Of Kent").child("Issues").child("\(id)").observeSingleEvent(of: .value, with: { result in
-
-                guard let issue = result.value as? NSDictionary else {
-                    completion(false, nil)
-                    return
-                }
-
-                guard let issuetitle = issue["issue_title"] as? String ,
-                    let description = issue["description"] as? String,
-                    let location = issue["location"] as? NSDictionary else {
+                
+                guard let issue = result.value as? NSDictionary,
+                    let report = self.decodeIssue(issue) else {
                         completion(false, nil)
                         return
                 }
                 
-                let loc: Location
-                
-                if let building = location["building"] as? String,
-                    let floor = location["floor"] as? String,
-                    let room = location["room"] as? String {
-
-                    loc = Location(building: building, floor: floor, room: room)
-                    
-                } else if let lat = location["lat"] as? Double,
-                let long = location["long"] as? Double {
-                    loc = Location(building: "Lat: \(lat)", floor: "Long: \(long)", room: "")
-                    
-                } else {
-                    completion(false, nil)
-                    return
-                }
-                
-                reports.append(Report(title: issuetitle, description: description, location: loc))
+                reports.append(report)
                 
                 if reports.count == ids.count {
                     // only end fetching when all issues were fetched
                     completion(true, reports)
                 }
-
+                
             }) { (error) in
                 print(error.localizedDescription)
                 completion(false, nil)
             }
         }
+    }
+    
+    private func decodeIssue(_ issue: NSDictionary) -> Report? {
+        guard let issuetitle = issue["issue_title"] as? String ,
+            let description = issue["description"] as? String,
+            let location = issue["location"] as? NSDictionary else {
+                return nil
+        }
+        
+        guard let loc = decodeLocation(location) else {
+            return nil
+        }
+        
+        return Report(title: issuetitle, description: description, location: loc)
+    }
+    
+    private func decodeLocation(_ location: NSDictionary) -> Location? {
+        let loc: Location
+        
+        if let building = location["building"] as? String,
+            let floor = location["floor"] as? String,
+            let room = location["room"] as? String {
+            
+            loc = Location(building: building, floor: floor, room: room)
+            
+        } else if let lat = location["lat"] as? Double,
+            let long = location["long"] as? Double {
+            loc = Location(building: "\(lat)", floor: "\(long)", room: "")
+            
+        } else {
+            return nil
+        }
+        
+        return loc
     }
     
     func buildings(completion: @escaping RetrievedData){
@@ -140,7 +171,7 @@ final class DataHandler {
                 completion(false, [])
                 return
             }
-
+            
             for building in allBuildings {
                 let buildingName = String(building.lowercased().capitalized)
                 buildings.append(buildingName)
@@ -156,7 +187,7 @@ final class DataHandler {
     func floorsFor(building: String, completion: @escaping RetrievedData) {
         var floors: [String] = []
         
-        reference.child("Company").child("University Of Kent").child("Building").child(building).observeSingleEvent(of: .value, with: { result in
+        reference.child("Company").child("University Of Kent").child("Building").child(building).child("Floor").observeSingleEvent(of: .value, with: { result in
             let info = result.value as? NSDictionary
             
             guard let allFloors = info?.allKeys as? [String] else {

@@ -13,19 +13,73 @@
         <!--Root View Controller-->
         <scene sceneID="qVT-Yq-fij">
             <objects>
-                <tableViewController id="y1V-wn-HbD" sceneMemberID="viewController">
+                <tableViewController id="y1V-wn-HbD" customClass="NewsFeedViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5nF-Yl-VRm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.99337714909999997" green="0.67358642820000003" blue="0.15261980889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="mak-Hc-H8u">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="issueCell" rowHeight="100" id="mak-Hc-H8u" customClass="IssueTableViewCell" customModule="Ray" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mak-Hc-H8u" id="wgt-iN-IRE">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="99.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAK-gB-mwO">
+                                            <rect key="frame" x="20" y="13" width="47" height="57"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEP" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4s-uS-9mr">
+                                            <rect key="frame" x="29" y="59" width="29" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OqS-ou-zbR">
+                                            <rect key="frame" x="82" y="50" width="312" height="29"/>
+                                            <string key="text">Woolf College, FL1, R1.20
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Watersink leaking" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQU-CJ-37j">
+                                            <rect key="frame" x="82" y="22" width="312" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="27" id="Bw8-k6-Wek"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="312" id="V5F-Qb-8oX"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="pQU-CJ-37j" firstAttribute="trailing" secondItem="OqS-ou-zbR" secondAttribute="trailing" id="7bk-lM-EYF"/>
+                                        <constraint firstItem="pQU-CJ-37j" firstAttribute="trailing" secondItem="wgt-iN-IRE" secondAttribute="trailingMargin" id="F8i-0p-Wva"/>
+                                        <constraint firstItem="qAK-gB-mwO" firstAttribute="centerX" secondItem="t4s-uS-9mr" secondAttribute="centerX" id="GkP-3s-Joh"/>
+                                        <constraint firstItem="pQU-CJ-37j" firstAttribute="leading" secondItem="OqS-ou-zbR" secondAttribute="leading" id="OZz-Rt-VdN"/>
+                                        <constraint firstItem="t4s-uS-9mr" firstAttribute="bottom" secondItem="OqS-ou-zbR" secondAttribute="bottom" id="QCs-Sw-eWG"/>
+                                        <constraint firstItem="pQU-CJ-37j" firstAttribute="leading" secondItem="qAK-gB-mwO" secondAttribute="trailing" constant="15" id="YBv-Xr-v0m"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="qAK-gB-mwO" secondAttribute="bottom" constant="19" id="b2q-Tz-OQG"/>
+                                        <constraint firstItem="qAK-gB-mwO" firstAttribute="top" secondItem="wgt-iN-IRE" secondAttribute="topMargin" constant="2" id="c1c-pS-N2C"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="t4s-uS-9mr" secondAttribute="bottom" constant="10" id="gXj-fQ-pEF"/>
+                                        <constraint firstItem="pQU-CJ-37j" firstAttribute="top" secondItem="wgt-iN-IRE" secondAttribute="topMargin" constant="11" id="hbb-Va-fD4"/>
+                                        <constraint firstItem="OqS-ou-zbR" firstAttribute="top" secondItem="pQU-CJ-37j" secondAttribute="bottom" constant="1" id="n0b-3C-Sn4"/>
+                                        <constraint firstItem="t4s-uS-9mr" firstAttribute="top" secondItem="wgt-iN-IRE" secondAttribute="topMargin" constant="48" id="ngB-P6-kcl"/>
+                                        <constraint firstItem="qAK-gB-mwO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wgt-iN-IRE" secondAttribute="leadingMargin" id="sAj-c7-gsp"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dayLabel" destination="qAK-gB-mwO" id="9nT-By-0gR"/>
+                                    <outlet property="infoLabel" destination="OqS-ou-zbR" id="3Kf-bN-Uvr"/>
+                                    <outlet property="monthLabel" destination="t4s-uS-9mr" id="Ns7-Rg-QjT"/>
+                                    <outlet property="titleLabel" destination="pQU-CJ-37j" id="CbS-sp-hwt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -37,7 +91,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LA-9F-66Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270" y="-730"/>
+            <point key="canvasLocation" x="2269.5652173913045" y="-730.43478260869574"/>
         </scene>
         <!--Report View Controller-->
         <scene sceneID="Uyl-kz-dSw">
@@ -170,13 +224,13 @@
                                                         <rect key="frame" x="0.0" y="150" width="350" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I guarantee that have the consent of the person I am reporting for to do so in their name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-1L-dNE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="263.66666666666669" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="305.33333333333331" height="31"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HT-PM-eal">
-                                                                <rect key="frame" x="265.66666666666669" y="0.0" width="86.333333333333314" height="31"/>
+                                                                <rect key="frame" x="307.33333333333331" y="0.0" width="44.666666666666686" height="31"/>
                                                                 <color key="onTintColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <connections>
                                                                     <action selector="consentSwitch:" destination="Xhd-tO-6Wy" eventType="valueChanged" id="WAe-gw-Dpv"/>
@@ -1077,7 +1131,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="350" height="451"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" red="0.99337714910507202" green="0.67358642816543579" blue="0.15261980891227722" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="issueCell" id="jIQ-k8-Roy" customClass="IssueTableViewCell" customModule="Ray" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="350" height="100"/>
@@ -1143,7 +1197,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTf-UJ-ZPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270" y="1346"/>
+            <point key="canvasLocation" x="2269.5652173913045" y="1345.5163043478262"/>
         </scene>
     </scenes>
     <resources>

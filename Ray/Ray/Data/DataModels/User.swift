@@ -15,12 +15,15 @@ final class User {
     let phone: String
     
     var reports: [Report]?
+    var savedLocations: [Location]?
     
-    init(id: String = "", name: String = "", email: String = "", phone: String = "", reports: [Report]? = nil) {
+    init(id: String = "", name: String = "", email: String = "", phone: String = "", reports: [Report]? = nil, savedLocations: [Location]? = nil) {
         self.id = id
         self.name = name
         self.email = email
         self.phone = phone
         self.reports = reports
+        self.savedLocations = savedLocations
     }
+
 }
