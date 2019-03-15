@@ -34,6 +34,13 @@ class UserViewController: UIViewController {
         showDialog()
     }
     
+    @IBAction func doneBtn(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Changes Saved", message: "(Implement saving any changes to details)", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func showDialog(animated: Bool = true) {
         
         let popupVC = PopupViewController(nibName: "PopupViewController", bundle: nil)
@@ -46,7 +53,7 @@ class UserViewController: UIViewController {
                                 
         
         let buttonOne = CancelButton(title: "CANCEL") {
-            //self.label.text = "You cancelled the dialog"
+            
         }
         
       //  let buttonTwo = DefaultButton(title: "SHAKE", dismissOnTap: false) { [weak popup] in

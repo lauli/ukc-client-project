@@ -170,13 +170,13 @@
                                                         <rect key="frame" x="0.0" y="150" width="350" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I guarantee that have the consent of the person I am reporting for to do so in their name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-1L-dNE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="305.33333333333331" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="263.66666666666669" height="31"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HT-PM-eal">
-                                                                <rect key="frame" x="307.33333333333331" y="0.0" width="44.666666666666686" height="31"/>
+                                                                <rect key="frame" x="265.66666666666669" y="0.0" width="86.333333333333314" height="31"/>
                                                                 <color key="onTintColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <connections>
                                                                     <action selector="consentSwitch:" destination="Xhd-tO-6Wy" eventType="valueChanged" id="WAe-gw-Dpv"/>
@@ -534,7 +534,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kcd-tA-DYP"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ukp-hL-lsS"/>
+                    <navigationItem key="navigationItem" id="Ukp-hL-lsS">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="J74-4r-wFL">
+                            <connections>
+                                <action selector="doneBtn:" destination="04r-2M-t5u" id="LHG-9I-zlP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="add" destination="pfS-9c-DYr" id="y7p-iy-Fa2"/>
                         <outlet property="addLocation" destination="PHw-vc-1wT" id="EjV-BF-gaM"/>
