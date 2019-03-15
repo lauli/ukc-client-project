@@ -9,7 +9,7 @@
 import UIKit
 import PopupDialog
 
-class UserViewController: UIViewController, UIPopoverControllerDelegate, UITextFieldDelegate {
+class UserViewController: UIViewController {
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -20,61 +20,46 @@ class UserViewController: UIViewController, UIPopoverControllerDelegate, UITextF
     @IBOutlet weak var ukc: UIButton!
     @IBOutlet weak var add: UIButton!
     
-    @IBOutlet weak var popupViewController: PopupViewController!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
             
         setupLayout()
     }
     
-    func setAlphaOfBackgroundViews(alpha: CGFloat) {
-        let statusBarWindow = UIApplication.shared.value(forKey: "statusBarWindow") as? UIWindow
-        UIView.animate(withDuration: 0.2) {
-            statusBarWindow?.alpha = alpha;
-            self.view.alpha = alpha;
-            self.navigationController?.navigationBar.alpha = alpha;
-        }
-    }
-    
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none
     }
     
-    @IBAction func addLocation(_ sender: UIButton) -> Void {
+    @IBAction func addLocation(_ sender: UIButton) {
         showDialog()
     }
     
-    func showDialog() {
-        let title = "Add a new location"
-        let message = "Saved locations can be used for quick reporting"
+    func showDialog(animated: Bool = true) {
         
-        let popup = PopupDialog(title: title,
-                                message: message,
+        let popupVC = PopupViewController(nibName: "PopupViewController", bundle: nil)
+        
+        let popup = PopupDialog(viewController: popupVC,
                                 buttonAlignment: .horizontal,
-                                transitionStyle: .zoomIn,
+                                transitionStyle: .bounceDown,
                                 tapGestureDismissal: true,
-                                panGestureDismissal: true,
-                                hideStatusBar: true) {
-                                    print("Completed")
-        }
+                                panGestureDismissal: false)
+                                
         
         let buttonOne = CancelButton(title: "CANCEL") {
             //self.label.text = "You cancelled the dialog"
         }
         
-        let buttonTwo = DefaultButton(title: "SHAKE", dismissOnTap: false) { [weak popup] in
-            popup?.shake()
-        }
+      //  let buttonTwo = DefaultButton(title: "SHAKE", dismissOnTap: false) { [weak popup] in
+      //      popup?.shake()
+      //  }
         
         let buttonThree = DefaultButton(title: "OK") {
             
         }
         
-        popup.addButtons([buttonOne, buttonTwo, buttonThree])
+        popup.addButtons([buttonOne, buttonThree])
         
-        self.present(popup, animated: false, completion: nil)
+        self.present(popup, animated: animated, completion: nil)
     }
     
     

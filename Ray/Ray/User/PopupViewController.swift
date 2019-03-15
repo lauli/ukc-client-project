@@ -8,26 +8,36 @@
 
 import UIKit
 
-class PopupViewController: UIView {
+class PopupViewController: UIViewController {
 
-    @IBOutlet var contentView: UIView!
-    @IBOutlet weak var mainLabel: UILabel!
+    @IBOutlet weak var commentField: UITextField!
+    @IBOutlet weak var floorField: UITextField!
+    @IBOutlet weak var roomField: UITextField!
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       commentField.delegate = self
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
+    
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    private func commonInit() {
-        Bundle.main.loadNibNamed("PopupViewController", owner: self, options: nil)
-        addSubview(contentView)
-        contentView.frame = self.bounds
-        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    @objc func endEditing() {
+        view.endEditing(true)
     }
+}
+
+extension PopupViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        endEditing()
+        return true
+    }
+    
 
 }
