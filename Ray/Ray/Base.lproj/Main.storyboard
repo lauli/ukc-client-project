@@ -497,9 +497,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHw-vc-1wT">
-                                <rect key="frame" x="156" y="353" width="102" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHw-vc-1wT">
+                                <rect key="frame" x="34" y="353" width="346" height="30"/>
                                 <state key="normal" title="Add a Location"/>
                                 <connections>
                                     <action selector="addLocation:" destination="04r-2M-t5u" eventType="touchUpInside" id="HBG-Ha-5Aa"/>
@@ -509,13 +508,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="K9v-tI-vIp" firstAttribute="trailing" secondItem="XwZ-2P-oFC" secondAttribute="trailing" id="6XO-Ci-RLD"/>
+                            <constraint firstItem="kcd-tA-DYP" firstAttribute="trailing" secondItem="PHw-vc-1wT" secondAttribute="trailing" constant="34" id="AxR-H8-wel"/>
                             <constraint firstItem="K9v-tI-vIp" firstAttribute="trailing" secondItem="qEC-aU-qtL" secondAttribute="trailing" id="En2-c3-91Y"/>
+                            <constraint firstItem="PHw-vc-1wT" firstAttribute="centerY" secondItem="7Xw-Fu-KO5" secondAttribute="centerY" id="Jbv-7a-d1H"/>
                             <constraint firstItem="pfS-9c-DYr" firstAttribute="leading" secondItem="eeh-DD-TLp" secondAttribute="trailing" constant="99" id="KWJ-ND-b0M"/>
                             <constraint firstItem="K9v-tI-vIp" firstAttribute="leading" secondItem="Lg6-Nq-84G" secondAttribute="leading" id="KZ5-ms-0Ep"/>
                             <constraint firstItem="K9v-tI-vIp" firstAttribute="trailing" secondItem="umz-0y-YIW" secondAttribute="trailing" id="LbF-T3-OfS"/>
                             <constraint firstItem="K9v-tI-vIp" firstAttribute="top" secondItem="dha-8D-Web" secondAttribute="bottom" constant="8" symbolic="YES" id="P6b-5F-vsf"/>
                             <constraint firstItem="umz-0y-YIW" firstAttribute="top" secondItem="qEC-aU-qtL" secondAttribute="bottom" constant="8" id="TC9-jA-1T8"/>
                             <constraint firstItem="K9v-tI-vIp" firstAttribute="leading" secondItem="kcd-tA-DYP" secondAttribute="leading" constant="34" id="Tyx-55-nm4"/>
+                            <constraint firstItem="PHw-vc-1wT" firstAttribute="leading" secondItem="kcd-tA-DYP" secondAttribute="leading" constant="34" id="WFr-pj-0Pl"/>
                             <constraint firstItem="K9v-tI-vIp" firstAttribute="leading" secondItem="XwZ-2P-oFC" secondAttribute="leading" id="X7q-os-6LW"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="top" secondItem="kcd-tA-DYP" secondAttribute="top" constant="12" id="azn-JT-Hvw"/>
                             <constraint firstItem="K9v-tI-vIp" firstAttribute="leading" secondItem="qEC-aU-qtL" secondAttribute="leading" id="bc0-5K-3Ba"/>
@@ -546,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkp-n5-g3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3141" y="728"/>
+            <point key="canvasLocation" x="3140.579710144928" y="727.98913043478262"/>
         </scene>
         <!--Report Issue View Controller-->
         <scene sceneID="c9d-Kf-dqi">
@@ -831,7 +833,6 @@
         <!--Navigation Controller-->
         <scene sceneID="P0j-YV-n9D">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wn6-Yh-rXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="KPK-2d-xCV" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iLL-H8-cFD">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -841,6 +842,7 @@
                         <segue destination="tYe-cG-yFr" kind="relationship" relationship="rootViewController" id="ezV-7D-Qua"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wn6-Yh-rXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4104" y="1229"/>
         </scene>
