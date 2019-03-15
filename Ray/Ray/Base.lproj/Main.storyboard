@@ -232,28 +232,28 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-YU-vKZ" customClass="UIImageView">
                                                         <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="81.666666666666671"/>
-                                                        <color key="backgroundColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="HA7-YU-vKZ" secondAttribute="height" multiplier="1:1" id="DTG-N4-bzL"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3K-aL-UET" customClass="UIImageView">
                                                         <rect key="frame" x="89.666666666666686" y="0.0" width="81.333333333333314" height="81.666666666666671"/>
-                                                        <color key="backgroundColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="W3K-aL-UET" secondAttribute="height" multiplier="1:1" id="klt-Ki-haG"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JLD-q1-fqi" customClass="UIImageView">
                                                         <rect key="frame" x="179" y="0.0" width="81.666666666666686" height="81.666666666666671"/>
-                                                        <color key="backgroundColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="JLD-q1-fqi" secondAttribute="height" multiplier="1:1" id="dDh-pq-0iI"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MUJ-rk-R6D" customClass="UIImageView">
                                                         <rect key="frame" x="268.66666666666669" y="0.0" width="81.333333333333314" height="81.666666666666671"/>
-                                                        <color key="backgroundColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="MUJ-rk-R6D" secondAttribute="height" multiplier="1:1" id="DKR-yt-P7H"/>
                                                         </constraints>
