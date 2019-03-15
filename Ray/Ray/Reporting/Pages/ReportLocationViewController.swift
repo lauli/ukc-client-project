@@ -18,7 +18,7 @@ class ReportLocationViewController: ReportPageViewController {
     @IBOutlet private weak var containerMap: UIView!
     
     private var suggestedVC: SuggestedInputViewController?
-//    private var savedLocationsVC:
+    private var savedLocationsVC: SavedLocationsViewController?
     private var mapVC: MapViewController?
     
     override func viewDidLoad() {
@@ -48,10 +48,13 @@ class ReportLocationViewController: ReportPageViewController {
         if let viewController = segue.destination as? SuggestedInputViewController {
             suggestedVC = viewController
             
+        } else if let viewController = segue.destination as? SavedLocationsViewController {
+            viewController.view.insertSubview(UIView(), at: 0)
+            savedLocationsVC = viewController
+            
         } else if let viewController = segue.destination as? MapViewController {
             mapVC = viewController
         }
-        // TODO: make for saved locations
     }
     
     // MARK: - IBActions
@@ -74,8 +77,20 @@ class ReportLocationViewController: ReportPageViewController {
     
     @IBAction func nextPage(_ sender: Any) {
         
-        if !containerManual.isHidden {
+        if !containerManual.isHidden, let suggestedVC = suggestedVC {
             
+            if let location = suggestedVC.savedLocation() {
+                viewModel.location = location
+                
+            } else {
+                if viewModel.location == nil {
+                    let alert = UIAlertController(title: "Missing Input", message: "Please make sure to give us all the information we need to handle your report properly (location).", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+            }
+
             
         } else if !containerSaved.isHidden {
             

@@ -28,12 +28,10 @@ class ReportIssueViewController: ReportPageViewController {
         prevButton.backgroundColor = .princetonOrange
         prevButton.layer.cornerRadius = 5
         
-//        titleTextField.changeTo(color: .charcoal, placeholderText: "Door not closing")
-//        descriptionTextField.changeTo(color: .charcoal)
-//        descriptionTextField.textContainerInset = UIEdgeInsets(top: 6, left: 4, bottom: 4, right: 4)
-        
         titleTextField.placeholder = "Door not closing"
         descriptionTextField.setupReportDescription()
+        descriptionTextField.changeTo(color: UIColor(white: 0.8, alpha: 1))
+        descriptionTextField.textContainerInset = UIEdgeInsets(top: 6, left: 4, bottom: 4, right: 4)
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
     }
     
@@ -51,7 +49,9 @@ class ReportIssueViewController: ReportPageViewController {
     
     @IBAction func nextPage(_ sender: Any) {
         if !hasUserGivenAllInformation() {
-            // TODO: handle missing input
+            let alert = UIAlertController(title: "Missing Input", message: "Please make sure to give us all the information we need to handle your report properly (title and description).", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         

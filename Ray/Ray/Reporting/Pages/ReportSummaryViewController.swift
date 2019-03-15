@@ -68,9 +68,9 @@ class ReportSummaryViewController: ReportPageViewController {
         viewUserDifferent.isHidden = true
         consentSwitch.onTintColor = .princetonOrange
         consentSwitch.isOn = false
-        differentName.changeTo(color: .charcoal, placeholderText: "Alexander McKenzie")
-        differentPhone.changeTo(color: .charcoal, placeholderText: "+44 7220 2345678")
-        differentEmail.changeTo(color: .charcoal, placeholderText: "acm1234@kent.ac.uk")
+        differentName.placeholder = "Alexander McKenzie"
+        differentPhone.placeholder = "+44 7220 2345678"
+        differentEmail.placeholder = "acm1234@kent.ac.uk"
         
         differentConsentLabel.numberOfLines = 0
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))

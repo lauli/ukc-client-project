@@ -61,7 +61,7 @@ class SuggestedInputViewController: UIViewController, UITextFieldDelegate, UIPic
     }
     
     //Get building floors from firebase for autocomplete
-    func getBuildingFloors(){
+    func getBuildingFloors(completion: @escaping Success){
         floorAutoCompletionPossibilities = [""]
         roomsAutoCompletionPossibilities = [""]
         floorResult = ""
@@ -70,11 +70,12 @@ class SuggestedInputViewController: UIViewController, UITextFieldDelegate, UIPic
         floorTextField.text = ""
         possibleMatches = []
         
-        DataHandler.shared.buildings() { success, floors in
+        DataHandler.shared.floorsFor(building: buildingTextField.text ?? ""){ success, floors in
             if success {
                 self.floorAutoCompletionPossibilities = floors
                 self.floorAutoCompletionPossibilities.sort()
             }
+            completion(success)
         }
     }
     
@@ -85,7 +86,7 @@ class SuggestedInputViewController: UIViewController, UITextFieldDelegate, UIPic
         roomTextField.text = ""
         possibleMatches = []
         
-        DataHandler.shared.buildings() { success, rooms in
+        DataHandler.shared.roomsFor(building: buildingTextField.text ?? "", floor: floorTextField.text?.uppercased() ?? "") { success, rooms in
             if success {
                 self.roomsAutoCompletionPossibilities = rooms
                 self.roomsAutoCompletionPossibilities.sort()
@@ -233,11 +234,16 @@ class SuggestedInputViewController: UIViewController, UITextFieldDelegate, UIPic
         textField.textColor = UIColor.black
         if textField == roomTextField {
             moveCaretToEndOfUserQueryPosition(textField: textField, userQuery: roomResult)
+            
         }
-        else if textField == buildingTextField{
+        else if textField == buildingTextField {
             moveCaretToEndOfUserQueryPosition(textField: textField, userQuery: buildingResult)
             if buildingTextField.text == possibleMatches[0]{
-                getBuildingFloors()
+                getBuildingFloors() { success in
+                    if success {
+                        self.floorTextField.reloadInputViews()
+                    }
+                }
             }
             else {
                 
@@ -284,6 +290,15 @@ class SuggestedInputViewController: UIViewController, UITextFieldDelegate, UIPic
         floorTextField.text = floorAutoCompletionPossibilities[row]
         floorResult = floorTextField.text ?? ""
         getFloorRooms()
-        print(floorResult)
+    }
+    
+    func savedLocation() -> Location? {
+        guard let building = buildingTextField.text, building != "",
+            let floor = floorTextField.text, floor != "",
+            let room = roomTextField.text, room != "" else {
+                return nil
+        }
+        
+        return Location(building: building, floor: floor, room: room)
     }
 }
