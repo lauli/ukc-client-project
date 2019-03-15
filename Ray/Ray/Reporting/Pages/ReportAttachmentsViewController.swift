@@ -136,7 +136,10 @@ class ReportAttachmentsViewController: ReportPageViewController, UIGestureRecogn
     @IBAction func addAttachment(_ sender: Any) {
         
         if alreadyOverFourAttachemnts {
-            // TODO: inform user that they can only upload 4
+            print("too many images saved already")
+            let alert = UIAlertController(title: "Maximum Reached", message: "You have reached the maximum number of attachments. If you would like to change one, please click on the attachment to modify it.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             return
         }
         
@@ -160,10 +163,6 @@ class ReportAttachmentsViewController: ReportPageViewController, UIGestureRecogn
                 self.fourth.image = image
                 self.fourth.maskCircle(anyImage: image)
                 
-            } else {
-                print("too many images saved already")
-                // TODO: make user aware that he/she can only store 4 pics
-                return
             }
             print("IMAGE")
             self.images.append(image)
