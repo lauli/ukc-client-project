@@ -16,18 +16,20 @@ class SharedIssuesTableViewController: UITableViewController {
     @IBOutlet var tableview: UITableView!
     //var viewModel: NewsFeedViewModel!
     
-    //private(set) var sharedIssue: Shared?
+    var i: Int = 0
     
-    var sharedIssue: Shared? {
-        didSet {
-            tableview.reloadData()
-        }
-    }
+//    private(set) var sharedIssue: Shared? {
+//        didSet {
+//            tableview.reloadData()
+//        }
+//    }
+    
+    var Issue = Shared()
     
     var allIssues = [""]
-    
-    func issueForIndex(_ index: Int) -> Report? {
-        return sharedIssue?.reports?[index]
+    var sharedIssue : [Shared] = []
+    func issueForIndex(_ index: Int) -> Shared? {
+        return sharedIssue[index]
     }
     
     override func viewDidLoad() {
@@ -38,7 +40,11 @@ class SharedIssuesTableViewController: UITableViewController {
                 for issue in self.allIssues {
                     DataHandler.shared.fetchReportedIssue(issueId: issue){ success, sharedIssues in
                         if success {
-                            self.sharedIssue = sharedIssues
+                            if sharedIssues != nil{
+                                self.Issue = sharedIssues!
+                                self.sharedIssue.append(self.Issue)
+                                self.tableview.reloadData()
+                            }
                         }
                         else{
                         }
@@ -59,7 +65,6 @@ class SharedIssuesTableViewController: UITableViewController {
         
     }
     
-    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,17 +72,17 @@ class SharedIssuesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sharedIssue?.reports?.count ?? 0
+        return sharedIssue.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? IssueTableViewCell else {
-            print("IssueTableViewController > CellType doesn't match.")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? SharedIssueTableViewCell else {
+            print("SharedIssueTableViewController > CellType doesn't match.")
             return tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         }
         
         if let report = issueForIndex(indexPath.row) {
-            cell.report = report
+            cell.sharedIssue = report
         }
         
         return cell

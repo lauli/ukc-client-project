@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D703EDE223D795200436412 /* SharedIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */; };
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
 		0DA8B2D0223C084A00D30B60 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8B2CF223C084A00D30B60 /* Shared.swift */; };
 		0DA8B2D4223C0C6600D30B60 /* NewsFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8B2D3223C0C6500D30B60 /* NewsFeedViewModel.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueTableViewCell.swift; sourceTree = "<group>"; };
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0DA8B2CF223C084A00D30B60 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		0DA8B2D3223C0C6500D30B60 /* NewsFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewModel.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				C8F6D56F22033A6B0073488F /* NewsFeedViewController.swift */,
 				0DA8B2D3223C0C6500D30B60 /* NewsFeedViewModel.swift */,
 				0DA8B2D5223C3B0800D30B60 /* SharedIssuesTableViewController.swift */,
+				0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			files = (
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
 				C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */,
+				0D703EDE223D795200436412 /* SharedIssueTableViewCell.swift in Sources */,
 				C8F6D56E22033A480073488F /* DataHandler.swift in Sources */,
 				C8F6D57222033A790073488F /* SuggestedInputViewController.swift in Sources */,
 				C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */,
