@@ -12,7 +12,12 @@ class SharedIssuesTableViewController: UITableViewController {
 
     private let reuseIdentifier = "issueCell"
     
-
+    var buildingSearch: String = ""{
+        didSet {
+            getData()
+        }
+    }
+    
     @IBOutlet var tableview: UITableView!
     //var viewModel: NewsFeedViewModel!
     
@@ -35,31 +40,37 @@ class SharedIssuesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
+}
+    
+    func getData(){
         DataHandler.shared.fetchReportedIssues() { success, issues in
             if success {
                 self.allIssues = issues
                 for issue in self.allIssues {
-                    DataHandler.shared.fetchReportedBuildingIssue(issueId: issue, buildingName: "Tyler Court Block C") { success, issues in
+                    DataHandler.shared.fetchReportedBuildingIssue(issueId: issue, buildingName: self.buildingSearch) { success, issues in
                         if success {
                             self.allBuildingIssues = issues
                             for issue in self.allBuildingIssues {
-                    DataHandler.shared.fetchReportedIssue(issueId: issue){ success, sharedIssues in
-                        if success {
-                            if sharedIssues != nil{
-                                self.Issue = sharedIssues!
-                                self.sharedIssue.append(self.Issue)
-                                self.tableview.reloadData()
+                                DataHandler.shared.fetchReportedIssue(issueId: issue){ success, sharedIssues in
+                                    if success {
+                                        if sharedIssues != nil{
+                                            self.Issue = sharedIssues!
+                                            self.sharedIssue.append(self.Issue)
+                                            self.tableview.reloadData()
+                                        }
+                                    }
+                                    else{
+                                    }
+                                }
                             }
-                        }
-                        else{
+                            
                         }
                     }
                 }
-                        
             }
         }
     }
-            }}}
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

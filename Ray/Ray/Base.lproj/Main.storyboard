@@ -10,12 +10,54 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--News Feed View Controller-->
+        <scene sceneID="FG4-JD-BJ9">
+            <objects>
+                <viewController id="k77-2k-bnW" customClass="NewsFeedViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gaz-jG-QL4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BLH-He-o1g">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <connections>
+                                    <segue destination="y1V-wn-HbD" kind="embed" id="aXt-75-zhZ"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BLH-He-o1g" firstAttribute="leading" secondItem="DBJ-PL-hpg" secondAttribute="leading" id="KhV-Ke-nnd"/>
+                            <constraint firstItem="DBJ-PL-hpg" firstAttribute="trailing" secondItem="BLH-He-o1g" secondAttribute="trailing" id="O5J-dF-mXX"/>
+                            <constraint firstItem="DBJ-PL-hpg" firstAttribute="bottom" secondItem="BLH-He-o1g" secondAttribute="bottom" id="co5-RN-r7J"/>
+                            <constraint firstItem="BLH-He-o1g" firstAttribute="top" secondItem="DBJ-PL-hpg" secondAttribute="top" id="zX4-iu-lcr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DBJ-PL-hpg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rkh-Zs-wQh">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building" textAlignment="center" minimumFontSize="17" id="G22-PR-ksk">
+                            <rect key="frame" x="70" y="7" width="274" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="buildingSearchField" destination="G22-PR-ksk" id="SJa-vz-CPl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8eh-QM-ShK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2269.5652173913045" y="-730.43478260869574"/>
+        </scene>
         <!--Shared Issues Table View Controller-->
         <scene sceneID="qVT-Yq-fij">
             <objects>
                 <tableViewController id="y1V-wn-HbD" customClass="SharedIssuesTableViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5nF-Yl-VRm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="567"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="0.99337714909999997" green="0.67358642820000003" blue="0.15261980889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -89,41 +131,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <outlet property="delegate" destination="y1V-wn-HbD" id="YbO-af-On9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="HG4-Dh-kOP"/>
+                    <navigationItem key="navigationItem" id="HG4-Dh-kOP">
+                        <nil key="title"/>
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building" textAlignment="center" minimumFontSize="17" id="4br-mn-bf2">
+                            <rect key="frame" x="170.66666666666666" y="7" width="73" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="buildingSearchField:" destination="taQ-eq-r9i" eventType="editingDidEnd" id="FXv-u6-Gq8"/>
+                            </connections>
+                        </textField>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="5nF-Yl-VRm" id="c8b-iJ-BZe"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LA-9F-66Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="taQ-eq-r9i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3116" y="-730"/>
-        </scene>
-        <!--Select Building View Controller-->
-        <scene sceneID="ccj-sD-L8I">
-            <objects>
-                <viewController id="T1o-gf-yXC" customClass="SelectBuildingViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="9uL-J3-48y">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ayZ-VW-HpN">
-                                <rect key="frame" x="0.0" y="120" width="414" height="567"/>
-                                <connections>
-                                    <segue destination="y1V-wn-HbD" kind="embed" id="gri-X6-Ui7"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ayZ-VW-HpN" firstAttribute="bottom" secondItem="SA4-Wb-std" secondAttribute="bottom" id="zSi-Jz-a8s"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="SA4-Wb-std"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vNh-cC-oaz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ySs-Px-ySi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2269.5652173913045" y="-730.43478260869574"/>
+            <point key="canvasLocation" x="3039" y="-730"/>
         </scene>
         <!--Report View Controller-->
         <scene sceneID="Uyl-kz-dSw">
@@ -256,13 +284,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <rect key="frame" x="0.0" y="150" width="350" height="31"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I guarantee that have the consent of the person I am reporting for to do so in their name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-1L-dNE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="305.33333333333331" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="263.66666666666669" height="31"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HT-PM-eal">
-                                                                <rect key="frame" x="307.33333333333331" y="0.0" width="44.666666666666686" height="31"/>
+                                                                <rect key="frame" x="265.66666666666669" y="0.0" width="86.333333333333314" height="31"/>
                                                                 <color key="onTintColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <connections>
                                                                     <action selector="consentSwitch:" destination="Xhd-tO-6Wy" eventType="valueChanged" id="WAe-gw-Dpv"/>
@@ -454,7 +482,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="T1o-gf-yXC" kind="relationship" relationship="rootViewController" id="4Fx-w9-n9v"/>
+                        <segue destination="k77-2k-bnW" kind="relationship" relationship="rootViewController" id="R66-7i-95s"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TC-cQ-HXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
