@@ -8,42 +8,58 @@
 
 import UIKit
 
-class SharedIssuesTableViewController: UITableViewController {
+class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate  {
 
+    @IBOutlet weak var buildingSearchField: UITextField!
     private let reuseIdentifier = "issueCell"
     
-    var buildingSearch: String = ""{
-        didSet {
-            getData()
-        }
-    }
-    
     @IBOutlet var tableview: UITableView!
-    //var viewModel: NewsFeedViewModel!
-    
-    var i: Int = 0
-    
-//    private(set) var sharedIssue: Shared? {
-//        didSet {
-//            tableview.reloadData()
-//        }
-//    }
-    
+
     var Issue = Shared()
-    
     var allIssues = [""]
     var allBuildingIssues = [""]
     var sharedIssue : [Shared] = []
     func issueForIndex(_ index: Int) -> Shared? {
         return sharedIssue[index]
     }
+    var buildingAutoCompletionPossibilities = [""] // array for database building info
+    var autoCompleteCharacterCount = 0
+    var timer = Timer() //for checking autocomplete possibilities update
+    var autoCompleteResult = ""
+    var buildingSearch: String = ""{
+        didSet{
+            print(buildingSearch)
+            getData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getData()
-}
+        
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        
+        buildingSearchField.inputView =  pickerView
+        getBuildingNames()
+        
+        //init toolbar
+        let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
+        //create left side empty space so that done button set on right side
+        let flexSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
+        let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+        toolbar.setItems([flexSpace, doneBtn], animated: false)
+        toolbar.sizeToFit()
+        //setting toolbar as inputAccessoryView
+        self.buildingSearchField.inputAccessoryView = toolbar
+    }
+    @objc func doneButtonAction() {
+        self.view.endEditing(true)
+    }
+    
     
     func getData(){
+        sharedIssue.removeAll()
         DataHandler.shared.fetchReportedIssues() { success, issues in
             if success {
                 self.allIssues = issues
@@ -60,11 +76,8 @@ class SharedIssuesTableViewController: UITableViewController {
                                             self.tableview.reloadData()
                                         }
                                     }
-                                    else{
-                                    }
                                 }
                             }
-                            
                         }
                     }
                 }
@@ -82,8 +95,6 @@ class SharedIssuesTableViewController: UITableViewController {
         self.navigationController?.navigationBar.tintColor = .princetonOrange
         
     }
-    
-    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -104,6 +115,43 @@ class SharedIssuesTableViewController: UITableViewController {
         }
         
         return cell
+    }
+
+    
+    
+    //Get building names from firebase for autocomplete
+    func getBuildingNames(){
+        buildingAutoCompletionPossibilities = [""]
+        buildingSearchField.text = ""
+        
+        DataHandler.shared.buildings() { success, buildings in
+            if success {
+                self.buildingAutoCompletionPossibilities = buildings
+                self.buildingAutoCompletionPossibilities.sort()
+            }
+        }
+    }
+    
+    // Sets number of columns in picker view
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // Sets the number of rows in the picker view
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return buildingAutoCompletionPossibilities.count
+    }
+    
+    // This function sets the text of the picker view to the content of the "salutations" array
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return buildingAutoCompletionPossibilities[row]
+    }
+    
+    // When user selects an option, this function will set the text of the text field to reflect
+    // the selected option.
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        buildingSearchField.text = buildingAutoCompletionPossibilities[row]
+        buildingSearch = buildingSearchField.text!
     }
 
 }

@@ -17,9 +17,11 @@ class NewsFeedViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     var timer = Timer() //for checking autocomplete possibilities update
     var autoCompleteResult = ""
     
-    var issueTable: SharedIssuesTableViewController?
+    var issueTable: SharedIssuesTableViewController!
     
     override func viewDidLoad() {
+        self.issueTable = SharedIssuesTableViewController()
+        
         super.viewDidLoad()
         
         let pickerView = UIPickerView()
@@ -41,7 +43,7 @@ class NewsFeedViewController: UIViewController, UITextFieldDelegate, UIPickerVie
             }
         }
     }
-    
+ 
     // Sets number of columns in picker view
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -61,8 +63,8 @@ class NewsFeedViewController: UIViewController, UITextFieldDelegate, UIPickerVie
     // the selected option.
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         buildingSearchField.text = buildingAutoCompletionPossibilities[row]
-        issueTable!.buildingSearch = buildingAutoCompletionPossibilities[row]
-        issueTable!.getData()
+        issueTable.buildingSearch = buildingAutoCompletionPossibilities[row]
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "reload"), object: nil)
     }
 
 }
