@@ -12,6 +12,7 @@
 		0DA8B2D0223C084A00D30B60 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8B2CF223C084A00D30B60 /* Shared.swift */; };
 		0DA8B2D4223C0C6600D30B60 /* NewsFeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8B2D3223C0C6500D30B60 /* NewsFeedViewModel.swift */; };
 		0DA8B2D6223C3B0800D30B60 /* SharedIssuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8B2D5223C3B0800D30B60 /* SharedIssuesTableViewController.swift */; };
+		0DC2DA13223E8414005BE33F /* SelectBuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DC2DA12223E8413005BE33F /* SelectBuildingViewController.swift */; };
 		C03794390B0D2CB7E07D8DA5 /* Pods_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */; };
 		C808A3582236A2EF0092DF8B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808A3572236A2EE0092DF8B /* UserViewController.swift */; };
 		C81EDF052238800200AA108E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81EDF042238800200AA108E /* ProfileViewController.swift */; };
@@ -53,6 +54,7 @@
 		0DA8B2CF223C084A00D30B60 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		0DA8B2D3223C0C6500D30B60 /* NewsFeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewModel.swift; sourceTree = "<group>"; };
 		0DA8B2D5223C3B0800D30B60 /* SharedIssuesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssuesTableViewController.swift; sourceTree = "<group>"; };
+		0DC2DA12223E8413005BE33F /* SelectBuildingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectBuildingViewController.swift; sourceTree = "<group>"; };
 		17A071A28074DEA3B42C3274 /* Pods-Ray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.debug.xcconfig"; sourceTree = "<group>"; };
 		2E88815C68888ABE541D3D18 /* Pods-Ray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.release.xcconfig"; sourceTree = "<group>"; };
 		738044AA222892B10065D3AA /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				0DA8B2D3223C0C6500D30B60 /* NewsFeedViewModel.swift */,
 				0DA8B2D5223C3B0800D30B60 /* SharedIssuesTableViewController.swift */,
 				0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */,
+				0DC2DA12223E8413005BE33F /* SelectBuildingViewController.swift */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */,
 				C8E2481E222B55F3004EFAF8 /* MapViewController.swift in Sources */,
 				C88498B7221C9767000A724A /* ReportSummaryViewController.swift in Sources */,
+				0DC2DA13223E8414005BE33F /* SelectBuildingViewController.swift in Sources */,
 				C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */,
 				0DA8B2D4223C0C6600D30B60 /* NewsFeedViewModel.swift in Sources */,
 				0DA8B2D0223C084A00D30B60 /* Shared.swift in Sources */,

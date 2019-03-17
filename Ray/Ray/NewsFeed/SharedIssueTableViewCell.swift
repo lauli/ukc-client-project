@@ -38,12 +38,12 @@ class SharedIssueTableViewCell: UITableViewCell {
     }
     
     private func updateLabels() {
-        dayLabel.text = "17"
-        monthLabel.text = "SEP"
-        titleLabel.text = sharedIssue?.reports?[0].title
+        dayLabel.text = sharedIssue?.reports?[0].day ?? ""
+        monthLabel.text = sharedIssue?.reports?[0].month.uppercased() ?? ""
+        titleLabel.text = sharedIssue?.reports?[0].title ?? ""
         
         let location = sharedIssue?.reports?[0].location.toString() ?? ""
-        let description = sharedIssue?.reports?[0].description ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+        let description = sharedIssue?.reports?[0].description ?? ""
         infoLabel.text = location + "\n" + description
     }
 

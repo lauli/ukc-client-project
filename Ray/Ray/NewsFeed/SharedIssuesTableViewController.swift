@@ -27,6 +27,7 @@ class SharedIssuesTableViewController: UITableViewController {
     var Issue = Shared()
     
     var allIssues = [""]
+    var allBuildingIssues = [""]
     var sharedIssue : [Shared] = []
     func issueForIndex(_ index: Int) -> Shared? {
         return sharedIssue[index]
@@ -38,6 +39,10 @@ class SharedIssuesTableViewController: UITableViewController {
             if success {
                 self.allIssues = issues
                 for issue in self.allIssues {
+                    DataHandler.shared.fetchReportedBuildingIssue(issueId: issue, buildingName: "Tyler Court Block C") { success, issues in
+                        if success {
+                            self.allBuildingIssues = issues
+                            for issue in self.allBuildingIssues {
                     DataHandler.shared.fetchReportedIssue(issueId: issue){ success, sharedIssues in
                         if success {
                             if sharedIssues != nil{
@@ -50,9 +55,11 @@ class SharedIssuesTableViewController: UITableViewController {
                         }
                     }
                 }
+                        
             }
         }
     }
+            }}}
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -72,7 +79,7 @@ class SharedIssuesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sharedIssue.count ?? 0
+        return sharedIssue.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

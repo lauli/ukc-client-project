@@ -24,7 +24,6 @@ final class DataHandler {
     typealias DecodedReports = (Bool, [Report]?) -> ()
     typealias DecodedLocations = (Bool, [Location]?) -> ()
     typealias RetrievedData = (Bool, [String]) -> ()
-    typealias RetrievedIssues = (Bool, String) -> ()
     typealias RetrievedIssue = (Bool, Shared?) -> ()
     
     // current user
@@ -134,6 +133,8 @@ final class DataHandler {
     private func decodeIssue(_ issue: NSDictionary) -> Report? {
         guard let issuetitle = issue["issue_title"] as? String ,
             let description = issue["description"] as? String,
+            let day = issue["day"] as? String,
+            let month = issue["month"] as? String,
             let location = issue["location"] as? NSDictionary else {
                 return nil
         }
@@ -142,7 +143,7 @@ final class DataHandler {
             return nil
         }
         
-        return Report(title: issuetitle, description: description, location: loc)
+        return Report(title: issuetitle, description: description, day: day, month: month, location: loc)
     }
     
     private func decodeLocation(_ location: NSDictionary) -> Location? {
@@ -288,4 +289,33 @@ final class DataHandler {
             completion(false, nil)
         }
     }
+    
+    func fetchReportedBuildingIssue(issueId: String, buildingName: String, completion: @escaping RetrievedData) {
+        
+        var issues: [String] = []
+        
+        reference.child("Company").child("University Of Kent").child("Issues").child(issueId).child("location").observeSingleEvent(of: .value, with: { result in
+            
+            guard let info = result.value as? NSDictionary else {
+                completion(false, [])
+                return
+            }
+            
+            guard let building = info["building"] as? String else {
+                completion(false, [])
+                return
+            }
+            
+            if building == buildingName {
+                // only add issues to user, when there are issues
+                issues.append(issueId)
+            }
+            completion(true, issues)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+            completion(false, [])
+        }
+    }
+    
 }
