@@ -12,9 +12,10 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
 
     @IBOutlet weak var buildingSearchField: UITextField!
     private let reuseIdentifier = "issueCell"
-    
+    let spinner = UIActivityIndicatorView(style: .whiteLarge)
     @IBOutlet var tableview: UITableView!
 
+    private(set) var user: User?
     var Issue = Shared()
     var allIssues = [""]
     var allBuildingIssues = [""]
@@ -33,9 +34,20 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
         }
     }
     
+    var titleText: String?
+    var locationText: String?
+    var dateText: String?
+    var monthText: String?
+    var descriptionText: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData()
+        spinner.color = .princetonOrange
+        spinner.startAnimating()
+        tableView.backgroundView = spinner
+        
+        user = DataHandler.shared.user
+        getUserInfo()
         
         let pickerView = UIPickerView()
         pickerView.delegate = self
@@ -46,20 +58,32 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
         //init toolbar
         let toolbar:UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0,  width: self.view.frame.size.width, height: 30))
         //create left side empty space so that done button set on right side
-        let flexSpace = UIBarButtonItem(barButtonSystemItem:    .flexibleSpace, target: nil, action: nil)
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+        doneBtn.tintColor = .princetonOrange
         toolbar.setItems([flexSpace, doneBtn], animated: false)
         toolbar.sizeToFit()
         //setting toolbar as inputAccessoryView
         self.buildingSearchField.inputAccessoryView = toolbar
     }
+    
+    func getUserInfo(){
+        DataHandler.shared.fetchUserInformation() { success, _ in
+            if success {
+                self.spinner.stopAnimating()
+                self.buildingSearch = self.user?.savedLocations?[0].building ?? ""
+                self.buildingSearchField.text = self.buildingSearch
+            }
+        }
+    }
     @objc func doneButtonAction() {
-        self.view.endEditing(true)
+        self.buildingSearchField.endEditing(true)
     }
     
     
     func getData(){
         sharedIssue.removeAll()
+        self.spinner.startAnimating()
         DataHandler.shared.fetchReportedIssues() { success, issues in
             if success {
                 self.allIssues = issues
@@ -74,6 +98,8 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
                                             self.Issue = sharedIssues!
                                             self.sharedIssue.append(self.Issue)
                                             self.tableview.reloadData()
+                                            self.spinner.stopAnimating()
+                                            self.buildingSearchField.endEditing(true)
                                         }
                                     }
                                 }
@@ -116,7 +142,33 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Get Cell Label
+        let indexPath = tableView.indexPathForSelectedRow!
+        let currentCell = tableView.cellForRow(at: indexPath)! as! SharedIssueTableViewCell
 
+        titleText = currentCell.titleLabel.text
+        locationText = currentCell.locationText
+        dateText = currentCell.dayLabel.text
+        monthText = currentCell.monthLabel.text
+        descriptionText = currentCell.descriptionText
+        
+        performSegue(withIdentifier: "sharedIssue", sender: self)
+    }
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "sharedIssue") {
+            
+            let vc = segue.destination as? SharedIssueDetailViewController
+            vc?.date = dateText
+            vc?.month = monthText
+            vc?.titleText = titleText
+            vc?.descriptionText = descriptionText
+            vc?.location = locationText
+        }
+    }
     
     
     //Get building names from firebase for autocomplete

@@ -92,10 +92,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     <navigationItem key="navigationItem" id="HG4-Dh-kOP">
                         <nil key="title"/>
                         <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building" textAlignment="center" minimumFontSize="17" id="4br-mn-bf2">
-                            <rect key="frame" x="85" y="7" width="244" height="30"/>
+                            <rect key="frame" x="64" y="7" width="286" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <action selector="buildingSearchField:" destination="taQ-eq-r9i" eventType="editingDidEnd" id="FXv-u6-Gq8"/>
@@ -105,12 +105,102 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     <connections>
                         <outlet property="buildingSearchField" destination="4br-mn-bf2" id="aaK-mY-pqS"/>
                         <outlet property="tableview" destination="5nF-Yl-VRm" id="iAQ-7g-DoU"/>
+                        <segue destination="V1g-F7-Ssl" kind="show" identifier="sharedIssue" id="5W4-LX-3jw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LA-9F-66Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="taQ-eq-r9i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2269.5652173913045" y="-730.43478260869574"/>
+        </scene>
+        <!--Shared Issue Detail View Controller-->
+        <scene sceneID="a6K-k9-Jaw">
+            <objects>
+                <viewController id="V1g-F7-Ssl" customClass="SharedIssueDetailViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uh1-kD-bYK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFH-CB-wVq">
+                                <rect key="frame" x="16" y="80" width="58" height="57"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEP" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Td-Sd-lIV">
+                                <rect key="frame" x="16" y="131" width="58" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="58" id="ybc-Pd-c6R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Watersink leaking" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VqM-eH-zPh">
+                                <rect key="frame" x="82" y="92" width="316" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="s0x-UO-LjF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="750" text="Desc" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBq-Bc-TfB">
+                                <rect key="frame" x="16" y="166" width="382" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Woolf College, FL1, R1.20" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e23-JV-cSa">
+                                <rect key="frame" x="82" y="134" width="316" height="14.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="316" id="OYk-O4-UBN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kR7-br-M4Y">
+                                <rect key="frame" x="32" y="158" width="350" height="1"/>
+                                <color key="backgroundColor" red="0.94494295120000005" green="0.61238664389999997" blue="0.24310453239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="VCA-7x-tQF"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tBq-Bc-TfB" firstAttribute="leading" secondItem="TxM-Tx-Fq5" secondAttribute="leading" constant="16" id="1A3-iF-AcK"/>
+                            <constraint firstItem="qFH-CB-wVq" firstAttribute="top" secondItem="TxM-Tx-Fq5" secondAttribute="top" constant="16" id="86P-QN-mFg"/>
+                            <constraint firstItem="TxM-Tx-Fq5" firstAttribute="trailing" secondItem="VqM-eH-zPh" secondAttribute="trailing" constant="16" id="9uZ-Uw-8hk"/>
+                            <constraint firstItem="0Td-Sd-lIV" firstAttribute="top" secondItem="TxM-Tx-Fq5" secondAttribute="top" constant="67" id="A2w-5I-Yyc"/>
+                            <constraint firstItem="kR7-br-M4Y" firstAttribute="top" secondItem="0Td-Sd-lIV" secondAttribute="bottom" constant="8" symbolic="YES" id="CT9-sf-1jS"/>
+                            <constraint firstItem="TxM-Tx-Fq5" firstAttribute="trailing" secondItem="tBq-Bc-TfB" secondAttribute="trailing" constant="16" id="FX3-hl-F6v"/>
+                            <constraint firstItem="TxM-Tx-Fq5" firstAttribute="trailing" secondItem="e23-JV-cSa" secondAttribute="trailing" constant="16" id="Hb7-hT-2ag"/>
+                            <constraint firstItem="TxM-Tx-Fq5" firstAttribute="bottom" secondItem="tBq-Bc-TfB" secondAttribute="bottom" priority="250" constant="16" id="IqZ-Ax-N8p"/>
+                            <constraint firstItem="kR7-br-M4Y" firstAttribute="leading" secondItem="Uh1-kD-bYK" secondAttribute="leadingMargin" constant="12" id="OCj-9K-ckr"/>
+                            <constraint firstItem="e23-JV-cSa" firstAttribute="top" secondItem="VqM-eH-zPh" secondAttribute="bottom" constant="18" id="XCQ-r2-zKF"/>
+                            <constraint firstItem="VqM-eH-zPh" firstAttribute="top" secondItem="TxM-Tx-Fq5" secondAttribute="top" constant="28" id="Xbr-Vu-KoK"/>
+                            <constraint firstItem="kR7-br-M4Y" firstAttribute="centerX" secondItem="Uh1-kD-bYK" secondAttribute="centerX" id="aJZ-Qu-NSg"/>
+                            <constraint firstItem="tBq-Bc-TfB" firstAttribute="top" secondItem="0Td-Sd-lIV" secondAttribute="bottom" constant="16" id="f1s-Ow-N1f"/>
+                            <constraint firstItem="VqM-eH-zPh" firstAttribute="leading" secondItem="qFH-CB-wVq" secondAttribute="trailing" constant="8" id="hdg-kQ-yfW"/>
+                            <constraint firstItem="0Td-Sd-lIV" firstAttribute="leading" secondItem="TxM-Tx-Fq5" secondAttribute="leading" constant="16" id="lZv-Ya-7mD"/>
+                            <constraint firstItem="e23-JV-cSa" firstAttribute="leading" secondItem="0Td-Sd-lIV" secondAttribute="trailing" constant="8" id="qlU-jh-tME"/>
+                            <constraint firstItem="qFH-CB-wVq" firstAttribute="leading" secondItem="TxM-Tx-Fq5" secondAttribute="leading" constant="16" id="vLn-8U-yW5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TxM-Tx-Fq5"/>
+                    </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="qFH-CB-wVq" id="4gn-Ex-YOV"/>
+                        <outlet property="descriptionLabel" destination="tBq-Bc-TfB" id="BDq-n4-J3a"/>
+                        <outlet property="locationLabel" destination="e23-JV-cSa" id="6fa-8t-KPm"/>
+                        <outlet property="monthLabel" destination="0Td-Sd-lIV" id="rMY-kL-aZR"/>
+                        <outlet property="titleLabel" destination="VqM-eH-zPh" id="LMZ-Pr-W9V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fH4-gW-DMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3140.579710144928" y="-730.43478260869574"/>
         </scene>
         <!--Report View Controller-->
         <scene sceneID="Uyl-kz-dSw">
@@ -431,11 +521,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </objects>
             <point key="canvasLocation" x="1046" y="20"/>
         </scene>
-        <!--Item-->
+        <!--News-->
         <scene sceneID="uZQ-Zv-6nL">
             <objects>
                 <navigationController id="vwx-2K-29X" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="first" id="fkT-OL-NXu"/>
+                    <tabBarItem key="tabBarItem" title="News" image="news" id="fkT-OL-NXu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gR8-0U-GDm">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -451,7 +541,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="TabBarController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="49e-Tb-3d3" customClass="TabBarController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -1220,7 +1310,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="news" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>

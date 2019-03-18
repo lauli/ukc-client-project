@@ -15,6 +15,8 @@ class SharedIssueTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
     
+    var locationText: String?
+    var descriptionText: String?
     var sharedIssue: Shared? {
         didSet {
             updateLabels()
@@ -42,9 +44,9 @@ class SharedIssueTableViewCell: UITableViewCell {
         monthLabel.text = sharedIssue?.reports?[0].month.uppercased() ?? ""
         titleLabel.text = sharedIssue?.reports?[0].title ?? ""
         
-        let location = sharedIssue?.reports?[0].location.toString() ?? ""
-        let description = sharedIssue?.reports?[0].description ?? ""
-        infoLabel.text = location + "\n" + description
+        locationText = sharedIssue?.reports?[0].location.toString() ?? ""
+        descriptionText = sharedIssue?.reports?[0].description ?? ""
+        infoLabel.text = locationText! + "\n" + descriptionText!
     }
 
 }

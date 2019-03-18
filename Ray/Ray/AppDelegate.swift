@@ -22,6 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         GMSServices.provideAPIKey("AIzaSyCwW2A6ZbBrbEJ_CmhAIDo6UWBBe9e3rlU")
+        // TODO: make with loginpage
+        
+        DataHandler.shared.fetchUserInformation() { success, _ in
+            
+            guard success else {
+                print("AppDelegate > Couldn't retrieve/find user.")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                self.window?.rootViewController = navigationController
+            }
+        }
         return true
     }
 
