@@ -26,9 +26,9 @@ class UserViewController: UIViewController {
         setupLayout()
     }
     
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return UIModalPresentationStyle.none
-    }
+   // func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+   //     return UIModalPresentationStyle.none
+   // }
     
     @IBAction func addLocation(_ sender: UIButton) {
         showDialog()
@@ -37,11 +37,12 @@ class UserViewController: UIViewController {
     @IBAction func doneBtn(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Changes Saved", message: "(Implement saving any changes to details)", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true, completion: nil)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+        
     }
     
-    func showDialog(animated: Bool = true) {
+    func showDialog(animated: Bool = false) {
         
         let popupVC = PopupViewController(nibName: "PopupViewController", bundle: nil)
         
@@ -56,16 +57,13 @@ class UserViewController: UIViewController {
             
         }
         
-      //  let buttonTwo = DefaultButton(title: "SHAKE", dismissOnTap: false) { [weak popup] in
-      //      popup?.shake()
-      //  }
-        
         let buttonThree = DefaultButton(title: "OK") {
+            
+            // if fields are empty, popup?.shake()
             
         }
         
         popup.addButtons([buttonOne, buttonThree])
-        
         self.present(popup, animated: animated, completion: nil)
     }
     

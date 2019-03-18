@@ -28,9 +28,6 @@
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Nb-vu-ob0">
                             <rect key="frame" x="32" y="42" width="232" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="232" id="g5y-bQ-ULr"/>
-                            </constraints>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -58,7 +55,6 @@
                     <constraints>
                         <constraint firstItem="6r4-YD-Fgh" firstAttribute="leading" secondItem="4kc-s1-rfZ" secondAttribute="leading" constant="78" id="3NW-bV-dlL"/>
                         <constraint firstAttribute="trailing" secondItem="flp-vO-VC1" secondAttribute="trailing" constant="32" id="5kv-1z-Jvt"/>
-                        <constraint firstItem="9Nb-vu-ob0" firstAttribute="leading" secondItem="4kc-s1-rfZ" secondAttribute="leading" constant="32" id="BvR-ak-sa8"/>
                         <constraint firstAttribute="trailing" secondItem="6r4-YD-Fgh" secondAttribute="trailing" constant="73" id="IjZ-Q4-riU"/>
                         <constraint firstAttribute="trailing" secondItem="blP-cc-Cof" secondAttribute="trailing" constant="32" id="Lot-1t-idP"/>
                         <constraint firstItem="flp-vO-VC1" firstAttribute="leading" secondItem="4kc-s1-rfZ" secondAttribute="leading" constant="32" id="NMu-I5-KS5"/>
@@ -66,6 +62,7 @@
                         <constraint firstItem="6r4-YD-Fgh" firstAttribute="top" secondItem="4kc-s1-rfZ" secondAttribute="top" constant="13" id="TDQ-VA-XBk"/>
                         <constraint firstItem="blP-cc-Cof" firstAttribute="leading" secondItem="4kc-s1-rfZ" secondAttribute="leading" constant="32" id="UKc-jK-TXG"/>
                         <constraint firstAttribute="bottom" secondItem="blP-cc-Cof" secondAttribute="bottom" constant="24" id="bLD-1f-70L"/>
+                        <constraint firstItem="9Nb-vu-ob0" firstAttribute="leading" secondItem="4kc-s1-rfZ" secondAttribute="leading" constant="32" id="fRl-qb-yoL"/>
                         <constraint firstItem="flp-vO-VC1" firstAttribute="top" secondItem="9Nb-vu-ob0" secondAttribute="bottom" constant="13" id="jnC-9Q-Ym5"/>
                         <constraint firstItem="blP-cc-Cof" firstAttribute="top" secondItem="flp-vO-VC1" secondAttribute="bottom" constant="13" id="nhe-Lr-hka"/>
                         <constraint firstAttribute="trailing" secondItem="9Nb-vu-ob0" secondAttribute="trailing" constant="32" id="s08-CI-n5b"/>

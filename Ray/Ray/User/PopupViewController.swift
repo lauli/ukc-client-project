@@ -17,10 +17,11 @@ class PopupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // commentField.delegate = self
-       // floorField.delegate = self
-       // roomField.delegate = self
-       // view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
+        commentField.delegate = self
+        self.commentField.becomeFirstResponder()
+        floorField.delegate = self
+        roomField.delegate = self
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
     
     }
     
@@ -29,15 +30,15 @@ class PopupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-  //  @objc func endEditing() {
-  //      view.endEditing(true)
-  //  }
+   @objc func endEditing() {
+        view.endEditing(true)
+    }
 }
 
-//extension PopupViewController: UITextFieldDelegate {
+ extension PopupViewController: UITextFieldDelegate {
     
-   // func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-   //     endEditing()
-   //     return true
-   // }
-//}
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        endEditing()
+        return true
+    }
+ }
