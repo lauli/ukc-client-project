@@ -26,10 +26,6 @@ class UserViewController: UIViewController {
         setupLayout()
     }
     
-   // func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-   //     return UIModalPresentationStyle.none
-   // }
-    
     @IBAction func addLocation(_ sender: UIButton) {
         showDialog()
     }
@@ -48,7 +44,6 @@ class UserViewController: UIViewController {
         
         let popup = PopupDialog(viewController: popupVC,
                                 buttonAlignment: .horizontal,
-                                transitionStyle: .bounceDown,
                                 tapGestureDismissal: true,
                                 panGestureDismissal: false)
                                 
@@ -57,9 +52,14 @@ class UserViewController: UIViewController {
             
         }
         
-        let buttonThree = DefaultButton(title: "OK") {
+        let buttonThree = DefaultButton(title: "OK", dismissOnTap: false) { [weak popup] in
             
-            // if fields are empty, popup?.shake()
+            if (popupVC.commentField.text?.isEmpty)! || (popupVC.floorField.text?.isEmpty)! || (popupVC.roomField.text?.isEmpty)! {
+                popup?.shake()
+            }
+            else {
+                popupVC.dismiss(animated: true, completion: nil)
+            }
             
         }
         

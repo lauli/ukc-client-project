@@ -9,6 +9,7 @@
 import UIKit
 
 class PopupViewController: UIViewController {
+    
 
     @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var floorField: UITextField!
@@ -19,6 +20,8 @@ class PopupViewController: UIViewController {
         
         commentField.delegate = self
         self.commentField.becomeFirstResponder()
+        
+        
         floorField.delegate = self
         roomField.delegate = self
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
