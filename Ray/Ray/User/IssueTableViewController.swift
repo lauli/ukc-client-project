@@ -5,7 +5,6 @@
 //  Created by Laureen Schausberger on 13.03.19.
 //  Copyright © 2019 Laureen Schausberger. All rights reserved.
 //
-
 import UIKit
 
 final class IssueTableViewController: UITableViewController {
@@ -31,15 +30,15 @@ final class IssueTableViewController: UITableViewController {
     }
     
     private func setupIssues() {
-//        if viewModel.user == nil {
-//            _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-//                if self.viewModel.user != nil {
-//                    self.tableView.reloadData()
-//                    timer.invalidate()
-//                }
-//            }
-//            
-//        }
+        //        if viewModel.user == nil {
+        //            _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
+        //                if self.viewModel.user != nil {
+        //                    self.tableView.reloadData()
+        //                    timer.invalidate()
+        //                }
+        //            }
+        //
+        //        }
     }
     
     // MARK: - Table view data source

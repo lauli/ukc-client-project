@@ -25,4 +25,5 @@ final class User {
         self.reports = reports
         self.savedLocations = savedLocations
     }
+
 }

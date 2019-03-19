@@ -12,12 +12,16 @@ final class Report {
     let id: String
     let title: String
     let description: String
+    let day: String
+    let month: String
     let location: Location
     
-    init(id: String = "", title: String, description: String, location: Location) {
+    init(id: String = "", title: String, description: String, day: String, month: String, location: Location) {
         self.id = id
         self.title = title
         self.description = description
+        self.day = day
+        self.month = month
         self.location = location
     }
 }
