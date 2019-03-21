@@ -7,7 +7,10 @@
 //
 
 import UIKit
+
 import Firebase
+import GoogleMaps
+import PopupDialog
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        GMSServices.provideAPIKey("AIzaSyCwW2A6ZbBrbEJ_CmhAIDo6UWBBe9e3rlU")
+
+        // TODO: make with loginpage
+        
+        DataHandler.shared.fetchUserInformation() { success, _ in
+            
+            guard success else {
+                print("AppDelegate > Couldn't retrieve/find user.")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                self.window?.rootViewController = navigationController
+            }
+        }
         return true
     }
 
