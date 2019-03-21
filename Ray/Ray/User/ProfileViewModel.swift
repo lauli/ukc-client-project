@@ -23,6 +23,10 @@ final class ProfileViewModel {
     
     // MARK: - UILabel Texts
     
+    func id() -> String {
+        return user?.id ?? ""
+    }
+    
     func nameText() -> String {
         return user?.name ?? ""
     }

@@ -13,6 +13,11 @@ import Firebase
 class UserViewController: UIViewController, UITextFieldDelegate {
     
     var viewModel: ProfileViewModel!
+    var data: DataHandler!
+    private var reference: DatabaseReference!
+    
+    
+    typealias RetrievedUser = (Bool, User?) -> ()
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -33,14 +38,32 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func doneBtn(_ sender: UIBarButtonItem) {
+        var newName: String = ""
+        
+        //create alert
         let alert = UIAlertController(title: "Changes Saved", message: "(Implement saving any changes to details)", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        self.present(alert, animated: true)
+        //create OK button
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            
+        }))
+        
+        //present the dialog
+        self.present(alert, animated: false, completion: nil)
+        
+        //data.fetchUserInformation(completion: RetrievedUser)
+        // if text has been changed, override it as the current value
+        if (nameField.text == viewModel.nameText()) {
+            //do nothing
+        } else {
+            newName = nameField.text ?? ""
+            self.reference.child("Company/University Of Kent/User/User ID/\(viewModel.id)/name").setValue(newName)
+            alert.message = "NAME CHANGED"
+        }
+        
+        // reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).observeSingleEvent(of: .value, with: { result in
         
     }
-    
-    
     
     private func showDialog(animated: Bool = false) {
         
