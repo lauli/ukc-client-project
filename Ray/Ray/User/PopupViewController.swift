@@ -14,14 +14,13 @@ class PopupViewController: UIViewController {
     @IBOutlet weak var commentField: UITextField!
     @IBOutlet weak var floorField: UITextField!
     @IBOutlet weak var roomField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         commentField.delegate = self
         self.commentField.becomeFirstResponder()
-        
-        
         floorField.delegate = self
         roomField.delegate = self
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))

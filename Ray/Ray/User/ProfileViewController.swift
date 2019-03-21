@@ -27,10 +27,15 @@ final class ProfileViewController: UIViewController {
     // MARK: - Overrides
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        viewModel = ProfileViewModel()
+        if viewModel == nil {
+            viewModel = ProfileViewModel()
+        }
         
         if let tableViewController = segue.destination as? IssueTableViewController {
             tableViewController.viewModel = viewModel
+            
+        } else if let userViewController = segue.destination as? UserViewController {
+            userViewController.viewModel = viewModel
         }
     }
     

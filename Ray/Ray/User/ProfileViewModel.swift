@@ -27,6 +27,14 @@ final class ProfileViewModel {
         return user?.name ?? ""
     }
     
+    func emailText() -> String {
+        return user?.email ?? ""
+    }
+    
+    func phoneText() -> String {
+        return user?.phone ?? ""
+    }
+    
     func contactDetailsText() -> String {
         return (user?.email ?? "") + ", " + (user?.phone ?? "")
     }

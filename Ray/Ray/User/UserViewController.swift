@@ -8,8 +8,11 @@
 
 import UIKit
 import PopupDialog
+import Firebase
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, UITextFieldDelegate {
+    
+    var viewModel: ProfileViewModel!
     
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -22,7 +25,6 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
         setupLayout()
     }
     
@@ -38,7 +40,9 @@ class UserViewController: UIViewController {
         
     }
     
-    func showDialog(animated: Bool = false) {
+    
+    
+    private func showDialog(animated: Bool = false) {
         
         let popupVC = PopupViewController(nibName: "PopupViewController", bundle: nil)
         
@@ -49,18 +53,23 @@ class UserViewController: UIViewController {
                                 
         
         let buttonOne = CancelButton(title: "CANCEL") {
-            
         }
         
         let buttonThree = DefaultButton(title: "OK", dismissOnTap: false) { [weak popup] in
             
             if (popupVC.commentField.text?.isEmpty)! || (popupVC.floorField.text?.isEmpty)! || (popupVC.roomField.text?.isEmpty)! {
+                
                 popup?.shake()
+                
+                popupVC.errorLabel.text = "None of the fields can be empty. Please enter all location data."
+                popupVC.errorLabel.textColor = UIColor.red
+                popupVC.errorLabel.numberOfLines = 2
             }
             else {
-                popupVC.dismiss(animated: true, completion: nil)
+                popup?.dismiss()
+               // self.view.window!.rootViewController!.dismiss(animated: true, completion: nil)
+               // popupVC.dismiss(animated: true, completion: nil)
             }
-            
         }
         
         popup.addButtons([buttonOne, buttonThree])
@@ -74,6 +83,8 @@ class UserViewController: UIViewController {
     }
     
     private func setupLayout() {
+        updateLabels()
+        
         addLocation.backgroundColor = .princetonOrange
         addLocation.layer.cornerRadius = 5
         
@@ -85,5 +96,11 @@ class UserViewController: UIViewController {
         add.layer.borderColor = UIColor.weldonBlue.cgColor
         add.layer.borderWidth = 1
         add.layer.cornerRadius = 20
+    }
+    
+    private func updateLabels() {
+        nameField.text = viewModel.nameText()
+        emailField.text = viewModel.emailText()
+        noField.text = viewModel.phoneText()
     }
 }

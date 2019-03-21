@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopupViewController" customModule="Ray" customModuleProvider="target">
             <connections>
                 <outlet property="commentField" destination="9Nb-vu-ob0" id="dpv-zl-i0U"/>
+                <outlet property="errorLabel" destination="gXC-t1-Ry9" id="3l8-HR-bEm"/>
                 <outlet property="floorField" destination="flp-vO-VC1" id="pVC-md-ZBB"/>
                 <outlet property="roomField" destination="blP-cc-Cof" id="bQ0-rA-thS"/>
                 <outlet property="view" destination="bsu-W5-E3J" id="9s0-0e-5qV"/>
@@ -50,18 +51,28 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXC-t1-Ry9">
+                            <rect key="frame" x="32" y="166" width="232" height="8"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                            <color key="textColor" red="1" green="0.19775088239334704" blue="0.14908762320768953" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="6r4-YD-Fgh" firstAttribute="leading" secondItem="4kc-s1-rfZ" secondAttribute="leading" constant="78" id="3NW-bV-dlL"/>
                         <constraint firstAttribute="trailing" secondItem="flp-vO-VC1" secondAttribute="trailing" constant="32" id="5kv-1z-Jvt"/>
+                        <constraint firstItem="gXC-t1-Ry9" firstAttribute="top" secondItem="blP-cc-Cof" secondAttribute="bottom" constant="8" symbolic="YES" id="8G0-h9-GX1"/>
                         <constraint firstAttribute="trailing" secondItem="6r4-YD-Fgh" secondAttribute="trailing" constant="73" id="IjZ-Q4-riU"/>
                         <constraint firstAttribute="trailing" secondItem="blP-cc-Cof" secondAttribute="trailing" constant="32" id="Lot-1t-idP"/>
                         <constraint firstItem="flp-vO-VC1" firstAttribute="leading" secondItem="4kc-s1-rfZ" secondAttribute="leading" constant="32" id="NMu-I5-KS5"/>
                         <constraint firstItem="9Nb-vu-ob0" firstAttribute="top" secondItem="6r4-YD-Fgh" secondAttribute="bottom" constant="8" id="PYE-8Q-LsS"/>
                         <constraint firstItem="6r4-YD-Fgh" firstAttribute="top" secondItem="4kc-s1-rfZ" secondAttribute="top" constant="13" id="TDQ-VA-XBk"/>
                         <constraint firstItem="blP-cc-Cof" firstAttribute="leading" secondItem="4kc-s1-rfZ" secondAttribute="leading" constant="32" id="UKc-jK-TXG"/>
+                        <constraint firstItem="gXC-t1-Ry9" firstAttribute="leading" secondItem="4kc-s1-rfZ" secondAttribute="leading" constant="32" id="XMl-Ld-lbu"/>
                         <constraint firstAttribute="bottom" secondItem="blP-cc-Cof" secondAttribute="bottom" constant="24" id="bLD-1f-70L"/>
+                        <constraint firstAttribute="trailing" secondItem="gXC-t1-Ry9" secondAttribute="trailing" constant="32" id="bSM-oY-i7v"/>
+                        <constraint firstItem="gXC-t1-Ry9" firstAttribute="bottom" secondItem="4kc-s1-rfZ" secondAttribute="bottomMargin" id="bv7-Wq-krg"/>
                         <constraint firstItem="9Nb-vu-ob0" firstAttribute="leading" secondItem="4kc-s1-rfZ" secondAttribute="leading" constant="32" id="fRl-qb-yoL"/>
                         <constraint firstItem="flp-vO-VC1" firstAttribute="top" secondItem="9Nb-vu-ob0" secondAttribute="bottom" constant="13" id="jnC-9Q-Ym5"/>
                         <constraint firstItem="blP-cc-Cof" firstAttribute="top" secondItem="flp-vO-VC1" secondAttribute="bottom" constant="13" id="nhe-Lr-hka"/>
