@@ -14,16 +14,18 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     var viewModel: ProfileViewModel!
     var data: DataHandler!
-    private var reference: DatabaseReference!
+    
+    //Database ref
+    var reference: DatabaseReference!
     
     
     typealias RetrievedUser = (Bool, User?) -> ()
     
+    // TextFields
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var noField: UITextField!
-    @IBOutlet weak var chooseLocation: UITextField!
-    @IBOutlet weak var chosenLocation: UITextField!
+    @IBOutlet weak var phoneField: UITextField!
+    // Buttons
     @IBOutlet weak var addLocation: UIButton!
     @IBOutlet weak var ukc: UIButton!
     @IBOutlet weak var add: UIButton!
@@ -31,6 +33,9 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        
+        //Database ref
+        reference = Database.database().reference()
     }
     
     @IBAction func addLocation(_ sender: UIButton) {
@@ -38,7 +43,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func doneBtn(_ sender: UIBarButtonItem) {
-        var newName: String = ""
         
         //create alert
         let alert = UIAlertController(title: "Changes Saved", message: "(Implement saving any changes to details)", preferredStyle: .alert)
@@ -51,18 +55,15 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         //present the dialog
         self.present(alert, animated: false, completion: nil)
         
-        //data.fetchUserInformation(completion: RetrievedUser)
         // if text has been changed, override it as the current value
+        let id = "2"
         if (nameField.text == viewModel.nameText()) {
-            //do nothing
+            alert.message = "No changes have been made"
         } else {
-            newName = nameField.text ?? ""
-            self.reference.child("Company/University Of Kent/User/User ID/\(viewModel.id)/name").setValue(newName)
-            alert.message = "NAME CHANGED"
+            let newName = nameField.text
+            reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).child("name").setValue(newName)
+            alert.message = "Details sucessfully changed"
         }
-        
-        // reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).observeSingleEvent(of: .value, with: { result in
-        
     }
     
     private func showDialog(animated: Bool = false) {
@@ -124,6 +125,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     private func updateLabels() {
         nameField.text = viewModel.nameText()
         emailField.text = viewModel.emailText()
-        noField.text = viewModel.phoneText()
+        phoneField.text = viewModel.phoneText()
     }
 }
