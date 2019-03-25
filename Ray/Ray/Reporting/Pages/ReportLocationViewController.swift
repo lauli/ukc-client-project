@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReportLocationViewController: ReportPageViewController {
+final class ReportLocationViewController: ReportPageViewController {
 
     @IBOutlet private weak var nextButton: UIButton!
     @IBOutlet private weak var segment: UISegmentedControl!
@@ -18,7 +18,7 @@ class ReportLocationViewController: ReportPageViewController {
     @IBOutlet private weak var containerMap: UIView!
     
     private var suggestedVC: SuggestedInputViewController?
-    private var savedLocationsVC: SavedLocationsViewController?
+    private var savedLocationsVC: SavedLocationsTableViewController?
     private var mapVC: MapViewController?
     
     override func viewDidLoad() {
@@ -48,8 +48,7 @@ class ReportLocationViewController: ReportPageViewController {
         if let viewController = segue.destination as? SuggestedInputViewController {
             suggestedVC = viewController
             
-        } else if let viewController = segue.destination as? SavedLocationsViewController {
-            viewController.view.insertSubview(UIView(), at: 0)
+        } else if let viewController = segue.destination as? SavedLocationsTableViewController {
             savedLocationsVC = viewController
             
         } else if let viewController = segue.destination as? MapViewController {
@@ -92,7 +91,17 @@ class ReportLocationViewController: ReportPageViewController {
             }
 
             
-        } else if !containerSaved.isHidden {
+        } else if !containerSaved.isHidden, let savedVC = savedLocationsVC {
+            if let savedLocation = savedVC.selectedLocation {
+                viewModel.location = savedLocation
+            } else {
+                if viewModel.location == nil {
+                    let alert = UIAlertController(title: "Missing Input", message: "Please make sure to select one of your saved locations.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                    return
+                }
+            }
             
         } else if !containerMap.isHidden, let mapVC = mapVC {
             let (lat, long) = mapVC.savedLocation()
