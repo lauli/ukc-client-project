@@ -59,7 +59,6 @@ class MapViewController: UIViewController {
         marker.icon = GMSMarker.markerImage(with: .princetonOrange)
         marker.map = mapView
         selectedPlace = position
-        marker.accessibilityIdentifier = "Location Marker"
     }
     
     private func setupWithPermission() {
