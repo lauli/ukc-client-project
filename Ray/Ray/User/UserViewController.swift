@@ -18,7 +18,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     //Database ref
     var reference: DatabaseReference!
     
-    
     typealias RetrievedUser = (Bool, User?) -> ()
     
     // TextFields
@@ -43,27 +42,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func doneBtn(_ sender: UIBarButtonItem) {
-        
-        //create alert
-        let alert = UIAlertController(title: "Changes Saved", message: "(Implement saving any changes to details)", preferredStyle: .alert)
-        
-        //create OK button
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            
-        }))
-        
-        //present the dialog
-        self.present(alert, animated: false, completion: nil)
-        
-        // if text has been changed, override it as the current value
-        let id = "2"
-        if (nameField.text == viewModel.nameText()) {
-            alert.message = "No changes have been made"
-        } else {
-            let newName = nameField.text
-            reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).child("name").setValue(newName)
-            alert.message = "Details sucessfully changed"
-        }
+        updateDetails()
     }
     
     private func showDialog(animated: Bool = false) {
@@ -74,20 +53,18 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                                 buttonAlignment: .horizontal,
                                 tapGestureDismissal: true,
                                 panGestureDismissal: false)
-                                
         
-        let buttonOne = CancelButton(title: "CANCEL") {
+        let cancel = CancelButton(title: "CANCEL") {
         }
         
-        let buttonThree = DefaultButton(title: "OK", dismissOnTap: false) { [weak popup] in
+        let confirm = DefaultButton(title: "OK", dismissOnTap: false) { [weak popup] in
             
             if (popupVC.commentField.text?.isEmpty)! || (popupVC.floorField.text?.isEmpty)! || (popupVC.roomField.text?.isEmpty)! {
-                
                 popup?.shake()
                 
                 popupVC.errorLabel.text = "None of the fields can be empty. Please enter all location data."
                 popupVC.errorLabel.textColor = UIColor.red
-                popupVC.errorLabel.numberOfLines = 2
+                popupVC.errorLabel.numberOfLines = 1
             }
             else {
                 popup?.dismiss()
@@ -95,11 +72,9 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                // popupVC.dismiss(animated: true, completion: nil)
             }
         }
-        
-        popup.addButtons([buttonOne, buttonThree])
+        popup.addButtons([cancel, confirm])
         self.present(popup, animated: animated, completion: nil)
     }
-    
     
     @IBAction func ukcBtn(_ sender: UIButton) {
     }
@@ -127,4 +102,42 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         emailField.text = viewModel.emailText()
         phoneField.text = viewModel.phoneText()
     }
+    
+    private func updateDetails() {
+        //create alert
+        let alert = UIAlertController(title: "Changes Saved", message: "(Implement saving any changes to details)", preferredStyle: .alert)
+        
+        //create OK button
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+        }))
+        
+        //present the dialog
+        self.present(alert, animated: false, completion: nil)
+        
+        // if text has been changed, override it as the current value
+        let id = "2"
+        //check name field
+        if (nameField.text == viewModel.nameText()) {
+            alert.message = "No changes have been made"
+        } else {
+            let newName = nameField.text
+            reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).child("name").setValue(newName)
+            alert.message = "Details sucessfully changed"
+        }
+        if (emailField.text == viewModel.emailText()) {
+            alert.message = "No changes have been made"
+        } else {
+            let newEmail = emailField.text
+            reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).child("email").setValue(newEmail)
+            alert.message = "Details sucessfully changed"
+        }
+        if (phoneField.text == viewModel.phoneText()) {
+            alert.message = "No changes have been made"
+        } else {
+            let newPhone = phoneField.text
+            //override value if different
+            reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).child("phone").setValue(newPhone)
+            alert.message = "Details sucessfully changed"
+        }
+}
 }
