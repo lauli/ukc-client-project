@@ -155,7 +155,7 @@ extension ReportViewController: ReportPageDelegate {
     
     func sendReport() {
         // TODO: implement sending to backend
-        uploadImage()
+        uploadImage() // TODO: Change filename to be reportid+"_"+String(i)+".jpg" instead of uploaded, cant do until report is sent to backend
         alertIfWeekend()
         scrollToPage(.first, animated: false)
         viewModel = ReportingViewModel()
@@ -167,55 +167,71 @@ extension ReportViewController: ReportPageDelegate {
     }
     
     func uploadImage() {
-        let url = URL(string: "YOUR SERVER URL");
-        let request = NSMutableURLRequest(url: url!);
-        request.httpMethod = "POST"
-        let boundary = "Boundary-\(NSUUID().uuidString)"
-        request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         
-        var retreivedImage: UIImage? = nil
-        //Get image
-        do {
-            let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-            let readData = try Data(contentsOf: URL(string: "file://\(documentsPath)/myImage")!)
-            retreivedImage = UIImage(data: readData)
-            addProfilePicView.setImage(retreivedImage, for: .normal)
-        }
-        catch {
-            print("Error while opening image")
+        guard let images = viewModel.attachments else {
             return
         }
         
-        let imageData = UIImageJPEGRepresentation(retreivedImage!, 1)
-        if (imageData == nil) {
-            print("UIImageJPEGRepresentation return nil")
-            return
+        for i in 1...images.count {
+            
+            let image = images[i-1]
+        
+            let filename = "uploaded_"+String(i)+".jpg"
+            
+            // generate boundary string using a unique per-app string
+            let boundary = UUID().uuidString
+            
+            let config = URLSessionConfiguration.default
+            let session = URLSession(configuration: config)
+            
+            // Set the URLRequest to POST and to the specified URL
+            var urlRequest = URLRequest(url: URL(string: "http://www.efstratiou.info/projects/rayproject/Website/upload.php")!)
+            urlRequest.httpMethod = "POST"
+            
+            // Set Content-Type Header to multipart/form-data, this is equivalent to submitting form data with file upload in a web browser
+            // And the boundary is also set here
+            urlRequest.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+            
+            var data = Data()
+            
+            // Add the image data to the raw http request data
+            data.append("\r\n--\(boundary)\r\n".data(using: .utf8)!)
+            data.append("Content-Disposition: form-data; name=\"fileToUpload\"; filename=\"\(filename)\"\r\n".data(using: .utf8)!)
+            data.append("Content-Type: image/jpeg\r\n\r\n".data(using: .utf8)!)
+            data.append(image.jpegData(compressionQuality: 0.5)!)
+            
+            // End the raw http request data, note that there is 2 extra dash ("-") at the end, this is to indicate the end of the data
+            // According to the HTTP 1.1 specification https://tools.ietf.org/html/rfc7230
+            data.append("\r\n--\(boundary)--\r\n".data(using: .utf8)!)
+            
+            // Send a POST request to the URL, with the data we created earlier
+            session.uploadTask(with: urlRequest, from: data, completionHandler: { responseData, response, error in
+                
+                if(error != nil){
+                    print("error in uploading")
+                    print("\(error!.localizedDescription)")
+                }
+                
+                guard let responseData = responseData else {
+                    print("no response data")
+                    return
+                }
+                
+                if let responseString = String(data: responseData, encoding: .utf8) {
+                    print("uploaded to: \(responseString)")
+                }
+            }).resume()
         }
-        
-        let body = NSMutableData()
-        body.append(NSString(format: "\r\n--%@\r\n", boundary).data(using: String.Encoding.utf8.rawValue)!)
-        body.append(NSString(format: "Content-Disposition: form-data; name=\"api_token\"\r\n\r\n" as NSString).data(using: String.Encoding.utf8.rawValue)!)
-        body.append(NSString(format: (UserDefaults.standard.string(forKey: "api_token")! as NSString)).data(using: String.Encoding.utf8.rawValue)!)
-        body.append(NSString(format: "\r\n--%@\r\n", boundary).data(using: String.Encoding.utf8.rawValue)!)
-        body.append(NSString(format:"Content-Disposition: form-data; name=\"profile_img\"; filename=\"testfromios.jpg\"\r\n").data(using: String.Encoding.utf8.rawValue)!)
-        body.append(NSString(format: "Content-Type: application/octet-stream\r\n\r\n").data(using: String.Encoding.utf8.rawValue)!)
-        body.append(imageData!)
-        body.append(NSString(format: "\r\n--%@\r\n", boundary).data(using: String.Encoding.utf8.rawValue)!)
-        
-        request.httpBody = body as Data
-        
-        let task =  URLSession.shared.dataTask(with: request as URLRequest, completionHandler: {
-            (data, response, error) -> Void in
-            if let data = data {
-                // do what you want in success case
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        })
-        
-        task.resume()
     }
     
+}
+
+extension NSMutableData {
+    
+    func appendString(string: String) {
+        let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true)
+        append(data!)
+    }
 }
 
 protocol ReportPageDelegate: class {
