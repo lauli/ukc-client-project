@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         GMSServices.provideAPIKey("AIzaSyCwW2A6ZbBrbEJ_CmhAIDo6UWBBe9e3rlU")
-        
+
         // TODO: make with loginpage
         
         DataHandler.shared.fetchUserInformation() { success, _ in

@@ -5,7 +5,6 @@
 //  Created by Laureen Schausberger on 13.03.19.
 //  Copyright © 2019 Laureen Schausberger. All rights reserved.
 //
-
 import UIKit
 
 final class ProfileViewController: UIViewController {
@@ -72,5 +71,4 @@ final class ProfileViewController: UIViewController {
         descriptionLabel.numberOfLines = 0
         descriptionLabel.lineBreakMode = .byWordWrapping
     }
-
 }
