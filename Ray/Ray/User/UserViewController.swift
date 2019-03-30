@@ -28,6 +28,8 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var ukc: UIButton!
     @IBOutlet weak var add: UIButton!
     
+    @IBOutlet weak var savedLocationsContainer: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
