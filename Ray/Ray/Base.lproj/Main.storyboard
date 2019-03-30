@@ -665,12 +665,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <segue destination="NUr-yl-86u" kind="embed" id="Clm-Hv-bRR"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEn-ui-gwq">
+                                <rect key="frame" x="32" y="207" width="350" height="1"/>
+                                <color key="backgroundColor" red="0.94494295120000005" green="0.61238664389999997" blue="0.24310453239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="UEn-ui-gwq" secondAttribute="trailing" constant="12" id="0hn-hl-El7"/>
                             <constraint firstItem="kcd-tA-DYP" firstAttribute="trailing" secondItem="PHw-vc-1wT" secondAttribute="trailing" constant="34" id="2Kc-k3-sGv"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="trailing" secondItem="umz-0y-YIW" secondAttribute="trailing" id="6HV-wN-B6m"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="leading" secondItem="PHw-vc-1wT" secondAttribute="leading" id="7LQ-vg-13f"/>
+                            <constraint firstItem="UEn-ui-gwq" firstAttribute="leading" secondItem="7Xw-Fu-KO5" secondAttribute="leadingMargin" constant="12" id="AUz-OI-dp6"/>
                             <constraint firstItem="PHw-vc-1wT" firstAttribute="leading" secondItem="kcd-tA-DYP" secondAttribute="leading" constant="34" id="Ejl-QQ-yv4"/>
                             <constraint firstItem="qEC-aU-qtL" firstAttribute="top" secondItem="XwZ-2P-oFC" secondAttribute="bottom" constant="9" id="FEG-wL-YlM"/>
                             <constraint firstItem="pfS-9c-DYr" firstAttribute="leading" secondItem="eeh-DD-TLp" secondAttribute="trailing" constant="99" id="KWJ-ND-b0M"/>
@@ -685,7 +691,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <constraint firstItem="eeh-DD-TLp" firstAttribute="leading" secondItem="kcd-tA-DYP" secondAttribute="leading" constant="42" id="foV-IT-WDN"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="leading" secondItem="umz-0y-YIW" secondAttribute="leading" id="l9e-dB-b4S"/>
                             <constraint firstItem="umz-0y-YIW" firstAttribute="top" secondItem="qEC-aU-qtL" secondAttribute="bottom" constant="8" symbolic="YES" id="qB7-mq-bU2"/>
+                            <constraint firstItem="2bT-N0-SPD" firstAttribute="top" secondItem="UEn-ui-gwq" secondAttribute="bottom" constant="8" symbolic="YES" id="uno-LQ-flm"/>
                             <constraint firstItem="2bT-N0-SPD" firstAttribute="leading" secondItem="umz-0y-YIW" secondAttribute="leading" id="vrb-QL-ZmT"/>
+                            <constraint firstItem="UEn-ui-gwq" firstAttribute="top" secondItem="umz-0y-YIW" secondAttribute="bottom" constant="24" id="yCf-fE-FJA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kcd-tA-DYP"/>
                     </view>
@@ -935,16 +943,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             <objects>
                 <tableViewController id="NUr-yl-86u" customClass="SavedLocationsTableViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="omd-Ek-n74">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="475.66666666666663"/>
+                        <rect key="frame" x="0.0" y="0.0" width="346" height="253"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedLocationsCell" rowHeight="135" id="Z1R-Lv-0Fw" customClass="SavedLocationViewCell" customModule="Ray" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="350" height="135"/>
+                                <rect key="frame" x="0.0" y="28" width="346" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z1R-Lv-0Fw" id="de6-U2-izY">
-                                    <rect key="frame" x="0.0" y="0.0" width="350" height="134.66666666666666"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="346" height="134.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="135" translatesAutoresizingMaskIntoConstraints="NO" id="xH6-Nl-eli">
@@ -1401,6 +1409,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <image name="news" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="b2I-CZ-XwB"/>
+        <segue reference="Clm-Hv-bRR"/>
     </inferredMetricsTieBreakers>
 </document>

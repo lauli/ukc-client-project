@@ -13,9 +13,11 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     var viewModel: ProfileViewModel!
     var data: DataHandler!
+    let id = "2"
     
     //Database ref
-    var reference: DatabaseReference!
+    var locationReference: DatabaseReference!
+    var userReference: DatabaseReference!
     
     typealias RetrievedUser = (Bool, User?) -> ()
     
@@ -34,8 +36,9 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         setupLayout()
         
-        //Database ref
-        reference = Database.database().reference()
+        //Database refs
+        userReference = Database.database().reference().child("Company").child("University Of Kent").child("User").child("User ID").child(id)
+        locationReference = Database.database().reference().child("Company").child("University Of Kent").child("User").child("User ID").child(id).child("saved_locations")
     }
     
     @IBAction func addLocation(_ sender: UIButton) {
@@ -59,18 +62,35 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         }
         
         let confirm = DefaultButton(title: "OK", dismissOnTap: false) { [weak popup] in
-            
-            if (popupVC.commentField.text?.isEmpty)! || (popupVC.floorField.text?.isEmpty)! || (popupVC.roomField.text?.isEmpty)! {
+            //Checking that none of the fields are empty
+            if (popupVC.buildingField.text?.isEmpty)! || (popupVC.floorField.text?.isEmpty)! || (popupVC.roomField.text?.isEmpty)! {
                 popup?.shake()
-                
+                //Error if empty
                 popupVC.errorLabel.text = "None of the fields can be empty. Please enter all location data."
                 popupVC.errorLabel.textColor = UIColor.red
                 popupVC.errorLabel.numberOfLines = 1
             }
+            //Getting data from textFields
             else {
+                //let newBuilding = popupVC.buildingField.text
+                //let newFloor = popupVC.floorField.text
+                //let newRoom = popupVC.roomField.text
+                
+                //Adding a new saved location
+                //self.locationReference.childByAutoId().setValue(["building":newBuilding, "floor":newFloor, "room": newRoom])
+                
+                //If location already exists within saved locations:
+                //var alreadySaved = false
+                //self.locationReference.observeSingleEvent(of: .value, with: { (DataSnapshot) in
+                    //if DataSnapshot.exists() {
+                        //alreadySaved = true
+                        //popupVC.errorLabel.text = "This location is already saved"
+                    //} else {
+                        //Confirmation text
+                //popupVC.errorLabel.text = "New location added!"
+                    //}
+                //})
                 popup?.dismiss()
-               // self.view.window!.rootViewController!.dismiss(animated: true, completion: nil)
-               // popupVC.dismiss(animated: true, completion: nil)
             }
         }
         popup.addButtons([cancel, confirm])
@@ -116,20 +136,20 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: false, completion: nil)
         
         // if text has been changed, override it as the current value
-        let id = "2"
+        //let id = "2"
         //check name field
         if (nameField.text == viewModel.nameText()) {
             alert.message = "No changes have been made"
         } else {
             let newName = nameField.text
-            reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).child("name").setValue(newName)
+            userReference.child("name").setValue(newName)
             alert.message = "Details sucessfully changed"
         }
         if (emailField.text == viewModel.emailText()) {
             alert.message = "No changes have been made"
         } else {
             let newEmail = emailField.text
-            reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).child("email").setValue(newEmail)
+            userReference.child("email").setValue(newEmail)
             alert.message = "Details sucessfully changed"
         }
         if (phoneField.text == viewModel.phoneText()) {
@@ -137,7 +157,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         } else {
             let newPhone = phoneField.text
             //override value if different
-            reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).child("phone").setValue(newPhone)
+            userReference.child("phone").setValue(newPhone)
             alert.message = "Details sucessfully changed"
         }
 }
