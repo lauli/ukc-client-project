@@ -82,15 +82,18 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                 //If location already exists within saved locations:
                 //var alreadySaved = false
                 //self.locationReference.observeSingleEvent(of: .value, with: { (DataSnapshot) in
-                    //if DataSnapshot.exists() {
-                        //alreadySaved = true
-                        //popupVC.errorLabel.text = "This location is already saved"
-                    //} else {
-                        //Confirmation text
+                //if DataSnapshot.exists() {
+                //alreadySaved = true
+                //popupVC.errorLabel.text = "This location is already saved"
+                //} else {
+                //Confirmation text
                 //popupVC.errorLabel.text = "New location added!"
-                    //}
+                //}
                 //})
-                popup?.dismiss()
+                    popup?.dismiss()
+                     // self.view.window!.rootViewController!.dismiss(animated: true, completion: nil)
+                    // popupVC.dismiss(animated: true, completion: nil)
+
             }
         }
         popup.addButtons([cancel, confirm])
