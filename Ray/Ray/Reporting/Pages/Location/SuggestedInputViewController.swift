@@ -39,6 +39,12 @@ class SuggestedInputViewController: UIViewController, UITextFieldDelegate, UIPic
         getBuildingNames()
     }
     
+    func cleanTextfields() {
+        buildingTextField.text = ""
+        floorTextField.text = ""
+        roomTextField.text = ""
+    }
+    
     //Get building names from firebase for autocomplete
     func getBuildingNames(){
         buildingAutoCompletionPossibilities = [""]

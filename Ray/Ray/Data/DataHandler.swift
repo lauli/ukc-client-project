@@ -69,7 +69,7 @@ final class DataHandler {
                 }
             }
             
-            if let issueIds = info["issues"] as? [Any] {
+            if let issueIds = info["issues"] as? [String: String] {
                 // only add issues to user, when there are issues
                 self.decodeIssues(ids: issueIds) { success, result in
                     if success{
@@ -83,21 +83,20 @@ final class DataHandler {
                     }
                 }
             }
-            
         }) { (error) in
             print(error.localizedDescription)
             completion(false, nil)
         }
     }
     
-    private func decodeIssues(ids: [Any], completion: @escaping DecodedReports) {
+    private func decodeIssues(ids: [String: String], completion: @escaping DecodedReports) {
         var reports: [Report] = []
         
         print(ids)
         
         for issueId in ids {
             
-            reference.child("Company").child("University Of Kent").child("Issues").child("\(issueId)").observeSingleEvent(of: .value, with: { result in
+            reference.child("Company").child("University Of Kent").child("Issues").child("\(issueId.value)").observeSingleEvent(of: .value, with: { result in
                 
                 guard let issue = result.value as? NSDictionary,
                     let report = self.decodeIssue(issue) else {
@@ -261,7 +260,7 @@ final class DataHandler {
             if sharedIssue == "true" {
                 // only add issues to user, when there are issues
                 issues.append(issueId)
-                self.decodeIssues(ids: issues) { success, result in
+                self.decodeIssues(ids: [issueId: issueId]) { success, result in
                     if success{
                         let sharedIssues = Shared(reports: result)
                         completion(true, sharedIssues)
@@ -307,4 +306,42 @@ final class DataHandler {
         }
     }
     
+}
+
+// SAVING NEW DATA
+
+extension DataHandler {
+    
+    func saveIssue(_ issue: Report) {
+        
+        let newReference = self.reference.child("Company").child("University Of Kent").child("Issues").childByAutoId()
+        
+        let newId = newReference.key
+        let newIssue = [
+            "issue_title": issue.title as NSString,
+            "description": issue.description as NSString,
+            "day": issue.day as NSString,
+            "month": issue.month as NSString,
+            "confirmation": "false" as NSString,
+            "shared": issue.isPublic.description as NSString,
+            "location": [
+                "building": issue.location.building as NSString,
+                "floor": issue.location.floor as NSString,
+                "room": issue.location.room as NSString
+                ] as NSDictionary,
+            "attachments": ["http://www.efstratiou.info/projects/rayproject/Website/images/TEEEEEEEEST" as NSString]
+            
+            ] as [String : Any]
+        
+        // save issue to database
+        newReference.setValue(newIssue)
+        
+        // save issue id to user in database
+        let userReference = reference.child("Company").child("University Of Kent").child("User").child("User ID").child(user?.id ?? "").child("issues").childByAutoId()
+        userReference.setValue(newId)
+        
+        // add issue to issue array in app
+        issue.id = newId ?? ""
+        user?.reports?.append(issue)
+    }
 }

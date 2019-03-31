@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             
             DispatchQueue.main.async {
-                
                 let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
                 self.window?.rootViewController = navigationController

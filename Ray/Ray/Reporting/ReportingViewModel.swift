@@ -22,5 +22,6 @@ final class ReportingViewModel {
     var title: String? = nil
     var description: String? = nil
     var attachments: [UIImage]? = nil
+    var isPublic = false
 
 }

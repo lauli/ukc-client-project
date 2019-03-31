@@ -154,7 +154,13 @@ extension ReportViewController: ReportPageDelegate {
     }
     
     func sendReport() {
-        // TODO: implement sending to backend
+        let today = Date()
+        
+        let issue = Report(title: viewModel.title ?? "", description: viewModel.description ?? "",
+                           day: today.day, month: today.month,
+                           location: viewModel.location ?? Location(building: "", floor: "", room: ""),
+                           isPublic: viewModel.isPublic)
+        DataHandler.shared.saveIssue(issue)
         
         alertIfWeekend()
         scrollToPage(.first, animated: false)

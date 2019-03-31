@@ -26,6 +26,11 @@ final class ReportLocationViewController: ReportPageViewController {
         setupLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        segment.selectedSegmentIndex = 0
+        showContainer(inside: true)
+    }
     private func setupLayout() {
         nextButton.backgroundColor = .princetonOrange
         nextButton.layer.cornerRadius = 5
@@ -33,13 +38,13 @@ final class ReportLocationViewController: ReportPageViewController {
         segment.tintColor = .princetonOrange
         segment.layer.borderColor = UIColor.princetonOrange.cgColor
         
-        showContainer(manual: true)
+        showContainer(inside: true)
     }
     
-    private func showContainer(manual: Bool = false, saved: Bool = false, map: Bool = false) {
-        containerManual.isHidden = !manual
+    private func showContainer(inside: Bool = false, outside: Bool = false, saved: Bool = false) {
+        containerManual.isHidden = !inside
+        containerMap.isHidden = !outside
         containerSaved.isHidden = !saved
-        containerMap.isHidden = !map
     }
     
     // MARK: - Overrides
@@ -61,23 +66,24 @@ final class ReportLocationViewController: ReportPageViewController {
     @IBAction func segmentChanged(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            // manual
-            showContainer(manual: true)
+            // inside
+            showContainer(inside: true)
         case 1:
+            // outside
+            showContainer(outside: true)
+        case 2:
             // saved
             showContainer(saved: true)
-        case 2:
-            // map
-            showContainer(map: true)
+            savedLocationsVC?.shows()
+            
         default:
-            showContainer(manual: true)
+            showContainer(inside: true)
         }
     }
     
     @IBAction func nextPage(_ sender: Any) {
         
         if !containerManual.isHidden, let suggestedVC = suggestedVC {
-            
             if let location = suggestedVC.savedLocation() {
                 viewModel.location = location
                 
@@ -92,6 +98,7 @@ final class ReportLocationViewController: ReportPageViewController {
 
             
         } else if !containerSaved.isHidden, let savedVC = savedLocationsVC {
+            savedVC.shows()
             if let savedLocation = savedVC.selectedLocation {
                 viewModel.location = savedLocation
             } else {

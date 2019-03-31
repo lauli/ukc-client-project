@@ -32,6 +32,8 @@ class ReportSummaryViewController: ReportPageViewController {
     @IBOutlet private weak var attachThird: UIImageView!
     @IBOutlet private weak var attachFourth: UIImageView!
     
+    @IBOutlet weak var publicSwitch: UISwitch!
+    
     @IBOutlet private weak var prevButton: UIButton!
     @IBOutlet private weak var nextButton: UIButton!
     
@@ -47,6 +49,7 @@ class ReportSummaryViewController: ReportPageViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupLayout()
         setupUserDefaults()
         setupLocation()
         setupDescription()
@@ -73,7 +76,9 @@ class ReportSummaryViewController: ReportPageViewController {
         differentEmail.placeholder = "acm1234@kent.ac.uk"
         
         differentConsentLabel.numberOfLines = 0
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+    self.view.addGestureRecognizer(UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:))))
+        
+        publicSwitch.isOn = false
     }
     
     private func setupLocation() {
@@ -161,4 +166,7 @@ class ReportSummaryViewController: ReportPageViewController {
         disableNextButton(!sender.isOn)
     }
     
+    @IBAction func publicSwitch(_ sender: UISwitch) {
+        viewModel.isPublic = sender.isOn ? true : false
+    }
 }
