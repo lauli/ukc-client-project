@@ -15,30 +15,17 @@ final class IssueTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupIssues()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+
         // set navigationbar layout, because otherwise childVC would override it
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.barStyle = .default
         self.navigationController?.navigationBar.shouldRemoveShadow(false)
         self.navigationController?.navigationBar.tintColor = .princetonOrange
         
-    }
-    
-    private func setupIssues() {
-        //        if viewModel.user == nil {
-        //            _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
-        //                if self.viewModel.user != nil {
-        //                    self.tableView.reloadData()
-        //                    timer.invalidate()
-        //                }
-        //            }
-        //
-        //        }
     }
     
     // MARK: - Table view data source

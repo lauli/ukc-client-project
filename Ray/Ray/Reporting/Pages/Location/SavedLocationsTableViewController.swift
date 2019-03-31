@@ -23,6 +23,7 @@ final class SavedLocationsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 135
+        tableView.contentInset = UIEdgeInsets(top: -100, left: 0, bottom: 0, right: 0) // bad hack to get rid of space above tableview
         tableView.tableFooterView = UIView(frame: .zero) // set footer so that empty cells aren't shown
     }
     

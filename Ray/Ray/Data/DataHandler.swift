@@ -56,10 +56,10 @@ final class DataHandler {
             }
             
             var locationArray: [Location] = []
-            if let locations = info["saved_locations"] as? [Any] {
+            if let locations = info["saved_locations"] as? [String: Any] {
 
                 for item in locations {
-                    guard let location = item as? NSDictionary else {
+                    guard let location = item.value as? NSDictionary else {
                         continue
                     }
                     
