@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D10386322510CB9005B3C74 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D10386222510CB9005B3C74 /* Attachment.swift */; };
 		0D2DAB262240419B0075144D /* SharedIssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */; };
 		0D703EDE223D795200436412 /* SharedIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */; };
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0D10386222510CB9005B3C74 /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueDetailViewController.swift; sourceTree = "<group>"; };
 		0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueTableViewCell.swift; sourceTree = "<group>"; };
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				C878831B221E36EA001AFF36 /* Report.swift */,
 				C8788322221E54CA001AFF36 /* Location.swift */,
 				0DA8B2CF223C084A00D30B60 /* Shared.swift */,
+				0D10386222510CB9005B3C74 /* Attachment.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				C8A1F18C221CF56900806190 /* ReportPageViewController.swift in Sources */,
 				C81EDF072238804E00AA108E /* IssueTableViewController.swift in Sources */,
 				C878831C221E36EA001AFF36 /* Report.swift in Sources */,
+				0D10386322510CB9005B3C74 /* Attachment.swift in Sources */,
 				C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */,
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,
 				C81EDF052238800200AA108E /* ProfileViewController.swift in Sources */,

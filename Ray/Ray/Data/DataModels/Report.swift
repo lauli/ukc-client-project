@@ -15,13 +15,15 @@ final class Report {
     let day: String
     let month: String
     let location: Location
+    let attachment: Attachment
     
-    init(id: String = "", title: String, description: String, day: String, month: String, location: Location) {
+    init(id: String = "", title: String, description: String, day: String, month: String, location: Location, attachment: Attachment) {
         self.id = id
         self.title = title
         self.description = description
         self.day = day
         self.month = month
         self.location = location
+        self.attachment = attachment
     }
 }

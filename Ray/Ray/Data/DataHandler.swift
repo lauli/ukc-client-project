@@ -33,19 +33,13 @@ final class DataHandler {
     
     init() {
         reference = Database.database().reference()
-        
-        //        fetchUserInformation { success, result in
-        //            if success, let user = result {
-        //                self.user = user
-        //            }
-        //        }
     }
     
     func fetchUserInformation(completion: @escaping RetrievedUser) {
         
         // TODO: get user id from core data
         // TODO: make app wait until user is loaded - otherwise login screen
-        let id = "1"
+        let id = "2"
         
         reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).observeSingleEvent(of: .value, with: { result in
             
@@ -62,10 +56,10 @@ final class DataHandler {
             }
             
             var locationArray: [Location] = []
-            if let locations = info["saved_locations"] as? [Any] {
+            if let locations = info["saved_locations"] as? [String: Any] {
                 
                 for item in locations {
-                    guard let location = item as? NSDictionary else {
+                    guard let location = item.value as? NSDictionary else {
                         continue
                     }
                     
@@ -75,7 +69,7 @@ final class DataHandler {
                 }
             }
             
-            if let issueIds = info["issues"] as? [Any] {
+            if let issueIds = info["issues"] as? [String: String] {
                 // only add issues to user, when there are issues
                 self.decodeIssues(ids: issueIds) { success, result in
                     if success{
@@ -89,32 +83,27 @@ final class DataHandler {
                     }
                 }
             }
-            
-            
         }) { (error) in
             print(error.localizedDescription)
             completion(false, nil)
         }
     }
     
-    private func decodeIssues(ids: [Any], completion: @escaping DecodedReports) {
+    private func decodeIssues(ids: [String: String], completion: @escaping DecodedReports) {
         var reports: [Report] = []
         
         print(ids)
         
         for issueId in ids {
             
-//            guard let id = issueId as? Int else {
-//                continue
-//            }
-            
-            reference.child("Company").child("University Of Kent").child("Issues").child("\(issueId)").observeSingleEvent(of: .value, with: { result in
+            reference.child("Company").child("University Of Kent").child("Issues").child("\(issueId.value)").observeSingleEvent(of: .value, with: { result in
                 
                 guard let issue = result.value as? NSDictionary,
                     let report = self.decodeIssue(issue) else {
                         completion(false, nil)
                         return
                 }
+                
                 reports.append(report)
                 
                 if reports.count == ids.count {
@@ -134,7 +123,9 @@ final class DataHandler {
             let description = issue["description"] as? String,
             let day = issue["day"] as? String,
             let month = issue["month"] as? String,
-            let location = issue["location"] as? NSDictionary else {
+            let location = issue["location"] as? NSDictionary,
+            let attachment = issue["attachments"] as? NSArray
+             else {
                 return nil
         }
         
@@ -142,7 +133,11 @@ final class DataHandler {
             return nil
         }
         
-        return Report(title: issuetitle, description: description, day: day, month: month, location: loc)
+        guard let attachments = decodeAttachments(attachment) else {
+            return nil
+        }
+        
+        return Report(title: issuetitle, description: description, day: day, month: month, location: loc, attachment: attachments)
     }
     
     private func decodeLocation(_ location: NSDictionary) -> Location? {
@@ -164,6 +159,32 @@ final class DataHandler {
         
         return loc
     }
+    
+    private func decodeAttachments(_ attachment: NSArray) -> Attachment? {
+        let attachments: Attachment
+        
+        if attachment.count==0 {
+            attachments = Attachment(attachment1: "", attachment2: "", attachment3: "", attachment4: "")
+            
+        } else if attachment.count == 1, let attachment1 = attachment[0] as? String {
+            attachments = Attachment(attachment1: attachment1, attachment2: "", attachment3: "", attachment4: "")
+            
+        } else if attachment.count == 2, let attachment1 = attachment[0] as? String, let attachment2 = attachment[1] as? String {
+            attachments = Attachment(attachment1: attachment1, attachment2: attachment2, attachment3: "", attachment4: "")
+            
+        } else if attachment.count == 3, let attachment1 = attachment[0] as? String, let attachment2 = attachment[1] as? String, let attachment3 = attachment[2] as? String {
+            attachments = Attachment(attachment1: attachment1, attachment2: attachment2, attachment3: attachment3, attachment4: "")
+            
+        } else if attachment.count == 4, let attachment1 = attachment[0] as? String, let attachment2 = attachment[1] as? String, let attachment3 = attachment[2] as? String, let attachment4 = attachment[3] as? String {
+            attachments = Attachment(attachment1: attachment1, attachment2: attachment2, attachment3: attachment3, attachment4: attachment4)
+            
+        } else {
+            return nil
+        }
+        
+        return attachments
+    }
+    
     
     func buildings(completion: @escaping RetrievedData){
         var buildings: [String] = []
@@ -264,14 +285,14 @@ final class DataHandler {
             }
             
             guard let sharedIssue = info["shared"] as? String else {
-                    completion(false, nil)
-                    return
+                completion(false, nil)
+                return
             }
             
             if sharedIssue == "true" {
                 // only add issues to user, when there are issues
                 issues.append(issueId)
-                self.decodeIssues(ids: issues) { success, result in
+                self.decodeIssues(ids: [issueId: issueId]) { success, result in
                     if success{
                         let sharedIssues = Shared(reports: result)
                         completion(true, sharedIssues)
@@ -282,7 +303,7 @@ final class DataHandler {
             }
             
             completion(true, self.sharedIssues)
-        
+            
         }) { (error) in
             print(error.localizedDescription)
             completion(false, nil)

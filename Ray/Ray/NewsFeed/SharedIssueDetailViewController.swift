@@ -14,24 +14,51 @@ class SharedIssueDetailViewController: UIViewController {
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var monthLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
-    @IBOutlet var viewedIcon: UIImageView!
-    @IBOutlet var viewedLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
-
+    @IBOutlet weak var attachment1: UIImageView!
+    @IBOutlet weak var attachment2: UIImageView!
+    @IBOutlet weak var attachment3: UIImageView!
+    @IBOutlet weak var attachment4: UIImageView!
+    
     var titleText: String?
     var location: String?
     var date: String?
     var month: String?
     var descriptionText: String?
+    var attachment1Text: String?
+    var attachment2Text: String?
+    var attachment3Text: String?
+    var attachment4Text: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         titleLabel.text = titleText
         locationLabel.text = location
         dateLabel.text = date
         monthLabel.text = month
         descriptionLabel.text = descriptionText
+        
+        downloadImage(urlstr: attachment1Text!, imageView: attachment1)
+        downloadImage(urlstr: attachment2Text!, imageView: attachment2)
+        downloadImage(urlstr: attachment3Text!, imageView: attachment3)
+        downloadImage(urlstr: attachment4Text!, imageView: attachment4)
+        
+        
+    }
+    
+    func downloadImage(urlstr: String, imageView: UIImageView) {
+        if urlstr == "" {
+            print("nil")
+            return}
+        let url = URL(string: urlstr)!
+        let task = URLSession.shared.dataTask(with: url) { data, _, _ in
+            guard let data = data else { return }
+            DispatchQueue.main.async {
+                imageView.image = UIImage(data: data)
+                imageView.maskCircle(anyImage: imageView.image ?? UIImage(named: "icon-report-outline")!)
+            }
+        }
+        task.resume()
     }
     
 
