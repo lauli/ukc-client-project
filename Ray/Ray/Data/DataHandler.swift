@@ -123,6 +123,7 @@ final class DataHandler {
             let description = issue["description"] as? String,
             let day = issue["day"] as? String,
             let month = issue["month"] as? String,
+            let viewed = issue["confirmation"] as? String,
             let location = issue["location"] as? NSDictionary,
             let attachment = issue["attachments"] as? NSArray
              else {
@@ -137,7 +138,7 @@ final class DataHandler {
             return nil
         }
         
-        return Report(title: issuetitle, description: description, day: day, month: month, location: loc, attachment: attachments)
+        return Report(title: issuetitle, description: description, day: day, month: month, viewed: viewed, location: loc, attachment: attachments)
     }
     
     private func decodeLocation(_ location: NSDictionary) -> Location? {

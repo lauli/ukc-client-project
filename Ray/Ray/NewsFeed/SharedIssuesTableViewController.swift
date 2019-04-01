@@ -38,6 +38,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
     var locationText: String?
     var dateText: String?
     var monthText: String?
+    var viewedText: String?
     var descriptionText: String?
     var attachment1Url: String?
     var attachment2Url: String?
@@ -157,6 +158,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
         locationText = currentCell.locationText
         dateText = currentCell.dayLabel.text
         monthText = currentCell.monthLabel.text
+        viewedText = currentCell.viewedText
         descriptionText = currentCell.descriptionText
         attachment1Url = currentCell.attachment1Url
         attachment2Url = currentCell.attachment2Url
@@ -173,6 +175,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
             let vc = segue.destination as? SharedIssueDetailViewController
             vc?.date = dateText
             vc?.month = monthText
+            vc?.viewed = viewedText
             vc?.titleText = titleText
             vc?.descriptionText = descriptionText
             vc?.location = locationText
