@@ -32,6 +32,12 @@ class SharedIssueDetailViewController: UIViewController {
         dateLabel.text = date
         monthLabel.text = month
         descriptionLabel.text = descriptionText
+        dateLabel.accessibilityLabel = dateLabel.text
+        monthLabel.accessibilityLabel = monthLabel.text
+        titleLabel.accessibilityLabel = titleLabel.text
+        locationLabel.accessibilityLabel = locationLabel.text
+        descriptionLabel.accessibilityLabel = descriptionLabel.text
+        
     }
     
 

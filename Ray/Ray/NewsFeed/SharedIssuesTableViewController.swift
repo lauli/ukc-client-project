@@ -53,6 +53,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
         pickerView.delegate = self
         
         buildingSearchField.inputView =  pickerView
+        buildingSearchField.accessibilityIdentifier = "Building Name Search Field"
         getBuildingNames()
         
         //init toolbar
@@ -60,6 +61,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
         //create left side empty space so that done button set on right side
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+        doneBtn.accessibilityIdentifier = "Done button"
         doneBtn.tintColor = .princetonOrange
         toolbar.setItems([flexSpace, doneBtn], animated: false)
         toolbar.sizeToFit()

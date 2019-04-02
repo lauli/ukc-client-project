@@ -46,6 +46,7 @@ class MapViewController: UIViewController {
         mapView.settings.myLocationButton = true
         mapView.isMyLocationEnabled = true
         mapView.layer.cornerRadius = 10
+        mapView.accessibilityIdentifier = "Map"
 
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
@@ -58,6 +59,7 @@ class MapViewController: UIViewController {
         marker.icon = GMSMarker.markerImage(with: .princetonOrange)
         marker.map = mapView
         selectedPlace = position
+        marker.accessibilityIdentifier = "Location Marker"
     }
     
     private func setupWithPermission() {

@@ -43,10 +43,15 @@ class SharedIssueTableViewCell: UITableViewCell {
         dayLabel.text = sharedIssue?.reports?[0].day ?? ""
         monthLabel.text = sharedIssue?.reports?[0].month.uppercased() ?? ""
         titleLabel.text = sharedIssue?.reports?[0].title ?? ""
-        
         locationText = sharedIssue?.reports?[0].location.toString() ?? ""
         descriptionText = sharedIssue?.reports?[0].description ?? ""
         infoLabel.text = locationText! + "\n" + descriptionText!
+        
+        dayLabel.accessibilityLabel = dayLabel.text
+        monthLabel.accessibilityLabel = monthLabel.text
+        titleLabel.accessibilityLabel = titleLabel.text
+        infoLabel.accessibilityIdentifier = infoLabel.text
+        
     }
 
 }
