@@ -1,4 +1,3 @@
-
 // !$*UTF8*$!
 {
 	archiveVersion = 1;
@@ -8,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D2DAB262240419B0075144D /* SharedIssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */; };
-		0D703EDE223D795200436412 /* SharedIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */; };
 		0D1390382227375F00F22906 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1390372227375F00F22906 /* LoginViewController.swift */; };
 		0D27AC4822281A5A00CA54E4 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */; };
 		0D27AC4A2228200E00CA54E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */; };
+		0D2DAB262240419B0075144D /* SharedIssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */; };
+		0D703EDE223D795200436412 /* SharedIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */; };
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
-				734A80E1223994A500C9641C /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 734A80E0223994A500C9641C /* PopupViewController.xib */; };
-		734A80E32239973F00C9641C /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A80E22239973F00C9641C /* PopupViewController.swift */; };
 		0DA8B2D0223C084A00D30B60 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8B2CF223C084A00D30B60 /* Shared.swift */; };
 		0DA8B2D6223C3B0800D30B60 /* SharedIssuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8B2D5223C3B0800D30B60 /* SharedIssuesTableViewController.swift */; };
+		734A80E1223994A500C9641C /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 734A80E0223994A500C9641C /* PopupViewController.xib */; };
+		734A80E32239973F00C9641C /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A80E22239973F00C9641C /* PopupViewController.swift */; };
 		C03794390B0D2CB7E07D8DA5 /* Pods_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */; };
 		C808A3582236A2EF0092DF8B /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C808A3572236A2EE0092DF8B /* UserViewController.swift */; };
 		C81EDF052238800200AA108E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81EDF042238800200AA108E /* ProfileViewController.swift */; };
@@ -37,6 +36,7 @@
 		C8A1F18E221CF6DD00806190 /* UITextField+TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18D221CF6DD00806190 /* UITextField+TextViewExtension.swift */; };
 		C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */; };
 		C8A9CE18225049A700DC201E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A9CE17225049A700DC201E /* Date+Extension.swift */; };
+		C8B88E362253C27C001BD74E /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E352253C27C001BD74E /* LoadingViewController.swift */; };
 		C8E2481E222B55F3004EFAF8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2481D222B55F3004EFAF8 /* MapViewController.swift */; };
 		C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2481F222B7F3D004EFAF8 /* AttachmentsHandler.swift */; };
 		C8E24822222B8998004EFAF8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E24821222B8998004EFAF8 /* UIImageView+Extension.swift */; };
@@ -56,11 +56,11 @@
 
 /* Begin PBXFileReference section */
 		0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueDetailViewController.swift; sourceTree = "<group>"; };
-		0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueTableViewCell.swift; sourceTree = "<group>"; };
 		0D1390372227375F00F22906 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueDetailViewController.swift; sourceTree = "<group>"; };
+		0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueTableViewCell.swift; sourceTree = "<group>"; };
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0DA8B2CF223C084A00D30B60 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		0DA8B2D5223C3B0800D30B60 /* SharedIssuesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssuesTableViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +87,7 @@
 		C8A1F18D221CF6DD00806190 /* UITextField+TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+TextViewExtension.swift"; sourceTree = "<group>"; };
 		C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportLocationViewController.swift; sourceTree = "<group>"; };
 		C8A9CE17225049A700DC201E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		C8B88E352253C27C001BD74E /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		C8E2481D222B55F3004EFAF8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Ray/Reporting/Pages/Location/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		C8E2481F222B7F3D004EFAF8 /* AttachmentsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsHandler.swift; sourceTree = "<group>"; };
 		C8E24821222B8998004EFAF8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -129,7 +130,7 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-        382D9E576E3F51C45C25D00F /* Frameworks */ = {
+		382D9E576E3F51C45C25D00F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */,
@@ -232,6 +233,7 @@
 				C8F6D56A220338B70073488F /* Reporting */,
 				C8F6D56B220338C50073488F /* User */,
 				0D1390392227377A00F22906 /* Authentication */,
+				C8B88E352253C27C001BD74E /* LoadingViewController.swift */,
 			);
 			path = Ray;
 			sourceTree = "<group>";
@@ -469,6 +471,7 @@
 				C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */,
 				C81EDF09223881A700AA108E /* ProfileViewModel.swift in Sources */,
 				C8A1F18C221CF56900806190 /* ReportPageViewController.swift in Sources */,
+				C8B88E362253C27C001BD74E /* LoadingViewController.swift in Sources */,
 				C81EDF072238804E00AA108E /* IssueTableViewController.swift in Sources */,
 				C878831C221E36EA001AFF36 /* Report.swift in Sources */,
 				C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */,

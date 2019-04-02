@@ -592,7 +592,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8PC-GP-SqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="-486"/>
+            <point key="canvasLocation" x="919" y="201"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="hL4-Cq-56K">
@@ -734,16 +734,29 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </objects>
             <point key="canvasLocation" x="81" y="2063"/>
         </scene>
-        <!--View Controller-->
+        <!--Loading View Controller-->
         <scene sceneID="mPW-YR-hbF">
             <objects>
-                <viewController id="Hvc-hA-zdg" sceneMemberID="viewController">
+                <viewController id="Hvc-hA-zdg" customClass="LoadingViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3nr-Lb-enN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="GF8-gs-OIZ">
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                                <color key="color" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GF8-gs-OIZ" firstAttribute="centerY" secondItem="3nr-Lb-enN" secondAttribute="centerY" id="PXD-hi-0JP"/>
+                            <constraint firstItem="GF8-gs-OIZ" firstAttribute="centerX" secondItem="3nr-Lb-enN" secondAttribute="centerX" id="hGR-R3-PnD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="r7c-a3-pAo"/>
                     </view>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="GF8-gs-OIZ" id="A6t-33-IUA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqF-gl-2pd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
