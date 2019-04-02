@@ -12,20 +12,9 @@ final class LoadingViewController: UIViewController {
     
     @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView!
     
-    private let locationManager = CLLocationManager()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingIndicator.startAnimating()
-        
-        locationManager.requestWhenInUseAuthorization()
-        
-        // If location services is enabled get the users location
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestLocation()
-        }
     }
     
     func stopIndicator() {

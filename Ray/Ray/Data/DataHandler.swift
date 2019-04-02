@@ -35,13 +35,9 @@ final class DataHandler {
         reference = Database.database().reference()
     }
 
-    func fetchUserInformation(completion: @escaping RetrievedUser) {
+    func fetchUserInformation(forUserID userID: String, completion: @escaping RetrievedUser) {
 
-        // TODO: get user id from core data
-        // TODO: make app wait until user is loaded - otherwise login screen
-        let id = "2"
-
-        reference.child("Company").child("University Of Kent").child("User").child("User ID").child(id).observeSingleEvent(of: .value, with: { result in
+        reference.child("Company").child("University Of Kent").child("User").child("User ID").child(userID).observeSingleEvent(of: .value, with: { result in
 
             guard let info = result.value as? NSDictionary else {
                 completion(false, nil)
@@ -72,7 +68,7 @@ final class DataHandler {
                 // only add issues to user, when there are issues
                 self.decodeIssues(ids: issueIds) { success, result in
                     if success{
-                        let user = User(id: id, name: name, email: email, phone: phone,
+                        let user = User(id: userID, name: name, email: email, phone: phone,
                                         reports: result, savedLocations: locationArray)
                         self.user = user
                         completion(true, user)

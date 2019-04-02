@@ -68,14 +68,11 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
     }
     
     func getUserInfo(){
-        DataHandler.shared.fetchUserInformation() { success, _ in
-            if success {
-                self.spinner.stopAnimating()
-                self.buildingSearch = self.user?.savedLocations?[0].building ?? ""
-                self.buildingSearchField.text = self.buildingSearch
-            }
-        }
+        spinner.stopAnimating()
+        buildingSearch = user?.savedLocations?[0].building ?? ""
+        buildingSearchField.text = buildingSearch
     }
+    
     @objc func doneButtonAction() {
         self.buildingSearchField.endEditing(true)
     }

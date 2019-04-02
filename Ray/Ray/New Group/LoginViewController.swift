@@ -47,6 +47,10 @@ class LoginViewController: UIViewController {
                 let userID = Auth.auth().currentUser!.uid
                 UserDefaults.standard.set(userID, forKey: "UserID")
                 print("USERID ", userID)
+                
+                if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                    appDelegate.showTabBarController(forUserID: userID)
+                }
             }
             
         }

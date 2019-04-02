@@ -222,6 +222,7 @@
 			children = (
 				C8F6D563220338040073488F /* Info.plist */,
 				C8F6D555220338020073488F /* AppDelegate.swift */,
+				C8B88E352253C27C001BD74E /* LoadingViewController.swift */,
 				C8F6D557220338020073488F /* MainViewController.swift */,
 				C8FDC0C72214E6D300B3D80E /* TabBarController.swift */,
 				C8F6D560220338040073488F /* LaunchScreen.storyboard */,
@@ -233,7 +234,6 @@
 				C8F6D56A220338B70073488F /* Reporting */,
 				C8F6D56B220338C50073488F /* User */,
 				0D1390392227377A00F22906 /* Authentication */,
-				C8B88E352253C27C001BD74E /* LoadingViewController.swift */,
 			);
 			path = Ray;
 			sourceTree = "<group>";
