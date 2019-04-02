@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hvc-hA-zdg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hvc-hA-zdg">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -351,7 +351,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <rect key="frame" x="0.0" y="150" width="350" height="31"/>
                                                         <subviews>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HT-PM-eal">
-                                                                <rect key="frame" x="307.33333333333331" y="0.0" width="44.666666666666686" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="31"/>
                                                                 <color key="onTintColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <connections>
                                                                     <action selector="consentSwitch:" destination="Xhd-tO-6Wy" eventType="valueChanged" id="WAe-gw-Dpv"/>
@@ -634,32 +634,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eeh-DD-TLp">
-                                <rect key="frame" x="42" y="604" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="lLm-xg-sO8"/>
-                                    <constraint firstAttribute="height" constant="50" id="s1q-G7-L4k"/>
-                                </constraints>
-                                <state key="normal" title="UKC">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="ukcBtn:" destination="04r-2M-t5u" eventType="touchUpInside" id="r6W-Ud-6Eo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfS-9c-DYr">
-                                <rect key="frame" x="191" y="604" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="T6D-hj-NCo"/>
-                                    <constraint firstAttribute="width" constant="50" id="jDt-pz-lhX"/>
-                                </constraints>
-                                <state key="normal" title="+"/>
-                                <connections>
-                                    <action selector="addBtn:" destination="04r-2M-t5u" eventType="touchUpInside" id="Cva-iP-quY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHw-vc-1wT">
-                                <rect key="frame" x="34" y="506" width="346" height="40"/>
+                                <rect key="frame" x="34" y="631" width="346" height="40"/>
                                 <color key="backgroundColor" red="0.99583572149999999" green="0.67142272000000003" blue="0.1487264931" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="tsl-wp-6bf"/>
@@ -677,9 +653,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z7G-tK-Lv7">
-                                <rect key="frame" x="34" y="245" width="346" height="253"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z7G-tK-Lv7">
+                                <rect key="frame" x="34" y="253" width="346" height="362"/>
                                 <connections>
                                     <segue destination="NUr-yl-86u" kind="embed" id="Clm-Hv-bRR"/>
                                 </connections>
@@ -694,21 +669,21 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <constraint firstAttribute="trailingMargin" secondItem="UEn-ui-gwq" secondAttribute="trailing" constant="12" id="0hn-hl-El7"/>
                             <constraint firstItem="kcd-tA-DYP" firstAttribute="trailing" secondItem="PHw-vc-1wT" secondAttribute="trailing" constant="34" id="2Kc-k3-sGv"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="trailing" secondItem="umz-0y-YIW" secondAttribute="trailing" id="6HV-wN-B6m"/>
+                            <constraint firstItem="PHw-vc-1wT" firstAttribute="top" secondItem="Z7G-tK-Lv7" secondAttribute="bottom" constant="16" id="6iX-0Z-0Ne"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="leading" secondItem="PHw-vc-1wT" secondAttribute="leading" id="7LQ-vg-13f"/>
                             <constraint firstItem="UEn-ui-gwq" firstAttribute="leading" secondItem="7Xw-Fu-KO5" secondAttribute="leadingMargin" constant="12" id="AUz-OI-dp6"/>
                             <constraint firstItem="PHw-vc-1wT" firstAttribute="leading" secondItem="kcd-tA-DYP" secondAttribute="leading" constant="34" id="Ejl-QQ-yv4"/>
                             <constraint firstItem="qEC-aU-qtL" firstAttribute="top" secondItem="XwZ-2P-oFC" secondAttribute="bottom" constant="9" id="FEG-wL-YlM"/>
-                            <constraint firstItem="pfS-9c-DYr" firstAttribute="leading" secondItem="eeh-DD-TLp" secondAttribute="trailing" constant="99" id="KWJ-ND-b0M"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="trailing" secondItem="qEC-aU-qtL" secondAttribute="trailing" id="MjU-b3-znn"/>
+                            <constraint firstItem="Z7G-tK-Lv7" firstAttribute="leading" secondItem="kcd-tA-DYP" secondAttribute="leading" constant="34" id="Q0M-HB-vFu"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="leading" secondItem="qEC-aU-qtL" secondAttribute="leading" id="QVR-HT-RRm"/>
                             <constraint firstItem="2bT-N0-SPD" firstAttribute="top" secondItem="umz-0y-YIW" secondAttribute="bottom" constant="33" id="Tkx-Q9-Fyi"/>
+                            <constraint firstItem="Z7G-tK-Lv7" firstAttribute="top" secondItem="2bT-N0-SPD" secondAttribute="bottom" constant="16" id="U8E-3z-s22"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="top" secondItem="kcd-tA-DYP" secondAttribute="top" constant="12" id="X6u-fw-Rii"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="trailing" secondItem="PHw-vc-1wT" secondAttribute="trailing" id="cDm-Id-yOx"/>
-                            <constraint firstItem="eeh-DD-TLp" firstAttribute="baseline" secondItem="pfS-9c-DYr" secondAttribute="baseline" id="dTV-xp-Lz8"/>
-                            <constraint firstAttribute="bottom" secondItem="PHw-vc-1wT" secondAttribute="bottom" constant="190" id="dx1-C4-FVd"/>
-                            <constraint firstItem="kcd-tA-DYP" firstAttribute="bottom" secondItem="eeh-DD-TLp" secondAttribute="bottom" constant="33" id="eFt-dG-3nC"/>
-                            <constraint firstItem="eeh-DD-TLp" firstAttribute="leading" secondItem="kcd-tA-DYP" secondAttribute="leading" constant="42" id="foV-IT-WDN"/>
+                            <constraint firstItem="kcd-tA-DYP" firstAttribute="bottom" secondItem="PHw-vc-1wT" secondAttribute="bottom" constant="16" id="dx1-C4-FVd"/>
                             <constraint firstItem="XwZ-2P-oFC" firstAttribute="leading" secondItem="umz-0y-YIW" secondAttribute="leading" id="l9e-dB-b4S"/>
+                            <constraint firstItem="kcd-tA-DYP" firstAttribute="trailing" secondItem="Z7G-tK-Lv7" secondAttribute="trailing" constant="34" id="q4m-aG-NPK"/>
                             <constraint firstItem="umz-0y-YIW" firstAttribute="top" secondItem="qEC-aU-qtL" secondAttribute="bottom" constant="8" symbolic="YES" id="qB7-mq-bU2"/>
                             <constraint firstItem="2bT-N0-SPD" firstAttribute="top" secondItem="UEn-ui-gwq" secondAttribute="bottom" constant="8" symbolic="YES" id="uno-LQ-flm"/>
                             <constraint firstItem="2bT-N0-SPD" firstAttribute="leading" secondItem="umz-0y-YIW" secondAttribute="leading" id="vrb-QL-ZmT"/>
@@ -724,13 +699,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="add" destination="pfS-9c-DYr" id="y7p-iy-Fa2"/>
                         <outlet property="addLocation" destination="PHw-vc-1wT" id="EjV-BF-gaM"/>
                         <outlet property="emailField" destination="qEC-aU-qtL" id="dbG-ut-nKc"/>
                         <outlet property="nameField" destination="XwZ-2P-oFC" id="0LB-eS-Vzm"/>
                         <outlet property="phoneField" destination="umz-0y-YIW" id="c2C-1z-1U6"/>
                         <outlet property="savedLocationsContainer" destination="Z7G-tK-Lv7" id="Ppg-em-hvI"/>
-                        <outlet property="ukc" destination="eeh-DD-TLp" id="lON-yZ-zyA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkp-n5-g3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -963,52 +936,51 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <scene sceneID="hPs-B6-VTs">
             <objects>
                 <tableViewController id="NUr-yl-86u" customClass="SavedLocationsTableViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
-
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="omd-Ek-n74">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="461.33333333333337"/>
+                        <rect key="frame" x="0.0" y="0.0" width="346" height="362"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedLocationsCell" rowHeight="135" id="Z1R-Lv-0Fw" customClass="SavedLocationViewCell" customModule="Ray" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1" width="350" height="135"/>
+                                <rect key="frame" x="0.0" y="1" width="346" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z1R-Lv-0Fw" id="de6-U2-izY">
                                     <rect key="frame" x="0.0" y="0.0" width="346" height="134.66666666666666"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="135" translatesAutoresizingMaskIntoConstraints="NO" id="xH6-Nl-eli">
-                                            <rect key="frame" x="139.66666666666666" y="8.0000000000000018" width="70.666666666666657" height="24.666666666666671"/>
+                                            <rect key="frame" x="137.66666666666666" y="8.0000000000000018" width="70.666666666666657" height="24.666666666666671"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Floor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NxA-PV-27D">
-                                            <rect key="frame" x="155.66666666666666" y="52.666666666666664" width="39" height="20.999999999999993"/>
+                                            <rect key="frame" x="153.66666666666666" y="52.666666666666664" width="39" height="20.999999999999993"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="254" text="Building" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBR-AD-oBi">
-                                            <rect key="frame" x="155.66666666666666" y="32.666666666666664" width="39" height="12"/>
+                                            <rect key="frame" x="153.66666666666666" y="32.666666666666664" width="39" height="12"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Floor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24G-5B-Egc">
-                                            <rect key="frame" x="162.66666666666666" y="73.666666666666671" width="24.666666666666657" height="12"/>
+                                            <rect key="frame" x="160.66666666666666" y="73.666666666666671" width="24.666666666666657" height="12"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLX-GW-Fux">
-                                            <rect key="frame" x="161.33333333333334" y="114.66666666666667" width="27.666666666666657" height="12"/>
+                                            <rect key="frame" x="159.33333333333334" y="114.66666666666667" width="27.666666666666657" height="12"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDa-kf-Bvt">
-                                            <rect key="frame" x="153" y="93.666666666666671" width="44.333333333333343" height="21"/>
+                                            <rect key="frame" x="151" y="93.666666666666671" width="44.333333333333343" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>

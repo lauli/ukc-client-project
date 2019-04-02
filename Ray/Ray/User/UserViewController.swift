@@ -26,8 +26,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneField: UITextField!
     // Buttons
     @IBOutlet weak var addLocation: UIButton!
-    @IBOutlet weak var ukc: UIButton!
-    @IBOutlet weak var add: UIButton!
     
     @IBOutlet weak var savedLocationsContainer: UIView!
     
@@ -82,25 +80,11 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.present(popup, animated: animated, completion: nil)
     }
     
-    @IBAction func ukcBtn(_ sender: UIButton) {
-    }
-    @IBAction func addBtn(_ sender: UIButton) {
-    }
-    
     private func setupLayout() {
         updateLabels()
         
         addLocation.backgroundColor = .princetonOrange
         addLocation.layer.cornerRadius = 5
-        
-        ukc.backgroundColor = .princetonOrange
-        ukc.layer.cornerRadius = 20
-        
-        add.backgroundColor = .white
-        add.setTitleColor(.weldonBlue, for: .normal)
-        add.layer.borderColor = UIColor.weldonBlue.cgColor
-        add.layer.borderWidth = 1
-        add.layer.cornerRadius = 20
     }
     
     private func updateLabels() {

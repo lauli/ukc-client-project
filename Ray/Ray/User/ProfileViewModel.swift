@@ -43,8 +43,11 @@ final class ProfileViewModel {
     }
     
     func savedLocationsText() -> String {
-        return "there are no saved locations atm"
-        // TODO: make right when implemented in backend
+        if let location = user?.savedLocations?.first {
+            return "\(location.toString()), etc."
+        } else {
+            return "No saved locations yet."
+        }
     }
     
     func issueForIndex(_ index: Int) -> Report? {
