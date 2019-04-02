@@ -26,6 +26,7 @@ final class IssueTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView(frame: .zero) // set footer so that empty cells aren't shown
     }
     
     override func viewDidAppear(_ animated: Bool) {

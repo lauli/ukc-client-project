@@ -50,7 +50,8 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
         spinner.color = .princetonOrange
         spinner.startAnimating()
         tableView.backgroundView = spinner
-        
+        tableView.tableFooterView = UIView(frame: .zero) // set footer so that empty cells aren't shown
+
         user = DataHandler.shared.user
         getUserInfo()
         

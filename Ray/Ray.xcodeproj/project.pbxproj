@@ -234,21 +234,21 @@
 				0D1390392227377A00F22906 /* Authentication */,
 				C8F6D56C2203393D0073488F /* Data */,
 				C8FDC0C92214EDA100B3D80E /* Extensions */,
-				C8F6D569220338AF0073488F /* NewsFeed */,
+				C8F6D569220338AF0073488F /* Issues */,
 				C8F6D56A220338B70073488F /* Reporting */,
 				C8F6D56B220338C50073488F /* User */,
 			);
 			path = Ray;
 			sourceTree = "<group>";
 		};
-		C8F6D569220338AF0073488F /* NewsFeed */ = {
+		C8F6D569220338AF0073488F /* Issues */ = {
 			isa = PBXGroup;
 			children = (
 				C8B88E372253D2FA001BD74E /* SharedIssueDetailViewController.swift */,
 				C8B88E392253D2FA001BD74E /* SharedIssuesTableViewController.swift */,
 				C8B88E382253D2FA001BD74E /* SharedIssueTableViewCell.swift */,
 			);
-			path = NewsFeed;
+			path = Issues;
 			sourceTree = "<group>";
 		};
 		C8F6D56A220338B70073488F /* Reporting */ = {

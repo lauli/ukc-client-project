@@ -179,7 +179,7 @@ extension ReportViewController: ReportPageDelegate {
     
     func uploadImage() {
         
-        guard let images = viewModel.attachments else {
+        guard let images = viewModel.attachments, images.count > 0 else {
             return
         }
         
