@@ -32,6 +32,7 @@
 		C8A1F18C221CF56900806190 /* ReportPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18B221CF56900806190 /* ReportPageViewController.swift */; };
 		C8A1F18E221CF6DD00806190 /* UITextField+TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18D221CF6DD00806190 /* UITextField+TextViewExtension.swift */; };
 		C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */; };
+		C8A9CE18225049A700DC201E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A9CE17225049A700DC201E /* Date+Extension.swift */; };
 		C8E2481E222B55F3004EFAF8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2481D222B55F3004EFAF8 /* MapViewController.swift */; };
 		C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2481F222B7F3D004EFAF8 /* AttachmentsHandler.swift */; };
 		C8E24822222B8998004EFAF8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E24821222B8998004EFAF8 /* UIImageView+Extension.swift */; };
@@ -78,6 +79,7 @@
 		C8A1F18B221CF56900806190 /* ReportPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPageViewController.swift; sourceTree = "<group>"; };
 		C8A1F18D221CF6DD00806190 /* UITextField+TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+TextViewExtension.swift"; sourceTree = "<group>"; };
 		C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportLocationViewController.swift; sourceTree = "<group>"; };
+		C8A9CE17225049A700DC201E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		C8E2481D222B55F3004EFAF8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Ray/Reporting/Pages/Location/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		C8E2481F222B7F3D004EFAF8 /* AttachmentsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsHandler.swift; sourceTree = "<group>"; };
 		C8E24821222B8998004EFAF8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				C8A1F18D221CF6DD00806190 /* UITextField+TextViewExtension.swift */,
 				C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */,
 				C8E24821222B8998004EFAF8 /* UIImageView+Extension.swift */,
+				C8A9CE17225049A700DC201E /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				0D2DAB262240419B0075144D /* SharedIssueDetailViewController.swift in Sources */,
 				C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */,
 				0DA8B2D0223C084A00D30B60 /* Shared.swift in Sources */,
+				C8A9CE18225049A700DC201E /* Date+Extension.swift in Sources */,
 				C8788323221E54CA001AFF36 /* Location.swift in Sources */,
 				C8788315221D1410001AFF36 /* UINavigationBarExtension.swift in Sources */,
 				0DA8B2D6223C3B0800D30B60 /* SharedIssuesTableViewController.swift in Sources */,

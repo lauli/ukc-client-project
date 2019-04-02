@@ -244,7 +244,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <rect key="frame" x="32" y="20" width="350" height="652"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UNS-9Y-H6V">
-                                        <rect key="frame" x="0.0" y="32" width="350" height="720.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="32" width="350" height="776"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Report Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQ2-5U-ZF0">
                                                 <rect key="frame" x="0.0" y="0.0" width="187.33333333333334" height="26.333333333333332"/>
@@ -253,35 +253,53 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbr-im-FSt">
-                                                <rect key="frame" x="0.0" y="36.333333333333321" width="311" height="71.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="36.333333333333329" width="311" height="86"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="311" id="tt1-uu-Vqa"/>
                                                 </constraints>
-                                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                                <string key="text">Please read through your summary carefully to check if all needed information was added and there aren't any mistaked. If you want to show this issue to other users as well, you can checkmark it as a public issue below. If you click "Send Report", the issue will be reportet to the respective department. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZQG-Ef-G6T">
+                                                <rect key="frame" x="0.0" y="132.33333333333334" width="163.66666666666666" height="31"/>
+                                                <subviews>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fYg-kn-dXj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
+                                                        <color key="onTintColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <connections>
+                                                            <action selector="publicSwitch:" destination="Xhd-tO-6Wy" eventType="valueChanged" id="ZR8-7c-xqs"/>
+                                                        </connections>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Make this issue public" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S67-IC-cD9">
+                                                        <rect key="frame" x="57.000000000000007" y="0.0" width="106.66666666666669" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqN-Rh-dzg">
-                                                <rect key="frame" x="0.0" y="117.99999999999999" width="49" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="173.33333333333334" width="49" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wL4-Wb-irp">
-                                                <rect key="frame" x="0.0" y="148.33333333333334" width="34.666666666666664" height="17"/>
+                                                <rect key="frame" x="0.0" y="203.66666666666666" width="34.666666666666664" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telephone" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLw-AP-JFZ">
-                                                <rect key="frame" x="0.0" y="175.33333333333334" width="67" height="17"/>
+                                                <rect key="frame" x="0.0" y="230.66666666666669" width="67" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ZLP-IX-uqu">
-                                                <rect key="frame" x="0.0" y="202.33333333333334" width="123" height="24"/>
+                                                <rect key="frame" x="0.0" y="257.66666666666669" width="123" height="24"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="10"/>
                                                 <state key="normal" title="Report for Someone Else">
                                                     <color key="titleColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -291,7 +309,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="RpX-0i-Xl4">
-                                                <rect key="frame" x="0.0" y="236.33333333333331" width="350" height="181"/>
+                                                <rect key="frame" x="0.0" y="291.66666666666669" width="350" height="181"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MX1-lz-KTk">
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="12"/>
@@ -329,15 +347,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                                     </textField>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-Gx-2NH">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1FS-Gx-2NH">
                                                         <rect key="frame" x="0.0" y="150" width="350" height="31"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I guarantee that have the consent of the person I am reporting for to do so in their name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-1L-dNE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="305.33333333333331" height="31"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HT-PM-eal">
                                                                 <rect key="frame" x="307.33333333333331" y="0.0" width="44.666666666666686" height="31"/>
                                                                 <color key="onTintColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -345,6 +357,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                                     <action selector="consentSwitch:" destination="Xhd-tO-6Wy" eventType="valueChanged" id="WAe-gw-Dpv"/>
                                                                 </connections>
                                                             </switch>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I guarantee that have the consent of the person I am reporting for to do so in their name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-1L-dNE">
+                                                                <rect key="frame" x="54.666666666666657" y="0.0" width="295.33333333333337" height="31"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -360,38 +378,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                 </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C79-Rd-z2g">
-                                                <rect key="frame" x="0.0" y="427.33333333333331" width="38" height="20.333333333333314"/>
+                                                <rect key="frame" x="0.0" y="482.66666666666663" width="38" height="20.333333333333314"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVN-5o-Kh3">
-                                                <rect key="frame" x="0.0" y="457.66666666666669" width="340.66666666666669" height="83.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="513" width="340.66666666666669" height="83.666666666666629"/>
                                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IXA-M5-eRt">
-                                                <rect key="frame" x="0.0" y="551.33333333333337" width="73" height="20.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="606.66666666666663" width="73" height="20.333333333333371"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building, Floor, Room or Long/Lat" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRd-ED-fvC">
-                                                <rect key="frame" x="0.0" y="581.66666666666663" width="214.33333333333334" height="17"/>
+                                                <rect key="frame" x="0.0" y="637" width="214.33333333333334" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attachments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0b-vb-wMv">
-                                                <rect key="frame" x="0.0" y="608.66666666666663" width="110.33333333333333" height="20.333333333333371"/>
+                                                <rect key="frame" x="0.0" y="664" width="110.33333333333333" height="20.333333333333371"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v2A-gn-9Yy">
-                                                <rect key="frame" x="0.0" y="639" width="350" height="81.666666666666629"/>
+                                                <rect key="frame" x="0.0" y="694.33333333333337" width="350" height="81.666666666666629"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HA7-YU-vKZ" customClass="UIImageView">
                                                         <rect key="frame" x="0.0" y="0.0" width="81.666666666666671" height="81.666666666666671"/>
@@ -496,6 +514,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <outlet property="nextButton" destination="dLs-oC-ZNd" id="ehh-eZ-G9q"/>
                         <outlet property="phoneLabel" destination="zLw-AP-JFZ" id="qkF-3c-w7c"/>
                         <outlet property="prevButton" destination="bMV-9b-Rot" id="LK4-a5-lW7"/>
+                        <outlet property="publicSwitch" destination="fYg-kn-dXj" id="cEZ-Nn-3F4"/>
                         <outlet property="reportTitle" destination="C79-Rd-z2g" id="IJF-cU-6Bv"/>
                         <outlet property="viewUserDifferent" destination="RpX-0i-Xl4" id="xvo-9Q-jra"/>
                     </connections>
@@ -747,32 +766,32 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Door not closing" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Beg-Xk-DYY">
-                                <rect key="frame" x="32" y="193" width="350" height="30"/>
+                                <rect key="frame" x="32" y="198" width="350" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSc-sg-8oS">
-                                <rect key="frame" x="36" y="179" width="21.666666666666671" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <rect key="frame" x="36" y="179" width="28.333333333333329" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ssd-5G-y2x">
-                                <rect key="frame" x="32" y="253" width="350" height="395"/>
+                                <rect key="frame" x="32" y="263" width="350" height="385"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Arc-1T-3FR">
-                                <rect key="frame" x="36" y="239" width="56" height="12"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <rect key="frame" x="36" y="244" width="74" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aM-to-b7m">
                                 <rect key="frame" x="32" y="83" width="350" height="80"/>
-                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                <string key="text">Please describe your problem as detailed as possible, so that I can send help asap. If you don't give enough information, a member of staff will have to reach out to you again to ask for further information, and unfortunately that usually requires some time.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -862,37 +881,38 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDg-Cr-EUe">
-                                <rect key="frame" x="32" y="87" width="350" height="57.333333333333343"/>
-                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                <rect key="frame" x="32" y="87" width="350" height="71.666666666666686"/>
+                                <string key="text">Please tell us where the issue arises. You can either declare the location to be inside (rooms, lecture halls, etc.), outside (campus areas like streets, public areas, etc.) or use one of your pre-defined saved locations (you can edit those in your profile section).</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nyW-ET-0Ya">
-                                <rect key="frame" x="32" y="160.33333333333334" width="350" height="29"/>
+                                <rect key="frame" x="32" y="174.66666666666666" width="350" height="29"/>
                                 <segments>
-                                    <segment title="Manual"/>
+                                    <segment title="Inside"/>
+                                    <segment title="Outside"/>
                                     <segment title="Saved"/>
-                                    <segment title="Map"/>
                                 </segments>
                                 <connections>
                                     <action selector="segmentChanged:" destination="J6m-Pd-jdb" eventType="valueChanged" id="flc-aI-lHS"/>
                                 </connections>
                             </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFy-9h-sW7">
-                                <rect key="frame" x="32" y="196.33333333333334" width="350" height="475.66666666666663"/>
-                                <connections>
-                                    <segue destination="fWq-1D-66C" kind="embed" id="nyz-l7-Scy"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCT-nQ-Qes">
-                                <rect key="frame" x="32" y="196.33333333333334" width="350" height="475.66666666666663"/>
+                                <rect key="frame" x="32" y="210.66666666666666" width="350" height="461.33333333333337"/>
+                                <color key="backgroundColor" red="0.31764705879999999" green="0.87843137250000003" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="NUr-yl-86u" kind="embed" id="b2I-CZ-XwB"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFy-9h-sW7">
+                                <rect key="frame" x="32" y="210.66666666666666" width="350" height="461.33333333333337"/>
+                                <connections>
+                                    <segue destination="fWq-1D-66C" kind="embed" id="nyz-l7-Scy"/>
+                                </connections>
+                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1v-iJ-kp7">
-                                <rect key="frame" x="32" y="196.33333333333334" width="350" height="475.66666666666663"/>
+                                <rect key="frame" x="32" y="210.66666666666666" width="350" height="461.33333333333337"/>
                                 <connections>
                                     <segue destination="3eM-0J-YmD" kind="embed" id="qlw-wb-nWU"/>
                                 </connections>
@@ -926,6 +946,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MhK-wG-7g6"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
                         <outlet property="containerManual" destination="IFy-9h-sW7" id="8sb-0Q-A7u"/>
                         <outlet property="containerMap" destination="q1v-iJ-kp7" id="U3S-UH-4lp"/>
@@ -942,14 +963,15 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         <scene sceneID="hPs-B6-VTs">
             <objects>
                 <tableViewController id="NUr-yl-86u" customClass="SavedLocationsTableViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="omd-Ek-n74">
-                        <rect key="frame" x="0.0" y="0.0" width="346" height="253"/>
+
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="omd-Ek-n74">
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="461.33333333333337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="separatorColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedLocationsCell" rowHeight="135" id="Z1R-Lv-0Fw" customClass="SavedLocationViewCell" customModule="Ray" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="346" height="135"/>
+                                <rect key="frame" x="0.0" y="1" width="350" height="135"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z1R-Lv-0Fw" id="de6-U2-izY">
                                     <rect key="frame" x="0.0" y="0.0" width="346" height="134.66666666666666"/>
@@ -1020,6 +1042,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <outlet property="delegate" destination="NUr-yl-86u" id="wat-Tc-eaI"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ez-jL-Fdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1030,7 +1053,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             <objects>
                 <viewController id="3eM-0J-YmD" customClass="MapViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZqN-vb-Bbh">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="475.66666666666663"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="461.33333333333337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6UO-V4-cC3"/>
@@ -1045,11 +1068,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             <objects>
                 <viewController id="fWq-1D-66C" customClass="SuggestedInputViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bic-fQ-pkn">
-                        <rect key="frame" x="0.0" y="0.0" width="350" height="475.66666666666663"/>
+                        <rect key="frame" x="0.0" y="0.0" width="350" height="461.33333333333337"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-8T-mg7">
-                                <rect key="frame" x="8" y="8" width="334" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Building" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GG5-tQ-fHC">
+                                <rect key="frame" x="8" y="8" width="334" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Darwin College" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b3w-8T-mg7">
+                                <rect key="frame" x="8" y="27" width="334" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1057,8 +1086,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <outlet property="delegate" destination="fWq-1D-66C" id="soh-18-yMN"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Floor" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vns-TK-jKe">
-                                <rect key="frame" x="8" y="46" width="334" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Floor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U9w-hf-qAX">
+                                <rect key="frame" x="8" y="73" width="334" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="FLR 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vns-TK-jKe">
+                                <rect key="frame" x="8" y="92" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1066,8 +1101,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                     <outlet property="delegate" destination="fWq-1D-66C" id="fPR-ha-BYx"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Room" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Up5-mE-tZV">
-                                <rect key="frame" x="8" y="84" width="334" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gts-pc-uLk">
+                                <rect key="frame" x="8" y="138" width="334" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="A0 01" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Up5-mE-tZV">
+                                <rect key="frame" x="8" y="157" width="334" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1078,16 +1119,24 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5vO-Ih-nZd" firstAttribute="trailing" secondItem="GG5-tQ-fHC" secondAttribute="trailing" constant="8" id="2UE-xf-oL4"/>
                             <constraint firstItem="Vns-TK-jKe" firstAttribute="leading" secondItem="5vO-Ih-nZd" secondAttribute="leading" constant="8" id="2ht-AF-Cqw"/>
-                            <constraint firstItem="Vns-TK-jKe" firstAttribute="top" secondItem="b3w-8T-mg7" secondAttribute="bottom" constant="8" id="6T0-vV-h7x"/>
-                            <constraint firstItem="b3w-8T-mg7" firstAttribute="top" secondItem="5vO-Ih-nZd" secondAttribute="top" constant="8" id="H4P-a6-JFR"/>
-                            <constraint firstItem="Vns-TK-jKe" firstAttribute="top" secondItem="b3w-8T-mg7" secondAttribute="bottom" constant="8" id="LV3-eS-DZo"/>
-                            <constraint firstItem="Up5-mE-tZV" firstAttribute="top" secondItem="Vns-TK-jKe" secondAttribute="bottom" constant="8" id="WRM-2l-hw1"/>
+                            <constraint firstItem="U9w-hf-qAX" firstAttribute="leading" secondItem="5vO-Ih-nZd" secondAttribute="leading" constant="8" id="Bpg-F5-q77"/>
+                            <constraint firstItem="gts-pc-uLk" firstAttribute="leading" secondItem="5vO-Ih-nZd" secondAttribute="leading" constant="8" id="CNU-p3-GBw"/>
+                            <constraint firstItem="b3w-8T-mg7" firstAttribute="top" secondItem="GG5-tQ-fHC" secondAttribute="bottom" constant="2" id="H4P-a6-JFR"/>
+                            <constraint firstItem="Vns-TK-jKe" firstAttribute="top" secondItem="U9w-hf-qAX" secondAttribute="bottom" constant="2" id="LV3-eS-DZo"/>
+                            <constraint firstItem="gts-pc-uLk" firstAttribute="top" secondItem="Vns-TK-jKe" secondAttribute="bottom" constant="16" id="PM2-4g-5st"/>
+                            <constraint firstItem="Up5-mE-tZV" firstAttribute="top" secondItem="gts-pc-uLk" secondAttribute="bottom" constant="2" id="WRM-2l-hw1"/>
                             <constraint firstItem="b3w-8T-mg7" firstAttribute="leading" secondItem="5vO-Ih-nZd" secondAttribute="leading" constant="8" id="cqY-0L-Ofy"/>
+                            <constraint firstItem="5vO-Ih-nZd" firstAttribute="trailing" secondItem="U9w-hf-qAX" secondAttribute="trailing" constant="8" id="cwg-QD-8hd"/>
+                            <constraint firstItem="GG5-tQ-fHC" firstAttribute="leading" secondItem="5vO-Ih-nZd" secondAttribute="leading" constant="8" id="dzN-xK-Jex"/>
                             <constraint firstItem="5vO-Ih-nZd" firstAttribute="trailing" secondItem="Up5-mE-tZV" secondAttribute="trailing" constant="8" id="lfD-8F-VZg"/>
+                            <constraint firstItem="5vO-Ih-nZd" firstAttribute="trailing" secondItem="gts-pc-uLk" secondAttribute="trailing" constant="8" id="m4X-vr-Dze"/>
                             <constraint firstItem="5vO-Ih-nZd" firstAttribute="trailing" secondItem="b3w-8T-mg7" secondAttribute="trailing" constant="8" id="ow0-H4-NHM"/>
                             <constraint firstItem="5vO-Ih-nZd" firstAttribute="trailing" secondItem="Vns-TK-jKe" secondAttribute="trailing" constant="8" id="rNX-A8-iDR"/>
                             <constraint firstItem="Up5-mE-tZV" firstAttribute="leading" secondItem="5vO-Ih-nZd" secondAttribute="leading" constant="8" id="rOS-kg-TBc"/>
+                            <constraint firstItem="GG5-tQ-fHC" firstAttribute="top" secondItem="5vO-Ih-nZd" secondAttribute="top" constant="8" id="tQi-bo-dpN"/>
+                            <constraint firstItem="U9w-hf-qAX" firstAttribute="top" secondItem="b3w-8T-mg7" secondAttribute="bottom" constant="16" id="zZD-Sz-qkh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5vO-Ih-nZd"/>
                     </view>
@@ -1131,14 +1180,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o0B-de-pjx">
-                                <rect key="frame" x="32" y="82.333333333333329" width="350" height="57.333333333333329"/>
-                                <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </string>
+                                <rect key="frame" x="32" y="82.333333333333329" width="350" height="43"/>
+                                <string key="text">If you have any pictures that can describe or help to understand the problem better, please attach them here. You can upload up to 4 pictures.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="ver-I2-Iol">
-                                <rect key="frame" x="32" y="171.66666666666663" width="350" height="350"/>
+                                <rect key="frame" x="32" y="157.33333333333337" width="350" height="350"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="iOb-se-vX1">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="159"/>

@@ -26,6 +26,10 @@ final class SavedLocationsTableViewController: UITableViewController {
         tableView.tableFooterView = UIView(frame: .zero) // set footer so that empty cells aren't shown
     }
     
+    func shows() {
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) // bad hack to get rid of space above tableview
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {

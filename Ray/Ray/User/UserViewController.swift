@@ -12,7 +12,6 @@ import Firebase
 class UserViewController: UIViewController, UITextFieldDelegate {
     
     var viewModel: ProfileViewModel!
-    var data: DataHandler!
     let id = "2"
     
     //Database ref
@@ -50,9 +49,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     }
     
     private func showDialog(animated: Bool = false) {
-        
         let popupVC = PopupViewController(nibName: "PopupViewController", bundle: nil)
-        
         let popup = PopupDialog(viewController: popupVC,
                                 buttonAlignment: .horizontal,
                                 tapGestureDismissal: true,
@@ -72,28 +69,13 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             }
             //Getting data from textFields
             else {
-                //let newBuilding = popupVC.buildingField.text
-                //let newFloor = popupVC.floorField.text
-                //let newRoom = popupVC.roomField.text
+                let newBuilding = popupVC.buildingField.text
+                let newFloor = popupVC.floorField.text
+                let newRoom = popupVC.roomField.text
+                self.locationReference.childByAutoId().setValue(["building":newBuilding, "floor":newFloor, "room": newRoom])
+                popupVC.errorLabel.text = "New location added!"
                 
-                //Adding a new saved location
-                //self.locationReference.childByAutoId().setValue(["building":newBuilding, "floor":newFloor, "room": newRoom])
-                
-                //If location already exists within saved locations:
-                //var alreadySaved = false
-                //self.locationReference.observeSingleEvent(of: .value, with: { (DataSnapshot) in
-                //if DataSnapshot.exists() {
-                //alreadySaved = true
-                //popupVC.errorLabel.text = "This location is already saved"
-                //} else {
-                //Confirmation text
-                //popupVC.errorLabel.text = "New location added!"
-                //}
-                //})
-                    popup?.dismiss()
-                     // self.view.window!.rootViewController!.dismiss(animated: true, completion: nil)
-                    // popupVC.dismiss(animated: true, completion: nil)
-
+                //popup?.dismiss()
             }
         }
         popup.addButtons([cancel, confirm])
@@ -139,8 +121,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: false, completion: nil)
         
         // if text has been changed, override it as the current value
-        //let id = "2"
-        //check name field
+        
         if (nameField.text == viewModel.nameText()) {
             alert.message = "No changes have been made"
         } else {
