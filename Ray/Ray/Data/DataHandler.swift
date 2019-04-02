@@ -53,6 +53,7 @@ final class DataHandler {
 
             var locationArray: [Location] = []
             if let locations = info["saved_locations"] as? [String: Any] {
+
                 for item in locations {
                     guard let location = item.value as? NSDictionary else {
                         continue
@@ -83,9 +84,7 @@ final class DataHandler {
                 self.user = user
                 completion(true, user)
             }
-            
-            
-            
+
         }) { (error) in
             print(error.localizedDescription)
             completion(false, nil)
@@ -98,7 +97,6 @@ final class DataHandler {
         print(ids)
 
         for issueId in ids {
-
             reference.child("Company").child("University Of Kent").child("Issues").child("\(issueId.value)").observeSingleEvent(of: .value, with: { result in
 
                 guard let issue = result.value as? NSDictionary,
@@ -126,15 +124,22 @@ final class DataHandler {
             let description = issue["description"] as? String,
             let day = issue["day"] as? String,
             let month = issue["month"] as? String,
-            let location = issue["location"] as? NSDictionary else {
+            let viewed = issue["confirmation"] as? String,
+            let location = issue["location"] as? NSDictionary,
+            let attachment = issue["attachments"] as? NSArray
+             else {
                 return nil
         }
 
         guard let loc = decodeLocation(location) else {
             return nil
         }
-
-        return Report(title: issuetitle, description: description, day: day, month: month, location: loc)
+        
+        guard let attachments = decodeAttachments(attachment) else {
+            return nil
+        }
+        
+        return Report(title: issuetitle, description: description, day: day, month: month, viewed: viewed, location: loc, attachment: attachments)
     }
 
     private func decodeLocation(_ location: NSDictionary) -> Location? {
@@ -157,6 +162,32 @@ final class DataHandler {
         return loc
     }
 
+    private func decodeAttachments(_ attachment: NSArray) -> Attachment? {
+        let attachments: Attachment
+        
+        if attachment.count == 0 {
+            attachments = Attachment(attachment1: "", attachment2: "", attachment3: "", attachment4: "")
+            
+        } else if attachment.count == 1, let attachment1 = attachment[0] as? String {
+            attachments = Attachment(attachment1: attachment1, attachment2: "", attachment3: "", attachment4: "")
+            
+        } else if attachment.count == 2, let attachment1 = attachment[0] as? String, let attachment2 = attachment[1] as? String {
+            attachments = Attachment(attachment1: attachment1, attachment2: attachment2, attachment3: "", attachment4: "")
+            
+        } else if attachment.count == 3, let attachment1 = attachment[0] as? String, let attachment2 = attachment[1] as? String, let attachment3 = attachment[2] as? String {
+            attachments = Attachment(attachment1: attachment1, attachment2: attachment2, attachment3: attachment3, attachment4: "")
+            
+        } else if attachment.count == 4, let attachment1 = attachment[0] as? String, let attachment2 = attachment[1] as? String, let attachment3 = attachment[2] as? String, let attachment4 = attachment[3] as? String {
+            attachments = Attachment(attachment1: attachment1, attachment2: attachment2, attachment3: attachment3, attachment4: attachment4)
+            
+        } else {
+            return nil
+        }
+        
+        return attachments
+    }
+    
+    
     func buildings(completion: @escaping RetrievedData){
         var buildings: [String] = []
 
@@ -256,8 +287,8 @@ final class DataHandler {
             }
 
             guard let sharedIssue = info["shared"] as? String else {
-                    completion(false, nil)
-                    return
+                completion(false, nil)
+                return
             }
 
             if sharedIssue == "true" {

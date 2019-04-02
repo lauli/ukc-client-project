@@ -156,9 +156,10 @@ extension ReportViewController: ReportPageDelegate {
     func sendReport() {
         let today = Date()
         
+        // TODO: Phoebe make attachments
         let issue = Report(title: viewModel.title ?? "", description: viewModel.description ?? "",
-                           day: today.day, month: today.month,
-                           location: viewModel.location ?? Location(building: "", floor: "", room: ""),
+                           day: today.day, month: today.month, viewed: "false",
+                           location: viewModel.location ?? Location(building: "", floor: "", room: ""), attachment: Attachment(attachment1: "", attachment2: "", attachment3: "", attachment4: ""),
                            isPublic: viewModel.isPublic)
         DataHandler.shared.saveIssue(issue)
         
