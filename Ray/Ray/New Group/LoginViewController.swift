@@ -19,6 +19,7 @@ class LoginViewController: UIViewController {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "backgroundimage.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .blue
         self.view.insertSubview(backgroundImage, at: 0)
         // Do any additional setup after loading the view.
         
@@ -45,7 +46,7 @@ class LoginViewController: UIViewController {
             }
             else{
                 let userID = Auth.auth().currentUser!.uid
-                UserDefaults.standard.set(userID, forKey: "UserID")
+                UserDefaults.standard.set(userID, forKey: "userID")
                 print("USERID ", userID)
                 
                 if let appDelegate = UIApplication.shared.delegate as? AppDelegate {

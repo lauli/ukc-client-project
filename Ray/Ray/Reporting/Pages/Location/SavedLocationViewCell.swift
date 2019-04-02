@@ -17,12 +17,19 @@ class SavedLocationViewCell: UITableViewCell {
     var location: Location? {
         didSet {
             updateLabels()
-            deselected()
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    override func prepareForReuse() {
+        if isSelected {
+            selected()
+        } else {
+            deselected()
+        }
     }
     
     private func updateLabels() {

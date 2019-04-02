@@ -19,13 +19,7 @@ final class IssueTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        // set navigationbar layout, because otherwise childVC would override it
-        self.navigationController?.navigationBar.barTintColor = .white
-        self.navigationController?.navigationBar.barStyle = .default
-        self.navigationController?.navigationBar.shouldRemoveShadow(false)
-        self.navigationController?.navigationBar.tintColor = .princetonOrange
-        
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source

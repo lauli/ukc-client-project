@@ -351,14 +351,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <rect key="frame" x="0.0" y="150" width="350" height="31"/>
                                                         <subviews>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HT-PM-eal">
-                                                                <rect key="frame" x="0.0" y="0.0" width="44" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="31"/>
                                                                 <color key="onTintColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <connections>
                                                                     <action selector="consentSwitch:" destination="Xhd-tO-6Wy" eventType="valueChanged" id="WAe-gw-Dpv"/>
                                                                 </connections>
                                                             </switch>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I guarantee that have the consent of the person I am reporting for to do so in their name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-1L-dNE">
-                                                                <rect key="frame" x="50" y="0.0" width="300" height="31"/>
+                                                                <rect key="frame" x="54.666666666666657" y="0.0" width="295.33333333333337" height="31"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -572,6 +572,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.17339256180000001" blue="0.38097069300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ovP-CU-D7O" firstAttribute="trailing" secondItem="mPm-HP-9PA" secondAttribute="trailing" constant="110" id="Cb5-8K-ex8"/>
                             <constraint firstItem="40x-so-k1H" firstAttribute="top" secondItem="t6u-Yx-gZf" secondAttribute="bottom" constant="21" id="N4X-KW-ntA"/>
@@ -620,6 +621,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.17339256180000001" blue="0.38097069300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Aed-t3-Oaz" firstAttribute="leading" secondItem="M6C-36-Cbg" secondAttribute="leading" constant="109" id="07N-qe-ice"/>
                             <constraint firstItem="M6C-36-Cbg" firstAttribute="trailing" secondItem="Aed-t3-Oaz" secondAttribute="trailing" constant="108" id="aRY-pL-MgR"/>
@@ -1640,4 +1642,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     <inferredMetricsTieBreakers>
         <segue reference="Clm-Hv-bRR"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
