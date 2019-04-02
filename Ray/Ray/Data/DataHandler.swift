@@ -64,20 +64,24 @@ final class DataHandler {
                 }
             }
 
+            var issues: [Report] = []
             if let issueIds = info["issues"] as? [String: String] {
                 // only add issues to user, when there are issues
                 self.decodeIssues(ids: issueIds) { success, result in
-                    if success{
-                        let user = User(id: userID, name: name, email: email, phone: phone,
-                                        reports: result, savedLocations: locationArray)
-                        self.user = user
-                        completion(true, user)
+                    if success, let result = result {
+                        issues = result
 
                     } else {
                         completion(false, nil)
                     }
                 }
             }
+            
+            let user = User(id: userID, name: name, email: email, phone: phone,
+                            reports: issues, savedLocations: locationArray)
+            self.user = user
+            completion(true, user)
+            
         }) { (error) in
             print(error.localizedDescription)
             completion(false, nil)

@@ -17,6 +17,7 @@ class SavedLocationViewCell: UITableViewCell {
     var location: Location? {
         didSet {
             updateLabels()
+            deselected()
         }
     }
     

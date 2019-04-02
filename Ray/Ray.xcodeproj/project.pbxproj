@@ -10,11 +10,8 @@
 		0D1390382227375F00F22906 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1390372227375F00F22906 /* LoginViewController.swift */; };
 		0D27AC4822281A5A00CA54E4 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */; };
 		0D27AC4A2228200E00CA54E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */; };
-		0D2DAB262240419B0075144D /* SharedIssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */; };
-		0D703EDE223D795200436412 /* SharedIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */; };
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
 		0DA8B2D0223C084A00D30B60 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8B2CF223C084A00D30B60 /* Shared.swift */; };
-		0DA8B2D6223C3B0800D30B60 /* SharedIssuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8B2D5223C3B0800D30B60 /* SharedIssuesTableViewController.swift */; };
 		734A80E1223994A500C9641C /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 734A80E0223994A500C9641C /* PopupViewController.xib */; };
 		734A80E32239973F00C9641C /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A80E22239973F00C9641C /* PopupViewController.swift */; };
 		C03794390B0D2CB7E07D8DA5 /* Pods_Ray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */; };
@@ -23,33 +20,36 @@
 		C81EDF072238804E00AA108E /* IssueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81EDF062238804E00AA108E /* IssueTableViewController.swift */; };
 		C81EDF09223881A700AA108E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81EDF08223881A700AA108E /* ProfileViewModel.swift */; };
 		C8788315221D1410001AFF36 /* UINavigationBarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */; };
-		C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */; };
 		C8788319221E3507001AFF36 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788318221E3507001AFF36 /* User.swift */; };
 		C878831C221E36EA001AFF36 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = C878831B221E36EA001AFF36 /* Report.swift */; };
 		C8788321221E534D001AFF36 /* IssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788320221E534C001AFF36 /* IssueTableViewCell.swift */; };
 		C8788323221E54CA001AFF36 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8788322221E54CA001AFF36 /* Location.swift */; };
-		C88498B4221C9359000A724A /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B3221C9359000A724A /* ReportViewController.swift */; };
-		C88498B7221C9767000A724A /* ReportSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88498B6221C9767000A724A /* ReportSummaryViewController.swift */; };
 		C88498BA221CDA0B000A724A /* Shree714.ttc in Resources */ = {isa = PBXBuildFile; fileRef = C88498B9221CDA0B000A724A /* Shree714.ttc */; };
-		C8A1F18A221CF45600806190 /* ReportIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F189221CF45600806190 /* ReportIssueViewController.swift */; };
-		C8A1F18C221CF56900806190 /* ReportPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18B221CF56900806190 /* ReportPageViewController.swift */; };
 		C8A1F18E221CF6DD00806190 /* UITextField+TextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18D221CF6DD00806190 /* UITextField+TextViewExtension.swift */; };
-		C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */; };
 		C8A9CE18225049A700DC201E /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A9CE17225049A700DC201E /* Date+Extension.swift */; };
 		C8B88E362253C27C001BD74E /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E352253C27C001BD74E /* LoadingViewController.swift */; };
+		C8B88E3A2253D2FA001BD74E /* SharedIssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E372253D2FA001BD74E /* SharedIssueDetailViewController.swift */; };
+		C8B88E3B2253D2FA001BD74E /* SharedIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E382253D2FA001BD74E /* SharedIssueTableViewCell.swift */; };
+		C8B88E3C2253D2FA001BD74E /* SharedIssuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E392253D2FA001BD74E /* SharedIssuesTableViewController.swift */; };
+		C8B88E402253D89F001BD74E /* SavedLocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E3D2253D89E001BD74E /* SavedLocationsTableViewController.swift */; };
+		C8B88E412253D89F001BD74E /* SavedLocationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E3E2253D89F001BD74E /* SavedLocationViewCell.swift */; };
+		C8B88E422253D89F001BD74E /* SuggestedInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E3F2253D89F001BD74E /* SuggestedInputViewController.swift */; };
+		C8B88E472253D8D0001BD74E /* ReportSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E432253D8D0001BD74E /* ReportSummaryViewController.swift */; };
+		C8B88E482253D8D0001BD74E /* ReportIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E442253D8D0001BD74E /* ReportIssueViewController.swift */; };
+		C8B88E492253D8D0001BD74E /* ReportLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E452253D8D0001BD74E /* ReportLocationViewController.swift */; };
+		C8B88E4A2253D8D0001BD74E /* ReportAttachmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E462253D8D0001BD74E /* ReportAttachmentsViewController.swift */; };
+		C8B88E4E2253D917001BD74E /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E4B2253D916001BD74E /* ReportViewController.swift */; };
+		C8B88E4F2253D917001BD74E /* ReportPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E4C2253D916001BD74E /* ReportPageViewController.swift */; };
+		C8B88E502253D917001BD74E /* ReportingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B88E4D2253D917001BD74E /* ReportingViewModel.swift */; };
 		C8E2481E222B55F3004EFAF8 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2481D222B55F3004EFAF8 /* MapViewController.swift */; };
 		C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2481F222B7F3D004EFAF8 /* AttachmentsHandler.swift */; };
 		C8E24822222B8998004EFAF8 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E24821222B8998004EFAF8 /* UIImageView+Extension.swift */; };
-		C8EE0A3C223B55AC0048BB6E /* SavedLocationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EE0A3B223B55AC0048BB6E /* SavedLocationsTableViewController.swift */; };
-		C8EE0A3E223B58070048BB6E /* SavedLocationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8EE0A3D223B58070048BB6E /* SavedLocationViewCell.swift */; };
-		C8F6C1AC221AEC1200FB1B34 /* ReportingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6C1AB221AEC1200FB1B34 /* ReportingViewModel.swift */; };
 		C8F6D556220338020073488F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D555220338020073488F /* AppDelegate.swift */; };
 		C8F6D558220338030073488F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D557220338020073488F /* MainViewController.swift */; };
 		C8F6D55D220338030073488F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F6D55B220338030073488F /* Main.storyboard */; };
 		C8F6D55F220338040073488F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8F6D55E220338040073488F /* Assets.xcassets */; };
 		C8F6D562220338040073488F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F6D560220338040073488F /* LaunchScreen.storyboard */; };
 		C8F6D56E22033A480073488F /* DataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D56D22033A480073488F /* DataHandler.swift */; };
-		C8F6D57222033A790073488F /* SuggestedInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F6D57122033A790073488F /* SuggestedInputViewController.swift */; };
 		C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDC0C72214E6D300B3D80E /* TabBarController.swift */; };
 		C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FDC0CA2214EDCB00B3D80E /* UIColorExtension.swift */; };
 /* End PBXBuildFile section */
@@ -59,11 +59,8 @@
 		0D1390372227375F00F22906 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueDetailViewController.swift; sourceTree = "<group>"; };
-		0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueTableViewCell.swift; sourceTree = "<group>"; };
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0DA8B2CF223C084A00D30B60 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
-		0DA8B2D5223C3B0800D30B60 /* SharedIssuesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssuesTableViewController.swift; sourceTree = "<group>"; };
 		17A071A28074DEA3B42C3274 /* Pods-Ray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.debug.xcconfig"; sourceTree = "<group>"; };
 		2E88815C68888ABE541D3D18 /* Pods-Ray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.release.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.release.xcconfig"; sourceTree = "<group>"; };
 		734A80E0223994A500C9641C /* PopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
@@ -74,26 +71,30 @@
 		C81EDF062238804E00AA108E /* IssueTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTableViewController.swift; sourceTree = "<group>"; };
 		C81EDF08223881A700AA108E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		C8788314221D1410001AFF36 /* UINavigationBarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBarExtension.swift; sourceTree = "<group>"; };
-		C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportAttachmentsViewController.swift; sourceTree = "<group>"; };
 		C8788318221E3507001AFF36 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C878831B221E36EA001AFF36 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		C8788320221E534C001AFF36 /* IssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTableViewCell.swift; sourceTree = "<group>"; };
 		C8788322221E54CA001AFF36 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		C88498B3221C9359000A724A /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
-		C88498B6221C9767000A724A /* ReportSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSummaryViewController.swift; sourceTree = "<group>"; };
 		C88498B9221CDA0B000A724A /* Shree714.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Shree714.ttc; path = ../../../../../../../../../../Library/Fonts/Shree714.ttc; sourceTree = "<group>"; };
-		C8A1F189221CF45600806190 /* ReportIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportIssueViewController.swift; sourceTree = "<group>"; };
-		C8A1F18B221CF56900806190 /* ReportPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPageViewController.swift; sourceTree = "<group>"; };
 		C8A1F18D221CF6DD00806190 /* UITextField+TextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+TextViewExtension.swift"; sourceTree = "<group>"; };
-		C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportLocationViewController.swift; sourceTree = "<group>"; };
 		C8A9CE17225049A700DC201E /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		C8B88E352253C27C001BD74E /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		C8B88E372253D2FA001BD74E /* SharedIssueDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedIssueDetailViewController.swift; sourceTree = "<group>"; };
+		C8B88E382253D2FA001BD74E /* SharedIssueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedIssueTableViewCell.swift; sourceTree = "<group>"; };
+		C8B88E392253D2FA001BD74E /* SharedIssuesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedIssuesTableViewController.swift; sourceTree = "<group>"; };
+		C8B88E3D2253D89E001BD74E /* SavedLocationsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedLocationsTableViewController.swift; sourceTree = "<group>"; };
+		C8B88E3E2253D89F001BD74E /* SavedLocationViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedLocationViewCell.swift; sourceTree = "<group>"; };
+		C8B88E3F2253D89F001BD74E /* SuggestedInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestedInputViewController.swift; sourceTree = "<group>"; };
+		C8B88E432253D8D0001BD74E /* ReportSummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportSummaryViewController.swift; sourceTree = "<group>"; };
+		C8B88E442253D8D0001BD74E /* ReportIssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportIssueViewController.swift; sourceTree = "<group>"; };
+		C8B88E452253D8D0001BD74E /* ReportLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportLocationViewController.swift; sourceTree = "<group>"; };
+		C8B88E462253D8D0001BD74E /* ReportAttachmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportAttachmentsViewController.swift; sourceTree = "<group>"; };
+		C8B88E4B2253D916001BD74E /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		C8B88E4C2253D916001BD74E /* ReportPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportPageViewController.swift; sourceTree = "<group>"; };
+		C8B88E4D2253D917001BD74E /* ReportingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportingViewModel.swift; sourceTree = "<group>"; };
 		C8E2481D222B55F3004EFAF8 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Ray/Reporting/Pages/Location/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		C8E2481F222B7F3D004EFAF8 /* AttachmentsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsHandler.swift; sourceTree = "<group>"; };
 		C8E24821222B8998004EFAF8 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
-		C8EE0A3B223B55AC0048BB6E /* SavedLocationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationsTableViewController.swift; sourceTree = "<group>"; };
-		C8EE0A3D223B58070048BB6E /* SavedLocationViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationViewCell.swift; sourceTree = "<group>"; };
-		C8F6C1AB221AEC1200FB1B34 /* ReportingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingViewModel.swift; sourceTree = "<group>"; };
 		C8F6D552220338020073488F /* Ray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8F6D555220338020073488F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8F6D557220338020073488F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +103,6 @@
 		C8F6D561220338040073488F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8F6D563220338040073488F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8F6D56D22033A480073488F /* DataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHandler.swift; sourceTree = "<group>"; };
-		C8F6D57122033A790073488F /* SuggestedInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedInputViewController.swift; sourceTree = "<group>"; };
 		C8FDC0C72214E6D300B3D80E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		C8FDC0CA2214EDCB00B3D80E /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,10 +169,10 @@
 		C8816A61223897A400512827 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				C8B88E3D2253D89E001BD74E /* SavedLocationsTableViewController.swift */,
+				C8B88E3E2253D89F001BD74E /* SavedLocationViewCell.swift */,
+				C8B88E3F2253D89F001BD74E /* SuggestedInputViewController.swift */,
 				C8E2481D222B55F3004EFAF8 /* MapViewController.swift */,
-				C8EE0A3B223B55AC0048BB6E /* SavedLocationsTableViewController.swift */,
-				C8EE0A3D223B58070048BB6E /* SavedLocationViewCell.swift */,
-				C8F6D57122033A790073488F /* SuggestedInputViewController.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -180,11 +180,11 @@
 		C88498B5221C9750000A724A /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				C8B88E462253D8D0001BD74E /* ReportAttachmentsViewController.swift */,
+				C8B88E442253D8D0001BD74E /* ReportIssueViewController.swift */,
+				C8B88E452253D8D0001BD74E /* ReportLocationViewController.swift */,
+				C8B88E432253D8D0001BD74E /* ReportSummaryViewController.swift */,
 				C8816A61223897A400512827 /* Location */,
-				C8A1F18F221D0AF300806190 /* ReportLocationViewController.swift */,
-				C8A1F189221CF45600806190 /* ReportIssueViewController.swift */,
-				C8788316221D1949001AFF36 /* ReportAttachmentsViewController.swift */,
-				C88498B6221C9767000A724A /* ReportSummaryViewController.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -220,20 +220,20 @@
 		C8F6D554220338020073488F /* Ray */ = {
 			isa = PBXGroup;
 			children = (
+				0DA68075221717DC0078915B /* GoogleService-Info.plist */,
 				C8F6D563220338040073488F /* Info.plist */,
+				C8F6D560220338040073488F /* LaunchScreen.storyboard */,
+				C8F6D55B220338030073488F /* Main.storyboard */,
 				C8F6D555220338020073488F /* AppDelegate.swift */,
 				C8B88E352253C27C001BD74E /* LoadingViewController.swift */,
 				C8F6D557220338020073488F /* MainViewController.swift */,
 				C8FDC0C72214E6D300B3D80E /* TabBarController.swift */,
-				C8F6D560220338040073488F /* LaunchScreen.storyboard */,
-				C8F6D55B220338030073488F /* Main.storyboard */,
-				0DA68075221717DC0078915B /* GoogleService-Info.plist */,
+				0D1390392227377A00F22906 /* Authentication */,
 				C8F6D56C2203393D0073488F /* Data */,
 				C8FDC0C92214EDA100B3D80E /* Extensions */,
 				C8F6D569220338AF0073488F /* NewsFeed */,
 				C8F6D56A220338B70073488F /* Reporting */,
 				C8F6D56B220338C50073488F /* User */,
-				0D1390392227377A00F22906 /* Authentication */,
 			);
 			path = Ray;
 			sourceTree = "<group>";
@@ -241,9 +241,9 @@
 		C8F6D569220338AF0073488F /* NewsFeed */ = {
 			isa = PBXGroup;
 			children = (
-				0DA8B2D5223C3B0800D30B60 /* SharedIssuesTableViewController.swift */,
-				0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */,
-				0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */,
+				C8B88E372253D2FA001BD74E /* SharedIssueDetailViewController.swift */,
+				C8B88E392253D2FA001BD74E /* SharedIssuesTableViewController.swift */,
+				C8B88E382253D2FA001BD74E /* SharedIssueTableViewCell.swift */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
@@ -251,10 +251,10 @@
 		C8F6D56A220338B70073488F /* Reporting */ = {
 			isa = PBXGroup;
 			children = (
+				C8B88E4D2253D917001BD74E /* ReportingViewModel.swift */,
+				C8B88E4C2253D916001BD74E /* ReportPageViewController.swift */,
+				C8B88E4B2253D916001BD74E /* ReportViewController.swift */,
 				C88498B5221C9750000A724A /* Pages */,
-				C8A1F18B221CF56900806190 /* ReportPageViewController.swift */,
-				C88498B3221C9359000A724A /* ReportViewController.swift */,
-				C8F6C1AB221AEC1200FB1B34 /* ReportingViewModel.swift */,
 			);
 			path = Reporting;
 			sourceTree = "<group>";
@@ -463,40 +463,40 @@
 				0D27AC4A2228200E00CA54E4 /* ResetPasswordViewController.swift in Sources */,
 				0D1390382227375F00F22906 /* LoginViewController.swift in Sources */,
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
+				C8B88E3A2253D2FA001BD74E /* SharedIssueDetailViewController.swift in Sources */,
 				C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */,
-				0D703EDE223D795200436412 /* SharedIssueTableViewCell.swift in Sources */,
+				C8B88E422253D89F001BD74E /* SuggestedInputViewController.swift in Sources */,
+				C8B88E412253D89F001BD74E /* SavedLocationViewCell.swift in Sources */,
 				C8F6D56E22033A480073488F /* DataHandler.swift in Sources */,
-				C8EE0A3C223B55AC0048BB6E /* SavedLocationsTableViewController.swift in Sources */,
-				C8F6D57222033A790073488F /* SuggestedInputViewController.swift in Sources */,
+				C8B88E472253D8D0001BD74E /* ReportSummaryViewController.swift in Sources */,
 				C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */,
+				C8B88E482253D8D0001BD74E /* ReportIssueViewController.swift in Sources */,
 				C81EDF09223881A700AA108E /* ProfileViewModel.swift in Sources */,
-				C8A1F18C221CF56900806190 /* ReportPageViewController.swift in Sources */,
+				C8B88E4A2253D8D0001BD74E /* ReportAttachmentsViewController.swift in Sources */,
+				C8B88E4E2253D917001BD74E /* ReportViewController.swift in Sources */,
 				C8B88E362253C27C001BD74E /* LoadingViewController.swift in Sources */,
+				C8B88E3C2253D2FA001BD74E /* SharedIssuesTableViewController.swift in Sources */,
+				C8B88E4F2253D917001BD74E /* ReportPageViewController.swift in Sources */,
 				C81EDF072238804E00AA108E /* IssueTableViewController.swift in Sources */,
 				C878831C221E36EA001AFF36 /* Report.swift in Sources */,
-				C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */,
 				0D27AC4822281A5A00CA54E4 /* CreateAccountViewController.swift in Sources */,
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,
 				C81EDF052238800200AA108E /* ProfileViewController.swift in Sources */,
 				C808A3582236A2EF0092DF8B /* UserViewController.swift in Sources */,
+				C8B88E3B2253D2FA001BD74E /* SharedIssueTableViewCell.swift in Sources */,
+				C8B88E402253D89F001BD74E /* SavedLocationsTableViewController.swift in Sources */,
 				C8788319221E3507001AFF36 /* User.swift in Sources */,
-				C8788317221D1949001AFF36 /* ReportAttachmentsViewController.swift in Sources */,
 				C8E2481E222B55F3004EFAF8 /* MapViewController.swift in Sources */,
-				C88498B7221C9767000A724A /* ReportSummaryViewController.swift in Sources */,
-				C8EE0A3E223B58070048BB6E /* SavedLocationViewCell.swift in Sources */,
-				0D2DAB262240419B0075144D /* SharedIssueDetailViewController.swift in Sources */,
+				C8B88E492253D8D0001BD74E /* ReportLocationViewController.swift in Sources */,
 				C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */,
 				0DA8B2D0223C084A00D30B60 /* Shared.swift in Sources */,
 				C8A9CE18225049A700DC201E /* Date+Extension.swift in Sources */,
 				C8788323221E54CA001AFF36 /* Location.swift in Sources */,
 				C8788315221D1410001AFF36 /* UINavigationBarExtension.swift in Sources */,
-				0DA8B2D6223C3B0800D30B60 /* SharedIssuesTableViewController.swift in Sources */,
 				C8788321221E534D001AFF36 /* IssueTableViewCell.swift in Sources */,
 				C8E24822222B8998004EFAF8 /* UIImageView+Extension.swift in Sources */,
+				C8B88E502253D917001BD74E /* ReportingViewModel.swift in Sources */,
 				C8A1F18E221CF6DD00806190 /* UITextField+TextViewExtension.swift in Sources */,
-				C8F6C1AC221AEC1200FB1B34 /* ReportingViewModel.swift in Sources */,
-				C88498B4221C9359000A724A /* ReportViewController.swift in Sources */,
-				C8A1F18A221CF45600806190 /* ReportIssueViewController.swift in Sources */,
 				734A80E32239973F00C9641C /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

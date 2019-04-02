@@ -69,7 +69,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
     
     func getUserInfo(){
         spinner.stopAnimating()
-        buildingSearch = user?.savedLocations?[0].building ?? ""
+        buildingSearch = user?.savedLocations?.first?.building ?? "Darwin College"
         buildingSearchField.text = buildingSearch
     }
     
@@ -171,7 +171,6 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
     //Get building names from firebase for autocomplete
     func getBuildingNames(){
         buildingAutoCompletionPossibilities = [""]
-        buildingSearchField.text = ""
         
         DataHandler.shared.buildings() { success, buildings in
             if success {
