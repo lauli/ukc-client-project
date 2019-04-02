@@ -111,7 +111,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3LA-9F-66Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="taQ-eq-r9i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2269.5652173913045" y="-730.43478260869574"/>
+            <point key="canvasLocation" x="1307" y="2063"/>
         </scene>
         <!--Shared Issue Detail View Controller-->
         <scene sceneID="a6K-k9-Jaw">
@@ -200,7 +200,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fH4-gW-DMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3140.579710144928" y="-730.43478260869574"/>
+            <point key="canvasLocation" x="2178" y="2063"/>
         </scene>
         <!--Report View Controller-->
         <scene sceneID="Uyl-kz-dSw">
@@ -216,7 +216,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdf-tG-L04" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270" y="20"/>
+            <point key="canvasLocation" x="1307" y="2800"/>
         </scene>
         <!--Report Summary View Controller-->
         <scene sceneID="RAv-kd-iDE">
@@ -521,7 +521,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oxp-WA-4p7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7335" y="20"/>
+            <point key="canvasLocation" x="6499" y="2800"/>
         </scene>
         <!--Report-->
         <scene sceneID="TKN-QB-9Ok">
@@ -538,7 +538,184 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7MA-6p-asa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="20"/>
+            <point key="canvasLocation" x="58" y="2801"/>
+        </scene>
+        <!--Create Account View Controller-->
+        <scene sceneID="1Ec-Di-HJb">
+            <objects>
+                <viewController id="xWV-TH-Mih" customClass="CreateAccountViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KaY-7l-3pI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-HP-9PA">
+                                <rect key="frame" x="110" y="265" width="194" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAccountTapped:" destination="xWV-TH-Mih" eventType="touchUpInside" id="4hf-GK-BG5"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t6u-Yx-gZf">
+                                <rect key="frame" x="39" y="164" width="336" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="40x-so-k1H">
+                                <rect key="frame" x="39" y="215" width="336" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.17339256180000001" blue="0.38097069300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="ovP-CU-D7O" firstAttribute="trailing" secondItem="mPm-HP-9PA" secondAttribute="trailing" constant="110" id="Cb5-8K-ex8"/>
+                            <constraint firstItem="40x-so-k1H" firstAttribute="top" secondItem="t6u-Yx-gZf" secondAttribute="bottom" constant="21" id="N4X-KW-ntA"/>
+                            <constraint firstItem="ovP-CU-D7O" firstAttribute="trailing" secondItem="t6u-Yx-gZf" secondAttribute="trailing" constant="39" id="Qbm-Sp-u41"/>
+                            <constraint firstItem="ovP-CU-D7O" firstAttribute="trailing" secondItem="40x-so-k1H" secondAttribute="trailing" constant="39" id="b0v-wr-fvW"/>
+                            <constraint firstItem="40x-so-k1H" firstAttribute="leading" secondItem="ovP-CU-D7O" secondAttribute="leading" constant="39" id="fkl-3Q-UVm"/>
+                            <constraint firstItem="mPm-HP-9PA" firstAttribute="top" secondItem="40x-so-k1H" secondAttribute="bottom" constant="20" id="gWM-tg-z2R"/>
+                            <constraint firstItem="t6u-Yx-gZf" firstAttribute="top" secondItem="ovP-CU-D7O" secondAttribute="top" constant="100" id="oEy-7t-xE8"/>
+                            <constraint firstItem="mPm-HP-9PA" firstAttribute="leading" secondItem="ovP-CU-D7O" secondAttribute="leading" constant="110" id="oPw-6z-2fL"/>
+                            <constraint firstItem="t6u-Yx-gZf" firstAttribute="leading" secondItem="ovP-CU-D7O" secondAttribute="leading" constant="39" id="s2I-pz-LIU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ovP-CU-D7O"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="t6u-Yx-gZf" id="AyQ-Ox-eme"/>
+                        <outlet property="passwordField" destination="40x-so-k1H" id="8ts-63-KXm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8PC-GP-SqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80" y="-486"/>
+        </scene>
+        <!--Reset Password View Controller-->
+        <scene sceneID="hL4-Cq-56K">
+            <objects>
+                <viewController id="Wlr-Id-9bx" customClass="ResetPasswordViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dbG-61-yzz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gIY-4l-cez">
+                                <rect key="frame" x="39" y="164" width="336" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aed-t3-Oaz">
+                                <rect key="frame" x="109" y="220" width="197" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Reset Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPasswordTapped:" destination="Wlr-Id-9bx" eventType="touchUpInside" id="o1Y-pU-1Ex"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.17339256180000001" blue="0.38097069300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Aed-t3-Oaz" firstAttribute="leading" secondItem="M6C-36-Cbg" secondAttribute="leading" constant="109" id="07N-qe-ice"/>
+                            <constraint firstItem="M6C-36-Cbg" firstAttribute="trailing" secondItem="Aed-t3-Oaz" secondAttribute="trailing" constant="108" id="aRY-pL-MgR"/>
+                            <constraint firstItem="gIY-4l-cez" firstAttribute="top" secondItem="M6C-36-Cbg" secondAttribute="top" constant="100" id="ljq-bP-VLF"/>
+                            <constraint firstItem="M6C-36-Cbg" firstAttribute="trailing" secondItem="gIY-4l-cez" secondAttribute="trailing" constant="39" id="mnK-Ls-MWr"/>
+                            <constraint firstItem="Aed-t3-Oaz" firstAttribute="top" secondItem="gIY-4l-cez" secondAttribute="bottom" constant="26" id="r7Y-E8-5oM"/>
+                            <constraint firstItem="gIY-4l-cez" firstAttribute="leading" secondItem="M6C-36-Cbg" secondAttribute="leading" constant="39" id="zVf-bT-zGj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M6C-36-Cbg"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailField" destination="gIY-4l-cez" id="8ZE-QC-ZpE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eMH-5p-cFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80" y="929"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="qJo-X7-B9G">
+            <objects>
+                <viewController id="bls-RV-hnn" customClass="LoginViewController" customModule="Ray" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tUd-Zv-VdS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="20A-LL-80K">
+                                <rect key="frame" x="39" y="164" width="336" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="va9-ep-Gqe">
+                                <rect key="frame" x="39" y="215" width="336" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFq-Ho-C6J">
+                                <rect key="frame" x="126" y="672" width="162" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Forgotten Password?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Wlr-Id-9bx" kind="show" id="ceF-ur-bRY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbe-8p-ZMv">
+                                <rect key="frame" x="147.66666666666666" y="632" width="118.99999999999997" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Create Account">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xWV-TH-Mih" kind="show" id="VsC-sj-zdT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxu-hn-7Tn">
+                                <rect key="frame" x="133" y="265" width="148" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginBtnTapped:" destination="bls-RV-hnn" eventType="touchUpInside" id="1bs-Ox-GoV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.17339256180000001" blue="0.38097069300000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="20A-LL-80K" firstAttribute="leading" secondItem="va9-ep-Gqe" secondAttribute="leading" id="0Hs-Se-Gmp"/>
+                            <constraint firstItem="cFq-Ho-C6J" firstAttribute="top" secondItem="Tbe-8p-ZMv" secondAttribute="bottom" constant="7" id="809-l6-msm"/>
+                            <constraint firstItem="20A-LL-80K" firstAttribute="top" secondItem="NzO-3H-x9c" secondAttribute="top" constant="100" id="CrV-ue-sdO"/>
+                            <constraint firstItem="Tbe-8p-ZMv" firstAttribute="centerX" secondItem="cFq-Ho-C6J" secondAttribute="centerX" id="FvZ-xb-Y3F"/>
+                            <constraint firstItem="20A-LL-80K" firstAttribute="leading" secondItem="NzO-3H-x9c" secondAttribute="leading" constant="39" id="RF0-fs-cnl"/>
+                            <constraint firstItem="Tbe-8p-ZMv" firstAttribute="centerX" secondItem="20A-LL-80K" secondAttribute="centerX" id="exI-d0-dxa"/>
+                            <constraint firstItem="Tbe-8p-ZMv" firstAttribute="centerX" secondItem="va9-ep-Gqe" secondAttribute="centerX" id="fAJ-qO-If2"/>
+                            <constraint firstItem="Tbe-8p-ZMv" firstAttribute="centerX" secondItem="tUd-Zv-VdS" secondAttribute="centerX" id="flr-R9-LYA"/>
+                            <constraint firstAttribute="bottom" secondItem="Tbe-8p-ZMv" secondAttribute="bottom" constant="71" id="jCA-qR-ayC"/>
+                            <constraint firstItem="Tbe-8p-ZMv" firstAttribute="centerX" secondItem="jxu-hn-7Tn" secondAttribute="centerX" id="rkM-IK-nZF"/>
+                            <constraint firstItem="jxu-hn-7Tn" firstAttribute="leading" secondItem="NzO-3H-x9c" secondAttribute="leading" constant="133" id="s36-Fh-GsE"/>
+                            <constraint firstItem="va9-ep-Gqe" firstAttribute="top" secondItem="20A-LL-80K" secondAttribute="bottom" constant="21" id="sAj-sG-EF1"/>
+                            <constraint firstItem="jxu-hn-7Tn" firstAttribute="top" secondItem="va9-ep-Gqe" secondAttribute="bottom" constant="20" id="zn9-sz-c9m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NzO-3H-x9c"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Login" id="kHd-pd-jbR"/>
+                    <connections>
+                        <outlet property="emailField" destination="20A-LL-80K" id="spz-qR-qh2"/>
+                        <outlet property="passwordField" destination="va9-ep-Gqe" id="kW4-Xi-CzJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SB4-HA-N4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="80" y="202"/>
         </scene>
         <!--News-->
         <scene sceneID="uZQ-Zv-6nL">
@@ -555,7 +732,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TC-cQ-HXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="-730"/>
+            <point key="canvasLocation" x="81" y="2063"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mPW-YR-hbF">
@@ -570,7 +747,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqF-gl-2pd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-913" y="0.0"/>
+            <point key="canvasLocation" x="-2543" y="1439"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -589,7 +766,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="-988" y="2782"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fSQ-CZ-R0K">
@@ -606,7 +783,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aaN-5v-pjA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1046" y="728"/>
+            <point key="canvasLocation" x="58" y="3510"/>
         </scene>
         <!--User View Controller-->
         <scene sceneID="kLQ-ZK-2b7">
@@ -708,7 +885,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gkp-n5-g3R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3140.579710144928" y="727.98913043478262"/>
+            <point key="canvasLocation" x="2177" y="3510"/>
         </scene>
         <!--Report Issue View Controller-->
         <scene sceneID="c9d-Kf-dqi">
@@ -823,7 +1000,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q2F-FV-kHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5633" y="20"/>
+            <point key="canvasLocation" x="4899" y="2804"/>
         </scene>
         <!--Report Location View Controller-->
         <scene sceneID="MOn-5u-Slg">
@@ -930,7 +1107,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fh7-rn-W36" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4809" y="20"/>
+            <point key="canvasLocation" x="4075" y="2804"/>
         </scene>
         <!--Saved Locations Table View Controller-->
         <scene sceneID="hPs-B6-VTs">
@@ -1018,7 +1195,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Ez-jL-Fdd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4809" y="1080"/>
+            <point key="canvasLocation" x="4086" y="3863"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="3gK-Rz-e9M">
@@ -1033,7 +1210,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAd-cp-Exl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5446" y="663"/>
+            <point key="canvasLocation" x="4722" y="3445"/>
         </scene>
         <!--Suggested Input View Controller-->
         <scene sceneID="zOu-Hh-YeL">
@@ -1121,7 +1298,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0r5-FA-nKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4152" y="663"/>
+            <point key="canvasLocation" x="3428" y="3445"/>
         </scene>
         <!--Report Attachments View Controller-->
         <scene sceneID="El1-kT-gFj">
@@ -1259,7 +1436,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dgh-l2-Rzu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6452" y="20"/>
+            <point key="canvasLocation" x="5717" y="2804"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="mdn-gU-m57">
@@ -1347,7 +1524,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hge-R1-99c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2270" y="728"/>
+            <point key="canvasLocation" x="1306" y="3510"/>
         </scene>
         <!--Issue Table View Controller-->
         <scene sceneID="Siu-zD-ISq">
@@ -1423,7 +1600,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YTf-UJ-ZPb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2269.5652173913045" y="1345.5163043478262"/>
+            <point key="canvasLocation" x="1306" y="4129"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rp5-RN-kdh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Af5-kb-mcW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ei5-Jl-XBN">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bls-RV-hnn" kind="relationship" relationship="rootViewController" id="j9Q-di-XEf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G8T-do-Dis" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-988" y="202"/>
         </scene>
     </scenes>
     <resources>

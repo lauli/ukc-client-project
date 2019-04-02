@@ -1,3 +1,4 @@
+
 // !$*UTF8*$!
 {
 	archiveVersion = 1;
@@ -9,6 +10,9 @@
 /* Begin PBXBuildFile section */
 		0D2DAB262240419B0075144D /* SharedIssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */; };
 		0D703EDE223D795200436412 /* SharedIssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */; };
+		0D1390382227375F00F22906 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1390372227375F00F22906 /* LoginViewController.swift */; };
+		0D27AC4822281A5A00CA54E4 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */; };
+		0D27AC4A2228200E00CA54E4 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */; };
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
 				734A80E1223994A500C9641C /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 734A80E0223994A500C9641C /* PopupViewController.xib */; };
 		734A80E32239973F00C9641C /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A80E22239973F00C9641C /* PopupViewController.swift */; };
@@ -54,6 +58,9 @@
 		0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2DAB252240419B0075144D /* SharedIssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueDetailViewController.swift; sourceTree = "<group>"; };
 		0D703EDD223D795200436412 /* SharedIssueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssueTableViewCell.swift; sourceTree = "<group>"; };
+		0D1390372227375F00F22906 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0DA8B2CF223C084A00D30B60 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		0DA8B2D5223C3B0800D30B60 /* SharedIssuesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedIssuesTableViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +118,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		382D9E576E3F51C45C25D00F /* Frameworks */ = {
+		0D1390392227377A00F22906 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				0D1390372227375F00F22906 /* LoginViewController.swift */,
+				0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */,
+				0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */,
+			);
+			name = Authentication;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+        382D9E576E3F51C45C25D00F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				0CF2B4DB4E282BAFA597CD6B /* Pods_Ray.framework */,
@@ -213,6 +231,7 @@
 				C8F6D569220338AF0073488F /* NewsFeed */,
 				C8F6D56A220338B70073488F /* Reporting */,
 				C8F6D56B220338C50073488F /* User */,
+				0D1390392227377A00F22906 /* Authentication */,
 			);
 			path = Ray;
 			sourceTree = "<group>";
@@ -439,6 +458,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D27AC4A2228200E00CA54E4 /* ResetPasswordViewController.swift in Sources */,
+				0D1390382227375F00F22906 /* LoginViewController.swift in Sources */,
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
 				C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */,
 				0D703EDE223D795200436412 /* SharedIssueTableViewCell.swift in Sources */,
@@ -451,6 +472,7 @@
 				C81EDF072238804E00AA108E /* IssueTableViewController.swift in Sources */,
 				C878831C221E36EA001AFF36 /* Report.swift in Sources */,
 				C8A1F190221D0AF300806190 /* ReportLocationViewController.swift in Sources */,
+				0D27AC4822281A5A00CA54E4 /* CreateAccountViewController.swift in Sources */,
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,
 				C81EDF052238800200AA108E /* ProfileViewController.swift in Sources */,
 				C808A3582236A2EF0092DF8B /* UserViewController.swift in Sources */,
