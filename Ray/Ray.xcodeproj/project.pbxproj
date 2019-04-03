@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0D10386322510CB9005B3C74 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D10386222510CB9005B3C74 /* Attachment.swift */; };
 		0D27AC4822281A5A00CA54E4 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */; };
+		0D899740225518E20091E82D /* XMLPaser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89973F225518E20091E82D /* XMLPaser.swift */; };
+		0D899742225519050091E82D /* NewsFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D899741225519050091E82D /* NewsFeedTableViewCell.swift */; };
+		0D8997442255191F0091E82D /* NewsFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D8997432255191F0091E82D /* NewsFeedTableViewController.swift */; };
+		0D89974822551AD70091E82D /* NewsFeedDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89974722551AD70091E82D /* NewsFeedDetailsViewController.swift */; };
 		0D926A6F2254FE1F00F8FA5B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1390372227375F00F22906 /* LoginViewController.swift */; };
 		0D926A702254FE2600F8FA5B /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */; };
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
@@ -62,6 +66,10 @@
 		0D1390372227375F00F22906 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		0D89973F225518E20091E82D /* XMLPaser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLPaser.swift; sourceTree = "<group>"; };
+		0D899741225519050091E82D /* NewsFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewCell.swift; sourceTree = "<group>"; };
+		0D8997432255191F0091E82D /* NewsFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedTableViewController.swift; sourceTree = "<group>"; };
+		0D89974722551AD70091E82D /* NewsFeedDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedDetailsViewController.swift; sourceTree = "<group>"; };
 		0DA68075221717DC0078915B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0DA8B2CF223C084A00D30B60 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		17A071A28074DEA3B42C3274 /* Pods-Ray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ray.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Ray/Pods-Ray.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +140,17 @@
 			);
 			name = Authentication;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		0D89973E225518C10091E82D /* NewsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				0D89973F225518E20091E82D /* XMLPaser.swift */,
+				0D899741225519050091E82D /* NewsFeedTableViewCell.swift */,
+				0D8997432255191F0091E82D /* NewsFeedTableViewController.swift */,
+				0D89974722551AD70091E82D /* NewsFeedDetailsViewController.swift */,
+			);
+			path = NewsFeed;
 			sourceTree = "<group>";
 		};
 		382D9E576E3F51C45C25D00F /* Frameworks */ = {
@@ -233,6 +252,7 @@
 				C8B88E352253C27C001BD74E /* LoadingViewController.swift */,
 				C8F6D557220338020073488F /* MainViewController.swift */,
 				C8FDC0C72214E6D300B3D80E /* TabBarController.swift */,
+				0D89973E225518C10091E82D /* NewsFeed */,
 				0D1390392227377A00F22906 /* Authentication */,
 				C8F6D56C2203393D0073488F /* Data */,
 				C8FDC0C92214EDA100B3D80E /* Extensions */,
@@ -469,10 +489,12 @@
 				C8F6D556220338020073488F /* AppDelegate.swift in Sources */,
 				C8B88E3A2253D2FA001BD74E /* SharedIssueDetailViewController.swift in Sources */,
 				C8E24820222B7F3D004EFAF8 /* AttachmentsHandler.swift in Sources */,
+				0D8997442255191F0091E82D /* NewsFeedTableViewController.swift in Sources */,
 				C8B88E422253D89F001BD74E /* SuggestedInputViewController.swift in Sources */,
 				C8B88E412253D89F001BD74E /* SavedLocationViewCell.swift in Sources */,
 				C8F6D56E22033A480073488F /* DataHandler.swift in Sources */,
 				C8B88E472253D8D0001BD74E /* ReportSummaryViewController.swift in Sources */,
+				0D89974822551AD70091E82D /* NewsFeedDetailsViewController.swift in Sources */,
 				C8FDC0CB2214EDCB00B3D80E /* UIColorExtension.swift in Sources */,
 				C8B88E482253D8D0001BD74E /* ReportIssueViewController.swift in Sources */,
 				C81EDF09223881A700AA108E /* ProfileViewModel.swift in Sources */,
@@ -480,12 +502,14 @@
 				C8B88E4E2253D917001BD74E /* ReportViewController.swift in Sources */,
 				C8B88E362253C27C001BD74E /* LoadingViewController.swift in Sources */,
 				C8B88E3C2253D2FA001BD74E /* SharedIssuesTableViewController.swift in Sources */,
+				0D899742225519050091E82D /* NewsFeedTableViewCell.swift in Sources */,
 				C8B88E4F2253D917001BD74E /* ReportPageViewController.swift in Sources */,
 				C81EDF072238804E00AA108E /* IssueTableViewController.swift in Sources */,
 				C878831C221E36EA001AFF36 /* Report.swift in Sources */,
 				0D27AC4822281A5A00CA54E4 /* CreateAccountViewController.swift in Sources */,
 				0D10386322510CB9005B3C74 /* Attachment.swift in Sources */,
 				C8F6D558220338030073488F /* MainViewController.swift in Sources */,
+				0D899740225518E20091E82D /* XMLPaser.swift in Sources */,
 				C81EDF052238800200AA108E /* ProfileViewController.swift in Sources */,
 				C808A3582236A2EF0092DF8B /* UserViewController.swift in Sources */,
 				C8B88E3B2253D2FA001BD74E /* SharedIssueTableViewCell.swift in Sources */,
