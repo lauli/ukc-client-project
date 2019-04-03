@@ -17,7 +17,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "backgroundimage.png")
+        backgroundImage.image = UIImage(named: "backgroundscreen.png")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.navigationController?.navigationBar.topItem?.backBarButtonItem?.tintColor = .blue
         self.view.insertSubview(backgroundImage, at: 0)

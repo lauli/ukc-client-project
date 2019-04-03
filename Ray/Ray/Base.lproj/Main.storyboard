@@ -931,7 +931,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-HP-9PA">
-                                <rect key="frame" x="110" y="676" width="194" height="40"/>
+                                <rect key="frame" x="110" y="306" width="194" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -977,9 +977,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                             <constraint firstItem="oT4-Vj-Cwm" firstAttribute="leading" secondItem="ovP-CU-D7O" secondAttribute="leading" constant="39" id="X1a-Nh-dms"/>
                             <constraint firstItem="djI-EQ-n9V" firstAttribute="top" secondItem="40x-so-k1H" secondAttribute="bottom" constant="21" id="Xwo-pE-oFE"/>
                             <constraint firstItem="ovP-CU-D7O" firstAttribute="trailing" secondItem="40x-so-k1H" secondAttribute="trailing" constant="39" id="b0v-wr-fvW"/>
+                            <constraint firstItem="mPm-HP-9PA" firstAttribute="top" secondItem="oT4-Vj-Cwm" secondAttribute="bottom" constant="20" id="eo6-cJ-ae6"/>
                             <constraint firstItem="40x-so-k1H" firstAttribute="leading" secondItem="ovP-CU-D7O" secondAttribute="leading" constant="39" id="fkl-3Q-UVm"/>
                             <constraint firstItem="ovP-CU-D7O" firstAttribute="trailing" secondItem="oT4-Vj-Cwm" secondAttribute="trailing" constant="39" id="gfi-cE-E4K"/>
-                            <constraint firstItem="ovP-CU-D7O" firstAttribute="bottom" secondItem="mPm-HP-9PA" secondAttribute="bottom" constant="20" id="iKY-L0-Gjl"/>
                             <constraint firstItem="t6u-Yx-gZf" firstAttribute="top" secondItem="ovP-CU-D7O" secondAttribute="top" constant="39" id="oEy-7t-xE8"/>
                             <constraint firstItem="mPm-HP-9PA" firstAttribute="leading" secondItem="ovP-CU-D7O" secondAttribute="leading" constant="110" id="oPw-6z-2fL"/>
                             <constraint firstItem="t6u-Yx-gZf" firstAttribute="leading" secondItem="ovP-CU-D7O" secondAttribute="leading" constant="39" id="s2I-pz-LIU"/>
