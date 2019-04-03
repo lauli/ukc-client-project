@@ -351,6 +351,22 @@ extension DataHandler {
         let newReference = self.reference.child("Company").child("University Of Kent").child("Issues").childByAutoId()
 
         let newId = newReference.key
+        
+        let imageRef = "http://www.efstratiou.info/projects/rayproject/Website/images/" + newId!
+        var image1 = "", image2 = "", image3 = "", image4 = ""
+        if issue.attachment.attachment1 != ""{
+            image1 = imageRef + "_1.jpg"
+        }
+        if issue.attachment.attachment2 != ""{
+            image2 = imageRef + "_2.jpg"
+        }
+        if issue.attachment.attachment3 != ""{
+            image3 = imageRef + "_3.jpg"
+        }
+        if issue.attachment.attachment4 != ""{
+            image4 = imageRef + "_4.jpg"
+        }
+        
         let newIssue = [
             "issue_title": issue.title as NSString,
             "description": issue.description as NSString,
@@ -363,7 +379,7 @@ extension DataHandler {
                 "floor": issue.location.floor as NSString,
                 "room": issue.location.room as NSString
                 ] as NSDictionary,
-            "attachments": ["http://www.efstratiou.info/projects/rayproject/Website/images/TEEEEEEEEST" as NSString]
+            "attachments": [image1 as NSString, image2 as NSString, image3 as NSString, image4 as NSString]
 
             ] as [String : Any]
 

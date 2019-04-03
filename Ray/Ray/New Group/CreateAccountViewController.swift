@@ -12,7 +12,10 @@ import Firebase
 class CreateAccountViewController: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -32,6 +35,17 @@ class CreateAccountViewController: UIViewController {
         }
         guard let password = self.passwordField.text else {
             let alertController = UIAlertController(title: "Alert", message: "Password can't be empty.", preferredStyle: .alert)
+            
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        guard let name = self.nameField.text else {
+            let alertController = UIAlertController(title: "Alert", message: "Name can't be empty.", preferredStyle: .alert)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        guard let phone = self.phoneField.text else {
+            let alertController = UIAlertController(title: "Alert", message: "Phone can't be empty.", preferredStyle: .alert)
             
             self.present(alertController, animated: true, completion: nil)
             return
@@ -59,8 +73,8 @@ class CreateAccountViewController: UIViewController {
             // make user object for database entry
             var dictionary: [String: Any] = [:]
             dictionary.updateValue(email, forKey: "email")
-            dictionary.updateValue("ABC", forKey: "name")
-            dictionary.updateValue("+123456789", forKey: "phone")
+            dictionary.updateValue(name, forKey: "name")
+            dictionary.updateValue(phone, forKey: "phone")
             dictionary.updateValue([], forKey: "locations")
             dictionary.updateValue([], forKey: "issues")
             

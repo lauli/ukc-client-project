@@ -13,6 +13,7 @@ class IssueTableViewCell: UITableViewCell {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var viewedLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
 
     var locationText: String?
@@ -56,6 +57,14 @@ class IssueTableViewCell: UITableViewCell {
         locationText = report?.location.toString() ?? ""
         descriptionText = report?.description ?? ""
         infoLabel.text = locationText! + "\n" + descriptionText!
+        
+        if viewedText == "true"{
+            viewedLabel.text = "\u{2713}\u{2713} Seen"
+            viewedLabel.textColor = .princetonOrange
+        }else {
+            viewedLabel.text = "\u{2713} Delivered"
+            viewedLabel.textColor = .darkCerulean
+        }
     }
 
 }

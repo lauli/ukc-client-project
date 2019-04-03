@@ -155,17 +155,24 @@ extension ReportViewController: ReportPageDelegate {
     
     func sendReport() {
         let today = Date()
+        let imageCount = viewModel.attachments?.count
+        var image = ["", "", "", ""]
         
-        // TODO: Phoebe make attachments
+        if imageCount! > 0 {
+            for i in 1...imageCount! {
+                image[i-1] = String(i)
+            }
+        } else {
+            
+        }
+
         let issue = Report(title: viewModel.title ?? "", description: viewModel.description ?? "",
                            day: today.day, month: today.month, viewed: "false",
-                           location: viewModel.location ?? Location(building: "", floor: "", room: ""), attachment: Attachment(attachment1: "", attachment2: "", attachment3: "", attachment4: ""),
+                           location: viewModel.location ?? Location(building: "", floor: "", room: ""), attachment: Attachment(attachment1: image[0], attachment2: image[1], attachment3: image[2], attachment4: image[3]),
                            isPublic: viewModel.isPublic)
         DataHandler.shared.saveIssue(issue)
         
-        // TODO: implement sending to backend
-        uploadImage()
-        // TODO: Change filename to be reportid+"_"+String(i)+".jpg" instead of uploaded, cant do until report is sent to backend
+        uploadImage(id: issue.id)
 
         alertIfWeekend()
         scrollToPage(.first, animated: false)
@@ -177,7 +184,7 @@ extension ReportViewController: ReportPageDelegate {
         tabBarController?.selectedIndex = 2 // go to profile to see new issue
     }
     
-    func uploadImage() {
+    func uploadImage(id: String) {
         
         guard let images = viewModel.attachments, images.count > 0 else {
             return
@@ -187,7 +194,7 @@ extension ReportViewController: ReportPageDelegate {
             
             let image = images[i-1]
         
-            let filename = "uploaded_"+String(i)+".jpg"
+            let filename = id+"_"+String(i)+".jpg"
             
             // generate boundary string using a unique per-app string
             let boundary = UUID().uuidString

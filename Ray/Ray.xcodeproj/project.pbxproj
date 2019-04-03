@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0D10386322510CB9005B3C74 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D10386222510CB9005B3C74 /* Attachment.swift */; };
 		0D27AC4822281A5A00CA54E4 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC4722281A5A00CA54E4 /* CreateAccountViewController.swift */; };
+		0D926A6F2254FE1F00F8FA5B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1390372227375F00F22906 /* LoginViewController.swift */; };
+		0D926A702254FE2600F8FA5B /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D27AC492228200E00CA54E4 /* ResetPasswordViewController.swift */; };
 		0DA68076221717DC0078915B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0DA68075221717DC0078915B /* GoogleService-Info.plist */; };
 		0DA8B2D0223C084A00D30B60 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA8B2CF223C084A00D30B60 /* Shared.swift */; };
 		734A80E1223994A500C9641C /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 734A80E0223994A500C9641C /* PopupViewController.xib */; };
@@ -488,8 +490,10 @@
 				C808A3582236A2EF0092DF8B /* UserViewController.swift in Sources */,
 				C8B88E3B2253D2FA001BD74E /* SharedIssueTableViewCell.swift in Sources */,
 				C8380AD1225410AF00068726 /* NSMutableData+Extension.swift in Sources */,
+				0D926A6F2254FE1F00F8FA5B /* LoginViewController.swift in Sources */,
 				C8B88E402253D89F001BD74E /* SavedLocationsTableViewController.swift in Sources */,
 				C8788319221E3507001AFF36 /* User.swift in Sources */,
+				0D926A702254FE2600F8FA5B /* ResetPasswordViewController.swift in Sources */,
 				C8E2481E222B55F3004EFAF8 /* MapViewController.swift in Sources */,
 				C8B88E492253D8D0001BD74E /* ReportLocationViewController.swift in Sources */,
 				C8FDC0C82214E6D300B3D80E /* TabBarController.swift in Sources */,

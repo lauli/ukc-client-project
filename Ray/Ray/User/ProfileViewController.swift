@@ -6,6 +6,7 @@
 //  Copyright © 2019 Laureen Schausberger. All rights reserved.
 //
 import UIKit
+import Firebase
 
 final class ProfileViewController: UIViewController {
     
@@ -15,6 +16,17 @@ final class ProfileViewController: UIViewController {
     @IBOutlet private weak var contributorsLabel: UILabel!
     
     @IBOutlet private weak var contributorContainer: UIView!
+    
+    @IBAction func LogoutButton(_ sender: Any) {
+        do {
+            print ("Signed Out")
+            UserDefaults.standard.removeObject(forKey: "userID")
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "LogoutSegue", sender: self)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
     
     private var viewModel: ProfileViewModel!
     

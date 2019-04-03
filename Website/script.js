@@ -32,27 +32,22 @@ const attachments = document.getElementById("attachments");
 
 const location_content = document.getElementById("location_content");
 
-usersRef.on("value", function (snapshot) {
-    var userNumber = snapshot.numChildren();
-    userNumber += 1;
-    findUser(userNumber);
-});
-
-function findUser(userNumber) {
-    for (var i = 0; i < userNumber; i++) {
-        usersRef.child('User').child('User ID').child(i).child('issues').on("value", function (snapshot) {
+usersRef.child('User').child('User ID').on("value", function (snapshot) {
+    snapshot.forEach(function (data) {
+        var userNum = data.key;
+        usersRef.child('User').child('User ID').child(data.key).child('issues').on("value", function (snapshot) {
             snapshot.forEach(function (data) {
+                console.log(data.val);
                 if (data.val() == reportNumber) {
-                    // i = user id
-                    findUserDetails(i);
-                    
+                    // userNum = user id
+                    findUserDetails(userNum);
                     findIssueDetails();
                     findAttachments();
                 }
             });
         });
-    }
-}
+    });
+});
 
 function findUserDetails(i) {
     usersRef.child('User').child('User ID').child(i).on("value", function (snapshot) {
@@ -83,18 +78,23 @@ function findIssueDetails() {
 
 function findAttachments(){
     usersRef.child('Issues').child(reportNumber).child('attachments').on("value", function (snapshot) {
-        if(snapshot.numChildren()==1){
-            attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('0').val()+"/></div></div>"
-        }
-        else if(snapshot.numChildren()==2){
-            attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('0').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('1').val()+" /></div></div>"
-        }
-        else if(snapshot.numChildren()==3){
-            attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('0').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('1').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('2').val()+" /></div></div>"
-        }
-        else if(snapshot.numChildren()==4){
+        if (snapshot.exists()){
+            if(snapshot.child('0').val() != "" & snapshot.child('1').val() != "" & snapshot.child('2').val() != "" & snapshot.child('3').val() != ""){
             attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('1').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('1').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('2').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('3').val()+" /></div></div>"
         }
+        else if(snapshot.child('0').val() != "" & snapshot.child('1').val() !== "" & snapshot.child('2').val() != ""){
+            attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('0').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('1').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('2').val()+" /></div></div>"
+        }
+        else if(snapshot.child('0').val() != "" & snapshot.child('1').val() != ""){
+            attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('0').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('1').val()+" /></div></div>"
+        }
+        else if(snapshot.child('0').val() != ""){
+            attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('0').val()+" /></div></div>"
+        }
+        else {
+            attachments.innerHTML = ""
+        }}
+        
         
     });
 }

@@ -22,7 +22,7 @@ final class AttachmentsHandler: NSObject {
     func showActionSheet(currentVC: UIViewController) {
         self.currentVC = currentVC
         
-        let actionSheet = UIAlertController(title: "Add a Picture or Video", message: "Please select if you want to make your own picture/video, or if you want to upload an existing one", preferredStyle: .actionSheet)
+        let actionSheet = UIAlertController(title: "Add a Picture", message: "Please select if you want to take a new picture, or if you want to upload an existing one", preferredStyle: .actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) -> Void in
             self.authorisationStatus(attachmentTypeEnum: .camera, vc: self.currentVC!)
@@ -30,11 +30,6 @@ final class AttachmentsHandler: NSObject {
         
         actionSheet.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: { (action) -> Void in
             self.authorisationStatus(attachmentTypeEnum: .photoLibrary, vc: self.currentVC!)
-        }))
-        
-        actionSheet.addAction(UIAlertAction(title: "Video", style: .default, handler: { (action) -> Void in
-            self.authorisationStatus(attachmentTypeEnum: .video, vc: self.currentVC!)
-            
         }))
         
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
