@@ -167,10 +167,7 @@ class ReportAttachmentsViewController: ReportPageViewController, UIGestureRecogn
             print("IMAGE")
             self.images.append(image)
         }
-        
-        AttachmentsHandler.shared.videoPickedBlock = { url in
-            print("VIDEO")
-        }
+
     }
     
     @IBAction func prevPage(_ sender: Any) {

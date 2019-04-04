@@ -79,11 +79,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DispatchQueue.main.async {
                 if let loadingVC = self.window?.rootViewController as? LoadingViewController {
                     loadingVC.stopIndicator()
-                    
-                    let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
-                    self.window?.rootViewController = navigationController
                 }
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                self.window?.rootViewController = navigationController
+                
             }
         }
     }

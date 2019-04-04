@@ -38,14 +38,20 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
     var locationText: String?
     var dateText: String?
     var monthText: String?
+    var viewedText: String?
     var descriptionText: String?
+    var attachment1Url: String?
+    var attachment2Url: String?
+    var attachment3Url: String?
+    var attachment4Url: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.color = .princetonOrange
         spinner.startAnimating()
         tableView.backgroundView = spinner
-        
+        tableView.tableFooterView = UIView(frame: .zero) // set footer so that empty cells aren't shown
+
         user = DataHandler.shared.user
         getUserInfo()
         
@@ -53,6 +59,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
         pickerView.delegate = self
         
         buildingSearchField.inputView =  pickerView
+        buildingSearchField.accessibilityIdentifier = "Building Name Search Field"
         getBuildingNames()
         
         //init toolbar
@@ -60,6 +67,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
         //create left side empty space so that done button set on right side
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+        doneBtn.accessibilityIdentifier = "Done button"
         doneBtn.tintColor = .princetonOrange
         toolbar.setItems([flexSpace, doneBtn], animated: false)
         toolbar.sizeToFit()
@@ -69,7 +77,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
     
     func getUserInfo(){
         spinner.stopAnimating()
-        buildingSearch = user?.savedLocations?[0].building ?? ""
+        buildingSearch = user?.savedLocations?.first?.building ?? "Darwin College"
         buildingSearchField.text = buildingSearch
     }
     
@@ -93,7 +101,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
                                     if success {
                                         if sharedIssues != nil{
                                             self.Issue = sharedIssues!
-                                            self.sharedIssue.append(self.Issue)
+                                            self.sharedIssue.insert(self.Issue, at: 0) //show most recent first
                                             self.tableview.reloadData()
                                             self.spinner.stopAnimating()
                                             self.buildingSearchField.endEditing(true)
@@ -106,6 +114,7 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
                 }
             }
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -149,7 +158,12 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
         locationText = currentCell.locationText
         dateText = currentCell.dayLabel.text
         monthText = currentCell.monthLabel.text
+        viewedText = currentCell.viewedText
         descriptionText = currentCell.descriptionText
+        attachment1Url = currentCell.attachment1Url
+        attachment2Url = currentCell.attachment2Url
+        attachment3Url = currentCell.attachment3Url
+        attachment4Url = currentCell.attachment4Url
         
         performSegue(withIdentifier: "sharedIssue", sender: self)
     }
@@ -161,9 +175,14 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
             let vc = segue.destination as? SharedIssueDetailViewController
             vc?.date = dateText
             vc?.month = monthText
+            vc?.viewed = viewedText
             vc?.titleText = titleText
             vc?.descriptionText = descriptionText
             vc?.location = locationText
+            vc?.attachment1Text = attachment1Url
+            vc?.attachment2Text = attachment2Url
+            vc?.attachment3Text = attachment3Url
+            vc?.attachment4Text = attachment4Url
         }
     }
     
@@ -171,7 +190,6 @@ class SharedIssuesTableViewController: UITableViewController,  UITextFieldDelega
     //Get building names from firebase for autocomplete
     func getBuildingNames(){
         buildingAutoCompletionPossibilities = [""]
-        buildingSearchField.text = ""
         
         DataHandler.shared.buildings() { success, buildings in
             if success {

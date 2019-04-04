@@ -9,16 +9,7 @@ import Foundation
 
 final class ProfileViewModel {
     
-    private let userId: String
-    
-    private(set) var user: User?
-    
-    init() {
-        UserDefaults.standard.set("1", forKey: "UserId")
-        userId = UserDefaults.standard.object(forKey: "UserId") as! String
-        // TODO: don't hardcode it once the login is implemented
-        user = DataHandler.shared.user
-    }
+    var user: User? = DataHandler.shared.user
     
     // MARK: - UILabel Texts
     

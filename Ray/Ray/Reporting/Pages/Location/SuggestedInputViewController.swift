@@ -240,7 +240,6 @@ class SuggestedInputViewController: UIViewController, UITextFieldDelegate, UIPic
         textField.textColor = UIColor.black
         if textField == roomTextField {
             moveCaretToEndOfUserQueryPosition(textField: textField, userQuery: roomResult)
-            
         }
         else if textField == buildingTextField {
             moveCaretToEndOfUserQueryPosition(textField: textField, userQuery: buildingResult)

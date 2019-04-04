@@ -13,8 +13,16 @@ class IssueTableViewCell: UITableViewCell {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var viewedLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
 
+    var locationText: String?
+    var descriptionText: String?
+    var attachment1Url: String?
+    var attachment2Url: String?
+    var attachment3Url: String?
+    var attachment4Url: String?
+    var viewedText: String?
     var report: Report? {
         didSet {
             updateLabels()
@@ -38,13 +46,25 @@ class IssueTableViewCell: UITableViewCell {
     }
     
     private func updateLabels() {
-        dayLabel.text = "17"
-        monthLabel.text = "SEP"
-        titleLabel.text = report?.title
+        dayLabel.text = report?.day ?? ""
+        monthLabel.text = report?.month.uppercased() ?? ""
+        titleLabel.text = report?.title ?? ""
+        viewedText = report?.viewed ?? ""
+        attachment1Url = report?.attachment.attachment1 ?? ""
+        attachment2Url = report?.attachment.attachment2 ?? ""
+        attachment3Url = report?.attachment.attachment3 ?? ""
+        attachment4Url = report?.attachment.attachment4 ?? ""
+        locationText = report?.location.toString() ?? ""
+        descriptionText = report?.description ?? ""
+        infoLabel.text = locationText! + "\n" + descriptionText!
         
-        let location = report?.location.toString() ?? ""
-        let description = report?.description ?? "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
-        infoLabel.text = location + "\n" + description
+        if viewedText == "true"{
+            viewedLabel.text = "\u{2713}\u{2713} Seen"
+            viewedLabel.textColor = .princetonOrange
+        }else {
+            viewedLabel.text = "\u{2713} Delivered"
+            viewedLabel.textColor = .darkCerulean
+        }
     }
 
 }

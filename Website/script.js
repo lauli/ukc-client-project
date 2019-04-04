@@ -28,28 +28,26 @@ const natureOfIssue = document.getElementById("natureOfIssue");
 const description = document.getElementById("description");
 const confirmation = document.getElementById("confirmation");
 
+const attachments = document.getElementById("attachments");
+
 const location_content = document.getElementById("location_content");
 
-usersRef.on("value", function (snapshot) {
-    var userNumber = snapshot.numChildren();
-    userNumber += 1;
-    findUser(userNumber);
-});
-
-function findUser(userNumber) {
-    for (var i = 0; i < userNumber; i++) {
-        usersRef.child('User').child('User ID').child(i).child('issues').on("value", function (snapshot) {
+usersRef.child('User').child('User ID').on("value", function (snapshot) {
+    snapshot.forEach(function (data) {
+        var userNum = data.key;
+        usersRef.child('User').child('User ID').child(data.key).child('issues').on("value", function (snapshot) {
             snapshot.forEach(function (data) {
+                console.log(data.val);
                 if (data.val() == reportNumber) {
-                    // i = user id
-                    findUserDetails(i);
-                    
+                    // userNum = user id
+                    findUserDetails(userNum);
                     findIssueDetails();
+                    findAttachments();
                 }
             });
         });
-    }
-}
+    });
+});
 
 function findUserDetails(i) {
     usersRef.child('User').child('User ID').child(i).on("value", function (snapshot) {
@@ -67,17 +65,38 @@ function findIssueDetails() {
     usersRef.child('Issues').child(reportNumber).child('location').on("value", function (snapshot) {
         if (snapshot.child('building').val() == null){
             location_content.innerHTML = "<iframe width='100%' height='500px' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?q="+snapshot.child('lat').val()+","+snapshot.child('long').val()+"&hl=es;z=14&amp;output=embed'></iframe>";
-            
         }
         else{
-        
-         building.innerHTML = "<b>Building: </b> " + snapshot.child('building').val();
+        building.innerHTML = "<b>Building: </b> " + snapshot.child('building').val();
         floor.innerHTML = "<b>Floor: </b> " + snapshot.child('floor').val();
         room.innerHTML = "<b>Room: </b> " + snapshot.child('room').val();
     }
     });
     
     
+}
+
+function findAttachments(){
+    usersRef.child('Issues').child(reportNumber).child('attachments').on("value", function (snapshot) {
+        if (snapshot.exists()){
+            if(snapshot.child('0').val() != "" & snapshot.child('1').val() != "" & snapshot.child('2').val() != "" & snapshot.child('3').val() != ""){
+            attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('1').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('1').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('2').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('3').val()+" /></div></div>"
+        }
+        else if(snapshot.child('0').val() != "" & snapshot.child('1').val() !== "" & snapshot.child('2').val() != ""){
+            attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('0').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('1').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('2').val()+" /></div></div>"
+        }
+        else if(snapshot.child('0').val() != "" & snapshot.child('1').val() != ""){
+            attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('0').val()+" /></div><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('1').val()+" /></div></div>"
+        }
+        else if(snapshot.child('0').val() != ""){
+            attachments.innerHTML = "<div style='padding-top: 70px; margin-top: -70px;'></div><h3>Attachments</h3><div id='images' class='row'><div class='column'><img class='image-column' alt='Added attachments' src="+snapshot.child('0').val()+" /></div></div>"
+        }
+        else {
+            attachments.innerHTML = ""
+        }}
+        
+        
+    });
 }
 
 function confirmationMessage() {

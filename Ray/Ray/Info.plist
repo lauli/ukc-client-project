@@ -2,6 +2,21 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+        <key>NSExceptionDomains</key>
+        <dict>
+            <key>efstratiou.info</key>
+            <dict>
+                <key>NSExceptionAllowsInsecureHTTPLoads</key>
+                <true/>
+                <key>NSIncludesSubdomains</key>
+                <true/>
+            </dict>
+        </dict>
+    </dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Shree714.ttc</string>
@@ -57,22 +72,22 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>googlechromes</string>
-        <string>comgooglemaps</string>
-    </array>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>This app requires access to GPS to let you select the location of the outside-issue that you want to report.</string>
-    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-    <string>This app requires access to GPS to let you select the location of the outside-issue that you want to report.</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>This app requires access to GPS to let you select the location of the outside-issue that you want to report.</string>
-    <key>NSCameraUsageDescription</key>
-    <string>This app requires access to the camera, in order to take a picture, which you can attach to your issue-report.</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>This app requires access to the microphone, in order to make a video, which you can attach to your issue-report.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>YThis app requires access to your photo library, in order to let you attach pictures/videos to your issue-report.</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app requires access to GPS to let you select the location of the outside-issue that you want to report.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app requires access to GPS to let you select the location of the outside-issue that you want to report.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app requires access to GPS to let you select the location of the outside-issue that you want to report.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires access to the camera, in order to take a picture, which you can attach to your issue-report.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app requires access to the microphone, in order to make a video, which you can attach to your issue-report.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app requires access to your photo library, in order to let you attach pictures/videos to your issue-report.</string>
 </dict>
 </plist>

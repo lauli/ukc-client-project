@@ -12,7 +12,10 @@ import Firebase
 class UserViewController: UIViewController, UITextFieldDelegate {
     
     var viewModel: ProfileViewModel!
-    let id = "2"
+    
+    weak var delegate: SavedLocationsUpdateDelegate?
+    
+    private let uid = UserDefaults.standard.string(forKey: "userID") ?? "1"
     
     //Database ref
     var locationReference: DatabaseReference!
@@ -34,8 +37,8 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         setupLayout()
         
         //Database refs
-        userReference = Database.database().reference().child("Company").child("University Of Kent").child("User").child("User ID").child(id)
-        locationReference = Database.database().reference().child("Company").child("University Of Kent").child("User").child("User ID").child(id).child("saved_locations")
+        userReference = Database.database().reference().child("Company").child("University Of Kent").child("User").child("User ID").child(uid)
+        locationReference = Database.database().reference().child("Company").child("University Of Kent").child("User").child("User ID").child(uid).child("saved_locations")
     }
     
     @IBAction func addLocation(_ sender: UIButton) {
@@ -65,15 +68,28 @@ class UserViewController: UIViewController, UITextFieldDelegate {
                 popupVC.errorLabel.textColor = UIColor.red
                 popupVC.errorLabel.numberOfLines = 1
             }
-            //Getting data from textFields
+                //Getting data from textFields
             else {
                 let newBuilding = popupVC.buildingField.text
                 let newFloor = popupVC.floorField.text
                 let newRoom = popupVC.roomField.text
                 self.locationReference.childByAutoId().setValue(["building":newBuilding, "floor":newFloor, "room": newRoom])
-                popupVC.errorLabel.text = "New location added!"
                 
-                //popup?.dismiss()
+                DataHandler.shared.fetchUserInformation(forUserID: self.uid) { success, _ in
+                    if success {
+                        popupVC.errorLabel.text = "New location added!"
+                        let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { _ in
+                            popup?.dismiss()
+                        }
+                        self.delegate?.updateTableView()
+                        
+                    } else {
+                        popupVC.errorLabel.text = "Couldn't load new locations.. "
+                    }
+                    
+                }
+                
+                
             }
         }
         popup.addButtons([cancel, confirm])
@@ -127,5 +143,11 @@ class UserViewController: UIViewController, UITextFieldDelegate {
             userReference.child("phone").setValue(newPhone)
             alert.message = "Details sucessfully changed"
         }
-}
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let savedLocationTableVC = segue.destination as? SavedLocationsTableViewController {
+            delegate = savedLocationTableVC
+        }
+    }
 }

@@ -24,6 +24,14 @@ class SavedLocationViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
+    override func prepareForReuse() {
+        if isSelected {
+            selected()
+        } else {
+            deselected()
+        }
+    }
+    
     private func updateLabels() {
         buildingLabel.text = location?.building
         floorLabel.text = location?.floor
