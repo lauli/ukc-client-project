@@ -379,7 +379,8 @@ extension DataHandler {
                 "floor": issue.location.floor as NSString,
                 "room": issue.location.room as NSString
                 ] as NSDictionary,
-            "attachments": [image1 as NSString, image2 as NSString, image3 as NSString, image4 as NSString]
+            "attachments": [image1 as NSString, image2 as NSString, image3 as NSString, image4 as NSString],
+            "website" : "http://www.efstratiou.info/projects/rayproject/Website/#" + newId!
 
             ] as [String : Any]
 
