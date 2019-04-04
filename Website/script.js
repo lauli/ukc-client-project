@@ -63,8 +63,12 @@ function findIssueDetails() {
         description.innerHTML = "<b>Description: </b> " + snapshot.child('description').val();
     });
     usersRef.child('Issues').child(reportNumber).child('location').on("value", function (snapshot) {
-        if (snapshot.child('building').val() == null){
-            location_content.innerHTML = "<iframe width='100%' height='500px' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?q="+snapshot.child('lat').val()+","+snapshot.child('long').val()+"&hl=es;z=14&amp;output=embed'></iframe>";
+        if (snapshot.child('room').val() == ""){
+            var lat = snapshot.child('building').val();
+            lat = lat.slice(5,13);
+            var long = snapshot.child('floor').val();
+            long = long.slice(6, 14);
+            location_content.innerHTML = "<iframe width='100%' height='500px' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='https://maps.google.com/maps?q="+lat+","+long+"&hl=es;z=14&amp;output=embed'></iframe>";
         }
         else{
         building.innerHTML = "<b>Building: </b> " + snapshot.child('building').val();
