@@ -95,7 +95,7 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     private func updateDetails() {
         //create alert
-        let alert = UIAlertController(title: "Changes Saved", message: "(Implement saving any changes to details)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Changes Saved", message: "", preferredStyle: .alert)
         
         //create OK button
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
@@ -105,7 +105,6 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: false, completion: nil)
         
         // if text has been changed, override it as the current value
-        
         if (nameField.text == viewModel.nameText()) {
             alert.message = "No changes have been made"
         } else {
