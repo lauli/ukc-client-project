@@ -1068,11 +1068,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
             </objects>
             <point key="canvasLocation" x="-988" y="2782"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="fSQ-CZ-R0K">
             <objects>
                 <navigationController id="hF3-F8-RfN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="contacts" id="QBZ-XO-52t">
+                    <tabBarItem key="tabBarItem" title="Profile" image="сontacts" id="QBZ-XO-52t">
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="User Tab"/>
                         </userDefinedRuntimeAttributes>
@@ -2186,6 +2186,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     </scenes>
     <resources>
         <image name="news" width="30" height="30"/>
+        <image name="сontacts" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Clm-Hv-bRR"/>
