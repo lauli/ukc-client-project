@@ -106,6 +106,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                     </tableView>
                     <navigationItem key="navigationItem" id="HG4-Dh-kOP">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="Info" id="lwQ-dp-AN2">
+                            <connections>
+                                <segue destination="Ofe-yc-gEa" kind="show" id="toB-gx-0gK"/>
+                            </connections>
+                        </barButtonItem>
                         <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Building" textAlignment="center" minimumFontSize="17" id="4br-mn-bf2">
                             <rect key="frame" x="59.333333333333343" y="7" width="286" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -135,6 +140,111 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                 <exit id="taQ-eq-r9i" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1307" y="2063"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kNt-kJ-0Wm">
+            <objects>
+                <viewController id="Ofe-yc-gEa" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PZ1-n4-BUA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z2g-Ky-SfF">
+                                <rect key="frame" x="0.0" y="64" width="414" height="736"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y36-zJ-zgy">
+                                        <rect key="frame" x="16" y="56" width="365.33333333333331" height="61"/>
+                                        <string key="text">Opening Hours: 08:00 - 17:00 Monday to Friday
+Tel: 01227 816666
+Email: EstatesCustomerServices@kent.ac.uk</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estates Contact Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7q-EJ-8zP">
+                                        <rect key="frame" x="16" y="16" width="365.33333333333331" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtw-Dq-YVp">
+                                        <rect key="frame" x="16" y="175" width="365.33333333333331" height="669.66666666666663"/>
+                                        <mutableString key="text">Within 1 hour – Emergency
+Floods (pipework or leaking roofs)
+Glazing (security or safety is compromised)
+Electrical shutdown of a building
+People trapped in a lift
+Gas leaks
+Fire alarms
+Serious trip hazard
+Bare electrical cables
+
+Within 24 Hours – Urgent
+No heating (reported before 3pm)
+No water
+Lighting (only light in an area)
+Lights on staircases
+No hot water
+Shower not working (only one in a house)
+Localised electrical failure
+Security lighting
+Blocked toilets or drains
+Lifts out of action
+Corridor lights
+Removal of graffiti
+
+Within 5 Working Days – Routine
+Lighting (multiple in an area)
+External lighting
+Door closers
+Unable to open windows
+Tiling to showers
+
+Within 20 working days – Scheduled
+All other maintenance items required</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maintenance priorities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Os5-62-E32">
+                                        <rect key="frame" x="16" y="133" width="365.33333333333331" height="26"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <color key="textColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="V7q-EJ-8zP" secondAttribute="trailing" constant="16" id="1Va-jl-RE3"/>
+                                    <constraint firstItem="y36-zJ-zgy" firstAttribute="top" secondItem="V7q-EJ-8zP" secondAttribute="bottom" constant="16" id="6zh-Mr-FUB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Rtw-Dq-YVp" secondAttribute="trailing" constant="16" id="CIM-pW-KaV"/>
+                                    <constraint firstItem="y36-zJ-zgy" firstAttribute="leading" secondItem="Z2g-Ky-SfF" secondAttribute="leading" constant="16" id="D3A-Kh-ppg"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rtw-Dq-YVp" secondAttribute="bottom" constant="116" id="NS6-ID-YU0"/>
+                                    <constraint firstItem="Rtw-Dq-YVp" firstAttribute="top" secondItem="Os5-62-E32" secondAttribute="bottom" constant="16" id="Rgi-V8-C8q"/>
+                                    <constraint firstAttribute="trailing" secondItem="Os5-62-E32" secondAttribute="trailing" constant="16" id="dOe-Qu-02b"/>
+                                    <constraint firstItem="Os5-62-E32" firstAttribute="leading" secondItem="Z2g-Ky-SfF" secondAttribute="leading" constant="16" id="eeS-pL-iOX"/>
+                                    <constraint firstItem="y36-zJ-zgy" firstAttribute="top" secondItem="V7q-EJ-8zP" secondAttribute="bottom" constant="16" id="f4x-EG-5Kw"/>
+                                    <constraint firstItem="V7q-EJ-8zP" firstAttribute="leading" secondItem="Z2g-Ky-SfF" secondAttribute="leading" constant="16" id="hTn-Vc-YRh"/>
+                                    <constraint firstItem="Rtw-Dq-YVp" firstAttribute="leading" secondItem="Z2g-Ky-SfF" secondAttribute="leading" constant="16" id="mdw-cd-iFr"/>
+                                    <constraint firstAttribute="trailing" secondItem="y36-zJ-zgy" secondAttribute="trailing" constant="16" id="nIJ-z8-La1"/>
+                                    <constraint firstItem="Os5-62-E32" firstAttribute="top" secondItem="y36-zJ-zgy" secondAttribute="bottom" constant="16" id="xn8-gU-ysu"/>
+                                    <constraint firstItem="V7q-EJ-8zP" firstAttribute="top" secondItem="Z2g-Ky-SfF" secondAttribute="top" constant="16" id="xzo-zf-NTO"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z2g-Ky-SfF" firstAttribute="trailing" secondItem="ch6-Qb-5Gz" secondAttribute="trailing" id="46H-5t-acT"/>
+                            <constraint firstItem="Z2g-Ky-SfF" firstAttribute="top" secondItem="ch6-Qb-5Gz" secondAttribute="top" id="4dQ-xa-RDh"/>
+                            <constraint firstItem="Z2g-Ky-SfF" firstAttribute="leading" secondItem="ch6-Qb-5Gz" secondAttribute="leading" id="pYV-cL-kmQ"/>
+                            <constraint firstItem="Z2g-Ky-SfF" firstAttribute="width" secondItem="PZ1-n4-BUA" secondAttribute="width" id="r3y-Sz-RKz"/>
+                            <constraint firstItem="Z2g-Ky-SfF" firstAttribute="height" secondItem="PZ1-n4-BUA" secondAttribute="height" id="ycR-PB-X5d"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ch6-Qb-5Gz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KtQ-4G-tqH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1305.7971014492755" y="1364.6739130434785"/>
         </scene>
         <!--News Feed Table View Controller-->
         <scene sceneID="nye-CC-VvM">
@@ -690,7 +800,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                         <rect key="frame" x="0.0" y="150" width="350" height="31"/>
                                                         <subviews>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3HT-PM-eal">
-                                                                <rect key="frame" x="0.0" y="0.0" width="44" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="48.666666666666664" height="31"/>
                                                                 <color key="onTintColor" red="1" green="0.67147801490000003" blue="0.1504818503" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="consent switch"/>
@@ -700,7 +810,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
                                                                 </connections>
                                                             </switch>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="I guarantee that have the consent of the person I am reporting for to do so in their name" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJO-1L-dNE">
-                                                                <rect key="frame" x="50" y="0.0" width="300" height="31"/>
+                                                                <rect key="frame" x="54.666666666666657" y="0.0" width="295.33333333333337" height="31"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
