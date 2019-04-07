@@ -292,7 +292,6 @@ final class DataHandler {
             }
 
             if sharedIssue == "true" {
-                // only add issues to user, when there are issues
                 issues.append(issueId)
                 self.decodeIssues(ids: [issueId: issueId]) { success, result in
                     if success{
@@ -329,7 +328,6 @@ final class DataHandler {
             }
 
             if building == buildingName {
-                // only add issues to user, when there are issues
                 issues.append(issueId)
             }
             completion(true, issues)
