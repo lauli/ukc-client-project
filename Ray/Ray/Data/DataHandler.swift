@@ -188,7 +188,7 @@ final class DataHandler {
     }
     
     
-    func buildings(completion: @escaping RetrievedData){
+    func buildings(completion: @escaping RetrievedData) {
         var buildings: [String] = []
 
         reference.child("Company").child("University Of Kent").child("Building").observeSingleEvent(of: .value, with: { result in
@@ -348,9 +348,12 @@ extension DataHandler {
 
         let newReference = self.reference.child("Company").child("University Of Kent").child("Issues").childByAutoId()
 
-        let newId = newReference.key
+        guard let newId = newReference.key else {
+            print("DataHandler > Key of new Issue couldn't be found.")
+            return
+        }
         
-        let imageRef = "http://www.efstratiou.info/projects/rayproject/Website/images/" + newId!
+        let imageRef = "http://www.efstratiou.info/projects/rayproject/Website/images/" + newId
         var image1 = "", image2 = "", image3 = "", image4 = ""
         if issue.attachment.attachment1 != ""{
             image1 = imageRef + "_1.jpg"
@@ -378,7 +381,7 @@ extension DataHandler {
                 "room": issue.location.room as NSString
                 ] as NSDictionary,
             "attachments": [image1 as NSString, image2 as NSString, image3 as NSString, image4 as NSString],
-            "website" : "http://www.efstratiou.info/projects/rayproject/Website/#" + newId!
+            "website" : "http://www.efstratiou.info/projects/rayproject/Website/#" + newId
 
             ] as [String : Any]
 
@@ -390,7 +393,7 @@ extension DataHandler {
         userReference.setValue(newId)
 
         // add issue to issue array in app
-        issue.id = newId ?? ""
+        issue.id = newId
         user?.reports?.append(issue)
     }
 }

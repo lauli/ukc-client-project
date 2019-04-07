@@ -182,6 +182,14 @@ extension ReportViewController: ReportPageDelegate {
         reloadData()
         
         tabBarController?.selectedIndex = 2 // go to profile to see new issue
+        
+        // reload issueTableVC
+        guard let profileVC = tabBarController?.selectedViewController as? ProfileViewController,
+            let tableVC = profileVC.issueTableVC else {
+            print("ReportViewController > Couldn't reload issuetableVC in profile tab.")
+            return
+        }
+        tableVC.tableView.reloadData()
     }
     
     func uploadImage(id: String) {

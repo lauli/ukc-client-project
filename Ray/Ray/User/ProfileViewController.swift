@@ -17,6 +17,8 @@ final class ProfileViewController: UIViewController {
     
     @IBOutlet private weak var contributorContainer: UIView!
     
+    private(set) var issueTableVC: IssueTableViewController?
+    
     @IBAction func LogoutButton(_ sender: Any) {
         do {
             print ("Signed Out")
@@ -44,6 +46,7 @@ final class ProfileViewController: UIViewController {
         
         if let tableViewController = segue.destination as? IssueTableViewController {
             tableViewController.viewModel = viewModel
+            issueTableVC = tableViewController
             
         } else if let userViewController = segue.destination as? UserViewController {
             userViewController.viewModel = viewModel
