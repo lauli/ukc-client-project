@@ -111,8 +111,8 @@ class UserViewController: UIViewController, UITextFieldDelegate {
     
     private func updateDetails() {
         //create alert
-        let alert = UIAlertController(title: "Changes Saved", message: "(Implement saving any changes to details)", preferredStyle: .alert)
-        
+        let alert = UIAlertController(title: "Changes Saved", message: "", preferredStyle: .alert)
+    
         //create OK button
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
         }))
@@ -121,28 +121,24 @@ class UserViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: false, completion: nil)
         
         // if text has been changed, override it as the current value
-        
         if (nameField.text == viewModel.nameText()) {
-            alert.message = "No changes have been made"
+            
         } else {
             let newName = nameField.text
             userReference.child("name").setValue(newName)
-            alert.message = "Details sucessfully changed"
         }
         if (emailField.text == viewModel.emailText()) {
-            alert.message = "No changes have been made"
+            
         } else {
             let newEmail = emailField.text
             userReference.child("email").setValue(newEmail)
-            alert.message = "Details sucessfully changed"
         }
         if (phoneField.text == viewModel.phoneText()) {
-            alert.message = "No changes have been made"
+           
         } else {
             let newPhone = phoneField.text
             //override value if different
             userReference.child("phone").setValue(newPhone)
-            alert.message = "Details sucessfully changed"
         }
     }
     
