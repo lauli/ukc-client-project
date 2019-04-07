@@ -19,9 +19,45 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>efstratiou.info</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires access to the camera, in order to take a picture, which you can attach to your issue-report.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app requires access to GPS to let you select the location of the outside-issue that you want to report.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>This app requires access to GPS to let you select the location of the outside-issue that you want to report.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app requires access to GPS to let you select the location of the outside-issue that you want to report.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app requires access to the microphone, in order to make a video, which you can attach to your issue-report.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app requires access to your photo library, in order to let you attach pictures/videos to your issue-report.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Shree714.ttc</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

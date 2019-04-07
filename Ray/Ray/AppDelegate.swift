@@ -7,7 +7,10 @@
 //
 
 import UIKit
+
 import Firebase
+import GoogleMaps
+import PopupDialog
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        GMSServices.provideAPIKey("AIzaSyCwW2A6ZbBrbEJ_CmhAIDo6UWBBe9e3rlU")
+
+        if let userID = UserDefaults.standard.string(forKey: "userID") {
+            showTabBarController(forUserID: userID)
+            
+        } else {
+            showLoginViewController()
+        }
+        
+        
         return true
     }
 
@@ -43,6 +56,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    private func showLoginViewController() {
+        DispatchQueue.main.async {
+            if let loadingVC = self.window?.rootViewController as? LoadingViewController {
+                loadingVC.stopIndicator()
+                
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "loginNavigationController") as! UINavigationController
+                self.window?.rootViewController = navigationController
+            }
+        }
+    }
+    
+    func showTabBarController(forUserID userID: String) {
+        DataHandler.shared.fetchUserInformation(forUserID: userID) { success, _ in
+            
+            guard success else {
+                print("AppDelegate > Couldn't retrieve/find user.")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                if let loadingVC = self.window?.rootViewController as? LoadingViewController {
+                    loadingVC.stopIndicator()
+                }
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let navigationController = mainStoryboard.instantiateViewController(withIdentifier: "TabBarController") as! TabBarController
+                self.window?.rootViewController = navigationController
+                
+            }
+        }
+    }
 }
-

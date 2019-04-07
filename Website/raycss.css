@@ -1,0 +1,140 @@
+html {
+    background: linear-gradient(rgb(168, 222, 244), rgb(4, 85, 119));
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    padding-top: 50px;
+}
+
+footer{
+   right: 0;
+   bottom: 0;
+   color: white;
+    padding-right: 10px;
+   text-align: right;
+}
+
+.content {
+    color: #545454;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    margin: 0px auto;
+    max-width: 800px;
+
+}
+
+.section {
+    background: #fff;
+    margin: 10px 0;
+    padding: 10px 30px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #F28029;
+    line-height: 1.3;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+a {
+    color: #F28029;
+}
+
+b,
+strong {
+    font-weight: 600;
+}
+
+.nav {
+    background-color: #36474F;
+    position: fixed;
+    width: 100%;
+    height: 53px;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+.nav li {
+    display: inline-block;
+    float: none;
+}
+
+.nav div {
+    float: left;
+    color: #859FAA;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.nav div:hover {
+    background-color: #859FAA;
+    color: black;
+}
+
+.nav :hover {
+    cursor: pointer;
+}
+
+#logo {
+    height: 40px;
+    padding-bottom: 8px;
+    filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 1));
+}
+
+.column {
+    float: left;
+    width: 48%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.image-column {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+}
+
+button {
+    width: 95%;
+    margin: 10px 2.5%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    background-color: #F28029;
+    border: #000;
+    border-radius: 10px;
+    cursor:pointer;
+}
+
+button h3 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
